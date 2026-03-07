@@ -57,16 +57,9 @@ export default function Memberships() {
                 </div>
 
                 {/* Ideal for */}
-                {plan.badge && (
-                  <p className="italic text-[#7A7A7A] text-sm mb-4">
-                    Ideal for: {plan.badge === "Most Popular" ? "Regular wellness enthusiasts" : plan.badge === "Best Value" ? "Daily wellness devotees" : "Getting started"}
-                  </p>
-                )}
-                {!plan.badge && (
-                  <p className="italic text-[#7A7A7A] text-sm mb-4">
-                    Ideal for: Getting started with wellness
-                  </p>
-                )}
+                <p className="italic text-[#7A7A7A] text-sm mb-4">
+                  Ideal for: {plan.idealFor}
+                </p>
 
                 {/* Features */}
                 <ul className="space-y-3 mb-8 flex-1">

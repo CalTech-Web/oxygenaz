@@ -10,7 +10,7 @@ const features = [
     body: "From dry needling to spinal manipulation, we offer techniques to help you feel better, faster.",
   },
   {
-    title: "Integrated wellness approach",
+    title: "Personalized treatment plans",
     body: "We blend traditional physical therapy with Core Services like cryotherapy, red light therapy, and infrared sauna.",
   },
 ];
@@ -36,8 +36,8 @@ export default function PhysicalTherapySection() {
 
         {/* Feature boxes */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-          {features.map((feature) => (
-            <div key={feature.title} className="text-center px-4">
+          {features.map((feature, index) => (
+            <div key={index} className="text-center px-4">
               <h3 className="text-[20px] font-extrabold text-[#10173E] mb-3">
                 {feature.title}
               </h3>

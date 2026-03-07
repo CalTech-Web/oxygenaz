@@ -24,29 +24,36 @@ const techniques = [
 
 const ptFaqs = [
   {
-    question: "Do I need a referral to see a physical therapist?",
+    question: "What should I wear?",
     answer:
-      "No, you do not need a referral or prescription. Arizona allows direct access to physical therapy, so you can schedule an appointment directly with us.",
+      "Wear comfortable, loose-fitting clothing that allows you to move easily. Athletic wear such as T-shirts, yoga pants, or shorts are ideal. Supportive sneakers are recommended if your session includes exercises or balance work.",
   },
   {
-    question: "How long is a physical therapy session?",
+    question: "What happens during the first visit?",
     answer:
-      "We offer 25-minute focused sessions and 55-minute comprehensive sessions. Your therapist will recommend the best option based on your condition and goals.",
+      "During your first visit, your physical therapist will perform a thorough evaluation, including a review of your medical history, a physical assessment, and a discussion of your goals. From there, a personalized treatment plan will be created just for you.",
   },
   {
-    question: "Does insurance cover physical therapy at Oxygen Wellness?",
+    question: "Will physical therapy be painful?",
     answer:
-      "Our services are not billed through insurance. However, HSA and FSA accounts typically cover our sessions. We provide detailed receipts for reimbursement purposes.",
+      "Physical therapy should not be painful, though some treatments may cause mild discomfort as your body heals. Your therapist will always communicate with you and adjust as needed to keep you comfortable throughout your session.",
   },
   {
-    question: "What should I wear to a physical therapy appointment?",
+    question: "Can I use any of the Core Services when I go?",
     answer:
-      "Wear comfortable, athletic clothing that allows you to move freely. This helps your therapist assess your movement and perform treatments effectively.",
+      "Yes! When you visit for physical therapy, you can also take advantage of our Core Services like cryotherapy, infrared sauna, red light therapy, compression therapy, and oxygen therapy. Your therapist may even incorporate these into your treatment plan.",
   },
   {
-    question: "How many sessions will I need?",
+    question:
+      "Do I need a doctor's referral to start physical therapy at Oxygen Wellness & Physical Therapy?",
     answer:
-      "The number of sessions depends on your specific condition, goals, and how your body responds to treatment. Dr. Borman will create a personalized plan and adjust it as you progress.",
+      "No, you do not need a doctor's referral. Arizona is a direct-access state, which means you can see a physical therapist without a prescription. Simply book an appointment and we'll take it from there.",
+  },
+  {
+    question:
+      "Is physical therapy at Oxygen Wellness & Physical Therapy covered by insurance?",
+    answer:
+      "Physical therapy at Oxygen Wellness & Physical Therapy is not billed through insurance. However, many patients are able to use their Health Savings Account (HSA) or Flexible Spending Account (FSA) to cover the cost of their sessions. We're happy to provide detailed receipts or documentation to support reimbursement through these accounts.",
   },
 ];
 
@@ -102,10 +109,10 @@ export default function PhysicalTherapyPage() {
                 What is Physical Therapy?
               </h2>
               <p className="text-[#7A7A7A] text-lg mb-4">
-                Physical therapy is a healthcare specialty focused on restoring movement, reducing pain, and improving physical function. At Oxygen Wellness, our approach combines hands-on manual techniques with evidence-based modalities to help you move better and feel your best.
+                Physical therapy is a healthcare specialty that helps people restore movement, strength, and function when they&apos;ve been limited by injury, surgery, illness, or chronic conditions.
               </p>
               <p className="text-[#7A7A7A] text-lg mb-6">
-                Whether you are recovering from an injury, managing chronic pain, or looking to optimize your athletic performance, our physical therapy program is designed to meet you where you are and help you reach your goals.
+                At Oxygen Wellness & Physical Therapy, we believe in treating the root cause of pain, not just the symptoms. Our licensed physical therapist will perform a detailed assessment to understand your condition, mobility limitations, and overall goals. We then design customized therapy programs that may include manual therapy, guided exercises, and state-of-the-art recovery treatments to ensure a safe and effective rehabilitation process.
               </p>
               <ul className="space-y-2 mb-8">
                 {techniques.map((technique) => (
@@ -134,31 +141,32 @@ export default function PhysicalTherapyPage() {
           <h2 className="text-[40px] font-extrabold text-[#10173E] mb-8 text-center">
             What to Expect During a Physical Therapy Appointment
           </h2>
-          <div className="max-w-3xl mx-auto space-y-6">
-            <div className="bg-white rounded-xl shadow-[1px_1px_15px_0px_rgba(0,0,0,0.15)] p-6">
-              <h3 className="text-lg font-bold text-[#10173E] mb-2">25-Minute Focused Session</h3>
-              <p className="text-[#7A7A7A]">
-                Ideal for targeted concerns, follow-ups, and maintenance visits. Get hands-on care that addresses your primary issue efficiently.
-              </p>
-            </div>
-            <div className="bg-white rounded-xl shadow-[1px_1px_15px_0px_rgba(0,0,0,0.15)] p-6">
-              <h3 className="text-lg font-bold text-[#10173E] mb-2">55-Minute Comprehensive Session</h3>
-              <p className="text-[#7A7A7A]">
-                For complex conditions, multiple areas of concern, or initial evaluations. Allows time for thorough assessment and multi-technique treatment.
-              </p>
-            </div>
-            <div className="bg-white rounded-xl shadow-[1px_1px_15px_0px_rgba(0,0,0,0.15)] p-6">
-              <h3 className="text-lg font-bold text-[#10173E] mb-2">Integrated Approach</h3>
-              <p className="text-[#7A7A7A]">
-                Your treatment plan may incorporate our core wellness services, including cryotherapy, red light therapy, compression therapy, and infrared sauna, all under one roof.
-              </p>
-            </div>
-          </div>
-          <div className="mt-10 bg-[#004AAD] rounded-xl p-6 text-center max-w-3xl mx-auto">
-            <p className="text-white text-lg font-bold">
-              Get a free Core Service of your choice when you book your first PT appointment!
-            </p>
-          </div>
+          <ul className="max-w-3xl mx-auto space-y-4">
+            <li className="flex items-start gap-3">
+              <svg className="w-5 h-5 text-[#004AAD] shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+              <span className="text-[#7A7A7A] text-lg">You can choose between our 25 or 55 minute session</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <svg className="w-5 h-5 text-[#004AAD] shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+              <span className="text-[#7A7A7A] text-lg">You will be in a public space</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <svg className="w-5 h-5 text-[#004AAD] shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+              <span className="text-[#7A7A7A] text-lg">Wear comfortable clothing and be prepared to move around</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <svg className="w-5 h-5 text-[#004AAD] shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+              <span className="text-[#7A7A7A] text-lg">Get a free Core Service of your choice</span>
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -180,16 +188,13 @@ export default function PhysicalTherapyPage() {
                 Meet our Physical Therapist
               </h2>
               <p className="text-[#7A7A7A] text-lg mb-4">
-                Dr. Clint Borman earned his Doctor of Physical Therapy degree from the University of St. Augustine in 1997 and has dedicated over 25 years to helping patients recover, perform, and thrive.
+                Meet Dr. Clint Borman, the owner + physical therapist of Oxygen Wellness & Physical Therapy. A former collegiate baseball player who spent countless hours recovering from injuries, Clint went on to earn his Doctor of Physical Therapy degree from the University of St. Augustine in 1997.
               </p>
               <p className="text-[#7A7A7A] text-lg mb-4">
-                As a former collegiate baseball player, Dr. Borman understands the demands athletes place on their bodies and the determination it takes to return to peak performance after injury. That firsthand experience drives his patient-centered approach.
-              </p>
-              <p className="text-[#7A7A7A] text-lg mb-4">
-                He empowers patients through education and delivers care with kindness, humor, and a commitment to your needs.
+                Over 25 years in outpatient sports medicine, he&apos;s led residency programs, trained staff, overseen mergers and acquisitions, and built a reputation for empowering patients through education at every session, delivering care with kindness, humor, and a commitment to your needs. This merger strengthens the shared mission of making every moment of your journey truly centered around you.
               </p>
               <p className="text-[#7A7A7A] text-lg mb-8">
-                Throughout his career, he has led residency programs, trained staff across multiple clinics, and guided organizations through growth, all while maintaining his primary focus on one-on-one patient care.
+                Today, at Oxygen Wellness & Physical Therapy, Clint blends experience, education, and innovation with traditional rehabilitation and regenerative care, free from insurance constraints and focused on only the good stuff.
               </p>
               <a
                 href="https://linkedin.com/in/clintborman"
@@ -209,6 +214,23 @@ export default function PhysicalTherapyPage() {
 
       {/* Core Services */}
       <CoreServices />
+
+      {/* Free Core Service CTA */}
+      <section className="py-12 bg-white">
+        <div className="max-w-[1140px] mx-auto px-4">
+          <div className="bg-[#004AAD] rounded-xl p-8 text-center">
+            <p className="text-white text-xl font-bold mb-4">
+              Get a core service for FREE when you book an appointment with us for the first time.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-block bg-white text-[#004AAD] rounded-full px-8 py-3 text-sm font-bold uppercase hover:bg-gray-100 transition-colors"
+            >
+              BOOK APPOINTMENT
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* Additional Services */}
       <AdditionalServices />

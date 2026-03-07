@@ -17,7 +17,7 @@ export default function AboutSection() {
           className="text-[40px] font-extrabold text-white leading-[48px] tracking-[0.4px] mb-6"
           style={{ textShadow: "4px 4px 0px rgba(0,0,0,0.25)" }}
         >
-          It&apos;s All About YOU
+          It&apos;s All About <em>YOU</em>
         </h2>
 
         <p className="text-white text-lg max-w-3xl mx-auto mb-10 leading-relaxed">

@@ -55,6 +55,12 @@ export const footerLinks = [
     href: "https://www.google.com/maps/place/20265+N+59th+Ave+b1,+Glendale,+AZ+85308",
     external: true,
   },
+  {
+    label: "Review Us",
+    href: "https://www.google.com/maps/place/Oxygen+Wellness+%26+Physical+Therapy/@33.6633,-112.1862,17z/data=!4m8!3m7!1s0x872b6916e4e3e5e7:0x2a5e3c0b1e20e9c7!8m2!3d33.6633!4d-112.1862!9m1!1b1!16s%2Fg%2F11t3m1_7yp",
+    external: true,
+  },
+  { label: "Store", href: "/store" },
 ];
 
 /* Keep legacy exports so nothing breaks elsewhere */

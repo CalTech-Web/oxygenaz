@@ -23,7 +23,7 @@ export default function Hero() {
           className="text-white text-[80px] font-extrabold leading-[96px] mb-6"
           style={{ textShadow: "4px 4px 0px rgba(0,0,0,0.25)" }}
         >
-          Only the Good Stuff
+          Only the <em>Good</em> Stuff
         </h2>
 
         <p className="text-white text-lg max-w-2xl mx-auto mb-10">

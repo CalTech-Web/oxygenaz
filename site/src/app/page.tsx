@@ -7,7 +7,6 @@ import Memberships from "@/components/sections/Memberships";
 import AboutSection from "@/components/sections/AboutSection";
 import AppDownload from "@/components/sections/AppDownload";
 import FAQ from "@/components/sections/FAQ";
-import ContactSection from "@/components/sections/ContactSection";
 
 export default function Home() {
   return (
@@ -22,7 +21,6 @@ export default function Home() {
       <AboutSection />
       <AppDownload />
       <FAQ />
-      <ContactSection />
     </>
   );
 }
