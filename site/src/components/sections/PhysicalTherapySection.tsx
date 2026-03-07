@@ -1,4 +1,8 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { fadeInUp, staggerContainer, viewportOnce } from "@/lib/animations";
 
 const features = [
   {
@@ -17,45 +21,60 @@ const features = [
 
 export default function PhysicalTherapySection() {
   return (
-    <section className="py-16 bg-white">
-      <div className="max-w-[1140px] mx-auto px-4 text-center">
+    <section className="py-20 md:py-28 bg-white">
+      <motion.div
+        className="max-w-[1140px] mx-auto px-4 text-center"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+      >
         {/* Pill tags */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
-          <span className="bg-[#004AAD] text-white text-xs font-bold uppercase rounded-full px-4 py-1.5 inline-block">
+        <motion.div variants={fadeInUp} className="flex flex-wrap items-center justify-center gap-3 mb-8">
+          <span className="bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white text-xs font-black uppercase tracking-wider rounded-full px-5 py-2 shadow-md">
             Wellness Services
           </span>
-          <span className="bg-[#004AAD] text-white text-xs font-bold uppercase rounded-full px-4 py-1.5 inline-block">
-            SPORTS MEDICINE/PHYSICAL THERAPY
+          <span className="bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white text-xs font-black uppercase tracking-wider rounded-full px-5 py-2 shadow-md">
+            Sports Medicine / Physical Therapy
           </span>
-        </div>
+        </motion.div>
 
         {/* Heading */}
-        <h1 className="text-[#10173E] text-[40px] font-extrabold leading-[48px] tracking-[0.4px] mb-12">
+        <motion.h1
+          variants={fadeInUp}
+          className="text-[#10173E] text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-tight mb-14 accent-underline-center"
+        >
           Expert Physical Therapy
-        </h1>
+        </motion.h1>
 
         {/* Feature boxes */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {features.map((feature, index) => (
-            <div key={index} className="text-center px-4">
-              <h3 className="text-[20px] font-extrabold text-[#10173E] mb-3">
+            <motion.div
+              key={index}
+              variants={fadeInUp}
+              className="text-left p-6 rounded-xl bg-[#EDF2F9] border-l-4 border-[#5CE1E6] hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+            >
+              <h3 className="text-xl font-black text-[#10173E] mb-3">
                 {feature.title}
               </h3>
               <p className="text-[#7A7A7A] text-base leading-relaxed">
                 {feature.body}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* CTA Button */}
-        <Link
-          href="/physical-therapy"
-          className="inline-block bg-[#004AAD] text-white rounded-full px-6 py-3 text-sm font-bold uppercase border-2 border-[#5CE1E6] hover:bg-[#0053DA] transition-colors"
-        >
-          LEARN MORE ABOUT PHYSICAL THERAPY
-        </Link>
-      </div>
+        <motion.div variants={fadeInUp}>
+          <Link
+            href="/physical-therapy"
+            className="inline-block bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white rounded-full px-8 py-4 text-sm font-black uppercase tracking-wider border-2 border-[#5CE1E6] hover:scale-105 hover:shadow-[0_0_30px_rgba(92,225,230,0.3)] transition-all duration-300"
+          >
+            Learn More About Physical Therapy
+          </Link>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

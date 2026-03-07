@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { scaleIn } from "@/lib/animations";
 
 interface ContactFormProps {
   source?: string;
@@ -51,13 +53,18 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
 
   if (status === "success") {
     return (
-      <div className="bg-white rounded-xl p-8 text-center">
-        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg className="w-8 h-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <motion.div
+        className="bg-white rounded-2xl p-8 text-center shadow-lg"
+        variants={scaleIn}
+        initial="hidden"
+        animate="visible"
+      >
+        <div className="w-16 h-16 bg-[#5CE1E6]/20 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg className="w-8 h-8 text-[#5CE1E6]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-xl font-bold text-[#10173E] mb-2">
+        <h3 className="text-xl font-black text-[#10173E] mb-2">
           Message Sent Successfully
         </h3>
         <p className="text-[#7A7A7A]">
@@ -65,17 +72,20 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
         </p>
         <button
           onClick={() => setStatus("idle")}
-          className="mt-6 text-[#004AAD] font-semibold hover:text-[#0053DA] transition-colors"
+          className="mt-6 text-[#004AAD] font-bold hover:text-[#0053DA] transition-colors"
         >
           Send Another Message
         </button>
-      </div>
+      </motion.div>
     );
   }
 
+  const inputClasses =
+    "border-2 border-gray-200 rounded-xl px-5 py-4 text-[#10173E] font-medium w-full focus:border-[#5CE1E6] focus:ring-2 focus:ring-[#5CE1E6]/30 outline-none transition-all duration-300 bg-gray-50/50 hover:border-gray-300";
+
   return (
     <div>
-      <h2 className="text-[40px] font-extrabold text-[#10173E] mb-2">
+      <h2 className="text-3xl md:text-4xl font-black text-[#10173E] mb-2 tracking-tight">
         Not Sure Where to Start?
       </h2>
       <p className="text-[#7A7A7A] mb-8">
@@ -84,8 +94,8 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
 
       <form onSubmit={handleSubmit} className="space-y-5">
         {status === "error" && (
-          <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-            <p className="text-red-600 text-sm">
+          <div className="bg-red-50 border border-red-200 rounded-xl p-4">
+            <p className="text-red-600 text-sm font-medium">
               Something went wrong. Please try again or call us directly.
             </p>
           </div>
@@ -93,7 +103,7 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label htmlFor="firstName" className="block text-[#10173E] text-sm font-semibold mb-1.5">
+            <label htmlFor="firstName" className="block text-[#10173E] text-xs font-black uppercase tracking-wider mb-2">
               First Name
             </label>
             <input
@@ -103,12 +113,12 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
               required
               value={formData.firstName}
               onChange={handleChange}
-              className="border border-[#C3C3C4] rounded-lg px-4 py-3 text-[#10173E] w-full focus:border-[#004AAD] focus:ring-1 focus:ring-[#004AAD] outline-none transition-colors"
+              className={inputClasses}
               placeholder="First name"
             />
           </div>
           <div>
-            <label htmlFor="lastName" className="block text-[#10173E] text-sm font-semibold mb-1.5">
+            <label htmlFor="lastName" className="block text-[#10173E] text-xs font-black uppercase tracking-wider mb-2">
               Last Name
             </label>
             <input
@@ -118,14 +128,14 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
               required
               value={formData.lastName}
               onChange={handleChange}
-              className="border border-[#C3C3C4] rounded-lg px-4 py-3 text-[#10173E] w-full focus:border-[#004AAD] focus:ring-1 focus:ring-[#004AAD] outline-none transition-colors"
+              className={inputClasses}
               placeholder="Last name"
             />
           </div>
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-[#10173E] text-sm font-semibold mb-1.5">
+          <label htmlFor="email" className="block text-[#10173E] text-xs font-black uppercase tracking-wider mb-2">
             Email
           </label>
           <input
@@ -135,13 +145,13 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
             required
             value={formData.email}
             onChange={handleChange}
-            className="border border-[#C3C3C4] rounded-lg px-4 py-3 text-[#10173E] w-full focus:border-[#004AAD] focus:ring-1 focus:ring-[#004AAD] outline-none transition-colors"
+            className={inputClasses}
             placeholder="you@example.com"
           />
         </div>
 
         <div>
-          <label htmlFor="phone" className="block text-[#10173E] text-sm font-semibold mb-1.5">
+          <label htmlFor="phone" className="block text-[#10173E] text-xs font-black uppercase tracking-wider mb-2">
             Phone Number
           </label>
           <input
@@ -151,13 +161,13 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
             required
             value={formData.phone}
             onChange={handleChange}
-            className="border border-[#C3C3C4] rounded-lg px-4 py-3 text-[#10173E] w-full focus:border-[#004AAD] focus:ring-1 focus:ring-[#004AAD] outline-none transition-colors"
+            className={inputClasses}
             placeholder="(555) 123-4567"
           />
         </div>
 
         <div>
-          <label htmlFor="reason" className="block text-[#10173E] text-sm font-semibold mb-1.5">
+          <label htmlFor="reason" className="block text-[#10173E] text-xs font-black uppercase tracking-wider mb-2">
             Reason for being here (optional)
           </label>
           <textarea
@@ -166,7 +176,7 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
             rows={4}
             value={formData.reason}
             onChange={handleChange}
-            className="border border-[#C3C3C4] rounded-lg px-4 py-3 text-[#10173E] w-full focus:border-[#004AAD] focus:ring-1 focus:ring-[#004AAD] outline-none transition-colors resize-vertical"
+            className={`${inputClasses} resize-vertical`}
             placeholder="Tell us how we can help..."
           />
         </div>
@@ -174,7 +184,7 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="bg-[#004AAD] text-white rounded-full px-8 py-3 font-bold text-sm uppercase border-2 border-[#5CE1E6] hover:bg-[#0053DA] w-full transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+          className="bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider border-2 border-[#5CE1E6] hover:scale-105 hover:shadow-[0_0_30px_rgba(92,225,230,0.3)] w-full transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
         >
           {status === "submitting" ? (
             <span className="flex items-center justify-center gap-2">
@@ -201,7 +211,7 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
               Submitting...
             </span>
           ) : (
-            "SUBMIT"
+            "Submit"
           )}
         </button>
       </form>

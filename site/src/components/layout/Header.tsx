@@ -11,7 +11,15 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileDropdowns, setMobileDropdowns] = useState<Record<string, boolean>>({});
+  const [scrolled, setScrolled] = useState(false);
   const dropdownTimers = useRef<Record<string, ReturnType<typeof setTimeout>>>({});
+
+  /* Scroll listener for sticky header effect */
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   /* Lock body scroll when mobile menu is open */
   useEffect(() => {
@@ -53,25 +61,25 @@ export default function Header() {
 
     return (
       <div className="absolute left-0 top-full z-50 mt-0 pt-2">
-        <div className="grid grid-cols-2 gap-6 rounded-xl bg-white p-[15px] shadow-[1px_1px_15px_0px_rgba(0,0,0,0.15)]">
+        <div className="grid grid-cols-2 gap-6 rounded-xl bg-white p-[15px] shadow-xl ring-1 ring-[#5CE1E6]/20">
           {/* Column 1 */}
           <div>
             {allServicesItem && (
               <Link
                 href={allServicesItem.href}
-                className="mb-2 block text-sm font-medium text-[#10173E] transition-colors hover:text-[#0053DA]"
+                className="mb-2 block text-sm font-bold text-[#10173E] transition-colors hover:text-[#004AAD]"
               >
                 {allServicesItem.label}
               </Link>
             )}
-            <p className="mb-1 text-xs font-bold uppercase tracking-wide text-[#7A7A7A]">
+            <p className="mb-1 text-xs font-black uppercase tracking-wider text-[#7A7A7A]">
               Core Services
             </p>
             {coreItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="block py-1 text-sm text-[#3A416A] transition-colors hover:text-[#0053DA]"
+                className="block py-1 text-sm font-medium text-[#3A416A] transition-colors hover:text-[#004AAD]"
               >
                 {item.label}
               </Link>
@@ -80,14 +88,14 @@ export default function Header() {
 
           {/* Column 2 */}
           <div>
-            <p className="mb-1 text-xs font-bold uppercase tracking-wide text-[#7A7A7A]">
+            <p className="mb-1 text-xs font-black uppercase tracking-wider text-[#7A7A7A]">
               Other Services
             </p>
             {otherItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="block py-1 text-sm text-[#3A416A] transition-colors hover:text-[#0053DA]"
+                className="block py-1 text-sm font-medium text-[#3A416A] transition-colors hover:text-[#004AAD]"
               >
                 {item.label}
               </Link>
@@ -104,7 +112,7 @@ export default function Header() {
 
     return (
       <div className="absolute left-0 top-full z-50 mt-0 pt-2">
-        <div className="min-w-[180px] rounded-xl bg-white p-[15px] shadow-[1px_1px_15px_0px_rgba(0,0,0,0.15)]">
+        <div className="min-w-[180px] rounded-xl bg-white p-[15px] shadow-xl ring-1 ring-[#5CE1E6]/20">
           {children.map((child) =>
             child.external ? (
               <a
@@ -112,7 +120,7 @@ export default function Header() {
                 href={child.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block py-1 text-sm text-[#3A416A] transition-colors hover:text-[#0053DA]"
+                className="block py-1 text-sm font-medium text-[#3A416A] transition-colors hover:text-[#004AAD]"
               >
                 {child.label}
               </a>
@@ -120,7 +128,7 @@ export default function Header() {
               <Link
                 key={child.href}
                 href={child.href}
-                className="block py-1 text-sm text-[#3A416A] transition-colors hover:text-[#0053DA]"
+                className="block py-1 text-sm font-medium text-[#3A416A] transition-colors hover:text-[#004AAD]"
               >
                 {child.label}
               </Link>
@@ -134,7 +142,7 @@ export default function Header() {
   return (
     <header>
       {/* ── Row 1: Top Bar ── */}
-      <div className="hidden bg-[#10173E] py-1.5 px-4 lg:flex lg:px-20">
+      <div className="hidden bg-gradient-to-r from-[#0A0F2C] via-[#10173E] to-[#0A0F2C] py-1.5 px-4 lg:flex lg:px-20">
         <div className="flex w-full items-center justify-between">
           <span className="inline-flex items-center gap-1.5 text-sm font-medium text-white">
             <MapPin className="h-3.5 w-3.5" />
@@ -142,7 +150,7 @@ export default function Header() {
           </span>
           <a
             href={SITE.phoneHref}
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-white transition-colors hover:text-white/80"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-white transition-colors hover:text-[#5CE1E6]"
           >
             <Phone className="h-3.5 w-3.5" />
             {SITE.phone}
@@ -151,7 +159,13 @@ export default function Header() {
       </div>
 
       {/* ── Row 2: Main Navigation ── */}
-      <div className="sticky top-0 z-50 bg-white shadow-[1px_0px_15px_0px_rgba(0,0,0,0.15)]">
+      <div
+        className={`sticky top-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-white/95 backdrop-blur-md shadow-lg"
+            : "bg-white shadow-[1px_0px_15px_0px_rgba(0,0,0,0.08)]"
+        }`}
+      >
         <div className="flex items-center justify-between px-4 py-5 lg:px-20">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
@@ -177,7 +191,7 @@ export default function Header() {
                 >
                   <button
                     type="button"
-                    className="inline-flex items-center gap-1 text-sm font-medium uppercase tracking-wide text-[#10173E] transition-colors hover:text-[#0053DA]"
+                    className="relative inline-flex items-center gap-1 text-sm font-bold uppercase tracking-wider text-[#10173E] transition-colors hover:text-[#004AAD] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#5CE1E6] after:transition-all after:duration-300 hover:after:w-full"
                     aria-expanded={openDropdown === item.label}
                     aria-haspopup="true"
                   >
@@ -198,7 +212,7 @@ export default function Header() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="text-sm font-medium uppercase tracking-wide text-[#10173E] transition-colors hover:text-[#0053DA]"
+                  className="relative text-sm font-bold uppercase tracking-wider text-[#10173E] transition-colors hover:text-[#004AAD] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#5CE1E6] after:transition-all after:duration-300 hover:after:w-full"
                 >
                   {item.label}
                 </Link>
@@ -210,7 +224,7 @@ export default function Header() {
           <div className="hidden lg:block">
             <Link
               href="/contact"
-              className="rounded-full bg-[#004AAD] px-5 py-3 text-sm font-bold uppercase text-white border-2 border-[#5CE1E6] transition-colors hover:bg-[#0053DA]"
+              className="rounded-full bg-gradient-to-r from-[#004AAD] to-[#0053DA] px-6 py-3 text-sm font-black uppercase tracking-wider text-white border-2 border-[#5CE1E6] hover:scale-105 hover:shadow-[0_0_30px_rgba(92,225,230,0.4)] transition-all duration-300"
             >
               Book Now
             </Link>
@@ -219,7 +233,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-md p-2 text-[#10173E] transition-colors hover:text-[#0053DA] lg:hidden"
+            className="inline-flex items-center justify-center rounded-md p-2 text-[#10173E] transition-colors hover:text-[#004AAD] lg:hidden"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
@@ -230,27 +244,27 @@ export default function Header() {
 
         {/* ── Mobile Navigation Panel ── */}
         {mobileOpen && (
-          <nav className="border-t border-[#C3C3C4] bg-white lg:hidden">
+          <nav className="border-t border-gray-100 bg-white/98 backdrop-blur-sm lg:hidden">
             <div className="space-y-1 px-4 pb-6 pt-4">
               {navigation.map((item) =>
                 item.children ? (
                   <div key={item.label}>
                     <button
                       type="button"
-                      className="flex w-full items-center justify-between py-2.5 text-base font-medium uppercase tracking-wide text-[#10173E] transition-colors hover:text-[#0053DA]"
+                      className="flex w-full items-center justify-between py-2.5 text-base font-bold uppercase tracking-wider text-[#10173E] transition-colors hover:text-[#004AAD]"
                       onClick={() => toggleMobileDropdown(item.label)}
                       aria-expanded={!!mobileDropdowns[item.label]}
                     >
                       {item.label}
                       <ChevronDown
-                        className={`h-4 w-4 transition-transform ${
+                        className={`h-4 w-4 transition-transform duration-300 ${
                           mobileDropdowns[item.label] ? "rotate-180" : ""
                         }`}
                       />
                     </button>
 
                     {mobileDropdowns[item.label] && (
-                      <div className="ml-4 space-y-1 border-l-2 border-[#5CE1E6]/40 pl-4 pb-2">
+                      <div className="ml-4 space-y-1 border-l-2 border-[#5CE1E6] pl-4 pb-2">
                         {item.children.map((child) =>
                           child.external ? (
                             <a
@@ -258,7 +272,7 @@ export default function Header() {
                               href={child.href}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="block py-1.5 text-sm text-[#3A416A] transition-colors hover:text-[#0053DA]"
+                              className="block py-1.5 text-sm font-medium text-[#3A416A] transition-colors hover:text-[#004AAD]"
                               onClick={closeMobile}
                             >
                               {child.label}
@@ -267,7 +281,7 @@ export default function Header() {
                             <Link
                               key={child.href + child.label}
                               href={child.href}
-                              className="block py-1.5 text-sm text-[#3A416A] transition-colors hover:text-[#0053DA]"
+                              className="block py-1.5 text-sm font-medium text-[#3A416A] transition-colors hover:text-[#004AAD]"
                               onClick={closeMobile}
                             >
                               {child.label}
@@ -281,7 +295,7 @@ export default function Header() {
                   <Link
                     key={item.label}
                     href={item.href}
-                    className="block py-2.5 text-base font-medium uppercase tracking-wide text-[#10173E] transition-colors hover:text-[#0053DA]"
+                    className="block py-2.5 text-base font-bold uppercase tracking-wider text-[#10173E] transition-colors hover:text-[#004AAD]"
                     onClick={closeMobile}
                   >
                     {item.label}
@@ -290,17 +304,17 @@ export default function Header() {
               )}
 
               {/* Mobile Phone + CTA */}
-              <div className="border-t border-[#C3C3C4] pt-4 mt-2">
+              <div className="border-t border-gray-200 pt-4 mt-2">
                 <a
                   href={SITE.phoneHref}
-                  className="flex items-center gap-2 py-2.5 text-base font-medium text-[#004AAD]"
+                  className="flex items-center gap-2 py-2.5 text-base font-bold text-[#004AAD]"
                 >
                   <Phone className="h-5 w-5" />
                   {SITE.phone}
                 </a>
                 <Link
                   href="/contact"
-                  className="mt-2 block rounded-full bg-[#004AAD] px-5 py-3 text-center text-sm font-bold uppercase text-white border-2 border-[#5CE1E6] transition-colors hover:bg-[#0053DA]"
+                  className="mt-2 block rounded-full bg-gradient-to-r from-[#004AAD] to-[#0053DA] px-5 py-3 text-center text-sm font-black uppercase tracking-wider text-white border-2 border-[#5CE1E6] transition-all duration-300"
                   onClick={closeMobile}
                 >
                   Book Now

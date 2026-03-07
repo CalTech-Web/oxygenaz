@@ -21,19 +21,16 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-[#3B88EA]">
-      {/* ── Background pattern with gradient overlay ── */}
+    <footer className="relative overflow-hidden bg-gradient-to-b from-[#10173E] to-[#0A0F2C]">
+      {/* ── Gradient line at top ── */}
+      <div className="h-1 bg-gradient-to-r from-transparent via-[#5CE1E6] to-transparent" />
+
+      {/* ── Background pattern ── */}
       <div
-        className="absolute inset-0 opacity-[0.06]"
+        className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage: "url(/images/patterns/logo-pattern.png)",
           backgroundRepeat: "repeat",
-        }}
-      />
-      <div
-        className="absolute inset-0"
-        style={{
-          background: "linear-gradient(180deg, transparent 0%, #3B88EA 100%)",
         }}
       />
 
@@ -51,7 +48,7 @@ export default function Footer() {
                 className="h-auto w-[200px]"
               />
             </Link>
-            <p className="mt-4 text-sm leading-relaxed text-white/80">
+            <p className="mt-4 text-sm leading-relaxed text-white/70">
               Oxygen Wellness &amp; Physical Therapy is a unique haven that
               blends innovative Physical Therapy with advanced treatments. We
               also offer traditional methods such as spine adjustments, dry
@@ -63,14 +60,14 @@ export default function Footer() {
             <div className="mt-6 space-y-3">
               <a
                 href={SITE.phoneHref}
-                className="flex items-center gap-3 text-sm text-white/80 transition-colors hover:text-white"
+                className="flex items-center gap-3 text-sm text-white/70 transition-colors hover:text-[#5CE1E6]"
               >
                 <Phone className="h-4 w-4 flex-shrink-0" />
                 {SITE.phone}
               </a>
               <a
                 href={`mailto:${SITE.email}`}
-                className="flex items-center gap-3 text-sm text-white/80 transition-colors hover:text-white"
+                className="flex items-center gap-3 text-sm text-white/70 transition-colors hover:text-[#5CE1E6]"
               >
                 <Mail className="h-4 w-4 flex-shrink-0" />
                 {SITE.email}
@@ -79,7 +76,7 @@ export default function Footer() {
                 href={SITE.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-3 text-sm text-white/80 transition-colors hover:text-white"
+                className="flex items-start gap-3 text-sm text-white/70 transition-colors hover:text-[#5CE1E6]"
               >
                 <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0" />
                 20265 N 59th Ave b1, Glendale, AZ 85308
@@ -89,7 +86,7 @@ export default function Footer() {
 
           {/* Column 2: Download Our App */}
           <div>
-            <h3 className="text-base font-bold uppercase tracking-wide text-white">
+            <h3 className="text-base font-black uppercase tracking-wider text-[#5CE1E6]">
               Download Our App
             </h3>
             <div className="mt-4 flex flex-col gap-3">
@@ -97,6 +94,7 @@ export default function Footer() {
                 href={SITE.apps.ios}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="transition-transform hover:scale-105"
               >
                 <Image
                   src="/images/badges/app-store.webp"
@@ -110,6 +108,7 @@ export default function Footer() {
                 href={SITE.apps.android}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="transition-transform hover:scale-105"
               >
                 <Image
                   src="/images/badges/google-play.webp"
@@ -124,7 +123,7 @@ export default function Footer() {
 
           {/* Column 3: Useful Links */}
           <div>
-            <h3 className="text-base font-bold uppercase tracking-wide text-white">
+            <h3 className="text-base font-black uppercase tracking-wider text-[#5CE1E6]">
               Useful Links
             </h3>
             <ul className="mt-4 space-y-2.5">
@@ -135,14 +134,14 @@ export default function Footer() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-white/80 transition-colors hover:text-white"
+                      className="text-sm text-white/70 transition-colors hover:text-[#5CE1E6]"
                     >
                       {item.label}
                     </a>
                   ) : (
                     <Link
                       href={item.href}
-                      className="text-sm text-white/80 transition-colors hover:text-white"
+                      className="text-sm text-white/70 transition-colors hover:text-[#5CE1E6]"
                     >
                       {item.label}
                     </Link>
@@ -155,10 +154,10 @@ export default function Footer() {
           {/* Column 4 + 5: Hours & Follow Us stacked */}
           <div>
             {/* Hours */}
-            <h3 className="text-base font-bold uppercase tracking-wide text-white">
+            <h3 className="text-base font-black uppercase tracking-wider text-[#5CE1E6]">
               Hours
             </h3>
-            <dl className="mt-4 space-y-2 text-sm text-white/80">
+            <dl className="mt-4 space-y-2 text-sm text-white/70">
               <div className="flex justify-between gap-4">
                 <dt>{SITE.hours.weekday.label}</dt>
                 <dd className="whitespace-nowrap">
@@ -174,7 +173,7 @@ export default function Footer() {
             </dl>
 
             {/* Follow Us */}
-            <h3 className="mt-8 text-base font-bold uppercase tracking-wide text-white">
+            <h3 className="mt-8 text-base font-black uppercase tracking-wider text-[#5CE1E6]">
               Follow Us
             </h3>
             <div className="mt-4 flex gap-3">
@@ -185,7 +184,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/40 text-white transition-colors hover:border-white hover:bg-white/10"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-white/30 text-white transition-all duration-300 hover:bg-[#5CE1E6] hover:text-[#10173E] hover:border-[#5CE1E6] hover:shadow-[0_0_20px_rgba(92,225,230,0.4)] hover:scale-110"
                 >
                   <Icon className="h-5 w-5" />
                 </a>
@@ -196,15 +195,16 @@ export default function Footer() {
       </div>
 
       {/* ── Bottom Bar ── */}
-      <div className="relative z-10 border-t border-white/20 mx-4 lg:mx-20 mt-0 pt-6 pb-6">
+      <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mx-4 lg:mx-20" />
+      <div className="relative z-10 mx-4 lg:mx-20 pt-6 pb-6">
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-          <div className="text-sm text-white/70">
+          <div className="text-sm text-white/60">
             <p>
               &copy; 2026 Oxygen Wellness LLC. All Rights Reserved.{" "}
               <span className="hidden sm:inline">|</span>{" "}
               <Link
                 href="/privacy-policy"
-                className="transition-colors hover:text-white"
+                className="transition-colors hover:text-[#5CE1E6]"
               >
                 Privacy Policy
               </Link>
@@ -212,7 +212,7 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col items-center gap-2 sm:flex-row sm:gap-4">
-            <p className="text-xs text-white/60">
+            <p className="text-xs text-white/50">
               Designed by Elizabeth Ardelt &amp; Audrey Muller
             </p>
             <a

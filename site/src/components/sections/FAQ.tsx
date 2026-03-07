@@ -1,7 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 import { faqItems } from "@/data/faq";
+import { fadeInUp, staggerContainer, viewportOnce } from "@/lib/animations";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -11,41 +14,66 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-16 bg-[#EDF2F9]">
-      <div className="max-w-[900px] mx-auto px-4">
+    <section className="py-20 md:py-28 bg-[#EDF2F9]">
+      <motion.div
+        className="max-w-[900px] mx-auto px-4"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+      >
         {/* Heading */}
-        <h2 className="text-[40px] font-extrabold text-[#10173E] leading-[48px] tracking-[0.4px] text-center mb-12">
-          Frequently Asked Questions (FAQs)
-        </h2>
+        <motion.h2
+          variants={fadeInUp}
+          className="text-3xl md:text-4xl lg:text-5xl font-black text-[#10173E] leading-tight tracking-tight text-center mb-14 accent-underline-center"
+        >
+          Frequently Asked Questions
+        </motion.h2>
 
         {/* Accordion */}
-        <div>
+        <div className="space-y-4">
           {faqItems.map((item, index) => (
-            <div key={index} className="border-b border-[#C3C3C4]">
+            <motion.div
+              key={index}
+              variants={fadeInUp}
+              className={`rounded-xl bg-white shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg ${
+                openIndex === index
+                  ? "ring-1 ring-[#5CE1E6]/50 border-l-4 border-[#5CE1E6]"
+                  : "border-l-4 border-transparent"
+              }`}
+            >
               <button
                 onClick={() => toggle(index)}
-                className="w-full flex items-center justify-between text-left py-5 gap-4"
+                className="w-full flex items-center justify-between text-left px-6 py-5 gap-4"
               >
                 <span className="text-[#10173E] text-lg font-bold">
                   {item.question}
                 </span>
-                <span className="text-[#10173E] text-2xl font-light shrink-0 w-6 h-6 flex items-center justify-center">
-                  {openIndex === index ? "-" : "+"}
-                </span>
+                <ChevronDown
+                  className={`w-5 h-5 text-[#004AAD] shrink-0 transition-transform duration-300 ${
+                    openIndex === index ? "rotate-180" : ""
+                  }`}
+                />
               </button>
-              <div
-                className={`overflow-hidden transition-all duration-300 ${
-                  openIndex === index ? "max-h-96 pb-5" : "max-h-0"
-                }`}
-              >
-                <p className="text-[#7A7A7A] leading-relaxed pl-0">
-                  {item.answer}
-                </p>
-              </div>
-            </div>
+              <AnimatePresence>
+                {openIndex === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                  >
+                    <p className="text-[#7A7A7A] leading-relaxed px-6 pb-5">
+                      {item.answer}
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

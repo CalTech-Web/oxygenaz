@@ -1,9 +1,14 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { Check } from "lucide-react";
 import { membershipPlans } from "@/data/memberships";
+import { fadeInUp, staggerContainer, viewportOnce } from "@/lib/animations";
 
 export default function Memberships() {
   return (
-    <section className="relative">
+    <section className="relative overflow-hidden">
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -12,7 +17,7 @@ export default function Memberships() {
         }}
       />
 
-      {/* Dark overlay with pattern */}
+      {/* Dark overlay */}
       <div className="absolute inset-0 bg-[#10173E]/90" />
       <div
         className="absolute inset-0 opacity-[0.04]"
@@ -22,72 +27,135 @@ export default function Memberships() {
         }}
       />
 
+      {/* Decorative orbs */}
+      <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-[#5CE1E6]/8 blur-[100px] pointer-events-none" />
+      <div className="absolute -bottom-40 -left-40 w-[400px] h-[400px] rounded-full bg-[#004AAD]/15 blur-[80px] pointer-events-none" />
+
       {/* Content */}
-      <div className="relative z-10 py-[100px] px-4">
+      <motion.div
+        className="relative z-10 py-24 md:py-28 px-4"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+      >
         <div className="max-w-[1140px] mx-auto">
           {/* Heading */}
-          <div className="text-center mb-12">
-            <h2 className="text-[40px] font-extrabold text-white leading-[48px] tracking-[0.4px] mb-4">
+          <motion.div variants={fadeInUp} className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight tracking-tight mb-4 accent-underline-center">
               Our Membership Plans
             </h2>
-            <p className="text-white/80 text-lg max-w-2xl mx-auto">
+            <p className="text-white/70 text-lg max-w-2xl mx-auto mt-8">
               Want better deals? These are our four most Popular Plans, but CALL
               or take a TOUR and experience our full menu of Plans.
             </p>
-          </div>
+          </motion.div>
 
           {/* Pricing cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {membershipPlans.map((plan) => (
-              <div
-                key={plan.id}
-                className="bg-[#EDF2F9] rounded-xl p-8 flex flex-col min-h-[500px]"
-              >
-                {/* Plan name */}
-                <h3 className="text-[#10173E] text-2xl font-extrabold mb-2">
-                  {plan.name}
-                </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+            {membershipPlans.map((plan) => {
+              const isHighlighted = plan.highlighted;
+              const isPlatinum = plan.id === "platinum";
 
-                {/* Price */}
-                <div className="mb-4">
-                  <span className="text-[#10173E] text-4xl font-extrabold">
-                    ${plan.price}
-                  </span>
-                  <span className="text-[#10173E] text-lg">/mo</span>
-                </div>
-
-                {/* Ideal for */}
-                <p className="italic text-[#7A7A7A] text-sm mb-4">
-                  Ideal for: {plan.idealFor}
-                </p>
-
-                {/* Features */}
-                <ul className="space-y-3 mb-8 flex-1">
-                  {plan.features.map((feature) => (
-                    <li
-                      key={feature}
-                      className="flex items-start gap-2 text-[#10173E] text-sm"
-                    >
-                      <span className="text-[#004AAD] mt-1 shrink-0">
-                        &#8226;
-                      </span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Signup button */}
-                <Link
-                  href="/contact"
-                  className="bg-[#004AAD] text-white rounded-full px-6 py-3 text-sm font-bold uppercase w-full text-center border-2 border-[#5CE1E6] hover:bg-[#0053DA] transition-colors block"
+              return (
+                <motion.div
+                  key={plan.id}
+                  variants={fadeInUp}
+                  className={`relative rounded-2xl p-8 flex flex-col min-h-[540px] hover:-translate-y-2 transition-all duration-300 ${
+                    isHighlighted
+                      ? "bg-white ring-2 ring-[#5CE1E6] glow-cyan md:scale-105"
+                      : isPlatinum
+                      ? "bg-[#10173E] border border-white/10"
+                      : "bg-white"
+                  }`}
                 >
-                  SIGNUP
-                </Link>
-              </div>
-            ))}
+                  {/* Badge */}
+                  {plan.badge && (
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                      <span
+                        className={`text-xs font-black uppercase tracking-wider rounded-full px-6 py-2 shadow-lg ${
+                          isHighlighted
+                            ? "bg-gradient-to-r from-[#5CE1E6] to-[#004AAD] text-white"
+                            : "bg-[#5CE1E6] text-[#10173E]"
+                        }`}
+                      >
+                        {plan.badge}
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Plan name */}
+                  <h3
+                    className={`text-2xl font-black mb-2 ${
+                      plan.badge ? "mt-4" : ""
+                    } ${isPlatinum ? "text-white" : "text-[#10173E]"}`}
+                  >
+                    {plan.name}
+                  </h3>
+
+                  {/* Price */}
+                  <div className="mb-4">
+                    <span
+                      className={`text-5xl font-black ${
+                        isPlatinum ? "text-white" : "text-[#10173E]"
+                      }`}
+                    >
+                      ${plan.price}
+                    </span>
+                    <span
+                      className={`text-lg font-medium ${
+                        isPlatinum ? "text-white/70" : "text-[#7A7A7A]"
+                      }`}
+                    >
+                      /mo
+                    </span>
+                  </div>
+
+                  {/* Ideal for */}
+                  <p
+                    className={`italic text-sm mb-6 border-b pb-4 ${
+                      isPlatinum
+                        ? "text-white/60 border-white/10"
+                        : "text-[#7A7A7A] border-gray-200"
+                    }`}
+                  >
+                    Ideal for: {plan.idealFor}
+                  </p>
+
+                  {/* Features */}
+                  <ul className="space-y-3 mb-8 flex-1">
+                    {plan.features.map((feature) => (
+                      <li
+                        key={feature}
+                        className={`flex items-start gap-3 text-sm ${
+                          isPlatinum ? "text-white/80" : "text-[#10173E]"
+                        }`}
+                      >
+                        <Check className="w-5 h-5 text-[#5CE1E6] shrink-0 mt-0.5" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Signup button */}
+                  <Link
+                    href="/contact"
+                    className={`rounded-full px-6 py-4 text-sm font-black uppercase tracking-wider w-full text-center block transition-all duration-300 hover:scale-105 ${
+                      isHighlighted
+                        ? "bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white border-2 border-[#5CE1E6] hover:shadow-[0_0_30px_rgba(92,225,230,0.4)]"
+                        : isPlatinum
+                        ? "bg-[#5CE1E6] text-[#10173E] hover:shadow-[0_0_30px_rgba(92,225,230,0.4)]"
+                        : "bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white border-2 border-[#5CE1E6]"
+                    }`}
+                  >
+                    Sign Up
+                  </Link>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

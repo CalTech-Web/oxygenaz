@@ -70,12 +70,15 @@ export default function PhysicalTherapyPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-[#10173E]/75" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#10173E]/60 via-[#10173E]/80 to-[#0A0F2C]/95" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#004AAD]/20 to-transparent" />
         </div>
+        <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-[#5CE1E6]/8 blur-[100px] pointer-events-none" />
+        <div className="absolute -bottom-20 -left-20 w-[300px] h-[300px] rounded-full bg-[#004AAD]/20 blur-[80px] pointer-events-none" />
         <div className="relative z-10 max-w-[1140px] mx-auto px-4 text-center py-20">
           <h1
-            className="text-[80px] font-extrabold text-white mb-4 leading-tight"
-            style={{ textShadow: "4px 4px 0px rgba(0,0,0,0.25)" }}
+            className="text-5xl md:text-7xl lg:text-[96px] font-black text-white leading-[1.05] tracking-tight mb-4"
+            style={{ textShadow: "4px 4px 0px rgba(0,0,0,0.3)" }}
           >
             Physical Therapy
           </h1>
@@ -84,7 +87,7 @@ export default function PhysicalTherapyPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-white text-[#004AAD] rounded-full px-8 py-3 text-sm font-bold uppercase hover:bg-gray-100 transition-colors"
+            className="inline-block bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider border-2 border-[#5CE1E6] hover:scale-105 animate-pulse-glow transition-transform duration-300"
           >
             BOOK TODAY
           </Link>
@@ -92,7 +95,7 @@ export default function PhysicalTherapyPage() {
       </section>
 
       {/* What is Physical Therapy */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-20 md:py-24 bg-white">
         <div className="max-w-[1140px] mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div className="relative">
@@ -101,11 +104,11 @@ export default function PhysicalTherapyPage() {
                 alt="What is Physical Therapy"
                 width={540}
                 height={400}
-                className="rounded-xl shadow-[1px_1px_15px_0px_rgba(0,0,0,0.15)] w-full h-auto object-cover"
+                className="rounded-2xl shadow-xl w-full h-auto object-cover"
               />
             </div>
             <div>
-              <h2 className="text-[40px] font-extrabold text-[#10173E] mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#10173E] tracking-tight mb-6">
                 What is Physical Therapy?
               </h2>
               <p className="text-[#7A7A7A] text-lg mb-4">
@@ -117,7 +120,7 @@ export default function PhysicalTherapyPage() {
               <ul className="space-y-2 mb-8">
                 {techniques.map((technique) => (
                   <li key={technique} className="flex items-center gap-3">
-                    <svg className="w-5 h-5 text-[#004AAD] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-[#5CE1E6] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                     <span className="text-[#7A7A7A]">{technique}</span>
@@ -126,7 +129,7 @@ export default function PhysicalTherapyPage() {
               </ul>
               <Link
                 href="/contact"
-                className="inline-block bg-[#004AAD] text-white rounded-full px-8 py-3 text-sm font-bold uppercase border-2 border-[#5CE1E6] hover:bg-[#0053DA] transition-colors"
+                className="inline-block bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider border-2 border-[#5CE1E6] hover:scale-105 hover:shadow-[0_0_30px_rgba(92,225,230,0.3)] transition-all duration-300"
               >
                 BOOK APPOINTMENT
               </Link>
@@ -136,32 +139,32 @@ export default function PhysicalTherapyPage() {
       </section>
 
       {/* What to Expect */}
-      <section className="py-16 md:py-20 bg-[#EDF2F9]">
+      <section className="py-20 md:py-24 bg-[#EDF2F9]">
         <div className="max-w-[1140px] mx-auto px-4">
-          <h2 className="text-[40px] font-extrabold text-[#10173E] mb-8 text-center">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#10173E] tracking-tight mb-8 text-center">
             What to Expect During a Physical Therapy Appointment
           </h2>
           <ul className="max-w-3xl mx-auto space-y-4">
             <li className="flex items-start gap-3">
-              <svg className="w-5 h-5 text-[#004AAD] shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-5 h-5 text-[#5CE1E6] shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
               <span className="text-[#7A7A7A] text-lg">You can choose between our 25 or 55 minute session</span>
             </li>
             <li className="flex items-start gap-3">
-              <svg className="w-5 h-5 text-[#004AAD] shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-5 h-5 text-[#5CE1E6] shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
               <span className="text-[#7A7A7A] text-lg">You will be in a public space</span>
             </li>
             <li className="flex items-start gap-3">
-              <svg className="w-5 h-5 text-[#004AAD] shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-5 h-5 text-[#5CE1E6] shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
               <span className="text-[#7A7A7A] text-lg">Wear comfortable clothing and be prepared to move around</span>
             </li>
             <li className="flex items-start gap-3">
-              <svg className="w-5 h-5 text-[#004AAD] shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-5 h-5 text-[#5CE1E6] shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
               <span className="text-[#7A7A7A] text-lg">Get a free Core Service of your choice</span>
@@ -171,7 +174,7 @@ export default function PhysicalTherapyPage() {
       </section>
 
       {/* Meet our Physical Therapist */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-20 md:py-24 bg-white">
         <div className="max-w-[1140px] mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
@@ -180,11 +183,11 @@ export default function PhysicalTherapyPage() {
                 alt="Dr. Clint Borman"
                 width={540}
                 height={500}
-                className="rounded-xl shadow-[1px_1px_15px_0px_rgba(0,0,0,0.15)] w-full h-auto object-cover"
+                className="rounded-2xl shadow-xl w-full h-auto object-cover"
               />
             </div>
             <div>
-              <h2 className="text-[40px] font-extrabold text-[#10173E] mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#10173E] tracking-tight mb-6">
                 Meet our Physical Therapist
               </h2>
               <p className="text-[#7A7A7A] text-lg mb-4">
@@ -200,7 +203,7 @@ export default function PhysicalTherapyPage() {
                 href="https://linkedin.com/in/clintborman"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-[#004AAD] text-white rounded-full px-8 py-3 text-sm font-bold uppercase border-2 border-[#5CE1E6] hover:bg-[#0053DA] transition-colors"
+                className="inline-block bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider border-2 border-[#5CE1E6] hover:scale-105 hover:shadow-[0_0_30px_rgba(92,225,230,0.3)] transition-all duration-300"
               >
                 SEE CLINT&apos;S LINKEDIN
               </a>
@@ -216,18 +219,21 @@ export default function PhysicalTherapyPage() {
       <CoreServices />
 
       {/* Free Core Service CTA */}
-      <section className="py-12 bg-white">
+      <section className="py-20 md:py-24 bg-white">
         <div className="max-w-[1140px] mx-auto px-4">
-          <div className="bg-[#004AAD] rounded-xl p-8 text-center">
-            <p className="text-white text-xl font-bold mb-4">
-              Get a core service for FREE when you book an appointment with us for the first time.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-block bg-white text-[#004AAD] rounded-full px-8 py-3 text-sm font-bold uppercase hover:bg-gray-100 transition-colors"
-            >
-              BOOK APPOINTMENT
-            </Link>
+          <div className="relative overflow-hidden bg-gradient-to-br from-[#10173E] to-[#004AAD] rounded-2xl p-8 text-center">
+            <div className="absolute -top-10 -right-10 w-[200px] h-[200px] rounded-full bg-[#5CE1E6]/8 blur-[60px] pointer-events-none" />
+            <div className="relative z-10">
+              <p className="text-white text-xl font-bold mb-4">
+                Get a core service for FREE when you book an appointment with us for the first time.
+              </p>
+              <Link
+                href="/contact"
+                className="inline-block bg-[#5CE1E6] text-[#10173E] rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider hover:scale-105 hover:shadow-[0_0_40px_rgba(92,225,230,0.5)] transition-all duration-300"
+              >
+                BOOK APPOINTMENT
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -236,7 +242,7 @@ export default function PhysicalTherapyPage() {
       <AdditionalServices />
 
       {/* Contact Form Section */}
-      <section className="py-16 md:py-20 bg-[#EDF2F9]">
+      <section className="py-20 md:py-24 bg-[#EDF2F9]">
         <div className="max-w-[1140px] mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <ContactForm source="physical-therapy-page" />
@@ -249,9 +255,9 @@ export default function PhysicalTherapyPage() {
 
 function PTFAQSection({ faqs }: { faqs: { question: string; answer: string }[] }) {
   return (
-    <section className="py-16 md:py-20 bg-[#EDF2F9]">
+    <section className="py-20 md:py-24 bg-[#EDF2F9]">
       <div className="max-w-[1140px] mx-auto px-4">
-        <h2 className="text-[40px] font-extrabold text-[#10173E] mb-8 text-center">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#10173E] tracking-tight accent-underline-center mb-8 text-center">
           Physical Therapy FAQs
         </h2>
         <div className="max-w-3xl mx-auto space-y-4">
@@ -266,7 +272,7 @@ function PTFAQSection({ faqs }: { faqs: { question: string; answer: string }[] }
 
 function PTFAQItem({ question, answer }: { question: string; answer: string }) {
   return (
-    <details className="group bg-white rounded-xl shadow-[1px_1px_15px_0px_rgba(0,0,0,0.15)] overflow-hidden">
+    <details className="group bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-transparent hover:border-[#5CE1E6] hover:shadow-lg transition-all duration-300">
       <summary className="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer list-none">
         <span className="text-lg font-semibold text-[#10173E] group-hover:text-[#004AAD] transition-colors">
           {question}
