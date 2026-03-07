@@ -1,84 +1,75 @@
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { SITE } from "@/lib/constants";
 
 export default function ContactSection() {
   return (
-    <section className="py-16 md:py-20 bg-brand-surface">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-white mb-3">
-            Visit Us
-          </h2>
-        </div>
+    <section className="py-16 bg-white">
+      <div className="max-w-[1140px] mx-auto px-4">
+        <h2 className="text-[40px] font-extrabold text-[#10173E] leading-[48px] tracking-[0.4px] text-center mb-12">
+          Visit Us
+        </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Contact Info */}
-          <div className="bg-brand-elevated border border-brand-border rounded-xl p-8 space-y-6">
-            <div className="flex items-start gap-4">
-              <MapPin className="w-6 h-6 text-brand-gold shrink-0 mt-0.5" />
-              <div>
-                <h3 className="font-semibold text-brand-white mb-1">Address</h3>
-                <a
-                  href={SITE.mapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-brand-muted hover:text-brand-gold transition-colors"
-                >
-                  {SITE.fullAddress}
-                </a>
-              </div>
+          <div className="space-y-6">
+            {/* Address */}
+            <div>
+              <h3 className="text-[#10173E] text-lg font-bold mb-1">
+                Address
+              </h3>
+              <a
+                href={SITE.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#7A7A7A] hover:text-[#004AAD] transition-colors"
+              >
+                {SITE.fullAddress}
+              </a>
             </div>
 
-            <div className="flex items-start gap-4">
-              <Phone className="w-6 h-6 text-brand-gold shrink-0 mt-0.5" />
-              <div>
-                <h3 className="font-semibold text-brand-white mb-1">Phone</h3>
-                <a
-                  href={SITE.phoneHref}
-                  className="text-brand-muted hover:text-brand-gold transition-colors"
-                >
-                  {SITE.phone}
-                </a>
-              </div>
+            {/* Phone */}
+            <div>
+              <h3 className="text-[#10173E] text-lg font-bold mb-1">Phone</h3>
+              <a
+                href={SITE.phoneHref}
+                className="text-[#7A7A7A] hover:text-[#004AAD] transition-colors"
+              >
+                {SITE.phone}
+              </a>
             </div>
 
-            <div className="flex items-start gap-4">
-              <Mail className="w-6 h-6 text-brand-gold shrink-0 mt-0.5" />
-              <div>
-                <h3 className="font-semibold text-brand-white mb-1">Email</h3>
-                <a
-                  href={`mailto:${SITE.email}`}
-                  className="text-brand-muted hover:text-brand-gold transition-colors"
-                >
-                  {SITE.email}
-                </a>
-              </div>
+            {/* Email */}
+            <div>
+              <h3 className="text-[#10173E] text-lg font-bold mb-1">Email</h3>
+              <a
+                href={`mailto:${SITE.email}`}
+                className="text-[#7A7A7A] hover:text-[#004AAD] transition-colors"
+              >
+                {SITE.email}
+              </a>
             </div>
 
-            <div className="flex items-start gap-4">
-              <Clock className="w-6 h-6 text-brand-gold shrink-0 mt-0.5" />
-              <div>
-                <h3 className="font-semibold text-brand-white mb-1">Hours</h3>
-                <p className="text-brand-muted">
-                  {SITE.hours.weekday.label}: {SITE.hours.weekday.open} -{" "}
-                  {SITE.hours.weekday.close}
-                </p>
-                <p className="text-brand-muted">
-                  {SITE.hours.weekend.label}: {SITE.hours.weekend.open} -{" "}
-                  {SITE.hours.weekend.close}
-                </p>
-              </div>
+            {/* Hours */}
+            <div>
+              <h3 className="text-[#10173E] text-lg font-bold mb-1">Hours</h3>
+              <p className="text-[#7A7A7A]">
+                {SITE.hours.weekday.label}: {SITE.hours.weekday.open} -{" "}
+                {SITE.hours.weekday.close}
+              </p>
+              <p className="text-[#7A7A7A]">
+                {SITE.hours.weekend.label}: {SITE.hours.weekend.open} -{" "}
+                {SITE.hours.weekend.close}
+              </p>
             </div>
           </div>
 
           {/* Google Maps Embed */}
-          <div className="rounded-xl overflow-hidden ring-1 ring-brand-gold/30 min-h-[320px]">
+          <div className="rounded-xl overflow-hidden shadow-[1px_1px_15px_0px_rgba(0,0,0,0.15)] min-h-[350px]">
             <iframe
               title="Oxygen Wellness Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3320.6!2d-112.186!3d33.658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s20265+N+59th+Ave+b1%2C+Glendale%2C+AZ+85308!5e0!3m2!1sen!2sus!4v1700000000000"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3320.6!2d-112.186!3d33.658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b6899fa2a52a3%3A0x5e3916e85fa1296c!2s20265%20N%2059th%20Ave%20b1%2C%20Glendale%2C%20AZ%2085308!5e0!3m2!1sen!2sus!4v1700000000000"
               width="100%"
               height="100%"
-              style={{ border: 0, minHeight: "320px" }}
+              style={{ border: 0, minHeight: "350px" }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

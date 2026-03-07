@@ -9,7 +9,7 @@ import {
   Mail,
   MapPin,
 } from "lucide-react";
-import { footerServices, footerCompany } from "@/data/navigation";
+import { footerLinks } from "@/data/navigation";
 import { SITE } from "@/lib/constants";
 
 const socialLinks = [
@@ -21,113 +21,160 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-brand-border bg-brand-surface">
-      <div className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          {/* Column 1 - Company Info */}
-          <div>
+    <footer className="relative overflow-hidden bg-[#3B88EA]">
+      {/* ── Background pattern with gradient overlay ── */}
+      <div
+        className="absolute inset-0 opacity-[0.06]"
+        style={{
+          backgroundImage: "url(/images/patterns/logo-pattern.png)",
+          backgroundRepeat: "repeat",
+        }}
+      />
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "linear-gradient(180deg, transparent 0%, #3B88EA 100%)",
+        }}
+      />
+
+      {/* ── Main footer content ── */}
+      <div className="relative z-10 px-4 py-[75px] lg:px-20">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5">
+          {/* Column 1: About */}
+          <div className="sm:col-span-2 lg:col-span-2">
             <Link href="/" className="inline-block">
               <Image
-                src="/images/logo.webp"
+                src="/images/logo-footer.webp"
                 alt={SITE.name}
-                width={150}
-                height={48}
-                className="h-auto w-[140px]"
+                width={200}
+                height={60}
+                className="h-auto w-[200px]"
               />
             </Link>
-            <p className="mt-4 text-sm leading-relaxed text-brand-muted">
-              Evidence-based wellness and physical therapy in Glendale, AZ.
-              Cryotherapy, infrared sauna, hyperbaric oxygen, IV infusions, and
-              expert physical therapy with 25+ years of experience.
+            <p className="mt-4 text-sm leading-relaxed text-white/80">
+              Oxygen Wellness &amp; Physical Therapy is a unique haven that
+              blends innovative Physical Therapy with advanced treatments. We
+              also offer traditional methods such as spine adjustments, dry
+              needling, therapeutic massage, and sports injury management, all
+              delivering &quot;ONLY THE GOOD STUFF&quot; for comprehensive care
+              and lasting results.
             </p>
 
             <div className="mt-6 space-y-3">
               <a
-                href={SITE.mapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-start gap-3 text-sm text-brand-muted transition-colors hover:text-brand-white"
-              >
-                <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-gold" />
-                {SITE.fullAddress}
-              </a>
-              <a
                 href={SITE.phoneHref}
-                className="flex items-center gap-3 text-sm text-brand-muted transition-colors hover:text-brand-white"
+                className="flex items-center gap-3 text-sm text-white/80 transition-colors hover:text-white"
               >
-                <Phone className="h-4 w-4 flex-shrink-0 text-brand-gold" />
+                <Phone className="h-4 w-4 flex-shrink-0" />
                 {SITE.phone}
               </a>
               <a
                 href={`mailto:${SITE.email}`}
-                className="flex items-center gap-3 text-sm text-brand-muted transition-colors hover:text-brand-white"
+                className="flex items-center gap-3 text-sm text-white/80 transition-colors hover:text-white"
               >
-                <Mail className="h-4 w-4 flex-shrink-0 text-brand-gold" />
+                <Mail className="h-4 w-4 flex-shrink-0" />
                 {SITE.email}
+              </a>
+              <a
+                href={SITE.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 text-sm text-white/80 transition-colors hover:text-white"
+              >
+                <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0" />
+                20265 N 59th Ave b1, Glendale, AZ 85308
               </a>
             </div>
           </div>
 
-          {/* Column 2 - Services */}
+          {/* Column 2: Download Our App */}
           <div>
-            <h3 className="text-base font-semibold tracking-wide text-brand-gold">
-              Services
+            <h3 className="text-base font-bold uppercase tracking-wide text-white">
+              Download Our App
+            </h3>
+            <div className="mt-4 flex flex-col gap-3">
+              <a
+                href={SITE.apps.ios}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src="/images/badges/app-store.webp"
+                  alt="Download on the App Store"
+                  width={150}
+                  height={50}
+                  className="h-auto w-[150px]"
+                />
+              </a>
+              <a
+                href={SITE.apps.android}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src="/images/badges/google-play.webp"
+                  alt="Get it on Google Play"
+                  width={150}
+                  height={50}
+                  className="h-auto w-[150px]"
+                />
+              </a>
+            </div>
+          </div>
+
+          {/* Column 3: Useful Links */}
+          <div>
+            <h3 className="text-base font-bold uppercase tracking-wide text-white">
+              Useful Links
             </h3>
             <ul className="mt-4 space-y-2.5">
-              {footerServices.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-brand-muted transition-colors hover:text-brand-white"
-                  >
-                    {item.label}
-                  </Link>
+              {footerLinks.map((item) => (
+                <li key={item.href + item.label}>
+                  {item.external ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-white/80 transition-colors hover:text-white"
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="text-sm text-white/80 transition-colors hover:text-white"
+                    >
+                      {item.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Column 3 - Company */}
+          {/* Column 4 + 5: Hours & Follow Us stacked */}
           <div>
-            <h3 className="text-base font-semibold tracking-wide text-brand-gold">
-              Company
-            </h3>
-            <ul className="mt-4 space-y-2.5">
-              {footerCompany.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-brand-muted transition-colors hover:text-brand-white"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 4 - Hours & Social */}
-          <div>
-            <h3 className="text-base font-semibold tracking-wide text-brand-gold">
+            {/* Hours */}
+            <h3 className="text-base font-bold uppercase tracking-wide text-white">
               Hours
             </h3>
-            <dl className="mt-4 space-y-2 text-sm text-brand-muted">
-              <div className="flex justify-between">
+            <dl className="mt-4 space-y-2 text-sm text-white/80">
+              <div className="flex justify-between gap-4">
                 <dt>{SITE.hours.weekday.label}</dt>
-                <dd>
+                <dd className="whitespace-nowrap">
                   {SITE.hours.weekday.open} - {SITE.hours.weekday.close}
                 </dd>
               </div>
-              <div className="flex justify-between">
+              <div className="flex justify-between gap-4">
                 <dt>{SITE.hours.weekend.label}</dt>
-                <dd>
+                <dd className="whitespace-nowrap">
                   {SITE.hours.weekend.open} - {SITE.hours.weekend.close}
                 </dd>
               </div>
             </dl>
 
-            {/* Social Media */}
-            <h3 className="mt-8 text-base font-semibold tracking-wide text-brand-gold">
+            {/* Follow Us */}
+            <h3 className="mt-8 text-base font-bold uppercase tracking-wide text-white">
               Follow Us
             </h3>
             <div className="mt-4 flex gap-3">
@@ -138,54 +185,50 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-brand-border text-brand-muted transition-colors hover:border-brand-gold hover:text-brand-gold"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/40 text-white transition-colors hover:border-white hover:bg-white/10"
                 >
                   <Icon className="h-5 w-5" />
                 </a>
               ))}
             </div>
-
-            {/* App Download Links */}
-            <h3 className="mt-8 text-base font-semibold tracking-wide text-brand-gold">
-              Download Our App
-            </h3>
-            <div className="mt-4 flex flex-col gap-2">
-              <a
-                href={SITE.apps.ios}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-lg border border-brand-border px-4 py-2.5 text-sm font-medium text-brand-muted transition-colors hover:border-brand-gold hover:text-brand-gold"
-              >
-                App Store
-              </a>
-              <a
-                href={SITE.apps.android}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-lg border border-brand-border px-4 py-2.5 text-sm font-medium text-brand-muted transition-colors hover:border-brand-gold hover:text-brand-gold"
-              >
-                Google Play
-              </a>
-            </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-brand-border">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-5 text-sm text-brand-muted sm:flex-row lg:px-8">
-          <p>&copy; 2026 Oxygen Wellness LLC. All Rights Reserved.</p>
-          <p>
-            Powered by{" "}
+      {/* ── Bottom Bar ── */}
+      <div className="relative z-10 border-t border-white/20 mx-4 lg:mx-20 mt-0 pt-6 pb-6">
+        <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+          <div className="text-sm text-white/70">
+            <p>
+              &copy; 2026 Oxygen Wellness LLC. All Rights Reserved.{" "}
+              <span className="hidden sm:inline">|</span>{" "}
+              <Link
+                href="/privacy-policy"
+                className="transition-colors hover:text-white"
+              >
+                Privacy Policy
+              </Link>
+            </p>
+          </div>
+
+          <div className="flex flex-col items-center gap-2 sm:flex-row sm:gap-4">
+            <p className="text-xs text-white/60">
+              Designed by Elizabeth Ardelt &amp; Audrey Muller
+            </p>
             <a
               href="https://caltechweb.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-brand-gold transition-colors hover:text-brand-gold-light"
             >
-              CalTech Web
+              <Image
+                src="/images/badges/caltech-web.png"
+                alt="CalTech Web"
+                width={120}
+                height={30}
+                className="h-auto w-[100px]"
+              />
             </a>
-          </p>
+          </div>
         </div>
       </div>
     </footer>

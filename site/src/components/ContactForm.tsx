@@ -1,14 +1,18 @@
 "use client";
 
 import { useState } from "react";
-import { Send, CheckCircle, AlertCircle } from "lucide-react";
 
-export default function ContactForm() {
+interface ContactFormProps {
+  source?: string;
+}
+
+export default function ContactForm({ source = "contact-page" }: ContactFormProps) {
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     phone: "",
-    message: "",
+    reason: "",
   });
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
@@ -28,18 +32,18 @@ export default function ContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           site: "oxygenaz.com",
-          name: formData.name,
+          name: `${formData.firstName} ${formData.lastName}`.trim(),
           email: formData.email,
           phone: formData.phone,
-          message: formData.message,
-          source: "contact-page",
+          message: formData.reason,
+          source,
         }),
       });
 
       if (!response.ok) throw new Error("Submission failed");
 
       setStatus("success");
-      setFormData({ name: "", email: "", phone: "", message: "" });
+      setFormData({ firstName: "", lastName: "", email: "", phone: "", reason: "" });
     } catch {
       setStatus("error");
     }
@@ -47,18 +51,21 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="bg-brand-gold/10 border border-brand-gold/30 rounded-xl p-8 text-center">
-        <CheckCircle className="w-12 h-12 text-brand-gold mx-auto mb-4" />
-        <h3 className="text-xl font-semibold text-brand-white mb-2">
+      <div className="bg-white rounded-xl p-8 text-center">
+        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg className="w-8 h-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h3 className="text-xl font-bold text-[#10173E] mb-2">
           Message Sent Successfully
         </h3>
-        <p className="text-brand-muted">
-          Thank you for reaching out. We will get back to you as soon as
-          possible.
+        <p className="text-[#7A7A7A]">
+          Thank you for reaching out. We will get back to you as soon as possible.
         </p>
         <button
           onClick={() => setStatus("idle")}
-          className="mt-6 text-brand-gold font-medium hover:text-brand-gold-light transition-colors"
+          className="mt-6 text-[#004AAD] font-semibold hover:text-[#0053DA] transition-colors"
         >
           Send Another Message
         </button>
@@ -67,127 +74,137 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-brand-surface border border-brand-border rounded-xl p-6 md:p-8 space-y-5">
-      {status === "error" && (
-        <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4 flex items-center gap-3">
-          <AlertCircle className="w-5 h-5 text-red-400 shrink-0" />
-          <p className="text-red-300 text-sm">
-            Something went wrong. Please try again or call us directly.
-          </p>
-        </div>
-      )}
+    <div>
+      <h2 className="text-[40px] font-extrabold text-[#10173E] mb-2">
+        Not Sure Where to Start?
+      </h2>
+      <p className="text-[#7A7A7A] mb-8">
+        Fill out your information and we&apos;ll give you a call.
+      </p>
 
-      <div>
-        <label
-          htmlFor="name"
-          className="block text-sm font-medium text-brand-white mb-1"
-        >
-          Full Name
-        </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          required
-          value={formData.name}
-          onChange={handleChange}
-          className="w-full rounded-lg bg-brand-elevated border border-brand-border px-4 py-3 text-brand-white placeholder:text-brand-muted/50 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-colors"
-          placeholder="Your name"
-        />
-      </div>
-
-      <div>
-        <label
-          htmlFor="email"
-          className="block text-sm font-medium text-brand-white mb-1"
-        >
-          Email Address
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required
-          value={formData.email}
-          onChange={handleChange}
-          className="w-full rounded-lg bg-brand-elevated border border-brand-border px-4 py-3 text-brand-white placeholder:text-brand-muted/50 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-colors"
-          placeholder="you@example.com"
-        />
-      </div>
-
-      <div>
-        <label
-          htmlFor="phone"
-          className="block text-sm font-medium text-brand-white mb-1"
-        >
-          Phone Number
-        </label>
-        <input
-          type="tel"
-          id="phone"
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          className="w-full rounded-lg bg-brand-elevated border border-brand-border px-4 py-3 text-brand-white placeholder:text-brand-muted/50 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-colors"
-          placeholder="(555) 123-4567"
-        />
-      </div>
-
-      <div>
-        <label
-          htmlFor="message"
-          className="block text-sm font-medium text-brand-white mb-1"
-        >
-          Message
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          required
-          rows={5}
-          value={formData.message}
-          onChange={handleChange}
-          className="w-full rounded-lg bg-brand-elevated border border-brand-border px-4 py-3 text-brand-white placeholder:text-brand-muted/50 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-colors resize-vertical"
-          placeholder="How can we help you?"
-        />
-      </div>
-
-      <button
-        type="submit"
-        disabled={status === "submitting"}
-        className="w-full flex items-center justify-center gap-2 rounded-lg bg-brand-gold px-6 py-3 text-lg font-semibold text-brand-bg hover:bg-brand-gold-light transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
-      >
-        {status === "submitting" ? (
-          <>
-            <svg
-              className="animate-spin w-5 h-5"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <circle
-                className="opacity-25"
-                cx="12"
-                cy="12"
-                r="10"
-                stroke="currentColor"
-                strokeWidth="4"
-              />
-              <path
-                className="opacity-75"
-                fill="currentColor"
-                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
-              />
-            </svg>
-            Sending...
-          </>
-        ) : (
-          <>
-            <Send className="w-5 h-5" />
-            Send Message
-          </>
+      <form onSubmit={handleSubmit} className="space-y-5">
+        {status === "error" && (
+          <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+            <p className="text-red-600 text-sm">
+              Something went wrong. Please try again or call us directly.
+            </p>
+          </div>
         )}
-      </button>
-    </form>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label htmlFor="firstName" className="block text-[#10173E] text-sm font-semibold mb-1.5">
+              First Name
+            </label>
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              required
+              value={formData.firstName}
+              onChange={handleChange}
+              className="border border-[#C3C3C4] rounded-lg px-4 py-3 text-[#10173E] w-full focus:border-[#004AAD] focus:ring-1 focus:ring-[#004AAD] outline-none transition-colors"
+              placeholder="First name"
+            />
+          </div>
+          <div>
+            <label htmlFor="lastName" className="block text-[#10173E] text-sm font-semibold mb-1.5">
+              Last Name
+            </label>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              required
+              value={formData.lastName}
+              onChange={handleChange}
+              className="border border-[#C3C3C4] rounded-lg px-4 py-3 text-[#10173E] w-full focus:border-[#004AAD] focus:ring-1 focus:ring-[#004AAD] outline-none transition-colors"
+              placeholder="Last name"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label htmlFor="email" className="block text-[#10173E] text-sm font-semibold mb-1.5">
+            Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            value={formData.email}
+            onChange={handleChange}
+            className="border border-[#C3C3C4] rounded-lg px-4 py-3 text-[#10173E] w-full focus:border-[#004AAD] focus:ring-1 focus:ring-[#004AAD] outline-none transition-colors"
+            placeholder="you@example.com"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="phone" className="block text-[#10173E] text-sm font-semibold mb-1.5">
+            Phone Number
+          </label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            required
+            value={formData.phone}
+            onChange={handleChange}
+            className="border border-[#C3C3C4] rounded-lg px-4 py-3 text-[#10173E] w-full focus:border-[#004AAD] focus:ring-1 focus:ring-[#004AAD] outline-none transition-colors"
+            placeholder="(555) 123-4567"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="reason" className="block text-[#10173E] text-sm font-semibold mb-1.5">
+            Reason for being here (optional)
+          </label>
+          <textarea
+            id="reason"
+            name="reason"
+            rows={4}
+            value={formData.reason}
+            onChange={handleChange}
+            className="border border-[#C3C3C4] rounded-lg px-4 py-3 text-[#10173E] w-full focus:border-[#004AAD] focus:ring-1 focus:ring-[#004AAD] outline-none transition-colors resize-vertical"
+            placeholder="Tell us how we can help..."
+          />
+        </div>
+
+        <button
+          type="submit"
+          disabled={status === "submitting"}
+          className="bg-[#004AAD] text-white rounded-full px-8 py-3 font-bold text-sm uppercase border-2 border-[#5CE1E6] hover:bg-[#0053DA] w-full transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+        >
+          {status === "submitting" ? (
+            <span className="flex items-center justify-center gap-2">
+              <svg
+                className="animate-spin w-5 h-5"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                />
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+                />
+              </svg>
+              Submitting...
+            </span>
+          ) : (
+            "SUBMIT"
+          )}
+        </button>
+      </form>
+    </div>
   );
 }

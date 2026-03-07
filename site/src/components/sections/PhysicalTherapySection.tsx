@@ -1,70 +1,60 @@
 import Link from "next/link";
-import { Check, Stethoscope } from "lucide-react";
 
-const techniques = [
-  "Spinal Manipulation",
-  "Dry Needling",
-  "Cupping Therapy",
-  "Kinesiology Taping",
-  "Manual Therapy",
-  "Therapeutic Exercise",
+const features = [
+  {
+    title: "Personalized treatment plans",
+    body: "Reduce pain, move freely, and feel strong again, whether it's a new injury, surgery, or a chronic condition.",
+  },
+  {
+    title: "Specialized services included",
+    body: "From dry needling to spinal manipulation, we offer techniques to help you feel better, faster.",
+  },
+  {
+    title: "Integrated wellness approach",
+    body: "We blend traditional physical therapy with Core Services like cryotherapy, red light therapy, and infrared sauna.",
+  },
 ];
 
 export default function PhysicalTherapySection() {
   return (
-    <section className="py-16 md:py-20 bg-brand-surface">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Text Content */}
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-white mb-4">
-              Expert Physical Therapy
-            </h2>
-            <p className="text-brand-muted text-lg mb-6">
-              Dr. Clint Borman brings over 25 years of experience in physical
-              therapy, offering a comprehensive approach that combines hands-on
-              techniques with advanced modalities. From spinal manipulation and
-              dry needling to cupping and taping, every treatment plan is
-              customized to help you move better and feel your best.
-            </p>
+    <section className="py-16 bg-white">
+      <div className="max-w-[1140px] mx-auto px-4 text-center">
+        {/* Pill tags */}
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
+          <span className="bg-[#004AAD] text-white text-xs font-bold uppercase rounded-full px-4 py-1.5 inline-block">
+            Wellness Services
+          </span>
+          <span className="bg-[#004AAD] text-white text-xs font-bold uppercase rounded-full px-4 py-1.5 inline-block">
+            SPORTS MEDICINE/PHYSICAL THERAPY
+          </span>
+        </div>
 
-            <ul className="space-y-3 mb-8">
-              {techniques.map((technique) => (
-                <li key={technique} className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-brand-gold shrink-0" />
-                  <span className="text-brand-muted">{technique}</span>
-                </li>
-              ))}
-            </ul>
+        {/* Heading */}
+        <h1 className="text-[#10173E] text-[40px] font-extrabold leading-[48px] tracking-[0.4px] mb-12">
+          Expert Physical Therapy
+        </h1>
 
-            <div className="bg-brand-gold/10 border border-brand-gold/30 rounded-lg p-4 mb-8">
-              <p className="text-brand-gold font-semibold text-sm">
-                Free core service with your first PT appointment
+        {/* Feature boxes */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+          {features.map((feature) => (
+            <div key={feature.title} className="text-center px-4">
+              <h3 className="text-[20px] font-extrabold text-[#10173E] mb-3">
+                {feature.title}
+              </h3>
+              <p className="text-[#7A7A7A] text-base leading-relaxed">
+                {feature.body}
               </p>
             </div>
-
-            <Link
-              href="/physical-therapy"
-              className="inline-block rounded-lg bg-brand-gold px-8 py-3 text-lg font-semibold text-brand-bg hover:bg-brand-gold-light transition-colors"
-            >
-              Learn More
-            </Link>
-          </div>
-
-          {/* Decorative Element - Gold-tinted rings */}
-          <div className="hidden lg:flex items-center justify-center">
-            <div className="relative w-80 h-80">
-              <div className="absolute inset-0 rounded-full border border-brand-gold/20" />
-              <div className="absolute inset-6 rounded-full border border-brand-gold/25" />
-              <div className="absolute inset-12 rounded-full border border-brand-gold/30" />
-              <div className="absolute inset-18 rounded-full bg-brand-gold/5 border border-brand-gold/40 flex items-center justify-center">
-                <Stethoscope className="w-20 h-20 text-brand-gold" />
-              </div>
-              {/* Subtle glow */}
-              <div className="absolute inset-0 rounded-full bg-brand-gold/5 blur-[40px] pointer-events-none" />
-            </div>
-          </div>
+          ))}
         </div>
+
+        {/* CTA Button */}
+        <Link
+          href="/physical-therapy"
+          className="inline-block bg-[#004AAD] text-white rounded-full px-6 py-3 text-sm font-bold uppercase border-2 border-[#5CE1E6] hover:bg-[#0053DA] transition-colors"
+        >
+          LEARN MORE ABOUT PHYSICAL THERAPY
+        </Link>
       </div>
     </section>
   );

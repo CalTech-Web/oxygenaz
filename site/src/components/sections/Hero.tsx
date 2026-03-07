@@ -5,82 +5,48 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative bg-brand-bg py-20 md:py-32 overflow-hidden">
-      {/* Radial gold glow behind text */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-[600px] h-[400px] rounded-full bg-brand-gold/5 blur-[120px]" />
-      </div>
+    <section
+      className="relative min-h-[720px] flex items-center justify-center bg-cover bg-center"
+      style={{ backgroundImage: "url('/images/heroes/home-hero.jpg')" }}
+    >
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-[#10173E]/75" />
 
-      {/* Subtle grid pattern overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(201,168,76,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.3) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
-
-      <div className="relative max-w-7xl mx-auto px-4 text-center">
-        {/* Decorative gold line above heading */}
-        <motion.div
-          className="w-16 h-0.5 bg-gradient-to-r from-transparent via-brand-gold to-transparent mx-auto mb-8"
-          initial={{ opacity: 0, scaleX: 0 }}
-          animate={{ opacity: 1, scaleX: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        />
-
-        <motion.h1
-          className="text-4xl md:text-6xl lg:text-7xl font-bold text-brand-white mb-6"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+      {/* Content */}
+      <motion.div
+        className="relative z-10 text-center max-w-[1140px] mx-auto px-4"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <h2
+          className="text-white text-[80px] font-extrabold leading-[96px] mb-6"
+          style={{ textShadow: "4px 4px 0px rgba(0,0,0,0.25)" }}
         >
-          Only the{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-brand-gold-light to-brand-gold">
-            Good Stuff
-          </span>
-        </motion.h1>
+          Only the Good Stuff
+        </h2>
 
-        <motion.p
-          className="text-lg md:text-xl text-brand-muted max-w-2xl mx-auto mb-10"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-        >
-          Advanced therapies that boost energy, enhance recovery, and support
-          your mind and body&apos;s vitality.
-        </motion.p>
+        <p className="text-white text-lg max-w-2xl mx-auto mb-10">
+          Whether you&apos;re seeking pain relief, improved mobility, or a
+          complete wellness plan, our team is here to guide you. Book today or
+          give us a ring.
+        </p>
 
-        <motion.div
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-        >
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="/contact"
-            className="inline-block rounded-lg bg-brand-gold px-8 py-3 text-lg font-semibold text-brand-bg hover:bg-brand-gold-light transition-colors"
+            className="bg-white text-[#004AAD] rounded-full px-6 py-3 font-bold text-sm uppercase hover:bg-gray-100 transition-colors"
           >
-            Book Appointment
+            Book Today
           </Link>
-
-          <a
-            href="tel:6028887992"
-            className="inline-block rounded-lg border border-brand-gold px-8 py-3 text-lg font-semibold text-brand-gold hover:bg-brand-gold hover:text-brand-bg transition-colors"
+          <Link
+            href="/services"
+            className="border border-white text-white rounded-full px-6 py-3 font-bold text-sm uppercase hover:bg-white/10 transition-colors"
           >
-            Call 602.888.7992
-          </a>
-        </motion.div>
-
-        {/* Decorative gold line below buttons */}
-        <motion.div
-          className="w-32 h-px bg-gradient-to-r from-transparent via-brand-gold/40 to-transparent mx-auto mt-12"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.6 }}
-        />
-      </div>
+            View Services
+          </Link>
+        </div>
+      </motion.div>
     </section>
   );
 }

@@ -1,15 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import {
-  Check,
-  Stethoscope,
-  Clock,
-  Zap,
-  Target,
-  Hand,
-  CircleDot,
-  Layers,
-} from "lucide-react";
+import CoreServices from "@/components/sections/CoreServices";
+import AdditionalServices from "@/components/sections/AdditionalServices";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Physical Therapy & Sports Medicine",
@@ -18,56 +12,41 @@ export const metadata: Metadata = {
 };
 
 const techniques = [
-  {
-    name: "Spinal Manipulation",
-    description:
-      "Targeted joint mobilization to restore movement and reduce pain",
-    icon: Target,
-  },
-  {
-    name: "Dry Needling",
-    description:
-      "Precise trigger point therapy to release tension and improve function",
-    icon: Zap,
-  },
-  {
-    name: "Cupping",
-    description:
-      "Myofascial decompression to improve blood flow and tissue mobility",
-    icon: CircleDot,
-  },
-  {
-    name: "Taping",
-    description:
-      "Kinesiology taping for support, stability, and movement correction",
-    icon: Layers,
-  },
-  {
-    name: "Scraping",
-    description:
-      "Instrument-assisted soft tissue mobilization for scar tissue and adhesions",
-    icon: Hand,
-  },
-  {
-    name: "1:1 Stretching & Exercise",
-    description:
-      "Individualized therapeutic exercise and manual stretching programs",
-    icon: Stethoscope,
-  },
+  "Spinal manipulation",
+  "Dry needling",
+  "Cupping",
+  "Taping",
+  "Scraping",
+  "1:1 stretching",
+  "Exercise",
+  "Education and training",
 ];
 
-const sessionFormats = [
+const ptFaqs = [
   {
-    duration: "25 Minutes",
-    description:
-      "Focused treatment session ideal for targeted concerns, follow-ups, and maintenance visits. Get hands-on care that addresses your primary issue efficiently.",
-    best: "Follow-ups, single-area concerns, maintenance",
+    question: "Do I need a referral to see a physical therapist?",
+    answer:
+      "No, you do not need a referral or prescription. Arizona allows direct access to physical therapy, so you can schedule an appointment directly with us.",
   },
   {
-    duration: "55 Minutes",
-    description:
-      "Comprehensive treatment session for complex conditions, multiple areas of concern, or initial evaluations. Allows time for thorough assessment and multi-technique treatment.",
-    best: "Initial evaluations, complex conditions, full-body treatment",
+    question: "How long is a physical therapy session?",
+    answer:
+      "We offer 25-minute focused sessions and 55-minute comprehensive sessions. Your therapist will recommend the best option based on your condition and goals.",
+  },
+  {
+    question: "Does insurance cover physical therapy at Oxygen Wellness?",
+    answer:
+      "Our services are not billed through insurance. However, HSA and FSA accounts typically cover our sessions. We provide detailed receipts for reimbursement purposes.",
+  },
+  {
+    question: "What should I wear to a physical therapy appointment?",
+    answer:
+      "Wear comfortable, athletic clothing that allows you to move freely. This helps your therapist assess your movement and perform treatments effectively.",
+  },
+  {
+    question: "How many sessions will I need?",
+    answer:
+      "The number of sessions depends on your specific condition, goals, and how your body responds to treatment. Dr. Borman will create a personalized plan and adjust it as you progress.",
   },
 ];
 
@@ -75,205 +54,213 @@ export default function PhysicalTherapyPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-brand-surface py-20 md:py-28">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(201,168,76,0.08),_transparent_60%)]" />
-        <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
-          <div className="w-16 h-0.5 bg-brand-gold mx-auto mb-6" />
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-white mb-6">
-            Physical Therapy & Sports Medicine
+      <section className="relative min-h-[500px] flex items-center justify-center">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/heroes/pt-hero.jpg"
+            alt="Physical Therapy"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-[#10173E]/75" />
+        </div>
+        <div className="relative z-10 max-w-[1140px] mx-auto px-4 text-center py-20">
+          <h1
+            className="text-[80px] font-extrabold text-white mb-4 leading-tight"
+            style={{ textShadow: "4px 4px 0px rgba(0,0,0,0.25)" }}
+          >
+            Physical Therapy
           </h1>
-          <p className="text-lg md:text-xl text-brand-muted max-w-3xl mx-auto mb-8">
-            Dr. Clint Borman brings over 25 years of hands-on physical therapy
-            experience, combining proven manual techniques with modern wellness
-            therapies to get you moving and feeling your best.
+          <p className="text-white text-lg md:text-xl max-w-3xl mx-auto mb-8">
+            Sports Medicine | Spinal Manipulation | Dry Needling | Cupping | Taping | Scraping | 1:1 Stretching | Exercise
           </p>
           <Link
             href="/contact"
-            className="inline-block rounded-lg bg-brand-gold px-8 py-3 text-lg font-semibold text-brand-bg hover:bg-brand-gold-light transition-colors"
+            className="inline-block bg-white text-[#004AAD] rounded-full px-8 py-3 text-sm font-bold uppercase hover:bg-gray-100 transition-colors"
           >
-            Book an Appointment
+            BOOK TODAY
           </Link>
         </div>
       </section>
 
-      {/* About Dr. Borman */}
-      <section className="py-16 md:py-20 bg-brand-bg">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      {/* What is Physical Therapy */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-[1140px] mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div className="relative">
+              <Image
+                src="/images/content/what-is-pt.webp"
+                alt="What is Physical Therapy"
+                width={540}
+                height={400}
+                className="rounded-xl shadow-[1px_1px_15px_0px_rgba(0,0,0,0.15)] w-full h-auto object-cover"
+              />
+            </div>
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-brand-white mb-6">
-                About Dr. Borman
+              <h2 className="text-[40px] font-extrabold text-[#10173E] mb-6">
+                What is Physical Therapy?
               </h2>
-              <p className="text-brand-muted text-lg mb-4">
-                Dr. Clint Borman earned his Doctor of Physical Therapy degree
-                from the University of St. Augustine in 1997 and has dedicated
-                over 25 years to helping patients recover, perform, and thrive.
+              <p className="text-[#7A7A7A] text-lg mb-4">
+                Physical therapy is a healthcare specialty focused on restoring movement, reducing pain, and improving physical function. At Oxygen Wellness, our approach combines hands-on manual techniques with evidence-based modalities to help you move better and feel your best.
               </p>
-              <p className="text-brand-muted text-lg mb-4">
-                As a former collegiate baseball player, Dr. Borman understands
-                the demands athletes place on their bodies - and the
-                determination it takes to return to peak performance after
-                injury. That firsthand experience drives his patient-centered
-                approach.
+              <p className="text-[#7A7A7A] text-lg mb-6">
+                Whether you are recovering from an injury, managing chronic pain, or looking to optimize your athletic performance, our physical therapy program is designed to meet you where you are and help you reach your goals.
               </p>
-              <p className="text-brand-muted text-lg mb-6">
-                Throughout his career, he has led residency programs, trained
-                staff across multiple clinics, and guided organizations through
-                mergers and acquisitions - all while maintaining his primary
-                focus on one-on-one patient care.
-              </p>
-            </div>
-
-            {/* Decorative Element */}
-            <div className="hidden lg:flex items-center justify-center">
-              <div className="relative w-80 h-80">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-gold/10 to-brand-gold/5" />
-                <div className="absolute inset-8 rounded-full bg-gradient-to-br from-brand-gold/15 to-brand-gold/10" />
-                <div className="absolute inset-16 rounded-full bg-gradient-to-br from-brand-gold/20 to-brand-gold/15 flex items-center justify-center">
-                  <Stethoscope className="w-20 h-20 text-brand-gold" />
-                </div>
-              </div>
+              <ul className="space-y-2 mb-8">
+                {techniques.map((technique) => (
+                  <li key={technique} className="flex items-center gap-3">
+                    <svg className="w-5 h-5 text-[#004AAD] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-[#7A7A7A]">{technique}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/contact"
+                className="inline-block bg-[#004AAD] text-white rounded-full px-8 py-3 text-sm font-bold uppercase border-2 border-[#5CE1E6] hover:bg-[#0053DA] transition-colors"
+              >
+                BOOK APPOINTMENT
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Philosophy Quote */}
-      <section className="py-12 bg-brand-surface">
-        <div className="max-w-4xl mx-auto px-4">
-          <blockquote className="border-l-4 border-brand-gold pl-6 py-2">
-            <p className="text-xl md:text-2xl text-brand-muted font-medium italic leading-relaxed">
-              &ldquo;Empowers patients through education, delivers care with
-              kindness, humor, and a commitment to your needs.&rdquo;
-            </p>
-            <p className="mt-4 text-brand-gold font-semibold">
-              - Dr. Clint Borman
-            </p>
-          </blockquote>
-        </div>
-      </section>
-
-      {/* PT Techniques Grid */}
-      <section className="py-16 md:py-20 bg-brand-bg">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-white mb-3">
-              Treatment Techniques
-            </h2>
-            <p className="text-lg text-brand-muted max-w-2xl mx-auto">
-              A comprehensive toolkit of manual therapy and rehabilitation
-              techniques, each selected based on your specific needs.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {techniques.map((technique) => (
-              <div
-                key={technique.name}
-                className="bg-brand-surface border border-brand-border rounded-xl hover:border-brand-gold/30 transition-colors p-6"
-              >
-                <div className="mb-4 w-12 h-12 rounded-lg bg-brand-gold/10 flex items-center justify-center">
-                  <technique.icon className="w-6 h-6 text-brand-gold" />
-                </div>
-                <h3 className="text-xl font-semibold text-brand-white mb-2">
-                  {technique.name}
-                </h3>
-                <p className="text-brand-muted">{technique.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Session Formats */}
-      <section className="py-16 md:py-20 bg-brand-surface">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-white mb-3">
-              Session Formats
-            </h2>
-            <p className="text-lg text-brand-muted">
-              Choose the session length that fits your needs.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {sessionFormats.map((session) => (
-              <div
-                key={session.duration}
-                className="bg-brand-elevated border border-brand-border rounded-xl p-8"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <Clock className="w-8 h-8 text-brand-gold" />
-                  <h3 className="text-2xl font-bold text-brand-white">
-                    {session.duration}
-                  </h3>
-                </div>
-                <p className="text-brand-muted mb-4">
-                  {session.description}
-                </p>
-                <p className="text-sm font-medium text-brand-gold">
-                  Best for: {session.best}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Integration Callout */}
-      <section className="py-16 md:py-20 bg-brand-bg">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-white mb-6">
-            Integrated Wellness Approach
+      {/* What to Expect */}
+      <section className="py-16 md:py-20 bg-[#EDF2F9]">
+        <div className="max-w-[1140px] mx-auto px-4">
+          <h2 className="text-[40px] font-extrabold text-[#10173E] mb-8 text-center">
+            What to Expect During a Physical Therapy Appointment
           </h2>
-          <p className="text-lg text-brand-muted mb-8 max-w-3xl mx-auto">
-            What sets Oxygen Wellness apart is the ability to combine physical
-            therapy with our core wellness services. Your treatment plan may
-            include cryotherapy for inflammation, red light therapy for tissue
-            repair, compression therapy for recovery, or infrared sauna for pain
-            relief - all under one roof.
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {["Cryotherapy", "Red Light Therapy", "Compression Therapy", "Infrared Sauna"].map(
-              (service) => (
-                <div
-                  key={service}
-                  className="bg-brand-surface border border-brand-border rounded-lg p-4 flex items-center justify-center"
-                >
-                  <div className="flex items-center gap-2">
-                    <Check className="w-5 h-5 text-brand-gold shrink-0" />
-                    <span className="text-sm font-medium text-brand-white">
-                      {service}
-                    </span>
-                  </div>
-                </div>
-              )
-            )}
+          <div className="max-w-3xl mx-auto space-y-6">
+            <div className="bg-white rounded-xl shadow-[1px_1px_15px_0px_rgba(0,0,0,0.15)] p-6">
+              <h3 className="text-lg font-bold text-[#10173E] mb-2">25-Minute Focused Session</h3>
+              <p className="text-[#7A7A7A]">
+                Ideal for targeted concerns, follow-ups, and maintenance visits. Get hands-on care that addresses your primary issue efficiently.
+              </p>
+            </div>
+            <div className="bg-white rounded-xl shadow-[1px_1px_15px_0px_rgba(0,0,0,0.15)] p-6">
+              <h3 className="text-lg font-bold text-[#10173E] mb-2">55-Minute Comprehensive Session</h3>
+              <p className="text-[#7A7A7A]">
+                For complex conditions, multiple areas of concern, or initial evaluations. Allows time for thorough assessment and multi-technique treatment.
+              </p>
+            </div>
+            <div className="bg-white rounded-xl shadow-[1px_1px_15px_0px_rgba(0,0,0,0.15)] p-6">
+              <h3 className="text-lg font-bold text-[#10173E] mb-2">Integrated Approach</h3>
+              <p className="text-[#7A7A7A]">
+                Your treatment plan may incorporate our core wellness services, including cryotherapy, red light therapy, compression therapy, and infrared sauna, all under one roof.
+              </p>
+            </div>
+          </div>
+          <div className="mt-10 bg-[#004AAD] rounded-xl p-6 text-center max-w-3xl mx-auto">
+            <p className="text-white text-lg font-bold">
+              Get a free Core Service of your choice when you book your first PT appointment!
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Promo */}
-      <section className="py-12 bg-brand-surface border-y border-brand-gold/20">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(201,168,76,0.06),_transparent_70%)]" />
-        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-brand-white mb-3">
-            Free Core Service with Your First PT Appointment
-          </h2>
-          <p className="text-brand-muted text-lg mb-6">
-            Experience the full spectrum of what Oxygen Wellness has to offer.
-            Book your first physical therapy session and receive a complimentary
-            core wellness service.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block rounded-lg bg-brand-gold px-8 py-3 text-lg font-semibold text-brand-bg hover:bg-brand-gold-light transition-colors"
-          >
-            Book Your Appointment
-          </Link>
+      {/* Meet our Physical Therapist */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-[1140px] mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="relative">
+              <Image
+                src="/images/content/dr-clint.jpg"
+                alt="Dr. Clint Borman"
+                width={540}
+                height={500}
+                className="rounded-xl shadow-[1px_1px_15px_0px_rgba(0,0,0,0.15)] w-full h-auto object-cover"
+              />
+            </div>
+            <div>
+              <h2 className="text-[40px] font-extrabold text-[#10173E] mb-6">
+                Meet our Physical Therapist
+              </h2>
+              <p className="text-[#7A7A7A] text-lg mb-4">
+                Dr. Clint Borman earned his Doctor of Physical Therapy degree from the University of St. Augustine in 1997 and has dedicated over 25 years to helping patients recover, perform, and thrive.
+              </p>
+              <p className="text-[#7A7A7A] text-lg mb-4">
+                As a former collegiate baseball player, Dr. Borman understands the demands athletes place on their bodies and the determination it takes to return to peak performance after injury. That firsthand experience drives his patient-centered approach.
+              </p>
+              <p className="text-[#7A7A7A] text-lg mb-4">
+                He empowers patients through education and delivers care with kindness, humor, and a commitment to your needs.
+              </p>
+              <p className="text-[#7A7A7A] text-lg mb-8">
+                Throughout his career, he has led residency programs, trained staff across multiple clinics, and guided organizations through growth, all while maintaining his primary focus on one-on-one patient care.
+              </p>
+              <a
+                href="https://linkedin.com/in/clintborman"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#004AAD] text-white rounded-full px-8 py-3 text-sm font-bold uppercase border-2 border-[#5CE1E6] hover:bg-[#0053DA] transition-colors"
+              >
+                SEE CLINT&apos;S LINKEDIN
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PT FAQs */}
+      <PTFAQSection faqs={ptFaqs} />
+
+      {/* Core Services */}
+      <CoreServices />
+
+      {/* Additional Services */}
+      <AdditionalServices />
+
+      {/* Contact Form Section */}
+      <section className="py-16 md:py-20 bg-[#EDF2F9]">
+        <div className="max-w-[1140px] mx-auto px-4">
+          <div className="max-w-2xl mx-auto">
+            <ContactForm source="physical-therapy-page" />
+          </div>
         </div>
       </section>
     </>
+  );
+}
+
+function PTFAQSection({ faqs }: { faqs: { question: string; answer: string }[] }) {
+  return (
+    <section className="py-16 md:py-20 bg-[#EDF2F9]">
+      <div className="max-w-[1140px] mx-auto px-4">
+        <h2 className="text-[40px] font-extrabold text-[#10173E] mb-8 text-center">
+          Physical Therapy FAQs
+        </h2>
+        <div className="max-w-3xl mx-auto space-y-4">
+          {faqs.map((faq, index) => (
+            <PTFAQItem key={index} question={faq.question} answer={faq.answer} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PTFAQItem({ question, answer }: { question: string; answer: string }) {
+  return (
+    <details className="group bg-white rounded-xl shadow-[1px_1px_15px_0px_rgba(0,0,0,0.15)] overflow-hidden">
+      <summary className="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer list-none">
+        <span className="text-lg font-semibold text-[#10173E] group-hover:text-[#004AAD] transition-colors">
+          {question}
+        </span>
+        <svg
+          className="w-5 h-5 text-[#004AAD] shrink-0 transition-transform group-open:rotate-180"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </summary>
+      <div className="px-6 pb-4">
+        <p className="text-[#7A7A7A] leading-relaxed">{answer}</p>
+      </div>
+    </details>
   );
 }
