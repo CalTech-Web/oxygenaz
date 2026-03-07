@@ -41,8 +41,8 @@ export default function FAQ() {
               variants={fadeInUp}
               className={`rounded-2xl bg-white overflow-hidden transition-all duration-300 ${
                 openIndex === index
-                  ? "shadow-xl ring-2 ring-[#5CE1E6]/40 border-l-4 border-[#5CE1E6]"
-                  : "shadow-md border-l-4 border-transparent hover:shadow-lg"
+                  ? "shadow-[0_8px_30px_rgba(0,0,0,0.08)] ring-1 ring-[#5CE1E6]/30 border-l-4 border-[#5CE1E6]"
+                  : "shadow-[0_2px_8px_rgba(0,0,0,0.04)] border-l-4 border-transparent hover:shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:border-[#5CE1E6]/30"
               }`}
             >
               <button

@@ -34,7 +34,7 @@ export default function PromoCTA({ variant = "both" }: PromoCTAProps) {
         </p>
         <Link
           href="/contact"
-          className="inline-block bg-[#5CE1E6] text-[#10173E] rounded-full px-10 py-5 font-black text-sm uppercase tracking-wider hover:scale-105 hover:shadow-[0_0_50px_rgba(92,225,230,0.6)] transition-all duration-300 shadow-[0_0_30px_rgba(92,225,230,0.3)]"
+          className="inline-block bg-[#5CE1E6] text-[#10173E] rounded-full px-10 py-5 font-black text-sm uppercase tracking-wider hover:scale-105 hover:shadow-[0_0_40px_rgba(92,225,230,0.5)] transition-all duration-300 shadow-[0_8px_30px_rgba(92,225,230,0.25)]"
         >
           Book My Consultation
         </Link>

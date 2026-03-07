@@ -7,7 +7,7 @@ import { fadeInUp, viewportOnce } from "@/lib/animations";
 export default function AboutSection() {
   return (
     <section
-      className="relative min-h-[550px] flex items-center justify-center bg-cover bg-center overflow-hidden"
+      className="relative min-h-[550px] flex items-center justify-center bg-cover bg-center overflow-hidden grain"
       style={{
         backgroundImage: "url('/images/heroes/compression-bg.webp')",
       }}

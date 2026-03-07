@@ -61,7 +61,7 @@ export default function PhysicalTherapyPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[500px] flex items-center justify-center">
+      <section className="relative min-h-[500px] flex items-center justify-center grain">
         <div className="absolute inset-0">
           <Image
             src="/images/heroes/pt-hero.jpg"
@@ -104,7 +104,7 @@ export default function PhysicalTherapyPage() {
                 alt="What is Physical Therapy"
                 width={540}
                 height={400}
-                className="rounded-2xl shadow-xl w-full h-auto object-cover"
+                className="rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] w-full h-auto object-cover"
               />
             </div>
             <div>
@@ -183,7 +183,7 @@ export default function PhysicalTherapyPage() {
                 alt="Dr. Clint Borman"
                 width={540}
                 height={500}
-                className="rounded-2xl shadow-xl w-full h-auto object-cover"
+                className="rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] w-full h-auto object-cover"
               />
             </div>
             <div>
@@ -272,7 +272,7 @@ function PTFAQSection({ faqs }: { faqs: { question: string; answer: string }[] }
 
 function PTFAQItem({ question, answer }: { question: string; answer: string }) {
   return (
-    <details className="group bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-transparent hover:border-[#5CE1E6] hover:shadow-lg transition-all duration-300">
+    <details className="group bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.06)] overflow-hidden border-l-4 border-transparent hover:border-[#5CE1E6] hover:shadow-[0_8px_30px_rgba(0,0,0,0.1)] transition-all duration-300">
       <summary className="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer list-none">
         <span className="text-lg font-semibold text-[#10173E] group-hover:text-[#004AAD] transition-colors">
           {question}

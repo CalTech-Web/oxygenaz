@@ -60,25 +60,31 @@ export default function Footer() {
             <div className="mt-6 space-y-3">
               <a
                 href={SITE.phoneHref}
-                className="flex items-center gap-3 text-sm text-white/70 transition-colors hover:text-[#5CE1E6]"
+                className="group flex items-center gap-3 text-sm text-white/70 transition-colors hover:text-[#5CE1E6]"
               >
-                <Phone className="h-4 w-4 flex-shrink-0" />
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 group-hover:bg-[#5CE1E6]/15 transition-colors">
+                  <Phone className="h-3.5 w-3.5" />
+                </span>
                 {SITE.phone}
               </a>
               <a
                 href={`mailto:${SITE.email}`}
-                className="flex items-center gap-3 text-sm text-white/70 transition-colors hover:text-[#5CE1E6]"
+                className="group flex items-center gap-3 text-sm text-white/70 transition-colors hover:text-[#5CE1E6]"
               >
-                <Mail className="h-4 w-4 flex-shrink-0" />
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 group-hover:bg-[#5CE1E6]/15 transition-colors">
+                  <Mail className="h-3.5 w-3.5" />
+                </span>
                 {SITE.email}
               </a>
               <a
                 href={SITE.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-3 text-sm text-white/70 transition-colors hover:text-[#5CE1E6]"
+                className="group flex items-center gap-3 text-sm text-white/70 transition-colors hover:text-[#5CE1E6]"
               >
-                <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0" />
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 group-hover:bg-[#5CE1E6]/15 transition-colors shrink-0">
+                  <MapPin className="h-3.5 w-3.5" />
+                </span>
                 20265 N 59th Ave b1, Glendale, AZ 85308
               </a>
             </div>
@@ -134,14 +140,14 @@ export default function Footer() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-white/70 transition-colors hover:text-[#5CE1E6]"
+                      className="text-sm text-white/70 transition-all hover:text-[#5CE1E6] hover:translate-x-1 inline-block"
                     >
                       {item.label}
                     </a>
                   ) : (
                     <Link
                       href={item.href}
-                      className="text-sm text-white/70 transition-colors hover:text-[#5CE1E6]"
+                      className="text-sm text-white/70 transition-all hover:text-[#5CE1E6] hover:translate-x-1 inline-block"
                     >
                       {item.label}
                     </Link>
@@ -195,7 +201,7 @@ export default function Footer() {
       </div>
 
       {/* ── Bottom Bar ── */}
-      <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mx-4 lg:mx-20" />
+      <div className="h-px bg-gradient-to-r from-transparent via-[#5CE1E6]/20 to-transparent mx-4 lg:mx-20" />
       <div className="relative z-10 mx-4 lg:mx-20 pt-6 pb-6">
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <div className="text-sm text-white/60">

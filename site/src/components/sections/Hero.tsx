@@ -8,12 +8,12 @@ import { heroText, heroSubtext, heroCTA } from "@/lib/animations";
 export default function Hero() {
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center bg-cover bg-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center bg-cover bg-center overflow-hidden grain"
       style={{ backgroundImage: "url('/images/heroes/home-hero.jpg')" }}
     >
-      {/* Multi-layered overlays - stronger contrast */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F2C]/70 via-[#10173E]/85 to-[#0A0F2C]" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#004AAD]/30 via-transparent to-[#5CE1E6]/10" />
+      {/* Multi-layered overlays */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F2C]/70 via-[#10173E]/80 to-[#0A0F2C]/95" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#004AAD]/25 via-transparent to-[#5CE1E6]/8" />
 
       {/* Decorative gradient orbs - bigger, brighter */}
       <div className="absolute -top-32 -right-32 w-[800px] h-[800px] rounded-full bg-[#5CE1E6]/15 blur-[150px] pointer-events-none" />
@@ -29,7 +29,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <span className="inline-block bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm font-bold uppercase tracking-[0.2em] rounded-full px-6 py-2">
+          <span className="inline-block bg-white/8 backdrop-blur-md border border-white/15 text-white/90 text-xs font-bold uppercase tracking-[0.25em] rounded-full px-7 py-2.5 shadow-[0_4px_30px_rgba(0,0,0,0.15)]">
             Wellness & Physical Therapy
           </span>
         </motion.div>
@@ -67,13 +67,13 @@ export default function Hero() {
         >
           <Link
             href="/contact"
-            className="bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white rounded-full px-10 py-5 font-black text-base uppercase tracking-wider border-2 border-[#5CE1E6] hover:scale-105 animate-pulse-glow transition-transform duration-300"
+            className="bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white rounded-full px-10 py-5 font-black text-sm uppercase tracking-wider border-2 border-[#5CE1E6] hover:scale-105 animate-pulse-glow transition-transform duration-300 shadow-[0_8px_30px_rgba(0,74,173,0.4)]"
           >
             Book Today
           </Link>
           <Link
             href="/services/cryotherapy"
-            className="backdrop-blur-md bg-white/10 border-2 border-white/30 text-white rounded-full px-10 py-5 font-black text-base uppercase tracking-wider hover:bg-white/20 hover:border-white/50 hover:scale-105 transition-all duration-300"
+            className="backdrop-blur-md bg-white/8 border-2 border-white/25 text-white rounded-full px-10 py-5 font-black text-sm uppercase tracking-wider hover:bg-white/15 hover:border-[#5CE1E6]/50 hover:scale-105 transition-all duration-300 shadow-[0_8px_30px_rgba(0,0,0,0.2)]"
           >
             View Services
           </Link>
@@ -82,11 +82,12 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        animate={{ y: [0, 12, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
       >
-        <ChevronDown className="w-8 h-8 text-[#5CE1E6]/60" />
+        <span className="text-white/30 text-[10px] uppercase tracking-[0.3em] font-bold">Scroll</span>
+        <ChevronDown className="w-6 h-6 text-[#5CE1E6]/50" />
       </motion.div>
     </section>
   );

@@ -122,7 +122,7 @@ export default function ContactPage() {
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <a
                   href={SITE.phoneHref}
-                  className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white rounded-full px-6 py-4 font-black text-sm uppercase tracking-wider border-2 border-[#5CE1E6] hover:scale-105 hover:shadow-[0_0_30px_rgba(92,225,230,0.3)] transition-all duration-300"
+                  className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white rounded-full px-6 py-4 font-black text-sm uppercase tracking-wider border-2 border-[#5CE1E6] shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:scale-105 hover:shadow-[0_8px_30px_rgba(0,0,0,0.1)] transition-all duration-300"
                 >
                   CALL NOW
                 </a>
@@ -130,7 +130,7 @@ export default function ContactPage() {
                   href={SITE.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 bg-white text-[#004AAD] rounded-full px-6 py-4 font-black text-sm uppercase tracking-wider border-2 border-[#004AAD] hover:bg-[#004AAD] hover:text-white hover:scale-105 transition-all duration-300"
+                  className="flex-1 flex items-center justify-center gap-2 bg-white text-[#004AAD] rounded-full px-6 py-4 font-black text-sm uppercase tracking-wider border-2 border-[#004AAD] shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:bg-[#004AAD] hover:text-white hover:scale-105 hover:shadow-[0_8px_30px_rgba(0,0,0,0.1)] transition-all duration-300"
                 >
                   GET DIRECTIONS
                 </a>

@@ -12,7 +12,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[500px] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[500px] flex items-center justify-center overflow-hidden grain">
         <div className="absolute inset-0">
           <Image
             src="/images/heroes/about-hero.jpg"
@@ -62,7 +62,7 @@ export default function AboutPage() {
                 alt="Dr. Clint Borman - Founder"
                 width={540}
                 height={500}
-                className="rounded-2xl shadow-xl w-full h-auto object-cover"
+                className="rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] w-full h-auto object-cover"
               />
             </div>
             <div>

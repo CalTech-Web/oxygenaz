@@ -64,12 +64,12 @@ export default function Memberships() {
                 <motion.div
                   key={plan.id}
                   variants={fadeInUp}
-                  className={`relative rounded-2xl p-8 flex flex-col min-h-[560px] transition-all duration-300 ${
+                  className={`relative rounded-2xl p-8 flex flex-col min-h-[560px] transition-all duration-400 ${
                     isHighlighted
-                      ? "bg-white ring-2 ring-[#5CE1E6] glow-cyan-strong md:scale-[1.08] hover:-translate-y-3 shadow-2xl"
+                      ? "bg-white ring-2 ring-[#5CE1E6] glow-cyan-strong md:scale-[1.06] hover:-translate-y-3 shadow-[0_25px_60px_rgba(0,0,0,0.12)]"
                       : isPlatinum
-                      ? "bg-gradient-to-b from-[#10173E] to-[#0A0F2C] border border-[#5CE1E6]/20 hover:-translate-y-2 shadow-xl"
-                      : "bg-white hover:-translate-y-2 shadow-xl"
+                      ? "bg-gradient-to-b from-[#10173E] to-[#0A0F2C] border border-[#5CE1E6]/15 hover:-translate-y-2 shadow-[0_15px_40px_rgba(0,0,0,0.2)]"
+                      : "bg-white border border-gray-100 hover:-translate-y-2 shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_15px_40px_rgba(0,0,0,0.1)]"
                   }`}
                 >
                   {/* Badge */}

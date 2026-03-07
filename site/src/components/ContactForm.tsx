@@ -54,14 +54,14 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
   if (status === "success") {
     return (
       <motion.div
-        className="bg-white rounded-2xl p-8 text-center shadow-lg"
+        className="bg-white rounded-2xl p-10 text-center shadow-[0_8px_30px_rgba(0,0,0,0.06)]"
         variants={scaleIn}
         initial="hidden"
         animate="visible"
       >
-        <div className="w-16 h-16 bg-[#5CE1E6]/20 rounded-full flex items-center justify-center mx-auto mb-4">
+        <div className="w-16 h-16 bg-gradient-to-br from-[#5CE1E6]/25 to-[#004AAD]/10 rounded-full flex items-center justify-center mx-auto mb-5 shadow-[0_0_0_6px_rgba(92,225,230,0.08)]">
           <svg className="w-8 h-8 text-[#5CE1E6]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
           </svg>
         </div>
         <h3 className="text-xl font-black text-[#10173E] mb-2">
@@ -81,7 +81,7 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
   }
 
   const inputClasses =
-    "border-2 border-gray-200 rounded-xl px-5 py-4 text-[#10173E] font-medium w-full focus:border-[#5CE1E6] focus:ring-2 focus:ring-[#5CE1E6]/30 outline-none transition-all duration-300 bg-gray-50/50 hover:border-gray-300";
+    "border border-gray-200 rounded-xl px-5 py-4 text-[#10173E] font-medium w-full focus:border-[#5CE1E6] focus:ring-2 focus:ring-[#5CE1E6]/20 focus:shadow-[0_0_0_4px_rgba(92,225,230,0.08)] outline-none transition-all duration-200 bg-gray-50/30 hover:border-gray-300 hover:bg-white placeholder:text-gray-400";
 
   return (
     <div>
@@ -184,7 +184,7 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider border-2 border-[#5CE1E6] hover:scale-105 hover:shadow-[0_0_30px_rgba(92,225,230,0.3)] w-full transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
+          className="bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider border-2 border-[#5CE1E6] hover:scale-[1.02] hover:shadow-[0_8px_30px_rgba(0,74,173,0.3)] w-full transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100 shadow-[0_4px_15px_rgba(0,74,173,0.2)]"
         >
           {status === "submitting" ? (
             <span className="flex items-center justify-center gap-2">

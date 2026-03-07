@@ -18,7 +18,7 @@ export default function CryotherapyPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden min-h-[500px] flex items-center justify-center">
+      <section className="grain relative overflow-hidden min-h-[500px] flex items-center justify-center">
         <div className="absolute inset-0">
           <Image
             src="/images/services/cryotherapy.jpg"
@@ -69,7 +69,7 @@ export default function CryotherapyPage() {
             {service.benefits.map((benefit, i) => (
               <div
                 key={i}
-                className="bg-white rounded-xl shadow-md border-l-4 border-[#5CE1E6] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 p-5 flex items-start gap-3"
+                className="bg-white rounded-xl shadow-[0_2px_12px_rgba(0,0,0,0.04)] border-l-4 border-[#5CE1E6] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 p-5 flex items-start gap-3"
               >
                 <svg className="w-5 h-5 text-[#5CE1E6] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -120,7 +120,7 @@ export default function CryotherapyPage() {
               <Link
                 key={rs.id}
                 href={`/services/${rs.slug}`}
-                className="bg-white shadow-md rounded-2xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-b-4 border-transparent hover:border-[#5CE1E6] p-6 group"
+                className="bg-white shadow-[0_2px_12px_rgba(0,0,0,0.04)] rounded-2xl hover:shadow-[0_8px_25px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 border-b-4 border-transparent hover:border-[#5CE1E6] p-6 group"
               >
                 <h3 className="text-lg font-bold text-[#10173E] mb-2 group-hover:text-[#004AAD] transition-colors">
                   {rs.name}
@@ -138,7 +138,7 @@ export default function CryotherapyPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-20 relative overflow-hidden bg-gradient-to-br from-[#10173E] to-[#004AAD]">
+      <section className="grain py-16 md:py-20 relative overflow-hidden bg-gradient-to-br from-[#10173E] to-[#004AAD]">
         <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-[#5CE1E6]/8 blur-[100px] pointer-events-none" />
         <div className="relative z-10 max-w-[1140px] mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-white mb-4">

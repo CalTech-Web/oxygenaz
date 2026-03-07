@@ -53,7 +53,7 @@ export default function AdditionalServices() {
             <Link
               key={service.slug}
               href={`/services/${service.slug}`}
-              className="relative min-w-[340px] flex-shrink-0 h-[500px] rounded-2xl overflow-hidden snap-start group cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-500"
+              className="relative min-w-[340px] flex-shrink-0 h-[500px] rounded-2xl overflow-hidden snap-start group cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.15),0_0_0_1px_rgba(92,225,230,0.15)] transition-all duration-500"
             >
               {/* Background image */}
               <div

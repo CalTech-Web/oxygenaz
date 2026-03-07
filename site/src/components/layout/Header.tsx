@@ -61,7 +61,7 @@ export default function Header() {
 
     return (
       <div className="absolute left-0 top-full z-50 mt-0 pt-2">
-        <div className="grid grid-cols-2 gap-6 rounded-xl bg-white p-[15px] shadow-xl ring-1 ring-[#5CE1E6]/20">
+        <div className="grid grid-cols-2 gap-6 rounded-xl bg-white p-[15px] shadow-[0_20px_60px_rgba(0,0,0,0.12)] ring-1 ring-black/5 border-t-2 border-[#5CE1E6]">
           {/* Column 1 */}
           <div>
             {allServicesItem && (
@@ -79,7 +79,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="block py-1 text-sm font-medium text-[#3A416A] transition-colors hover:text-[#004AAD]"
+                className="block py-1.5 px-2 text-sm font-medium text-[#3A416A] rounded-md transition-all hover:text-[#004AAD] hover:bg-[#EDF2F9]/60 hover:pl-3"
               >
                 {item.label}
               </Link>
@@ -95,7 +95,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="block py-1 text-sm font-medium text-[#3A416A] transition-colors hover:text-[#004AAD]"
+                className="block py-1.5 px-2 text-sm font-medium text-[#3A416A] rounded-md transition-all hover:text-[#004AAD] hover:bg-[#EDF2F9]/60 hover:pl-3"
               >
                 {item.label}
               </Link>
@@ -112,7 +112,7 @@ export default function Header() {
 
     return (
       <div className="absolute left-0 top-full z-50 mt-0 pt-2">
-        <div className="min-w-[180px] rounded-xl bg-white p-[15px] shadow-xl ring-1 ring-[#5CE1E6]/20">
+        <div className="min-w-[180px] rounded-xl bg-white p-[15px] shadow-[0_20px_60px_rgba(0,0,0,0.12)] ring-1 ring-black/5 border-t-2 border-[#5CE1E6]">
           {children.map((child) =>
             child.external ? (
               <a
@@ -120,7 +120,7 @@ export default function Header() {
                 href={child.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block py-1 text-sm font-medium text-[#3A416A] transition-colors hover:text-[#004AAD]"
+                className="block py-1.5 px-2 text-sm font-medium text-[#3A416A] rounded-md transition-all hover:text-[#004AAD] hover:bg-[#EDF2F9]/60 hover:pl-3"
               >
                 {child.label}
               </a>
@@ -128,7 +128,7 @@ export default function Header() {
               <Link
                 key={child.href}
                 href={child.href}
-                className="block py-1 text-sm font-medium text-[#3A416A] transition-colors hover:text-[#004AAD]"
+                className="block py-1.5 px-2 text-sm font-medium text-[#3A416A] rounded-md transition-all hover:text-[#004AAD] hover:bg-[#EDF2F9]/60 hover:pl-3"
               >
                 {child.label}
               </Link>
@@ -160,10 +160,10 @@ export default function Header() {
 
       {/* ── Row 2: Main Navigation ── */}
       <div
-        className={`sticky top-0 z-50 transition-all duration-300 ${
+        className={`sticky top-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-white/95 backdrop-blur-md shadow-lg"
-            : "bg-white shadow-[1px_0px_15px_0px_rgba(0,0,0,0.08)]"
+            ? "bg-white/95 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.08)]"
+            : "bg-white shadow-[0_1px_3px_rgba(0,0,0,0.06)]"
         }`}
       >
         <div className="flex items-center justify-between px-4 py-5 lg:px-20">

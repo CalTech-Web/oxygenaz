@@ -12,7 +12,7 @@ export default function MembershipsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#10173E] via-[#10173E] to-[#004AAD] py-20 md:py-28">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#10173E] via-[#10173E] to-[#004AAD] py-20 md:py-28 grain">
         <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-[#5CE1E6]/8 blur-[100px] pointer-events-none" />
         <div className="absolute -bottom-20 -left-20 w-[300px] h-[300px] rounded-full bg-[#004AAD]/20 blur-[80px] pointer-events-none" />
         <div className="relative z-10 max-w-[1140px] mx-auto px-4 text-center">

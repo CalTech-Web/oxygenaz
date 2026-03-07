@@ -56,7 +56,7 @@ export default function PhysicalTherapySection() {
             <motion.div
               key={index}
               variants={fadeInUp}
-              className="text-left p-8 rounded-2xl bg-gradient-to-br from-[#EDF2F9] to-white border-l-4 border-[#5CE1E6] shadow-sm card-lift"
+              className="text-left p-8 rounded-2xl bg-gradient-to-br from-[#EDF2F9]/80 to-white border-l-4 border-[#5CE1E6] shadow-[0_2px_12px_rgba(0,0,0,0.04)] card-lift"
             >
               <h3 className="text-xl font-black text-[#10173E] mb-3">
                 {feature.title}
