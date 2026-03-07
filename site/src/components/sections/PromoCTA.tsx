@@ -10,7 +10,7 @@ interface PromoCTAProps {
 
 export default function PromoCTA({ variant = "both" }: PromoCTAProps) {
   const consultation = (
-    <section className="relative py-24 bg-gradient-to-br from-[#0A0F2C] via-[#10173E] to-[#004AAD] overflow-hidden">
+    <section className="relative py-16 bg-gradient-to-br from-[#0A0F2C] via-[#10173E] to-[#004AAD] overflow-hidden">
       {/* Decorative orbs */}
       <div className="absolute -right-32 -top-32 w-[600px] h-[600px] rounded-full bg-[#5CE1E6]/12 blur-[100px] pointer-events-none" />
       <div className="absolute -left-20 -bottom-20 w-[400px] h-[400px] rounded-full bg-[#004AAD]/20 blur-[80px] pointer-events-none" />
@@ -25,7 +25,7 @@ export default function PromoCTA({ variant = "both" }: PromoCTAProps) {
         whileInView="visible"
         viewport={viewportOnce}
       >
-        <p className="text-white text-2xl md:text-3xl font-bold max-w-3xl mx-auto mb-10 leading-snug">
+        <p className="text-white text-xl md:text-2xl font-bold max-w-3xl mx-auto mb-10 leading-snug">
           Not sure where to start? Book a{" "}
           <span className="text-[#5CE1E6] font-black drop-shadow-[0_0_20px_rgba(92,225,230,0.4)]">
             FREE 15&apos;
@@ -43,7 +43,7 @@ export default function PromoCTA({ variant = "both" }: PromoCTAProps) {
   );
 
   const coreService = (
-    <section className="py-24 md:py-28 bg-gradient-to-br from-white to-[#EDF2F9] relative overflow-hidden">
+    <section className="py-16 md:py-20 bg-gradient-to-br from-white to-[#EDF2F9] relative overflow-hidden">
       {/* Subtle accent */}
       <div className="absolute -bottom-20 -right-20 w-[400px] h-[400px] rounded-full bg-[#5CE1E6]/[0.05] blur-[80px] pointer-events-none" />
 
@@ -54,7 +54,7 @@ export default function PromoCTA({ variant = "both" }: PromoCTAProps) {
         whileInView="visible"
         viewport={viewportOnce}
       >
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#10173E] leading-tight tracking-tight max-w-4xl mx-auto mb-10">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#10173E] leading-tight tracking-tight max-w-4xl mx-auto mb-8">
           Get a core service for{" "}
           <span className="text-gradient-cyan">FREE</span>{" "}
           when you book an appointment with us for the first time.

@@ -22,14 +22,14 @@ export default function AboutSection() {
 
       {/* Content */}
       <motion.div
-        className="relative z-10 text-center max-w-[1140px] mx-auto px-4 py-24"
+        className="relative z-10 text-center max-w-[1140px] mx-auto px-4 py-16"
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"
         viewport={viewportOnce}
       >
         <h2
-          className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight mb-8"
+          className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight tracking-tight mb-8"
           style={{ textShadow: "4px 6px 0px rgba(0,0,0,0.4)" }}
         >
           It&apos;s All About{" "}

@@ -14,7 +14,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-24 md:py-32 bg-gradient-to-b from-[#EDF2F9] to-white relative overflow-hidden">
+    <section className="py-16 md:py-20 bg-gradient-to-b from-[#EDF2F9] to-white relative overflow-hidden">
       {/* Subtle accent */}
       <div className="absolute -top-20 -left-20 w-[500px] h-[500px] rounded-full bg-[#5CE1E6]/[0.03] blur-[100px] pointer-events-none" />
 
@@ -28,7 +28,7 @@ export default function FAQ() {
         {/* Heading */}
         <motion.h2
           variants={fadeInUp}
-          className="text-4xl md:text-5xl lg:text-6xl font-black text-[#10173E] leading-tight tracking-tight text-center mb-16 accent-underline-center"
+          className="text-3xl md:text-4xl lg:text-5xl font-black text-[#10173E] leading-tight tracking-tight text-center mb-10 accent-underline-center"
         >
           Frequently Asked Questions
         </motion.h2>

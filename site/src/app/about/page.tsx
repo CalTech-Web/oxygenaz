@@ -28,9 +28,9 @@ export default function AboutPage() {
         <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-[#5CE1E6]/8 blur-[100px] pointer-events-none" />
         <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] rounded-full bg-[#004AAD]/15 blur-[120px] pointer-events-none" />
 
-        <div className="relative z-10 max-w-[1140px] mx-auto px-4 text-center py-20 md:py-24">
+        <div className="relative z-10 max-w-[1140px] mx-auto px-4 text-center py-16 md:py-20">
           <h1
-            className="text-5xl md:text-7xl lg:text-[96px] font-black text-white leading-[1.05] tracking-tight"
+            className="text-4xl md:text-6xl lg:text-[72px] font-black text-white leading-[1.05] tracking-tight"
             style={{ textShadow: "4px 4px 0px rgba(0,0,0,0.3)" }}
           >
             About Us
@@ -39,7 +39,7 @@ export default function AboutPage() {
       </section>
 
       {/* Introduction */}
-      <section className="py-20 md:py-24 bg-white">
+      <section className="py-16 md:py-20 bg-white">
         <div className="max-w-[1140px] mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-[#7A7A7A] text-lg md:text-xl mb-4 leading-relaxed font-light">
@@ -53,7 +53,7 @@ export default function AboutPage() {
       </section>
 
       {/* Founder Section */}
-      <section className="py-20 md:py-24 bg-gradient-to-br from-[#EDF2F9] to-white">
+      <section className="py-16 md:py-20 bg-gradient-to-br from-[#EDF2F9] to-white">
         <div className="max-w-[1140px] mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
@@ -105,7 +105,7 @@ export default function AboutPage() {
         {/* Decorative orb */}
         <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-[#5CE1E6]/10 blur-[100px] pointer-events-none" />
 
-        <div className="relative z-10 text-center max-w-[1140px] mx-auto px-4 py-20 md:py-24">
+        <div className="relative z-10 text-center max-w-[1140px] mx-auto px-4 py-16 md:py-20">
           <h2
             className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight tracking-tight mb-6"
             style={{ textShadow: "4px 4px 0px rgba(0,0,0,0.25)" }}
@@ -128,7 +128,7 @@ export default function AboutPage() {
       </section>
 
       {/* Blending Tradition with Innovation */}
-      <section className="py-20 md:py-24 bg-white">
+      <section className="py-16 md:py-20 bg-white">
         <div className="max-w-[1140px] mx-auto px-4">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-[#10173E] mb-6 text-center accent-underline-center">
             Blending Tradition with Innovation
@@ -140,7 +140,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Mission */}
-      <section className="py-20 md:py-24 bg-gradient-to-br from-[#EDF2F9] to-white">
+      <section className="py-16 md:py-20 bg-gradient-to-br from-[#EDF2F9] to-white">
         <div className="max-w-[1140px] mx-auto px-4">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-[#10173E] mb-6 text-center accent-underline-center">
             Our Mission
@@ -152,7 +152,7 @@ export default function AboutPage() {
       </section>
 
       {/* Why Choose Us? */}
-      <section className="py-20 md:py-24 bg-white">
+      <section className="py-16 md:py-20 bg-white">
         <div className="max-w-[1140px] mx-auto px-4">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-[#10173E] mb-6 text-center accent-underline-center">
             Why Choose Us?
@@ -164,7 +164,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Community */}
-      <section className="py-20 md:py-24 bg-gradient-to-br from-[#EDF2F9] to-white">
+      <section className="py-16 md:py-20 bg-gradient-to-br from-[#EDF2F9] to-white">
         <div className="max-w-[1140px] mx-auto px-4">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-[#10173E] mb-6 text-center accent-underline-center">
             Our Community

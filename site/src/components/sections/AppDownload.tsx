@@ -7,7 +7,7 @@ import { fadeInLeft, fadeInRight, viewportOnce } from "@/lib/animations";
 
 export default function AppDownload() {
   return (
-    <section className="py-24 md:py-32 bg-gradient-to-br from-[#0A0F2C] via-[#10173E] to-[#004AAD] relative overflow-hidden">
+    <section className="py-16 md:py-20 bg-gradient-to-br from-[#0A0F2C] via-[#10173E] to-[#004AAD] relative overflow-hidden">
       {/* Decorative orbs - bigger */}
       <div className="absolute top-0 right-0 w-[700px] h-[700px] rounded-full bg-[#5CE1E6]/8 blur-[120px] pointer-events-none" />
       <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full bg-[#004AAD]/20 blur-[80px] pointer-events-none" />
@@ -25,7 +25,7 @@ export default function AppDownload() {
             whileInView="visible"
             viewport={viewportOnce}
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight mb-4 accent-underline">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight tracking-tight mb-4 accent-underline">
               Download the App
             </h2>
             <p className="text-white/60 text-lg md:text-xl mb-10 mt-8 font-light">

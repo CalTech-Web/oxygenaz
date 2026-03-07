@@ -29,7 +29,7 @@ const services = [
 
 export default function AdditionalServices() {
   return (
-    <section className="py-24 md:py-32 bg-gradient-to-b from-[#EDF2F9]/50 to-white relative overflow-hidden">
+    <section className="py-16 md:py-20 bg-gradient-to-b from-[#EDF2F9]/50 to-white relative overflow-hidden">
       <motion.div
         className="relative z-10 max-w-[1140px] mx-auto px-4"
         variants={staggerContainer}
@@ -38,8 +38,8 @@ export default function AdditionalServices() {
         viewport={viewportOnce}
       >
         {/* Heading */}
-        <motion.div variants={fadeInUp} className="mb-12">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#10173E] leading-tight tracking-tight accent-underline">
+        <motion.div variants={fadeInUp} className="mb-8">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#10173E] leading-tight tracking-tight accent-underline">
             Other Services
           </h2>
         </motion.div>

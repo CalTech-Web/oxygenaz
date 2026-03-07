@@ -17,7 +17,7 @@ export default function MembershipsPage() {
         <div className="absolute -bottom-20 -left-20 w-[300px] h-[300px] rounded-full bg-[#004AAD]/20 blur-[80px] pointer-events-none" />
         <div className="relative z-10 max-w-[1140px] mx-auto px-4 text-center">
           <h1
-            className="text-5xl md:text-7xl lg:text-[96px] font-black text-white leading-[1.05] tracking-tight mb-4"
+            className="text-4xl md:text-6xl lg:text-[72px] font-black text-white leading-[1.05] tracking-tight mb-4"
             style={{ textShadow: "4px 4px 0px rgba(0,0,0,0.3)" }}
           >
             Membership Plans
@@ -32,7 +32,7 @@ export default function MembershipsPage() {
       <Memberships />
 
       {/* Not Sure CTA */}
-      <section className="py-20 md:py-24 bg-[#EDF2F9]">
+      <section className="py-16 md:py-20 bg-[#EDF2F9]">
         <div className="max-w-[1140px] mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#10173E] tracking-tight accent-underline-center mb-4">
             Not Sure Which Plan Is Right for You?

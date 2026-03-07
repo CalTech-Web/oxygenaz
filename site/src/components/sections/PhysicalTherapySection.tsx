@@ -21,7 +21,7 @@ const features = [
 
 export default function PhysicalTherapySection() {
   return (
-    <section className="py-24 md:py-32 bg-white relative overflow-hidden">
+    <section className="py-16 md:py-20 bg-white relative overflow-hidden">
       {/* Subtle background accent */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-[#5CE1E6]/[0.03] blur-[100px] pointer-events-none" />
 
@@ -45,7 +45,7 @@ export default function PhysicalTherapySection() {
         {/* Heading */}
         <motion.h1
           variants={fadeInUp}
-          className="text-[#10173E] text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight mb-16 accent-underline-center"
+          className="text-[#10173E] text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-tight mb-10 accent-underline-center"
         >
           Expert Physical Therapy
         </motion.h1>

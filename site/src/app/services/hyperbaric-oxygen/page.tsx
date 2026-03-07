@@ -33,7 +33,7 @@ export default function HyperbaricOxygenPage() {
         <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-[#5CE1E6]/8 blur-[100px] pointer-events-none" />
         <div className="relative z-10 max-w-[1140px] mx-auto px-4 text-center py-20">
           <h1
-            className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-white mb-6 leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white mb-6 leading-tight"
             style={{ textShadow: "4px 4px 0px rgba(0,0,0,0.25)" }}
           >
             {service.name}
@@ -48,7 +48,7 @@ export default function HyperbaricOxygenPage() {
       </section>
 
       {/* What is it */}
-      <section className="py-20 md:py-24 bg-white">
+      <section className="py-16 md:py-20 bg-white">
         <div className="max-w-[1140px] mx-auto px-4">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight accent-underline text-[#10173E] mb-6">
             What is {service.name}?
@@ -60,9 +60,9 @@ export default function HyperbaricOxygenPage() {
       </section>
 
       {/* Benefits */}
-      <section className="py-20 md:py-24 bg-[#EDF2F9]">
+      <section className="py-16 md:py-20 bg-[#EDF2F9]">
         <div className="max-w-[1140px] mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight accent-underline-center text-[#10173E] mb-10 text-center">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight accent-underline-center text-[#10173E] mb-8 text-center">
             Benefits
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -82,7 +82,7 @@ export default function HyperbaricOxygenPage() {
       </section>
 
       {/* What to Expect */}
-      <section className="py-20 md:py-24 bg-white">
+      <section className="py-16 md:py-20 bg-white">
         <div className="max-w-[1140px] mx-auto px-4">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight accent-underline text-[#10173E] mb-6">
             What to Expect
@@ -108,9 +108,9 @@ export default function HyperbaricOxygenPage() {
       </section>
 
       {/* Related Services */}
-      <section className="py-20 md:py-24 bg-white">
+      <section className="py-16 md:py-20 bg-white">
         <div className="max-w-[1140px] mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight accent-underline-center text-[#10173E] mb-10 text-center">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight accent-underline-center text-[#10173E] mb-8 text-center">
             Related Services
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -155,7 +155,7 @@ export default function HyperbaricOxygenPage() {
       </section>
 
       {/* Contact Form */}
-      <section className="py-20 md:py-24 bg-[#EDF2F9]">
+      <section className="py-16 md:py-20 bg-[#EDF2F9]">
         <div className="max-w-2xl mx-auto px-4">
           <ContactForm source="hyperbaric-oxygen-page" />
         </div>

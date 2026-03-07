@@ -35,7 +35,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.h2
-          className="text-white text-5xl sm:text-7xl lg:text-[130px] font-black leading-[0.95] mb-8 tracking-tight"
+          className="text-white text-4xl sm:text-6xl lg:text-[90px] font-black leading-[0.95] mb-8 tracking-tight"
           style={{ textShadow: "4px 6px 0px rgba(0,0,0,0.4)" }}
           variants={heroText}
           initial="hidden"

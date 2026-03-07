@@ -34,7 +34,7 @@ const services = [
 
 export default function CoreServices() {
   return (
-    <section className="py-24 md:py-32 bg-gradient-to-b from-white to-[#EDF2F9]/50 relative overflow-hidden">
+    <section className="py-16 md:py-20 bg-gradient-to-b from-white to-[#EDF2F9]/50 relative overflow-hidden">
       <motion.div
         className="relative z-10 max-w-[1140px] mx-auto px-4"
         variants={staggerContainer}
@@ -43,8 +43,8 @@ export default function CoreServices() {
         viewport={viewportOnce}
       >
         {/* Heading row */}
-        <motion.div variants={fadeInUp} className="flex items-center justify-between mb-12">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#10173E] leading-tight tracking-tight accent-underline">
+        <motion.div variants={fadeInUp} className="flex items-center justify-between mb-8">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#10173E] leading-tight tracking-tight accent-underline">
             Core Services
           </h2>
           <span className="bg-[#F01717] text-white text-sm font-black rounded-full px-6 py-2.5 shadow-[0_0_25px_rgba(240,23,23,0.4)] animate-pulse">

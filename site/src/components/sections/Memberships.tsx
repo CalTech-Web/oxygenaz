@@ -36,7 +36,7 @@ export default function Memberships() {
 
       {/* Content */}
       <motion.div
-        className="relative z-10 py-28 md:py-36 px-4"
+        className="relative z-10 py-20 md:py-24 px-4"
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
@@ -44,8 +44,8 @@ export default function Memberships() {
       >
         <div className="max-w-[1140px] mx-auto">
           {/* Heading */}
-          <motion.div variants={fadeInUp} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight mb-4 accent-underline-center">
+          <motion.div variants={fadeInUp} className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight tracking-tight mb-4 accent-underline-center">
               Our Membership Plans
             </h2>
             <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto mt-8 font-light">
