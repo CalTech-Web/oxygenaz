@@ -6,18 +6,18 @@ export const metadata: Metadata = {
 
 export default function TermsOfServicePage() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-brand-bg">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-brand-dark mb-2">
+        <h1 className="text-4xl font-bold text-brand-white mb-2">
           Terms of Service
         </h1>
-        <p className="text-sm text-gray-500 mb-10">
+        <p className="text-sm text-brand-muted mb-10">
           Last updated: March 6, 2026
         </p>
 
-        <div className="space-y-8 text-brand-text leading-relaxed">
+        <div className="space-y-8 text-brand-muted leading-relaxed">
           <div>
-            <h2 className="text-2xl font-semibold text-brand-dark mb-3">
+            <h2 className="text-2xl font-semibold text-brand-white mb-3">
               Agreement to Terms
             </h2>
             <p>
@@ -29,7 +29,7 @@ export default function TermsOfServicePage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-brand-dark mb-3">
+            <h2 className="text-2xl font-semibold text-brand-white mb-3">
               Use of Website
             </h2>
             <p className="mb-3">
@@ -60,7 +60,7 @@ export default function TermsOfServicePage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-brand-dark mb-3">
+            <h2 className="text-2xl font-semibold text-brand-white mb-3">
               Services Disclaimer
             </h2>
             <p className="mb-3">
@@ -79,7 +79,7 @@ export default function TermsOfServicePage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-brand-dark mb-3">
+            <h2 className="text-2xl font-semibold text-brand-white mb-3">
               Physical Therapy Services
             </h2>
             <p>
@@ -93,7 +93,7 @@ export default function TermsOfServicePage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-brand-dark mb-3">
+            <h2 className="text-2xl font-semibold text-brand-white mb-3">
               Intellectual Property
             </h2>
             <p>
@@ -107,7 +107,7 @@ export default function TermsOfServicePage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-brand-dark mb-3">
+            <h2 className="text-2xl font-semibold text-brand-white mb-3">
               Limitation of Liability
             </h2>
             <p>
@@ -121,7 +121,7 @@ export default function TermsOfServicePage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-brand-dark mb-3">
+            <h2 className="text-2xl font-semibold text-brand-white mb-3">
               Disclaimer of Warranties
             </h2>
             <p>
@@ -134,7 +134,7 @@ export default function TermsOfServicePage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-brand-dark mb-3">
+            <h2 className="text-2xl font-semibold text-brand-white mb-3">
               Modifications to Terms
             </h2>
             <p>
@@ -147,7 +147,7 @@ export default function TermsOfServicePage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-brand-dark mb-3">
+            <h2 className="text-2xl font-semibold text-brand-white mb-3">
               Governing Law
             </h2>
             <p>
@@ -160,7 +160,7 @@ export default function TermsOfServicePage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-brand-dark mb-3">
+            <h2 className="text-2xl font-semibold text-brand-white mb-3">
               Contact Us
             </h2>
             <p>
@@ -168,14 +168,14 @@ export default function TermsOfServicePage() {
               contact us:
             </p>
             <address className="mt-3 not-italic space-y-1">
-              <p className="font-semibold">Oxygen Wellness LLC</p>
+              <p className="font-semibold text-brand-white">Oxygen Wellness LLC</p>
               <p>20265 N. 59th Ave. Suite B-1</p>
               <p>Glendale, AZ 85308</p>
               <p>
                 Email:{" "}
                 <a
                   href="mailto:Contact@OxygenAZ.com"
-                  className="text-brand-primary hover:text-brand-secondary underline"
+                  className="text-brand-gold hover:text-brand-gold-light underline"
                 >
                   Contact@OxygenAZ.com
                 </a>

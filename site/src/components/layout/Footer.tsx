@@ -21,7 +21,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1a1a2e] text-white">
+    <footer className="border-t border-brand-border bg-brand-surface">
       <div className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Column 1 - Company Info */}
@@ -32,10 +32,10 @@ export default function Footer() {
                 alt={SITE.name}
                 width={150}
                 height={48}
-                className="h-auto w-[140px] brightness-0 invert"
+                className="h-auto w-[140px]"
               />
             </Link>
-            <p className="mt-4 text-sm leading-relaxed text-gray-300">
+            <p className="mt-4 text-sm leading-relaxed text-brand-muted">
               Evidence-based wellness and physical therapy in Glendale, AZ.
               Cryotherapy, infrared sauna, hyperbaric oxygen, IV infusions, and
               expert physical therapy with 25+ years of experience.
@@ -46,23 +46,23 @@ export default function Footer() {
                 href={SITE.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-3 text-sm text-gray-300 transition-colors hover:text-[#06b6d4]"
+                className="flex items-start gap-3 text-sm text-brand-muted transition-colors hover:text-brand-white"
               >
-                <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#06b6d4]" />
+                <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-gold" />
                 {SITE.fullAddress}
               </a>
               <a
                 href={SITE.phoneHref}
-                className="flex items-center gap-3 text-sm text-gray-300 transition-colors hover:text-[#06b6d4]"
+                className="flex items-center gap-3 text-sm text-brand-muted transition-colors hover:text-brand-white"
               >
-                <Phone className="h-4 w-4 flex-shrink-0 text-[#06b6d4]" />
+                <Phone className="h-4 w-4 flex-shrink-0 text-brand-gold" />
                 {SITE.phone}
               </a>
               <a
                 href={`mailto:${SITE.email}`}
-                className="flex items-center gap-3 text-sm text-gray-300 transition-colors hover:text-[#06b6d4]"
+                className="flex items-center gap-3 text-sm text-brand-muted transition-colors hover:text-brand-white"
               >
-                <Mail className="h-4 w-4 flex-shrink-0 text-[#06b6d4]" />
+                <Mail className="h-4 w-4 flex-shrink-0 text-brand-gold" />
                 {SITE.email}
               </a>
             </div>
@@ -70,13 +70,15 @@ export default function Footer() {
 
           {/* Column 2 - Services */}
           <div>
-            <h3 className="text-base font-semibold tracking-wide">Services</h3>
+            <h3 className="text-base font-semibold tracking-wide text-brand-gold">
+              Services
+            </h3>
             <ul className="mt-4 space-y-2.5">
               {footerServices.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-gray-300 transition-colors hover:text-[#06b6d4]"
+                    className="text-sm text-brand-muted transition-colors hover:text-brand-white"
                   >
                     {item.label}
                   </Link>
@@ -87,13 +89,15 @@ export default function Footer() {
 
           {/* Column 3 - Company */}
           <div>
-            <h3 className="text-base font-semibold tracking-wide">Company</h3>
+            <h3 className="text-base font-semibold tracking-wide text-brand-gold">
+              Company
+            </h3>
             <ul className="mt-4 space-y-2.5">
               {footerCompany.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-gray-300 transition-colors hover:text-[#06b6d4]"
+                    className="text-sm text-brand-muted transition-colors hover:text-brand-white"
                   >
                     {item.label}
                   </Link>
@@ -104,8 +108,10 @@ export default function Footer() {
 
           {/* Column 4 - Hours & Social */}
           <div>
-            <h3 className="text-base font-semibold tracking-wide">Hours</h3>
-            <dl className="mt-4 space-y-2 text-sm text-gray-300">
+            <h3 className="text-base font-semibold tracking-wide text-brand-gold">
+              Hours
+            </h3>
+            <dl className="mt-4 space-y-2 text-sm text-brand-muted">
               <div className="flex justify-between">
                 <dt>{SITE.hours.weekday.label}</dt>
                 <dd>
@@ -121,7 +127,7 @@ export default function Footer() {
             </dl>
 
             {/* Social Media */}
-            <h3 className="mt-8 text-base font-semibold tracking-wide">
+            <h3 className="mt-8 text-base font-semibold tracking-wide text-brand-gold">
               Follow Us
             </h3>
             <div className="mt-4 flex gap-3">
@@ -132,7 +138,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-gray-300 transition-colors hover:bg-[#06b6d4] hover:text-white"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-brand-border text-brand-muted transition-colors hover:border-brand-gold hover:text-brand-gold"
                 >
                   <Icon className="h-5 w-5" />
                 </a>
@@ -140,7 +146,7 @@ export default function Footer() {
             </div>
 
             {/* App Download Links */}
-            <h3 className="mt-8 text-base font-semibold tracking-wide">
+            <h3 className="mt-8 text-base font-semibold tracking-wide text-brand-gold">
               Download Our App
             </h3>
             <div className="mt-4 flex flex-col gap-2">
@@ -148,7 +154,7 @@ export default function Footer() {
                 href={SITE.apps.ios}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-lg bg-white/10 px-4 py-2.5 text-sm font-medium text-gray-200 transition-colors hover:bg-white/20"
+                className="inline-flex items-center justify-center rounded-lg border border-brand-border px-4 py-2.5 text-sm font-medium text-brand-muted transition-colors hover:border-brand-gold hover:text-brand-gold"
               >
                 App Store
               </a>
@@ -156,7 +162,7 @@ export default function Footer() {
                 href={SITE.apps.android}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-lg bg-white/10 px-4 py-2.5 text-sm font-medium text-gray-200 transition-colors hover:bg-white/20"
+                className="inline-flex items-center justify-center rounded-lg border border-brand-border px-4 py-2.5 text-sm font-medium text-brand-muted transition-colors hover:border-brand-gold hover:text-brand-gold"
               >
                 Google Play
               </a>
@@ -166,8 +172,8 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-5 text-sm text-gray-400 sm:flex-row lg:px-8">
+      <div className="border-t border-brand-border">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-5 text-sm text-brand-muted sm:flex-row lg:px-8">
           <p>&copy; 2026 Oxygen Wellness LLC. All Rights Reserved.</p>
           <p>
             Powered by{" "}
@@ -175,7 +181,7 @@ export default function Footer() {
               href="https://caltechweb.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#06b6d4] transition-colors hover:text-white"
+              className="text-brand-gold transition-colors hover:text-brand-gold-light"
             >
               CalTech Web
             </a>

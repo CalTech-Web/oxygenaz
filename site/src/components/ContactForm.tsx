@@ -47,18 +47,18 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="bg-green-50 border border-green-200 rounded-xl p-8 text-center">
-        <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
-        <h3 className="text-xl font-semibold text-green-800 mb-2">
+      <div className="bg-brand-gold/10 border border-brand-gold/30 rounded-xl p-8 text-center">
+        <CheckCircle className="w-12 h-12 text-brand-gold mx-auto mb-4" />
+        <h3 className="text-xl font-semibold text-brand-white mb-2">
           Message Sent Successfully
         </h3>
-        <p className="text-green-700">
+        <p className="text-brand-muted">
           Thank you for reaching out. We will get back to you as soon as
           possible.
         </p>
         <button
           onClick={() => setStatus("idle")}
-          className="mt-6 text-brand-primary font-medium hover:text-brand-secondary transition-colors"
+          className="mt-6 text-brand-gold font-medium hover:text-brand-gold-light transition-colors"
         >
           Send Another Message
         </button>
@@ -67,11 +67,11 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form onSubmit={handleSubmit} className="bg-brand-surface border border-brand-border rounded-xl p-6 md:p-8 space-y-5">
       {status === "error" && (
-        <div className="bg-red-50 border border-red-200 rounded-lg p-4 flex items-center gap-3">
-          <AlertCircle className="w-5 h-5 text-red-500 shrink-0" />
-          <p className="text-red-700 text-sm">
+        <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4 flex items-center gap-3">
+          <AlertCircle className="w-5 h-5 text-red-400 shrink-0" />
+          <p className="text-red-300 text-sm">
             Something went wrong. Please try again or call us directly.
           </p>
         </div>
@@ -80,7 +80,7 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="name"
-          className="block text-sm font-medium text-brand-dark mb-1"
+          className="block text-sm font-medium text-brand-white mb-1"
         >
           Full Name
         </label>
@@ -91,7 +91,7 @@ export default function ContactForm() {
           required
           value={formData.name}
           onChange={handleChange}
-          className="w-full rounded-lg border border-gray-300 px-4 py-3 text-brand-text focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent transition-colors"
+          className="w-full rounded-lg bg-brand-elevated border border-brand-border px-4 py-3 text-brand-white placeholder:text-brand-muted/50 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-colors"
           placeholder="Your name"
         />
       </div>
@@ -99,7 +99,7 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="email"
-          className="block text-sm font-medium text-brand-dark mb-1"
+          className="block text-sm font-medium text-brand-white mb-1"
         >
           Email Address
         </label>
@@ -110,7 +110,7 @@ export default function ContactForm() {
           required
           value={formData.email}
           onChange={handleChange}
-          className="w-full rounded-lg border border-gray-300 px-4 py-3 text-brand-text focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent transition-colors"
+          className="w-full rounded-lg bg-brand-elevated border border-brand-border px-4 py-3 text-brand-white placeholder:text-brand-muted/50 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-colors"
           placeholder="you@example.com"
         />
       </div>
@@ -118,7 +118,7 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="phone"
-          className="block text-sm font-medium text-brand-dark mb-1"
+          className="block text-sm font-medium text-brand-white mb-1"
         >
           Phone Number
         </label>
@@ -128,7 +128,7 @@ export default function ContactForm() {
           name="phone"
           value={formData.phone}
           onChange={handleChange}
-          className="w-full rounded-lg border border-gray-300 px-4 py-3 text-brand-text focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent transition-colors"
+          className="w-full rounded-lg bg-brand-elevated border border-brand-border px-4 py-3 text-brand-white placeholder:text-brand-muted/50 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-colors"
           placeholder="(555) 123-4567"
         />
       </div>
@@ -136,7 +136,7 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="message"
-          className="block text-sm font-medium text-brand-dark mb-1"
+          className="block text-sm font-medium text-brand-white mb-1"
         >
           Message
         </label>
@@ -147,7 +147,7 @@ export default function ContactForm() {
           rows={5}
           value={formData.message}
           onChange={handleChange}
-          className="w-full rounded-lg border border-gray-300 px-4 py-3 text-brand-text focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent transition-colors resize-vertical"
+          className="w-full rounded-lg bg-brand-elevated border border-brand-border px-4 py-3 text-brand-white placeholder:text-brand-muted/50 focus:outline-none focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/20 transition-colors resize-vertical"
           placeholder="How can we help you?"
         />
       </div>
@@ -155,7 +155,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="w-full flex items-center justify-center gap-2 rounded-lg bg-brand-primary px-6 py-3 text-lg font-semibold text-white hover:bg-brand-secondary transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+        className="w-full flex items-center justify-center gap-2 rounded-lg bg-brand-gold px-6 py-3 text-lg font-semibold text-brand-bg hover:bg-brand-gold-light transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {status === "submitting" ? (
           <>

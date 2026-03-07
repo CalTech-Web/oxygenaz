@@ -6,18 +6,18 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-brand-bg">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-brand-dark mb-2">
+        <h1 className="text-4xl font-bold text-brand-white mb-2">
           Privacy Policy
         </h1>
-        <p className="text-sm text-gray-500 mb-10">
+        <p className="text-sm text-brand-muted mb-10">
           Last updated: March 6, 2026
         </p>
 
-        <div className="space-y-8 text-brand-text leading-relaxed">
+        <div className="space-y-8 text-brand-muted leading-relaxed">
           <div>
-            <h2 className="text-2xl font-semibold text-brand-dark mb-3">
+            <h2 className="text-2xl font-semibold text-brand-white mb-3">
               Introduction
             </h2>
             <p>
@@ -31,14 +31,14 @@ export default function PrivacyPolicyPage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-brand-dark mb-3">
+            <h2 className="text-2xl font-semibold text-brand-white mb-3">
               Information We Collect
             </h2>
             <p className="mb-3">
               We may collect information about you in a variety of ways,
               including:
             </p>
-            <h3 className="text-lg font-semibold text-brand-dark mb-2">
+            <h3 className="text-lg font-semibold text-brand-white mb-2">
               Personal Information
             </h3>
             <p className="mb-3">
@@ -47,7 +47,7 @@ export default function PrivacyPolicyPage() {
               information such as your name, email address, phone number, and
               mailing address.
             </p>
-            <h3 className="text-lg font-semibold text-brand-dark mb-2">
+            <h3 className="text-lg font-semibold text-brand-white mb-2">
               Health-Related Information
             </h3>
             <p className="mb-3">
@@ -56,7 +56,7 @@ export default function PrivacyPolicyPage() {
               connection with our services. This information is treated with the
               highest level of confidentiality.
             </p>
-            <h3 className="text-lg font-semibold text-brand-dark mb-2">
+            <h3 className="text-lg font-semibold text-brand-white mb-2">
               Automatically Collected Information
             </h3>
             <p>
@@ -69,7 +69,7 @@ export default function PrivacyPolicyPage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-brand-dark mb-3">
+            <h2 className="text-2xl font-semibold text-brand-white mb-3">
               How We Use Your Information
             </h2>
             <p className="mb-3">
@@ -99,7 +99,7 @@ export default function PrivacyPolicyPage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-brand-dark mb-3">
+            <h2 className="text-2xl font-semibold text-brand-white mb-3">
               Cookies and Tracking Technologies
             </h2>
             <p className="mb-3">
@@ -116,7 +116,7 @@ export default function PrivacyPolicyPage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-brand-dark mb-3">
+            <h2 className="text-2xl font-semibold text-brand-white mb-3">
               Third-Party Services
             </h2>
             <p className="mb-3">
@@ -134,7 +134,7 @@ export default function PrivacyPolicyPage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-brand-dark mb-3">
+            <h2 className="text-2xl font-semibold text-brand-white mb-3">
               Data Security
             </h2>
             <p>
@@ -147,7 +147,7 @@ export default function PrivacyPolicyPage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-brand-dark mb-3">
+            <h2 className="text-2xl font-semibold text-brand-white mb-3">
               Your Rights
             </h2>
             <p>
@@ -159,7 +159,7 @@ export default function PrivacyPolicyPage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-brand-dark mb-3">
+            <h2 className="text-2xl font-semibold text-brand-white mb-3">
               Changes to This Policy
             </h2>
             <p>
@@ -171,7 +171,7 @@ export default function PrivacyPolicyPage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold text-brand-dark mb-3">
+            <h2 className="text-2xl font-semibold text-brand-white mb-3">
               Contact Us
             </h2>
             <p>
@@ -179,14 +179,14 @@ export default function PrivacyPolicyPage() {
               please contact us:
             </p>
             <address className="mt-3 not-italic space-y-1">
-              <p className="font-semibold">Oxygen Wellness LLC</p>
+              <p className="font-semibold text-brand-white">Oxygen Wellness LLC</p>
               <p>20265 N. 59th Ave. Suite B-1</p>
               <p>Glendale, AZ 85308</p>
               <p>
                 Email:{" "}
                 <a
                   href="mailto:Contact@OxygenAZ.com"
-                  className="text-brand-primary hover:text-brand-secondary underline"
+                  className="text-brand-gold hover:text-brand-gold-light underline"
                 >
                   Contact@OxygenAZ.com
                 </a>

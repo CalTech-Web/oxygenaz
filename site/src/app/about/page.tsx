@@ -60,12 +60,14 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-gradient-to-br from-brand-dark to-brand-primary py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+      <section className="relative bg-brand-surface py-20 md:py-28">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(201,168,76,0.08),_transparent_60%)]" />
+        <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
+          <div className="w-16 h-0.5 bg-brand-gold mx-auto mb-6" />
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-white mb-6">
             About Oxygen Wellness
           </h1>
-          <p className="text-lg md:text-xl text-cyan-100 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-brand-muted max-w-2xl mx-auto">
             Evidence-based wellness and expert physical therapy, designed to help
             you recover, perform, and thrive.
           </p>
@@ -73,13 +75,13 @@ export default function AboutPage() {
       </section>
 
       {/* Mission */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-brand-bg">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mb-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-brand-white mb-6 text-center">
             Our Mission
           </h2>
-          <p className="text-lg text-brand-text/80 text-center max-w-3xl mx-auto mb-8">
-            At Oxygen Wellness & Physical Therapy, we deliver evidence-based
+          <p className="text-lg text-brand-muted text-center max-w-3xl mx-auto mb-8">
+            At <span className="text-brand-gold">Oxygen Wellness & Physical Therapy</span>, we deliver evidence-based
             treatments that prioritize results over routine. We believe in
             providing the best possible care without the constraints of
             insurance-driven healthcare - giving our team the freedom to focus
@@ -89,45 +91,45 @@ export default function AboutPage() {
       </section>
 
       {/* Only the Good Stuff */}
-      <section className="py-16 md:py-20 bg-brand-light">
+      <section className="py-16 md:py-20 bg-brand-surface">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-white mb-4">
               &ldquo;Only the Good Stuff&rdquo;
             </h2>
-            <p className="text-lg text-brand-text/80 max-w-3xl mx-auto">
+            <p className="text-lg text-brand-muted max-w-3xl mx-auto">
               Our tagline is not just a slogan - it is a promise. It means every
               service, every technique, and every treatment plan we offer has
               been carefully chosen because it delivers real, measurable results.
             </p>
           </div>
 
-          <div className="bg-white rounded-xl shadow-md p-8 md:p-10">
+          <div className="bg-brand-elevated border border-brand-border rounded-xl p-8 md:p-10">
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <Check className="w-6 h-6 text-brand-accent shrink-0 mt-0.5" />
-                <p className="text-brand-text/80">
+                <Check className="w-6 h-6 text-brand-gold shrink-0 mt-0.5" />
+                <p className="text-brand-muted">
                   We do not offer treatments just because they are trendy. If the
                   science does not support it, we do not do it.
                 </p>
               </div>
               <div className="flex items-start gap-3">
-                <Check className="w-6 h-6 text-brand-accent shrink-0 mt-0.5" />
-                <p className="text-brand-text/80">
+                <Check className="w-6 h-6 text-brand-gold shrink-0 mt-0.5" />
+                <p className="text-brand-muted">
                   Every therapy in our lineup has been vetted for safety,
                   efficacy, and clinical outcomes.
                 </p>
               </div>
               <div className="flex items-start gap-3">
-                <Check className="w-6 h-6 text-brand-accent shrink-0 mt-0.5" />
-                <p className="text-brand-text/80">
+                <Check className="w-6 h-6 text-brand-gold shrink-0 mt-0.5" />
+                <p className="text-brand-muted">
                   Your treatment plan is customized to your body, your goals,
                   and your timeline - not a one-size-fits-all protocol.
                 </p>
               </div>
               <div className="flex items-start gap-3">
-                <Check className="w-6 h-6 text-brand-accent shrink-0 mt-0.5" />
-                <p className="text-brand-text/80">
+                <Check className="w-6 h-6 text-brand-gold shrink-0 mt-0.5" />
+                <p className="text-brand-muted">
                   We educate you at every step so you understand why each
                   treatment matters and how it contributes to your recovery.
                 </p>
@@ -138,26 +140,26 @@ export default function AboutPage() {
       </section>
 
       {/* Dr. Borman Bio */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-brand-bg">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-brand-white mb-6">
                 Meet Dr. Clint Borman
               </h2>
-              <p className="text-brand-text/80 text-lg mb-4">
+              <p className="text-brand-muted text-lg mb-4">
                 Dr. Clint Borman is the founder and lead physical therapist at
                 Oxygen Wellness & Physical Therapy. He earned his Doctor of
                 Physical Therapy degree from the University of St. Augustine in
                 1997 and has spent over 25 years in clinical practice.
               </p>
-              <p className="text-brand-text/80 text-lg mb-4">
+              <p className="text-brand-muted text-lg mb-4">
                 A former collegiate baseball player, Dr. Borman brings a unique
                 athletic perspective to rehabilitation. He understands what it
                 takes to recover from injury and return to the activities you
                 love - because he has been there himself.
               </p>
-              <p className="text-brand-text/80 text-lg mb-6">
+              <p className="text-brand-muted text-lg mb-6">
                 Throughout his career, Dr. Borman has led residency programs,
                 trained clinical staff, and guided healthcare organizations
                 through mergers and acquisitions. His leadership experience
@@ -165,8 +167,8 @@ export default function AboutPage() {
                 qualified to deliver comprehensive, integrated care.
               </p>
 
-              <blockquote className="border-l-4 border-brand-accent pl-6 py-2 mb-6">
-                <p className="text-brand-dark italic text-lg">
+              <blockquote className="border-l-4 border-brand-gold pl-6 py-2 mb-6">
+                <p className="text-brand-muted italic text-lg">
                   &ldquo;Empowers patients through education, delivers care with
                   kindness, humor, and a commitment to your needs.&rdquo;
                 </p>
@@ -176,10 +178,10 @@ export default function AboutPage() {
             {/* Decorative Element */}
             <div className="hidden lg:flex items-center justify-center">
               <div className="relative w-80 h-80">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-accent/20 to-brand-primary/20" />
-                <div className="absolute inset-8 rounded-full bg-gradient-to-br from-brand-accent/30 to-brand-primary/30" />
-                <div className="absolute inset-16 rounded-full bg-gradient-to-br from-brand-accent/40 to-brand-primary/40 flex items-center justify-center">
-                  <Stethoscope className="w-20 h-20 text-brand-primary" />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-brand-gold/10 to-brand-gold/5" />
+                <div className="absolute inset-8 rounded-full bg-gradient-to-br from-brand-gold/15 to-brand-gold/10" />
+                <div className="absolute inset-16 rounded-full bg-gradient-to-br from-brand-gold/20 to-brand-gold/15 flex items-center justify-center">
+                  <Stethoscope className="w-20 h-20 text-brand-gold" />
                 </div>
               </div>
             </div>
@@ -188,13 +190,13 @@ export default function AboutPage() {
       </section>
 
       {/* Key Differentiators */}
-      <section className="py-16 md:py-20 bg-brand-light">
+      <section className="py-16 md:py-20 bg-brand-surface">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mb-3">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-white mb-3">
               What Makes Us Different
             </h2>
-            <p className="text-lg text-brand-text/70 max-w-2xl mx-auto">
+            <p className="text-lg text-brand-muted max-w-2xl mx-auto">
               We built Oxygen Wellness to deliver care the way it should be -
               focused on you, backed by science, and free from unnecessary
               limitations.
@@ -205,15 +207,15 @@ export default function AboutPage() {
             {differentiators.map((item) => (
               <div
                 key={item.title}
-                className="bg-white rounded-xl shadow-md p-6"
+                className="bg-brand-surface border border-brand-border rounded-xl p-6 hover:border-brand-gold/30 transition-colors"
               >
-                <div className="mb-4 w-12 h-12 rounded-lg bg-brand-accent/10 flex items-center justify-center">
-                  <item.icon className="w-6 h-6 text-brand-accent" />
+                <div className="mb-4 w-12 h-12 rounded-lg bg-brand-gold/10 flex items-center justify-center">
+                  <item.icon className="w-6 h-6 text-brand-gold" />
                 </div>
-                <h3 className="text-lg font-semibold text-brand-dark mb-2">
+                <h3 className="text-lg font-semibold text-brand-white mb-2">
                   {item.title}
                 </h3>
-                <p className="text-brand-text/70 text-sm">
+                <p className="text-brand-muted text-sm">
                   {item.description}
                 </p>
               </div>
@@ -223,30 +225,30 @@ export default function AboutPage() {
       </section>
 
       {/* Not Insurance-Driven */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-16 md:py-20 bg-brand-bg">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-dark mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-brand-white mb-6">
             Not Insurance-Driven Healthcare
           </h2>
-          <p className="text-lg text-brand-text/80 mb-4">
+          <p className="text-lg text-brand-muted mb-4">
             Insurance-driven models often limit the treatments a provider can
             offer, the time they can spend with you, and the outcomes they can
             pursue. We chose a different path.
           </p>
-          <p className="text-lg text-brand-text/80 mb-4">
+          <p className="text-lg text-brand-muted mb-4">
             By operating outside the traditional insurance framework, we have the
             freedom to offer the exact treatments your body needs - for as long
             as it needs them. No pre-authorizations, no arbitrary session limits,
             no watered-down care.
           </p>
-          <p className="text-lg text-brand-text/80 mb-8">
+          <p className="text-lg text-brand-muted mb-8">
             We accept HSA and FSA payments and provide detailed receipts for
             reimbursement. Our focus is on delivering results - everything else
             is secondary.
           </p>
           <Link
             href="/contact"
-            className="inline-block rounded-lg bg-brand-primary px-8 py-3 text-lg font-semibold text-white hover:bg-brand-secondary transition-colors"
+            className="inline-block rounded-lg bg-brand-gold px-8 py-3 text-lg font-semibold text-brand-bg hover:bg-brand-gold-light transition-colors"
           >
             Book Your First Visit
           </Link>
