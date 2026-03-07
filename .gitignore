@@ -1,0 +1,5 @@
+.vercel
+site/node_modules/
+site/.next/
+.DS_Store
+.playwright-mcp/
