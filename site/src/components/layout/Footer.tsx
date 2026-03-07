@@ -23,7 +23,7 @@ export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-gradient-to-b from-[#10173E] to-[#0A0F2C]">
       {/* ── Gradient line at top ── */}
-      <div className="h-1 bg-gradient-to-r from-transparent via-[#5CE1E6] to-transparent" />
+      <div className="h-[3px] bg-gradient-to-r from-transparent via-[#5CE1E6] to-transparent" />
 
       {/* ── Background pattern ── */}
       <div
