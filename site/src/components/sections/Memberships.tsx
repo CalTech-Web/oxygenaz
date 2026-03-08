@@ -8,7 +8,7 @@ import { fadeInUp, staggerContainer, viewportOnce } from "@/lib/animations";
 
 export default function Memberships() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden grain">
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -68,7 +68,7 @@ export default function Memberships() {
                     isHighlighted
                       ? "bg-white ring-2 ring-[#5CE1E6] glow-cyan-strong md:scale-[1.06] hover:-translate-y-3 shadow-[0_25px_60px_rgba(0,0,0,0.12)]"
                       : isPlatinum
-                      ? "bg-gradient-to-b from-[#10173E] to-[#0A0F2C] border border-[#5CE1E6]/15 hover:-translate-y-2 shadow-[0_15px_40px_rgba(0,0,0,0.2)]"
+                      ? "bg-gradient-to-b from-[#10173E] to-[#0A0F2C] border border-[#5CE1E6]/25 hover:-translate-y-2 shadow-[0_15px_40px_rgba(0,0,0,0.2)] inner-glow"
                       : "bg-white border border-gray-100 hover:-translate-y-2 shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_15px_40px_rgba(0,0,0,0.1)]"
                   }`}
                 >
@@ -107,7 +107,7 @@ export default function Memberships() {
                     </span>
                     <span
                       className={`text-lg font-medium ${
-                        isPlatinum ? "text-white/50" : "text-[#7A7A7A]"
+                        isPlatinum ? "text-white/50" : "text-[#5A5A5A]"
                       }`}
                     >
                       /mo
@@ -119,7 +119,7 @@ export default function Memberships() {
                     className={`italic text-sm mb-6 border-b pb-4 ${
                       isPlatinum
                         ? "text-white/50 border-white/10"
-                        : "text-[#7A7A7A] border-gray-200"
+                        : "text-[#5A5A5A] border-gray-200"
                     }`}
                   >
                     Ideal for: {plan.idealFor}

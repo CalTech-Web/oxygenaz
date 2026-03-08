@@ -47,7 +47,7 @@ export default function AboutSection() {
 
         <Link
           href="/about"
-          className="inline-block bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white rounded-full px-10 py-5 text-sm font-black uppercase tracking-wider border-2 border-[#5CE1E6] hover:scale-105 hover:shadow-[0_0_40px_rgba(92,225,230,0.4)] transition-all duration-300"
+          className="inline-block bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white rounded-full px-10 py-5 text-sm font-black uppercase tracking-wider border-2 border-[#5CE1E6] hover:scale-105 hover:shadow-[0_0_40px_rgba(92,225,230,0.4)] transition-all duration-300 shadow-[0_8px_30px_rgba(0,74,173,0.35)]"
         >
           Learn More About Oxygen Wellness
         </Link>

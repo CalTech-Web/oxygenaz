@@ -37,12 +37,12 @@ export default function MembershipsPage() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#10173E] tracking-tight accent-underline-center mb-4">
             Not Sure Which Plan Is Right for You?
           </h2>
-          <p className="text-[#7A7A7A] text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-[#5A5A5A] text-lg mb-8 max-w-2xl mx-auto">
             Get in touch and we will help you find the membership that matches your goals. Plus, get a free core service with your first visit.
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider border-2 border-[#5CE1E6] hover:scale-105 hover:shadow-[0_0_30px_rgba(92,225,230,0.3)] transition-all duration-300"
+            className="inline-block bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider border-2 border-[#5CE1E6] shadow-[0_8px_30px_rgba(0,74,173,0.25)] hover:scale-105 hover:shadow-[0_0_30px_rgba(92,225,230,0.3)] transition-all duration-300"
           >
             CONTACT US
           </Link>

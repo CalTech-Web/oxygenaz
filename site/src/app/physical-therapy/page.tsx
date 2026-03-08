@@ -129,7 +129,7 @@ export default function PhysicalTherapyPage() {
               </ul>
               <Link
                 href="/contact"
-                className="inline-block bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider border-2 border-[#5CE1E6] hover:scale-105 hover:shadow-[0_0_30px_rgba(92,225,230,0.3)] transition-all duration-300"
+                className="inline-block bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider border-2 border-[#5CE1E6] shadow-[0_8px_30px_rgba(0,74,173,0.25)] hover:scale-105 hover:shadow-[0_0_30px_rgba(92,225,230,0.3)] transition-all duration-300"
               >
                 BOOK APPOINTMENT
               </Link>
@@ -203,7 +203,7 @@ export default function PhysicalTherapyPage() {
                 href="https://linkedin.com/in/clintborman"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider border-2 border-[#5CE1E6] hover:scale-105 hover:shadow-[0_0_30px_rgba(92,225,230,0.3)] transition-all duration-300"
+                className="inline-block bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider border-2 border-[#5CE1E6] shadow-[0_8px_30px_rgba(0,74,173,0.25)] hover:scale-105 hover:shadow-[0_0_30px_rgba(92,225,230,0.3)] transition-all duration-300"
               >
                 SEE CLINT&apos;S LINKEDIN
               </a>
@@ -229,7 +229,7 @@ export default function PhysicalTherapyPage() {
               </p>
               <Link
                 href="/contact"
-                className="inline-block bg-[#5CE1E6] text-[#10173E] rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider hover:scale-105 hover:shadow-[0_0_40px_rgba(92,225,230,0.5)] transition-all duration-300"
+                className="inline-block bg-[#5CE1E6] text-[#10173E] rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider shadow-[0_8px_30px_rgba(0,74,173,0.25)] hover:scale-105 hover:shadow-[0_0_40px_rgba(92,225,230,0.5)] transition-all duration-300"
               >
                 BOOK APPOINTMENT
               </Link>
@@ -287,7 +287,7 @@ function PTFAQItem({ question, answer }: { question: string; answer: string }) {
         </svg>
       </summary>
       <div className="px-6 pb-4">
-        <p className="text-[#7A7A7A] leading-relaxed">{answer}</p>
+        <p className="text-[#5A5A5A] leading-relaxed">{answer}</p>
       </div>
     </details>
   );

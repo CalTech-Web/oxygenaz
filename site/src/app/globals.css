@@ -173,6 +173,36 @@ html {
   border-color: #5CE1E6;
 }
 
+/* ── Bottom vignette for hero sections ── */
+.vignette-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to top, #ffffff, transparent);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.vignette-bottom-dark::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to top, #0A0F2C, transparent);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ── Subtle inner shadow for depth ── */
+.inner-glow {
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), inset 0 -1px 0 rgba(0,0,0,0.1);
+}
+
 /* ── Scrollbar hide ── */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;

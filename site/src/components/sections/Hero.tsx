@@ -20,6 +20,9 @@ export default function Hero() {
       <div className="absolute -bottom-32 -left-32 w-[600px] h-[600px] rounded-full bg-[#004AAD]/25 blur-[120px] pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-[#5CE1E6]/5 blur-[80px] pointer-events-none" />
 
+      {/* Bottom vignette fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white/10 to-transparent pointer-events-none z-[1]" />
+
       {/* Content */}
       <div className="relative z-10 text-center max-w-[1200px] mx-auto px-4">
         {/* Tagline pill */}
@@ -42,14 +45,14 @@ export default function Hero() {
           animate="visible"
         >
           Only the{" "}
-          <span className="text-[#5CE1E6] drop-shadow-[0_0_30px_rgba(92,225,230,0.4)]">
+          <span className="text-[#5CE1E6] drop-shadow-[0_0_40px_rgba(92,225,230,0.5)]">
             Good
           </span>{" "}
           Stuff
         </motion.h2>
 
         <motion.p
-          className="text-white/80 text-lg md:text-2xl max-w-2xl mx-auto mb-14 leading-relaxed font-light"
+          className="text-white/75 text-lg md:text-xl max-w-2xl mx-auto mb-14 leading-relaxed font-light"
           variants={heroSubtext}
           initial="hidden"
           animate="visible"

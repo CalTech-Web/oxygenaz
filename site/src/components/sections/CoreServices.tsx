@@ -76,16 +76,16 @@ export default function CoreServices() {
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#5CE1E6] to-[#004AAD] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
               {/* Content at bottom */}
-              <div className="absolute bottom-0 left-0 right-0 p-7">
+              <div className="absolute bottom-0 left-0 right-0 p-7 bg-gradient-to-t from-black/30 to-transparent">
                 <h3
-                  className="text-white text-2xl font-black mb-3 tracking-tight"
-                  style={{ textShadow: "2px 3px 0px rgba(0,0,0,0.4)" }}
+                  className="text-white text-2xl font-black mb-2 tracking-tight"
+                  style={{ textShadow: "1px 2px 4px rgba(0,0,0,0.5)" }}
                 >
                   {service.title}
                 </h3>
-                <div className="flex items-center gap-2 text-[#5CE1E6] text-sm font-black uppercase tracking-wider">
+                <div className="flex items-center gap-2 text-[#5CE1E6] text-sm font-bold uppercase tracking-wider opacity-80 group-hover:opacity-100 transition-opacity duration-300">
                   <span>Learn More</span>
-                  <span className="transform translate-x-0 group-hover:translate-x-3 transition-transform duration-300">
+                  <span className="transform translate-x-0 group-hover:translate-x-2 transition-transform duration-300">
                     &rarr;
                   </span>
                 </div>

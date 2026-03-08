@@ -12,7 +12,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#10173E] via-[#10173E] to-[#004AAD] py-20 md:py-28">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#10173E] via-[#10173E] to-[#004AAD] py-20 md:py-28 grain">
         {/* Decorative orbs */}
         <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-[#5CE1E6]/8 blur-[100px] pointer-events-none" />
         <div className="absolute -bottom-20 -left-20 w-[300px] h-[300px] rounded-full bg-[#004AAD]/20 blur-[100px] pointer-events-none" />
@@ -58,7 +58,7 @@ export default function ContactPage() {
                       href={SITE.mapsUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#7A7A7A] hover:text-[#004AAD] transition-colors"
+                      className="text-[#5A5A5A] hover:text-[#004AAD] transition-colors"
                     >
                       {SITE.address}<br />
                       {SITE.city}, {SITE.state} {SITE.zip}
@@ -76,7 +76,7 @@ export default function ContactPage() {
                     <h3 className="font-black text-[#10173E] mb-1">Phone</h3>
                     <a
                       href={SITE.phoneHref}
-                      className="text-[#7A7A7A] hover:text-[#004AAD] transition-colors"
+                      className="text-[#5A5A5A] hover:text-[#004AAD] transition-colors"
                     >
                       {SITE.phone}
                     </a>
@@ -93,7 +93,7 @@ export default function ContactPage() {
                     <h3 className="font-black text-[#10173E] mb-1">Email</h3>
                     <a
                       href={`mailto:${SITE.email}`}
-                      className="text-[#7A7A7A] hover:text-[#004AAD] transition-colors"
+                      className="text-[#5A5A5A] hover:text-[#004AAD] transition-colors"
                     >
                       {SITE.email}
                     </a>
@@ -108,10 +108,10 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-black text-[#10173E] mb-1">Hours</h3>
-                    <p className="text-[#7A7A7A]">
+                    <p className="text-[#5A5A5A]">
                       {SITE.hours.weekday.label}: {SITE.hours.weekday.open} - {SITE.hours.weekday.close}
                     </p>
-                    <p className="text-[#7A7A7A]">
+                    <p className="text-[#5A5A5A]">
                       {SITE.hours.weekend.label}: {SITE.hours.weekend.open} - {SITE.hours.weekend.close}
                     </p>
                   </div>

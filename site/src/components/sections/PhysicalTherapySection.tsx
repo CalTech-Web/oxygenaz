@@ -34,10 +34,10 @@ export default function PhysicalTherapySection() {
       >
         {/* Pill tags */}
         <motion.div variants={fadeInUp} className="flex flex-wrap items-center justify-center gap-3 mb-8">
-          <span className="bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white text-xs font-black uppercase tracking-[0.15em] rounded-full px-6 py-2.5 shadow-lg">
+          <span className="bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white text-xs font-black uppercase tracking-[0.15em] rounded-full px-6 py-2.5 shadow-[0_4px_15px_rgba(0,74,173,0.3)]">
             Wellness Services
           </span>
-          <span className="bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white text-xs font-black uppercase tracking-[0.15em] rounded-full px-6 py-2.5 shadow-lg">
+          <span className="bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white text-xs font-black uppercase tracking-[0.15em] rounded-full px-6 py-2.5 shadow-[0_4px_15px_rgba(0,74,173,0.3)]">
             Sports Medicine / Physical Therapy
           </span>
         </motion.div>
@@ -56,8 +56,11 @@ export default function PhysicalTherapySection() {
             <motion.div
               key={index}
               variants={fadeInUp}
-              className="text-left p-8 rounded-2xl bg-gradient-to-br from-[#EDF2F9]/80 to-white border-l-4 border-[#5CE1E6] shadow-[0_2px_12px_rgba(0,0,0,0.04)] card-lift"
+              className="text-left p-8 rounded-2xl bg-gradient-to-br from-[#EDF2F9]/80 to-white border-l-4 border-[#5CE1E6] shadow-[0_2px_12px_rgba(0,0,0,0.04)] card-lift group"
             >
+              <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#5CE1E6]/10 text-[#004AAD] text-sm font-black mb-4 group-hover:bg-[#5CE1E6]/20 transition-colors">
+                {String(index + 1).padStart(2, '0')}
+              </span>
               <h3 className="text-xl font-black text-[#10173E] mb-3">
                 {feature.title}
               </h3>
@@ -72,7 +75,7 @@ export default function PhysicalTherapySection() {
         <motion.div variants={fadeInUp}>
           <Link
             href="/physical-therapy"
-            className="inline-block bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white rounded-full px-10 py-5 text-sm font-black uppercase tracking-wider border-2 border-[#5CE1E6] hover:scale-105 hover:shadow-[0_0_40px_rgba(92,225,230,0.4)] transition-all duration-300"
+            className="inline-block bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white rounded-full px-10 py-5 text-sm font-black uppercase tracking-wider border-2 border-[#5CE1E6] hover:scale-105 hover:shadow-[0_0_40px_rgba(92,225,230,0.4)] transition-all duration-300 shadow-[0_8px_30px_rgba(0,74,173,0.25)]"
           >
             Learn More About Physical Therapy
           </Link>

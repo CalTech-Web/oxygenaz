@@ -82,7 +82,7 @@ export default function AboutPage() {
                 href="https://linkedin.com/in/clintborman"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider border-2 border-[#5CE1E6] hover:scale-105 hover:shadow-[0_0_30px_rgba(92,225,230,0.3)] transition-all duration-300"
+                className="inline-block bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider border-2 border-[#5CE1E6] shadow-[0_8px_30px_rgba(0,74,173,0.25)] hover:scale-105 hover:shadow-[0_0_30px_rgba(92,225,230,0.3)] transition-all duration-300"
               >
                 SEE CLINT&apos;S LINKEDIN
               </a>
@@ -93,7 +93,7 @@ export default function AboutPage() {
 
       {/* It's All About YOU */}
       <section
-        className="relative min-h-[504px] flex items-center justify-center bg-cover bg-center overflow-hidden"
+        className="relative min-h-[504px] flex items-center justify-center bg-cover bg-center overflow-hidden grain"
         style={{
           backgroundImage: "url('/images/heroes/compression-bg.webp')",
         }}
@@ -120,7 +120,7 @@ export default function AboutPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider border-2 border-[#5CE1E6] hover:scale-105 hover:shadow-[0_0_30px_rgba(92,225,230,0.3)] transition-all duration-300"
+            className="inline-block bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider border-2 border-[#5CE1E6] shadow-[0_8px_30px_rgba(0,74,173,0.25)] hover:scale-105 hover:shadow-[0_0_30px_rgba(92,225,230,0.3)] transition-all duration-300"
           >
             BOOK NOW
           </Link>

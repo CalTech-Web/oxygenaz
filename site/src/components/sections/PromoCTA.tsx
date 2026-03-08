@@ -10,7 +10,7 @@ interface PromoCTAProps {
 
 export default function PromoCTA({ variant = "both" }: PromoCTAProps) {
   const consultation = (
-    <section className="relative py-16 bg-gradient-to-br from-[#0A0F2C] via-[#10173E] to-[#004AAD] overflow-hidden">
+    <section className="relative py-16 bg-gradient-to-br from-[#0A0F2C] via-[#10173E] to-[#004AAD] overflow-hidden grain">
       {/* Decorative orbs */}
       <div className="absolute -right-32 -top-32 w-[600px] h-[600px] rounded-full bg-[#5CE1E6]/12 blur-[100px] pointer-events-none" />
       <div className="absolute -left-20 -bottom-20 w-[400px] h-[400px] rounded-full bg-[#004AAD]/20 blur-[80px] pointer-events-none" />
@@ -61,7 +61,7 @@ export default function PromoCTA({ variant = "both" }: PromoCTAProps) {
         </h2>
         <Link
           href="/contact"
-          className="inline-block bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white rounded-full px-10 py-5 font-black text-sm uppercase tracking-wider border-2 border-[#5CE1E6] hover:scale-105 animate-pulse-glow transition-transform duration-300"
+          className="inline-block bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white rounded-full px-10 py-5 font-black text-sm uppercase tracking-wider border-2 border-[#5CE1E6] hover:scale-105 animate-pulse-glow transition-transform duration-300 shadow-[0_8px_30px_rgba(0,74,173,0.3)]"
         >
           Book My Appointment
         </Link>

@@ -23,7 +23,7 @@ export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-gradient-to-b from-[#10173E] to-[#0A0F2C]">
       {/* ── Gradient line at top ── */}
-      <div className="h-[3px] bg-gradient-to-r from-transparent via-[#5CE1E6] to-transparent" />
+      <div className="h-[3px] bg-gradient-to-r from-transparent via-[#5CE1E6]/80 to-transparent" />
 
       {/* ── Background pattern ── */}
       <div
@@ -163,16 +163,16 @@ export default function Footer() {
             <h3 className="text-base font-black uppercase tracking-wider text-[#5CE1E6]">
               Hours
             </h3>
-            <dl className="mt-4 space-y-2 text-sm text-white/70">
-              <div className="flex justify-between gap-4">
+            <dl className="mt-4 space-y-0 text-sm text-white/70">
+              <div className="flex justify-between gap-4 py-2.5 border-b border-white/5">
                 <dt>{SITE.hours.weekday.label}</dt>
-                <dd className="whitespace-nowrap">
+                <dd className="whitespace-nowrap font-medium text-white/80">
                   {SITE.hours.weekday.open} - {SITE.hours.weekday.close}
                 </dd>
               </div>
-              <div className="flex justify-between gap-4">
+              <div className="flex justify-between gap-4 py-2.5">
                 <dt>{SITE.hours.weekend.label}</dt>
-                <dd className="whitespace-nowrap">
+                <dd className="whitespace-nowrap font-medium text-white/80">
                   {SITE.hours.weekend.open} - {SITE.hours.weekend.close}
                 </dd>
               </div>
@@ -225,6 +225,7 @@ export default function Footer() {
               href="https://caltechweb.com"
               target="_blank"
               rel="noopener noreferrer"
+              className="transition-opacity hover:opacity-80"
             >
               <Image
                 src="/images/badges/caltech-web.png"

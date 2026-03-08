@@ -7,7 +7,7 @@ import { fadeInLeft, fadeInRight, viewportOnce } from "@/lib/animations";
 
 export default function AppDownload() {
   return (
-    <section className="py-16 md:py-20 bg-gradient-to-br from-[#0A0F2C] via-[#10173E] to-[#004AAD] relative overflow-hidden">
+    <section className="py-16 md:py-20 bg-gradient-to-br from-[#0A0F2C] via-[#10173E] to-[#004AAD] relative overflow-hidden grain">
       {/* Decorative orbs - bigger */}
       <div className="absolute top-0 right-0 w-[700px] h-[700px] rounded-full bg-[#5CE1E6]/8 blur-[120px] pointer-events-none" />
       <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full bg-[#004AAD]/20 blur-[80px] pointer-events-none" />

@@ -53,7 +53,7 @@ export default function WeightLossPage() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight accent-underline text-[#10173E] mb-6">
             What is the {service.name}?
           </h2>
-          <p className="text-[#7A7A7A] text-lg leading-relaxed max-w-4xl">
+          <p className="text-[#5A5A5A] text-lg leading-relaxed max-w-4xl">
             {service.description}
           </p>
         </div>
@@ -74,7 +74,7 @@ export default function WeightLossPage() {
                 <svg className="w-5 h-5 text-[#5CE1E6] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                <span className="text-[#7A7A7A]">{benefit}</span>
+                <span className="text-[#5A5A5A]">{benefit}</span>
               </div>
             ))}
           </div>
@@ -87,7 +87,7 @@ export default function WeightLossPage() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight accent-underline text-[#10173E] mb-6">
             What to Expect
           </h2>
-          <p className="text-[#7A7A7A] text-lg leading-relaxed max-w-4xl">
+          <p className="text-[#5A5A5A] text-lg leading-relaxed max-w-4xl">
             Your program begins with an initial consultation and metabolic assessment to understand your body, goals, and lifestyle. From there, we build a customized weight loss plan that may include nutrition guidance, targeted treatments, and ongoing accountability check-ins. This is not a one-size-fits-all approach - every plan is tailored to help you achieve and maintain your ideal weight safely and effectively.
           </p>
         </div>
@@ -118,7 +118,7 @@ export default function WeightLossPage() {
                 <h3 className="text-lg font-bold text-[#10173E] mb-2 group-hover:text-[#004AAD] transition-colors">
                   {rs.name}
                 </h3>
-                <p className="text-sm text-[#7A7A7A] mb-3">
+                <p className="text-sm text-[#5A5A5A] mb-3">
                   {rs.shortDescription}
                 </p>
                 <span className="text-[#004AAD] text-sm font-bold uppercase tracking-wider">
@@ -142,7 +142,7 @@ export default function WeightLossPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-[#5CE1E6] text-[#10173E] rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider hover:scale-105 hover:shadow-[0_0_40px_rgba(92,225,230,0.5)] transition-all duration-300"
+            className="inline-block bg-[#5CE1E6] text-[#10173E] rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider shadow-[0_8px_30px_rgba(0,74,173,0.25)] hover:scale-105 hover:shadow-[0_0_40px_rgba(92,225,230,0.5)] transition-all duration-300"
           >
             BOOK APPOINTMENT
           </Link>

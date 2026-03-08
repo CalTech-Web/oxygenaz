@@ -160,10 +160,10 @@ export default function Header() {
 
       {/* ── Row 2: Main Navigation ── */}
       <div
-        className={`sticky top-0 z-50 transition-all duration-500 ${
+        className={`sticky top-0 z-50 transition-all duration-500 border-b-2 ${
           scrolled
-            ? "bg-white/95 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.08)]"
-            : "bg-white shadow-[0_1px_3px_rgba(0,0,0,0.06)]"
+            ? "bg-white/95 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.08)] border-[#5CE1E6]/30"
+            : "bg-white shadow-[0_1px_3px_rgba(0,0,0,0.06)] border-transparent"
         }`}
       >
         <div className="flex items-center justify-between px-4 py-5 lg:px-20">
@@ -224,7 +224,7 @@ export default function Header() {
           <div className="hidden lg:block">
             <Link
               href="/contact"
-              className="rounded-full bg-gradient-to-r from-[#004AAD] to-[#0053DA] px-6 py-3 text-sm font-black uppercase tracking-wider text-white border-2 border-[#5CE1E6] hover:scale-105 hover:shadow-[0_0_30px_rgba(92,225,230,0.4)] transition-all duration-300"
+              className="rounded-full bg-gradient-to-r from-[#004AAD] to-[#0053DA] px-6 py-3 text-sm font-black uppercase tracking-wider text-white border-2 border-[#5CE1E6] hover:scale-105 hover:shadow-[0_0_30px_rgba(92,225,230,0.4)] transition-all duration-300 shadow-[0_4px_15px_rgba(0,74,173,0.25)]"
             >
               Book Now
             </Link>
