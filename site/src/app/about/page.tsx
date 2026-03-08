@@ -21,7 +21,7 @@ export default function AboutPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#10173E]/80 via-[#10173E]/75 to-[#004AAD]/60" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#10173E]/90 via-[#10173E]/88 to-[#004AAD]/80" />
         </div>
 
         {/* Decorative orbs */}
@@ -99,8 +99,8 @@ export default function AboutPage() {
         }}
       >
         {/* Multi-layer overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#10173E]/70 via-[#10173E]/80 to-[#0A0F2C]/90" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#004AAD]/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#10173E]/82 via-[#10173E]/88 to-[#0A0F2C]/95" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#004AAD]/12 to-transparent" />
 
         {/* Decorative orb */}
         <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-[#5CE1E6]/10 blur-[100px] pointer-events-none" />

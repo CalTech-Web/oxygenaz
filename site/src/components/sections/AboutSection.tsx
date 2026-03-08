@@ -13,8 +13,8 @@ export default function AboutSection() {
       }}
     >
       {/* Multi-layer overlay - stronger */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F2C]/80 via-[#10173E]/85 to-[#0A0F2C]/95" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#004AAD]/25 via-transparent to-[#5CE1E6]/10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F2C]/88 via-[#10173E]/92 to-[#0A0F2C]/97" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#004AAD]/15 via-transparent to-[#5CE1E6]/5" />
 
       {/* Decorative orbs */}
       <div className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full bg-[#5CE1E6]/12 blur-[100px] pointer-events-none" />

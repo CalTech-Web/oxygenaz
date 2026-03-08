@@ -12,8 +12,8 @@ export default function Hero() {
       style={{ backgroundImage: "url('/images/heroes/home-hero.jpg')" }}
     >
       {/* Multi-layered overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F2C]/70 via-[#10173E]/80 to-[#0A0F2C]/95" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#004AAD]/25 via-transparent to-[#5CE1E6]/8" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F2C]/82 via-[#10173E]/88 to-[#0A0F2C]/97" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#004AAD]/20 via-transparent to-[#5CE1E6]/5" />
 
       {/* Decorative gradient orbs - bigger, brighter */}
       <div className="absolute -top-32 -right-32 w-[800px] h-[800px] rounded-full bg-[#5CE1E6]/15 blur-[150px] pointer-events-none" />

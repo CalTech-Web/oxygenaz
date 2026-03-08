@@ -18,7 +18,7 @@ export default function Memberships() {
       />
 
       {/* Dark overlay - deeper */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F2C]/95 via-[#10173E]/90 to-[#0A0F2C]/95" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F2C]/97 via-[#10173E]/95 to-[#0A0F2C]/97" />
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{

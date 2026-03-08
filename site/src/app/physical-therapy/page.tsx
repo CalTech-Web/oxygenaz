@@ -70,8 +70,8 @@ export default function PhysicalTherapyPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#10173E]/60 via-[#10173E]/80 to-[#0A0F2C]/95" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#004AAD]/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#10173E]/78 via-[#10173E]/88 to-[#0A0F2C]/97" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#004AAD]/12 to-transparent" />
         </div>
         <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-[#5CE1E6]/8 blur-[100px] pointer-events-none" />
         <div className="absolute -bottom-20 -left-20 w-[300px] h-[300px] rounded-full bg-[#004AAD]/20 blur-[80px] pointer-events-none" />
