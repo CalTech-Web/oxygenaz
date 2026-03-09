@@ -15,7 +15,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-20 md:py-28 bg-[#FFF8F0] relative overflow-hidden">
+    <section className="py-20 md:py-28 bg-[#F5F7FA] relative overflow-hidden">
       <div className="relative z-10 mx-auto max-w-6xl px-4 lg:px-20">
         <motion.div
           className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16"
@@ -29,16 +29,16 @@ export default function FAQ() {
             variants={fadeInLeft}
             className="lg:col-span-4 lg:sticky lg:top-32 lg:self-start"
           >
-            <h2 className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1A1A2E] tracking-tight leading-tight">
+            <h2 className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0B2447] tracking-tight leading-tight">
               Frequently Asked Questions
             </h2>
-            <div className="h-1 w-20 rounded-full bg-gradient-to-r from-[#FF6B6B] to-[#7C3AED] mt-4 mb-6" />
-            <p className="text-[#6B7280] text-base mb-6">
+            <div className="h-1 w-20 rounded-full bg-gradient-to-r from-[#00B4D8] to-[#0B2447] mt-4 mb-6" />
+            <p className="text-[#6B7B8D] text-base mb-6">
               Have more questions? We&apos;re here to help.
             </p>
             <a
               href={SITE.phoneHref}
-              className="inline-flex items-center gap-2 text-[#FF6B6B] font-bold hover:underline"
+              className="inline-flex items-center gap-2 text-[#00B4D8] font-bold hover:underline"
             >
               <Phone className="h-4 w-4" />
               Call us at {SITE.phone}
@@ -53,22 +53,22 @@ export default function FAQ() {
                 variants={fadeInUp}
                 className={`rounded-2xl bg-white overflow-hidden transition-all duration-300 ${
                   openIndex === index
-                    ? "shadow-[0_8px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#FF6B6B]"
-                    : "shadow-[0_2px_8px_rgba(0,0,0,0.04)] border-l-4 border-transparent hover:shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:border-[#FF6B6B]/30"
+                    ? "shadow-[0_8px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#00B4D8]"
+                    : "shadow-[0_2px_8px_rgba(0,0,0,0.04)] border-l-4 border-transparent hover:shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:border-[#00B4D8]/30"
                 }`}
               >
                 <button
                   onClick={() => toggle(index)}
                   className="w-full flex items-center justify-between text-left px-7 py-6 gap-4"
                 >
-                  <span className="text-[#1A1A2E] text-lg font-bold">
+                  <span className="text-[#0B2447] text-lg font-bold">
                     {item.question}
                   </span>
                   <div
                     className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
                       openIndex === index
-                        ? "bg-[#FF6B6B] text-white"
-                        : "bg-[#FFF0E6] text-[#FF6B6B]"
+                        ? "bg-[#00B4D8] text-white"
+                        : "bg-[#EEF1F5] text-[#00B4D8]"
                     }`}
                   >
                     <ChevronDown
@@ -87,7 +87,7 @@ export default function FAQ() {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <p className="text-[#6B7280] leading-relaxed px-7 pb-6 text-base">
+                      <p className="text-[#6B7B8D] leading-relaxed px-7 pb-6 text-base">
                         {item.answer}
                       </p>
                     </motion.div>

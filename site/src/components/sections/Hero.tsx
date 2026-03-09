@@ -9,9 +9,9 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-white">
       {/* Gradient mesh blobs */}
-      <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] rounded-full bg-[#FF6B6B]/20 blur-[120px] pointer-events-none animate-mesh" />
-      <div className="absolute top-[20%] right-[10%] w-[400px] h-[400px] rounded-full bg-[#7C3AED]/15 blur-[100px] pointer-events-none animate-mesh" style={{ animationDelay: "-3s" }} />
-      <div className="absolute bottom-[10%] right-[15%] w-[350px] h-[350px] rounded-full bg-[#FF8C42]/15 blur-[100px] pointer-events-none animate-mesh" style={{ animationDelay: "-6s" }} />
+      <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] rounded-full bg-[#00B4D8]/20 blur-[120px] pointer-events-none animate-mesh" />
+      <div className="absolute top-[20%] right-[10%] w-[400px] h-[400px] rounded-full bg-[#0B2447]/15 blur-[100px] pointer-events-none animate-mesh" style={{ animationDelay: "-3s" }} />
+      <div className="absolute bottom-[10%] right-[15%] w-[350px] h-[350px] rounded-full bg-[#00B4D8]/15 blur-[100px] pointer-events-none animate-mesh" style={{ animationDelay: "-6s" }} />
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-6xl px-4 lg:px-20 py-32 md:py-0">
@@ -20,7 +20,7 @@ export default function Hero() {
           <div className="md:col-span-7">
             {/* Accent bar */}
             <motion.div
-              className="h-1 w-20 rounded-full bg-gradient-to-r from-[#FF6B6B] to-[#7C3AED] mb-8"
+              className="h-1 w-20 rounded-full bg-gradient-to-r from-[#00B4D8] to-[#0B2447] mb-8"
               initial={{ opacity: 0, scaleX: 0 }}
               animate={{ opacity: 1, scaleX: 1 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
@@ -28,7 +28,7 @@ export default function Hero() {
             />
 
             <motion.h1
-              className="font-[var(--font-display)] text-5xl sm:text-6xl lg:text-[84px] font-extrabold leading-[0.95] mb-8 tracking-tight text-[#1A1A2E]"
+              className="font-[var(--font-display)] text-5xl sm:text-6xl lg:text-[84px] font-extrabold leading-[0.95] mb-8 tracking-tight text-[#0B2447]"
               variants={heroText}
               initial="hidden"
               animate="visible"
@@ -41,7 +41,7 @@ export default function Hero() {
             </motion.h1>
 
             <motion.p
-              className="text-[#4A4A6A] text-lg md:text-xl max-w-lg mb-10 leading-relaxed"
+              className="text-[#5A6878] text-lg md:text-xl max-w-lg mb-10 leading-relaxed"
               variants={heroSubtext}
               initial="hidden"
               animate="visible"
@@ -59,13 +59,13 @@ export default function Hero() {
             >
               <Link
                 href="/contact"
-                className="bg-gradient-to-r from-[#FF6B6B] to-[#E84545] text-white rounded-full px-10 py-5 font-black text-sm uppercase tracking-wider hover:scale-105 hover:shadow-[0_0_30px_rgba(255,107,107,0.4)] transition-all duration-300 shadow-[0_8px_30px_rgba(255,107,107,0.25)]"
+                className="bg-gradient-to-r from-[#00B4D8] to-[#0096B7] text-white rounded-full px-10 py-5 font-black text-sm uppercase tracking-wider hover:scale-105 hover:shadow-[0_0_30px_rgba(0,180,216,0.4)] transition-all duration-300 shadow-[0_8px_30px_rgba(0,180,216,0.25)]"
               >
                 Book Today
               </Link>
               <Link
                 href="/services/cryotherapy"
-                className="border-2 border-[#1A1A2E]/20 text-[#1A1A2E] rounded-full px-10 py-5 font-black text-sm uppercase tracking-wider hover:border-[#FF6B6B] hover:text-[#FF6B6B] hover:scale-105 transition-all duration-300"
+                className="border-2 border-[#0B2447]/20 text-[#0B2447] rounded-full px-10 py-5 font-black text-sm uppercase tracking-wider hover:border-[#00B4D8] hover:text-[#00B4D8] hover:scale-105 transition-all duration-300"
               >
                 View Services
               </Link>
@@ -78,7 +78,7 @@ export default function Hero() {
       </div>
 
       {/* Diagonal bottom clip overlay */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-[#1A1A2E]" style={{ clipPath: "polygon(0 100%, 100% 40%, 100% 100%)" }} />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-[#0B2447]" style={{ clipPath: "polygon(0 100%, 100% 40%, 100% 100%)" }} />
 
       {/* Scroll indicator */}
       <motion.div
@@ -86,8 +86,8 @@ export default function Hero() {
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
       >
-        <span className="text-[#1A1A2E]/30 text-[10px] uppercase tracking-[0.3em] font-bold">Scroll</span>
-        <ChevronDown className="w-6 h-6 text-[#FF6B6B]/50" />
+        <span className="text-[#0B2447]/30 text-[10px] uppercase tracking-[0.3em] font-bold">Scroll</span>
+        <ChevronDown className="w-6 h-6 text-[#00B4D8]/50" />
       </motion.div>
     </section>
   );

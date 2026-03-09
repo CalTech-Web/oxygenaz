@@ -25,21 +25,21 @@ const placeholderReviews = [
 
 export default function TestimonialsPlaceholder() {
   return (
-    <section className="relative py-20 md:py-28 bg-[#FFF8F0] overflow-hidden">
+    <section className="relative py-20 md:py-28 bg-[#F5F7FA] overflow-hidden">
       <div className="mx-auto max-w-6xl px-4 lg:px-20">
         {/* Heading */}
         <div className="text-center mb-14">
-          <h2 className="font-[var(--font-display)] text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A1A2E] tracking-tight">
+          <h2 className="font-[var(--font-display)] text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0B2447] tracking-tight">
             What Our Clients Say
           </h2>
-          <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-[#FF6B6B] to-[#7C3AED]" />
-          <p className="mt-4 text-[#6B7280]">
+          <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-[#00B4D8] to-[#0B2447]" />
+          <p className="mt-4 text-[#6B7B8D]">
             See why our clients love us on{" "}
             <a
               href={SITE.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-bold text-[#FF6B6B] hover:underline"
+              className="font-bold text-[#00B4D8] hover:underline"
             >
               Google Reviews
             </a>
@@ -65,24 +65,24 @@ export default function TestimonialsPlaceholder() {
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
-                    className="h-5 w-5 fill-[#FF6B6B] text-[#FF6B6B]"
+                    className="h-5 w-5 fill-[#00B4D8] text-[#00B4D8]"
                   />
                 ))}
               </div>
 
               {/* Quote */}
-              <p className="text-[#4A4A6A] text-sm leading-relaxed italic">
+              <p className="text-[#5A6878] text-sm leading-relaxed italic">
                 &quot;{review.text}&quot;
               </p>
 
               {/* Author */}
               <div className="mt-5 flex items-center gap-3">
-                <div className="h-10 w-10 rounded-full bg-gradient-to-r from-[#FF6B6B] to-[#7C3AED] flex items-center justify-center text-white font-bold text-sm">
+                <div className="h-10 w-10 rounded-full bg-gradient-to-r from-[#00B4D8] to-[#0B2447] flex items-center justify-center text-white font-bold text-sm">
                   {review.name.charAt(0)}
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-[#1A1A2E]">{review.name}</p>
-                  <p className="text-xs text-[#6B7280]">Verified Google Review</p>
+                  <p className="text-sm font-bold text-[#0B2447]">{review.name}</p>
+                  <p className="text-xs text-[#6B7B8D]">Verified Google Review</p>
                 </div>
               </div>
             </motion.div>

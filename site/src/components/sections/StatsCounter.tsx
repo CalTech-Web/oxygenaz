@@ -43,10 +43,10 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
 
 export default function StatsCounter() {
   return (
-    <section className="relative bg-[#1A1A2E] py-16 md:py-20 overflow-hidden">
+    <section className="relative bg-[#0B2447] py-16 md:py-20 overflow-hidden">
       {/* Gradient mesh accent */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-[#FF6B6B]/10 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full bg-[#7C3AED]/10 blur-[100px] pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-[#00B4D8]/10 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full bg-[#0B2447]/10 blur-[100px] pointer-events-none" />
 
       <motion.div
         className="relative z-10 mx-auto max-w-6xl px-4 lg:px-20"

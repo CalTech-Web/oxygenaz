@@ -37,10 +37,10 @@ export default function HowItWorks() {
       <div className="mx-auto max-w-6xl px-4 lg:px-20">
         {/* Heading */}
         <div className="text-center mb-14">
-          <h2 className="font-[var(--font-display)] text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1A1A2E] tracking-tight">
+          <h2 className="font-[var(--font-display)] text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0B2447] tracking-tight">
             How It Works
           </h2>
-          <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-[#FF6B6B] to-[#7C3AED]" />
+          <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-[#00B4D8] to-[#0B2447]" />
         </div>
 
         {/* Steps */}
@@ -52,7 +52,7 @@ export default function HowItWorks() {
           viewport={{ once: true, margin: "-60px" }}
         >
           {/* Connecting line - desktop only */}
-          <div className="absolute top-16 left-[12%] right-[12%] h-0.5 bg-gradient-to-r from-[#FF6B6B] via-[#FF8C42] to-[#7C3AED] hidden md:block" />
+          <div className="absolute top-16 left-[12%] right-[12%] h-0.5 bg-gradient-to-r from-[#00B4D8] via-[#00B4D8] to-[#0B2447] hidden md:block" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-6">
             {steps.map((step) => (
@@ -62,18 +62,18 @@ export default function HowItWorks() {
                 className="relative flex flex-col items-center text-center"
               >
                 {/* Circle with number */}
-                <div className="relative z-10 flex h-32 w-32 flex-col items-center justify-center rounded-full bg-white shadow-[0_8px_40px_rgba(255,107,107,0.15)] border-2 border-[#FFF0E6]">
+                <div className="relative z-10 flex h-32 w-32 flex-col items-center justify-center rounded-full bg-white shadow-[0_8px_40px_rgba(0,180,216,0.15)] border-2 border-[#EEF1F5]">
                   <span className="font-[var(--font-display)] text-3xl font-extrabold text-gradient-vibrant">
                     {step.number}
                   </span>
-                  <step.icon className="mt-1 h-6 w-6 text-[#FF6B6B]" />
+                  <step.icon className="mt-1 h-6 w-6 text-[#00B4D8]" />
                 </div>
 
                 {/* Text */}
-                <h3 className="mt-5 font-[var(--font-display)] text-xl font-bold text-[#1A1A2E]">
+                <h3 className="mt-5 font-[var(--font-display)] text-xl font-bold text-[#0B2447]">
                   {step.title}
                 </h3>
-                <p className="mt-2 text-sm text-[#6B7280] max-w-[200px]">
+                <p className="mt-2 text-sm text-[#6B7B8D] max-w-[200px]">
                   {step.description}
                 </p>
               </motion.div>

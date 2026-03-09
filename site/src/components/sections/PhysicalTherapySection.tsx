@@ -25,7 +25,7 @@ const features = [
 
 export default function PhysicalTherapySection() {
   return (
-    <section className="py-20 md:py-28 bg-[#FFF8F0] relative overflow-hidden">
+    <section className="py-20 md:py-28 bg-[#F5F7FA] relative overflow-hidden">
       <div className="mx-auto max-w-6xl px-4 lg:px-20">
         <motion.div
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
@@ -45,29 +45,29 @@ export default function PhysicalTherapySection() {
                 className="w-full h-auto object-cover"
               />
               {/* Coral accent border */}
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#FF6B6B] to-[#7C3AED]" />
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#00B4D8] to-[#0B2447]" />
             </div>
           </motion.div>
 
           {/* Right - Content */}
           <motion.div variants={fadeInRight}>
-            <h2 className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1A1A2E] tracking-tight mb-3">
+            <h2 className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0B2447] tracking-tight mb-3">
               Expert Physical Therapy
             </h2>
-            <div className="h-1 w-20 rounded-full bg-gradient-to-r from-[#FF6B6B] to-[#7C3AED] mb-10" />
+            <div className="h-1 w-20 rounded-full bg-gradient-to-r from-[#00B4D8] to-[#0B2447] mb-10" />
 
             {/* Numbered features */}
             <div className="space-y-8 mb-10">
               {features.map((feature) => (
                 <div key={feature.number} className="flex gap-5">
-                  <span className="font-[var(--font-display)] text-4xl font-extrabold text-gradient-coral shrink-0">
+                  <span className="font-[var(--font-display)] text-4xl font-extrabold text-gradient-blue shrink-0">
                     {feature.number}
                   </span>
                   <div>
-                    <h3 className="text-lg font-bold text-[#1A1A2E] mb-1">
+                    <h3 className="text-lg font-bold text-[#0B2447] mb-1">
                       {feature.title}
                     </h3>
-                    <p className="text-[#6B7280] text-sm leading-relaxed">
+                    <p className="text-[#6B7B8D] text-sm leading-relaxed">
                       {feature.body}
                     </p>
                   </div>
@@ -77,7 +77,7 @@ export default function PhysicalTherapySection() {
 
             <Link
               href="/physical-therapy"
-              className="inline-block bg-gradient-to-r from-[#FF6B6B] to-[#E84545] text-white rounded-full px-8 py-4 text-sm font-black uppercase tracking-wider hover:scale-105 hover:shadow-[0_0_30px_rgba(255,107,107,0.4)] transition-all duration-300 shadow-[0_8px_30px_rgba(255,107,107,0.25)]"
+              className="inline-block bg-gradient-to-r from-[#00B4D8] to-[#0096B7] text-white rounded-full px-8 py-4 text-sm font-black uppercase tracking-wider hover:scale-105 hover:shadow-[0_0_30px_rgba(0,180,216,0.4)] transition-all duration-300 shadow-[0_8px_30px_rgba(0,180,216,0.25)]"
             >
               Learn More
             </Link>

@@ -8,7 +8,7 @@ export default function TermsOfServicePage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#1A1A2E] py-16 md:py-20">
+      <section className="bg-[#0B2447] py-16 md:py-20">
         <div className="max-w-[1140px] mx-auto px-4 text-center">
           <h1
             className="text-[60px] font-extrabold font-[var(--font-display)] text-white leading-tight"
@@ -22,13 +22,13 @@ export default function TermsOfServicePage() {
       {/* Content */}
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4">
-          <p className="text-sm text-[#6B7280] mb-10">
+          <p className="text-sm text-[#6B7B8D] mb-10">
             Last updated: March 6, 2026
           </p>
 
-          <div className="space-y-8 text-[#6B7280] leading-relaxed">
+          <div className="space-y-8 text-[#6B7B8D] leading-relaxed">
             <div>
-              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#1A1A2E] mb-3">
+              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#0B2447] mb-3">
                 Agreement to Terms
               </h2>
               <p>
@@ -40,7 +40,7 @@ export default function TermsOfServicePage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#1A1A2E] mb-3">
+              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#0B2447] mb-3">
                 Use of Website
               </h2>
               <p className="mb-3">
@@ -71,7 +71,7 @@ export default function TermsOfServicePage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#1A1A2E] mb-3">
+              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#0B2447] mb-3">
                 Services Disclaimer
               </h2>
               <p className="mb-3">
@@ -90,7 +90,7 @@ export default function TermsOfServicePage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#1A1A2E] mb-3">
+              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#0B2447] mb-3">
                 Physical Therapy Services
               </h2>
               <p>
@@ -104,7 +104,7 @@ export default function TermsOfServicePage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#1A1A2E] mb-3">
+              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#0B2447] mb-3">
                 Intellectual Property
               </h2>
               <p>
@@ -118,7 +118,7 @@ export default function TermsOfServicePage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#1A1A2E] mb-3">
+              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#0B2447] mb-3">
                 Limitation of Liability
               </h2>
               <p>
@@ -132,7 +132,7 @@ export default function TermsOfServicePage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#1A1A2E] mb-3">
+              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#0B2447] mb-3">
                 Disclaimer of Warranties
               </h2>
               <p>
@@ -145,7 +145,7 @@ export default function TermsOfServicePage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#1A1A2E] mb-3">
+              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#0B2447] mb-3">
                 Modifications to Terms
               </h2>
               <p>
@@ -158,7 +158,7 @@ export default function TermsOfServicePage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#1A1A2E] mb-3">
+              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#0B2447] mb-3">
                 Governing Law
               </h2>
               <p>
@@ -171,7 +171,7 @@ export default function TermsOfServicePage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#1A1A2E] mb-3">
+              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#0B2447] mb-3">
                 Contact Us
               </h2>
               <p>
@@ -179,14 +179,14 @@ export default function TermsOfServicePage() {
                 contact us:
               </p>
               <address className="mt-3 not-italic space-y-1">
-                <p className="font-bold text-[#1A1A2E]">Oxygen Wellness LLC</p>
+                <p className="font-bold text-[#0B2447]">Oxygen Wellness LLC</p>
                 <p>20265 N. 59th Ave. Suite B-1</p>
                 <p>Glendale, AZ 85308</p>
                 <p>
                   Email:{" "}
                   <a
                     href="mailto:Contact@OxygenAZ.com"
-                    className="text-[#FF6B6B] hover:text-[#E84545] underline"
+                    className="text-[#00B4D8] hover:text-[#0096B7] underline"
                   >
                     Contact@OxygenAZ.com
                   </a>

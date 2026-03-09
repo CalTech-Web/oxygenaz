@@ -9,16 +9,16 @@ export default function AppDownload() {
   return (
     <section className="relative py-16 md:py-24 overflow-hidden">
       {/* Vibrant gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B6B] via-[#FF8C42] to-[#7C3AED]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#00B4D8] via-[#00B4D8] to-[#0B2447]" />
 
       {/* Mesh overlay */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-white/10 blur-[100px]" />
-        <div className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full bg-[#7C3AED]/20 blur-[80px]" />
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full bg-[#0B2447]/20 blur-[80px]" />
       </div>
 
       {/* Diagonal top clip */}
-      <div className="absolute top-0 left-0 right-0 h-16 bg-[#FFF8F0]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 0, 0 100%)" }} />
+      <div className="absolute top-0 left-0 right-0 h-16 bg-[#F5F7FA]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 0, 0 100%)" }} />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 lg:px-20">
         <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">

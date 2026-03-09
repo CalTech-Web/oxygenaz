@@ -8,7 +8,7 @@ export default function PrivacyPolicyPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#1A1A2E] py-16 md:py-20">
+      <section className="bg-[#0B2447] py-16 md:py-20">
         <div className="max-w-[1140px] mx-auto px-4 text-center">
           <h1
             className="text-[60px] font-extrabold font-[var(--font-display)] text-white leading-tight"
@@ -22,13 +22,13 @@ export default function PrivacyPolicyPage() {
       {/* Content */}
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4">
-          <p className="text-sm text-[#6B7280] mb-10">
+          <p className="text-sm text-[#6B7B8D] mb-10">
             Last updated: March 6, 2026
           </p>
 
-          <div className="space-y-8 text-[#6B7280] leading-relaxed">
+          <div className="space-y-8 text-[#6B7B8D] leading-relaxed">
             <div>
-              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#1A1A2E] mb-3">
+              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#0B2447] mb-3">
                 Introduction
               </h2>
               <p>
@@ -42,14 +42,14 @@ export default function PrivacyPolicyPage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#1A1A2E] mb-3">
+              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#0B2447] mb-3">
                 Information We Collect
               </h2>
               <p className="mb-3">
                 We may collect information about you in a variety of ways,
                 including:
               </p>
-              <h3 className="text-lg font-bold text-[#1A1A2E] mb-2">
+              <h3 className="text-lg font-bold text-[#0B2447] mb-2">
                 Personal Information
               </h3>
               <p className="mb-3">
@@ -58,7 +58,7 @@ export default function PrivacyPolicyPage() {
                 information such as your name, email address, phone number, and
                 mailing address.
               </p>
-              <h3 className="text-lg font-bold text-[#1A1A2E] mb-2">
+              <h3 className="text-lg font-bold text-[#0B2447] mb-2">
                 Health-Related Information
               </h3>
               <p className="mb-3">
@@ -67,7 +67,7 @@ export default function PrivacyPolicyPage() {
                 connection with our services. This information is treated with the
                 highest level of confidentiality.
               </p>
-              <h3 className="text-lg font-bold text-[#1A1A2E] mb-2">
+              <h3 className="text-lg font-bold text-[#0B2447] mb-2">
                 Automatically Collected Information
               </h3>
               <p>
@@ -80,7 +80,7 @@ export default function PrivacyPolicyPage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#1A1A2E] mb-3">
+              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#0B2447] mb-3">
                 How We Use Your Information
               </h2>
               <p className="mb-3">
@@ -97,7 +97,7 @@ export default function PrivacyPolicyPage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#1A1A2E] mb-3">
+              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#0B2447] mb-3">
                 Cookies and Tracking Technologies
               </h2>
               <p className="mb-3">
@@ -114,7 +114,7 @@ export default function PrivacyPolicyPage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#1A1A2E] mb-3">
+              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#0B2447] mb-3">
                 Third-Party Services
               </h2>
               <p className="mb-3">
@@ -132,7 +132,7 @@ export default function PrivacyPolicyPage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#1A1A2E] mb-3">
+              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#0B2447] mb-3">
                 Data Security
               </h2>
               <p>
@@ -145,7 +145,7 @@ export default function PrivacyPolicyPage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#1A1A2E] mb-3">
+              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#0B2447] mb-3">
                 Your Rights
               </h2>
               <p>
@@ -157,7 +157,7 @@ export default function PrivacyPolicyPage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#1A1A2E] mb-3">
+              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#0B2447] mb-3">
                 Changes to This Policy
               </h2>
               <p>
@@ -169,7 +169,7 @@ export default function PrivacyPolicyPage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#1A1A2E] mb-3">
+              <h2 className="text-2xl font-extrabold font-[var(--font-display)] text-[#0B2447] mb-3">
                 Contact Us
               </h2>
               <p>
@@ -177,14 +177,14 @@ export default function PrivacyPolicyPage() {
                 please contact us:
               </p>
               <address className="mt-3 not-italic space-y-1">
-                <p className="font-bold text-[#1A1A2E]">Oxygen Wellness LLC</p>
+                <p className="font-bold text-[#0B2447]">Oxygen Wellness LLC</p>
                 <p>20265 N. 59th Ave. Suite B-1</p>
                 <p>Glendale, AZ 85308</p>
                 <p>
                   Email:{" "}
                   <a
                     href="mailto:Contact@OxygenAZ.com"
-                    className="text-[#FF6B6B] hover:text-[#E84545] underline"
+                    className="text-[#00B4D8] hover:text-[#0096B7] underline"
                   >
                     Contact@OxygenAZ.com
                   </a>

@@ -70,11 +70,11 @@ export default function PhysicalTherapyPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A2E]/78 via-[#1A1A2E]/88 to-[#1A1A2E]/97" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#FF6B6B]/12 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0B2447]/78 via-[#0B2447]/88 to-[#0B2447]/97" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#00B4D8]/12 to-transparent" />
         </div>
-        <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-[#FF6B6B]/8 blur-[100px] pointer-events-none" />
-        <div className="absolute -bottom-20 -left-20 w-[300px] h-[300px] rounded-full bg-[#7C3AED]/15 blur-[80px] pointer-events-none" />
+        <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-[#00B4D8]/8 blur-[100px] pointer-events-none" />
+        <div className="absolute -bottom-20 -left-20 w-[300px] h-[300px] rounded-full bg-[#0B2447]/15 blur-[80px] pointer-events-none" />
         <div className="relative z-10 max-w-[1140px] mx-auto px-4 text-center py-20">
           <h1
             className="font-[var(--font-display)] text-4xl md:text-6xl lg:text-[72px] font-extrabold text-white leading-[1.05] tracking-tight mb-4"
@@ -87,7 +87,7 @@ export default function PhysicalTherapyPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-gradient-to-r from-[#FF6B6B] to-[#E84545] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider hover:scale-105 animate-pulse-glow transition-transform duration-300"
+            className="inline-block bg-gradient-to-r from-[#00B4D8] to-[#0096B7] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider hover:scale-105 animate-pulse-glow transition-transform duration-300"
           >
             BOOK TODAY
           </Link>
@@ -108,28 +108,28 @@ export default function PhysicalTherapyPage() {
               />
             </div>
             <div>
-              <h2 className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1A1A2E] tracking-tight mb-6">
+              <h2 className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0B2447] tracking-tight mb-6">
                 What is Physical Therapy?
               </h2>
-              <p className="text-[#6B7280] text-lg mb-4">
+              <p className="text-[#6B7B8D] text-lg mb-4">
                 Physical therapy is a healthcare specialty that helps people restore movement, strength, and function when they&apos;ve been limited by injury, surgery, illness, or chronic conditions.
               </p>
-              <p className="text-[#6B7280] text-lg mb-6">
+              <p className="text-[#6B7B8D] text-lg mb-6">
                 At Oxygen Wellness & Physical Therapy, we believe in treating the root cause of pain, not just the symptoms. Our licensed physical therapist will perform a detailed assessment to understand your condition, mobility limitations, and overall goals. We then design customized therapy programs that may include manual therapy, guided exercises, and state-of-the-art recovery treatments to ensure a safe and effective rehabilitation process.
               </p>
               <ul className="space-y-2 mb-8">
                 {techniques.map((technique) => (
                   <li key={technique} className="flex items-center gap-3">
-                    <svg className="w-5 h-5 text-[#FF6B6B] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5 text-[#00B4D8] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-[#6B7280]">{technique}</span>
+                    <span className="text-[#6B7B8D]">{technique}</span>
                   </li>
                 ))}
               </ul>
               <Link
                 href="/contact"
-                className="inline-block bg-gradient-to-r from-[#FF6B6B] to-[#E84545] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider shadow-[0_8px_30px_rgba(255,107,107,0.25)] hover:scale-105 hover:shadow-[0_0_30px_rgba(255,107,107,0.4)] transition-all duration-300"
+                className="inline-block bg-gradient-to-r from-[#00B4D8] to-[#0096B7] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider shadow-[0_8px_30px_rgba(0,180,216,0.25)] hover:scale-105 hover:shadow-[0_0_30px_rgba(0,180,216,0.4)] transition-all duration-300"
               >
                 BOOK APPOINTMENT
               </Link>
@@ -139,35 +139,35 @@ export default function PhysicalTherapyPage() {
       </section>
 
       {/* What to Expect */}
-      <section className="py-16 md:py-20 bg-[#FFF8F0]">
+      <section className="py-16 md:py-20 bg-[#F5F7FA]">
         <div className="max-w-[1140px] mx-auto px-4">
-          <h2 className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1A1A2E] tracking-tight mb-8 text-center">
+          <h2 className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0B2447] tracking-tight mb-8 text-center">
             What to Expect During a Physical Therapy Appointment
           </h2>
           <ul className="max-w-3xl mx-auto space-y-4">
             <li className="flex items-start gap-3">
-              <svg className="w-5 h-5 text-[#FF6B6B] shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-5 h-5 text-[#00B4D8] shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
-              <span className="text-[#6B7280] text-lg">You can choose between our 25 or 55 minute session</span>
+              <span className="text-[#6B7B8D] text-lg">You can choose between our 25 or 55 minute session</span>
             </li>
             <li className="flex items-start gap-3">
-              <svg className="w-5 h-5 text-[#FF6B6B] shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-5 h-5 text-[#00B4D8] shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
-              <span className="text-[#6B7280] text-lg">You will be in a public space</span>
+              <span className="text-[#6B7B8D] text-lg">You will be in a public space</span>
             </li>
             <li className="flex items-start gap-3">
-              <svg className="w-5 h-5 text-[#FF6B6B] shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-5 h-5 text-[#00B4D8] shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
-              <span className="text-[#6B7280] text-lg">Wear comfortable clothing and be prepared to move around</span>
+              <span className="text-[#6B7B8D] text-lg">Wear comfortable clothing and be prepared to move around</span>
             </li>
             <li className="flex items-start gap-3">
-              <svg className="w-5 h-5 text-[#FF6B6B] shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-5 h-5 text-[#00B4D8] shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
-              <span className="text-[#6B7280] text-lg">Get a free Core Service of your choice</span>
+              <span className="text-[#6B7B8D] text-lg">Get a free Core Service of your choice</span>
             </li>
           </ul>
         </div>
@@ -187,23 +187,23 @@ export default function PhysicalTherapyPage() {
               />
             </div>
             <div>
-              <h2 className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1A1A2E] tracking-tight mb-6">
+              <h2 className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0B2447] tracking-tight mb-6">
                 Meet our Physical Therapist
               </h2>
-              <p className="text-[#6B7280] text-lg mb-4">
+              <p className="text-[#6B7B8D] text-lg mb-4">
                 Meet Dr. Clint Borman, the owner + physical therapist of Oxygen Wellness & Physical Therapy. A former collegiate baseball player who spent countless hours recovering from injuries, Clint went on to earn his Doctor of Physical Therapy degree from the University of St. Augustine in 1997.
               </p>
-              <p className="text-[#6B7280] text-lg mb-4">
+              <p className="text-[#6B7B8D] text-lg mb-4">
                 Over 25 years in outpatient sports medicine, he&apos;s led residency programs, trained staff, overseen mergers and acquisitions, and built a reputation for empowering patients through education at every session, delivering care with kindness, humor, and a commitment to your needs. This merger strengthens the shared mission of making every moment of your journey truly centered around you.
               </p>
-              <p className="text-[#6B7280] text-lg mb-8">
+              <p className="text-[#6B7B8D] text-lg mb-8">
                 Today, at Oxygen Wellness & Physical Therapy, Clint blends experience, education, and innovation with traditional rehabilitation and regenerative care, free from insurance constraints and focused on only the good stuff.
               </p>
               <a
                 href="https://linkedin.com/in/clintborman"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-gradient-to-r from-[#FF6B6B] to-[#E84545] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider shadow-[0_8px_30px_rgba(255,107,107,0.25)] hover:scale-105 hover:shadow-[0_0_30px_rgba(255,107,107,0.4)] transition-all duration-300"
+                className="inline-block bg-gradient-to-r from-[#00B4D8] to-[#0096B7] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider shadow-[0_8px_30px_rgba(0,180,216,0.25)] hover:scale-105 hover:shadow-[0_0_30px_rgba(0,180,216,0.4)] transition-all duration-300"
               >
                 SEE CLINT&apos;S LINKEDIN
               </a>
@@ -221,7 +221,7 @@ export default function PhysicalTherapyPage() {
       {/* Free Core Service CTA */}
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-[1140px] mx-auto px-4">
-          <div className="relative overflow-hidden bg-gradient-to-br from-[#FF6B6B] to-[#7C3AED] rounded-2xl p-8 text-center">
+          <div className="relative overflow-hidden bg-gradient-to-br from-[#00B4D8] to-[#0B2447] rounded-2xl p-8 text-center">
             <div className="absolute -top-10 -right-10 w-[200px] h-[200px] rounded-full bg-white/8 blur-[60px] pointer-events-none" />
             <div className="relative z-10">
               <p className="text-white text-xl font-bold mb-4">
@@ -229,7 +229,7 @@ export default function PhysicalTherapyPage() {
               </p>
               <Link
                 href="/contact"
-                className="inline-block bg-white text-[#1A1A2E] rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider shadow-[0_8px_30px_rgba(0,0,0,0.15)] hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] transition-all duration-300"
+                className="inline-block bg-white text-[#0B2447] rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider shadow-[0_8px_30px_rgba(0,0,0,0.15)] hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] transition-all duration-300"
               >
                 BOOK APPOINTMENT
               </Link>
@@ -242,7 +242,7 @@ export default function PhysicalTherapyPage() {
       <AdditionalServices />
 
       {/* Contact Form Section */}
-      <section className="py-16 md:py-20 bg-[#FFF8F0]">
+      <section className="py-16 md:py-20 bg-[#F5F7FA]">
         <div className="max-w-[1140px] mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <ContactForm source="physical-therapy-page" />
@@ -255,9 +255,9 @@ export default function PhysicalTherapyPage() {
 
 function PTFAQSection({ faqs }: { faqs: { question: string; answer: string }[] }) {
   return (
-    <section className="py-16 md:py-20 bg-[#FFF8F0]">
+    <section className="py-16 md:py-20 bg-[#F5F7FA]">
       <div className="max-w-[1140px] mx-auto px-4">
-        <h2 className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1A1A2E] tracking-tight accent-underline-center mb-8 text-center">
+        <h2 className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0B2447] tracking-tight accent-underline-center mb-8 text-center">
           Physical Therapy FAQs
         </h2>
         <div className="max-w-3xl mx-auto space-y-4">
@@ -272,13 +272,13 @@ function PTFAQSection({ faqs }: { faqs: { question: string; answer: string }[] }
 
 function PTFAQItem({ question, answer }: { question: string; answer: string }) {
   return (
-    <details className="group bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.06)] overflow-hidden border-l-4 border-transparent hover:border-[#FF6B6B] hover:shadow-[0_8px_30px_rgba(0,0,0,0.1)] transition-all duration-300">
+    <details className="group bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.06)] overflow-hidden border-l-4 border-transparent hover:border-[#00B4D8] hover:shadow-[0_8px_30px_rgba(0,0,0,0.1)] transition-all duration-300">
       <summary className="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer list-none">
-        <span className="text-lg font-semibold text-[#1A1A2E] group-hover:text-[#FF6B6B] transition-colors">
+        <span className="text-lg font-semibold text-[#0B2447] group-hover:text-[#00B4D8] transition-colors">
           {question}
         </span>
         <svg
-          className="w-5 h-5 text-[#FF6B6B] shrink-0 transition-transform group-open:rotate-180"
+          className="w-5 h-5 text-[#00B4D8] shrink-0 transition-transform group-open:rotate-180"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -287,7 +287,7 @@ function PTFAQItem({ question, answer }: { question: string; answer: string }) {
         </svg>
       </summary>
       <div className="px-6 pb-4">
-        <p className="text-[#6B7280] leading-relaxed">{answer}</p>
+        <p className="text-[#6B7B8D] leading-relaxed">{answer}</p>
       </div>
     </details>
   );
