@@ -7,90 +7,87 @@ import { heroText, heroSubtext, heroCTA } from "@/lib/animations";
 
 export default function Hero() {
   return (
-    <section
-      className="relative min-h-screen flex items-center justify-center bg-cover bg-center overflow-hidden grain"
-      style={{ backgroundImage: "url('/images/heroes/home-hero.jpg')" }}
-    >
-      {/* Multi-layered overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F2C]/82 via-[#10173E]/88 to-[#0A0F2C]/97" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#004AAD]/20 via-transparent to-[#5CE1E6]/5" />
-
-      {/* Decorative gradient orbs - bigger, brighter */}
-      <div className="absolute -top-32 -right-32 w-[800px] h-[800px] rounded-full bg-[#5CE1E6]/15 blur-[150px] pointer-events-none" />
-      <div className="absolute -bottom-32 -left-32 w-[600px] h-[600px] rounded-full bg-[#004AAD]/25 blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-[#5CE1E6]/5 blur-[80px] pointer-events-none" />
-
-      {/* Bottom vignette fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white/10 to-transparent pointer-events-none z-[1]" />
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-white">
+      {/* Gradient mesh blobs */}
+      <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] rounded-full bg-[#FF6B6B]/20 blur-[120px] pointer-events-none animate-mesh" />
+      <div className="absolute top-[20%] right-[10%] w-[400px] h-[400px] rounded-full bg-[#7C3AED]/15 blur-[100px] pointer-events-none animate-mesh" style={{ animationDelay: "-3s" }} />
+      <div className="absolute bottom-[10%] right-[15%] w-[350px] h-[350px] rounded-full bg-[#FF8C42]/15 blur-[100px] pointer-events-none animate-mesh" style={{ animationDelay: "-6s" }} />
 
       {/* Content */}
-      <div className="relative z-10 text-center max-w-[1200px] mx-auto px-4">
-        {/* Tagline pill */}
-        <motion.div
-          className="mb-8"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
-          <span className="inline-block bg-white/8 backdrop-blur-md border border-white/15 text-white/90 text-xs font-bold uppercase tracking-[0.25em] rounded-full px-7 py-2.5 shadow-[0_4px_30px_rgba(0,0,0,0.15)]">
-            Wellness & Physical Therapy
-          </span>
-        </motion.div>
+      <div className="relative z-10 mx-auto max-w-6xl px-4 lg:px-20 py-32 md:py-0">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          {/* Left side - text */}
+          <div className="md:col-span-7">
+            {/* Accent bar */}
+            <motion.div
+              className="h-1 w-20 rounded-full bg-gradient-to-r from-[#FF6B6B] to-[#7C3AED] mb-8"
+              initial={{ opacity: 0, scaleX: 0 }}
+              animate={{ opacity: 1, scaleX: 1 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              style={{ transformOrigin: "left" }}
+            />
 
-        <motion.h2
-          className="text-white text-4xl sm:text-6xl lg:text-[90px] font-black leading-[0.95] mb-8 tracking-tight"
-          style={{ textShadow: "4px 6px 0px rgba(0,0,0,0.4)" }}
-          variants={heroText}
-          initial="hidden"
-          animate="visible"
-        >
-          Only the{" "}
-          <span className="text-[#5CE1E6] drop-shadow-[0_0_40px_rgba(92,225,230,0.5)]">
-            Good
-          </span>{" "}
-          Stuff
-        </motion.h2>
+            <motion.h1
+              className="font-[var(--font-display)] text-5xl sm:text-6xl lg:text-[84px] font-extrabold leading-[0.95] mb-8 tracking-tight text-[#1A1A2E]"
+              variants={heroText}
+              initial="hidden"
+              animate="visible"
+            >
+              Only the{" "}
+              <span className="text-gradient-vibrant">
+                Good
+              </span>{" "}
+              Stuff
+            </motion.h1>
 
-        <motion.p
-          className="text-white/75 text-lg md:text-xl max-w-2xl mx-auto mb-14 leading-relaxed font-light"
-          variants={heroSubtext}
-          initial="hidden"
-          animate="visible"
-        >
-          Whether you&apos;re seeking pain relief, improved mobility, or a
-          complete wellness plan, our team is here to guide you. Book today or
-          give us a ring.
-        </motion.p>
+            <motion.p
+              className="text-[#4A4A6A] text-lg md:text-xl max-w-lg mb-10 leading-relaxed"
+              variants={heroSubtext}
+              initial="hidden"
+              animate="visible"
+            >
+              Whether you&apos;re seeking pain relief, improved mobility, or a
+              complete wellness plan, our team is here to guide you. Book today or
+              give us a ring.
+            </motion.p>
 
-        <motion.div
-          className="flex flex-col sm:flex-row items-center justify-center gap-5"
-          variants={heroCTA}
-          initial="hidden"
-          animate="visible"
-        >
-          <Link
-            href="/contact"
-            className="bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white rounded-full px-10 py-5 font-black text-sm uppercase tracking-wider border-2 border-[#5CE1E6] hover:scale-105 animate-pulse-glow transition-transform duration-300 shadow-[0_8px_30px_rgba(0,74,173,0.4)]"
-          >
-            Book Today
-          </Link>
-          <Link
-            href="/services/cryotherapy"
-            className="backdrop-blur-md bg-white/8 border-2 border-white/25 text-white rounded-full px-10 py-5 font-black text-sm uppercase tracking-wider hover:bg-white/15 hover:border-[#5CE1E6]/50 hover:scale-105 transition-all duration-300 shadow-[0_8px_30px_rgba(0,0,0,0.2)]"
-          >
-            View Services
-          </Link>
-        </motion.div>
+            <motion.div
+              className="flex flex-col sm:flex-row items-start gap-4"
+              variants={heroCTA}
+              initial="hidden"
+              animate="visible"
+            >
+              <Link
+                href="/contact"
+                className="bg-gradient-to-r from-[#FF6B6B] to-[#E84545] text-white rounded-full px-10 py-5 font-black text-sm uppercase tracking-wider hover:scale-105 hover:shadow-[0_0_30px_rgba(255,107,107,0.4)] transition-all duration-300 shadow-[0_8px_30px_rgba(255,107,107,0.25)]"
+              >
+                Book Today
+              </Link>
+              <Link
+                href="/services/cryotherapy"
+                className="border-2 border-[#1A1A2E]/20 text-[#1A1A2E] rounded-full px-10 py-5 font-black text-sm uppercase tracking-wider hover:border-[#FF6B6B] hover:text-[#FF6B6B] hover:scale-105 transition-all duration-300"
+              >
+                View Services
+              </Link>
+            </motion.div>
+          </div>
+
+          {/* Right side - decorative (empty, mesh blobs handle the visual) */}
+          <div className="hidden md:block md:col-span-5" />
+        </div>
       </div>
+
+      {/* Diagonal bottom clip overlay */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-[#1A1A2E]" style={{ clipPath: "polygon(0 100%, 100% 40%, 100% 100%)" }} />
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
       >
-        <span className="text-white/30 text-[10px] uppercase tracking-[0.3em] font-bold">Scroll</span>
-        <ChevronDown className="w-6 h-6 text-[#5CE1E6]/50" />
+        <span className="text-[#1A1A2E]/30 text-[10px] uppercase tracking-[0.3em] font-bold">Scroll</span>
+        <ChevronDown className="w-6 h-6 text-[#FF6B6B]/50" />
       </motion.div>
     </section>
   );

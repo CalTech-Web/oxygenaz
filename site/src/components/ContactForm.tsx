@@ -59,20 +59,20 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
         initial="hidden"
         animate="visible"
       >
-        <div className="w-16 h-16 bg-gradient-to-br from-[#5CE1E6]/25 to-[#004AAD]/10 rounded-full flex items-center justify-center mx-auto mb-5 shadow-[0_0_0_6px_rgba(92,225,230,0.08)]">
-          <svg className="w-8 h-8 text-[#5CE1E6]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div className="w-16 h-16 bg-gradient-to-br from-[#FF6B6B]/25 to-[#FF6B6B]/10 rounded-full flex items-center justify-center mx-auto mb-5 shadow-[0_0_0_6px_rgba(255,107,107,0.08)]">
+          <svg className="w-8 h-8 text-[#FF6B6B]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-xl font-black text-[#10173E] mb-2">
+        <h3 className="text-xl font-black text-[#1A1A2E] mb-2">
           Message Sent Successfully
         </h3>
-        <p className="text-[#7A7A7A]">
+        <p className="text-[#6B7280]">
           Thank you for reaching out. We will get back to you as soon as possible.
         </p>
         <button
           onClick={() => setStatus("idle")}
-          className="mt-6 text-[#004AAD] font-bold hover:text-[#0053DA] transition-colors"
+          className="mt-6 text-[#FF6B6B] font-bold hover:text-[#E84545] transition-colors"
         >
           Send Another Message
         </button>
@@ -81,14 +81,14 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
   }
 
   const inputClasses =
-    "border border-gray-200 rounded-xl px-5 py-4 text-[#10173E] font-medium w-full focus:border-[#5CE1E6] focus:ring-2 focus:ring-[#5CE1E6]/20 focus:shadow-[0_0_0_4px_rgba(92,225,230,0.08)] outline-none transition-all duration-200 bg-gray-50/30 hover:border-gray-300 hover:bg-white placeholder:text-gray-400";
+    "border border-gray-200 rounded-xl px-5 py-4 text-[#1A1A2E] font-medium w-full focus:border-[#FF6B6B] focus:ring-2 focus:ring-[#FF6B6B]/20 focus:shadow-[0_0_0_4px_rgba(255,107,107,0.08)] outline-none transition-all duration-200 bg-gray-50/30 hover:border-gray-300 hover:bg-white placeholder:text-gray-400";
 
   return (
     <div>
-      <h2 className="text-3xl md:text-4xl font-black text-[#10173E] mb-2 tracking-tight">
+      <h2 className="text-3xl md:text-4xl font-extrabold font-[var(--font-display)] text-[#1A1A2E] mb-2 tracking-tight">
         Not Sure Where to Start?
       </h2>
-      <p className="text-[#7A7A7A] mb-8">
+      <p className="text-[#6B7280] mb-8">
         Fill out your information and we&apos;ll give you a call.
       </p>
 
@@ -103,7 +103,7 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label htmlFor="firstName" className="block text-[#10173E] text-xs font-black uppercase tracking-wider mb-2">
+            <label htmlFor="firstName" className="block text-[#1A1A2E] text-xs font-black uppercase tracking-wider mb-2">
               First Name
             </label>
             <input
@@ -118,7 +118,7 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
             />
           </div>
           <div>
-            <label htmlFor="lastName" className="block text-[#10173E] text-xs font-black uppercase tracking-wider mb-2">
+            <label htmlFor="lastName" className="block text-[#1A1A2E] text-xs font-black uppercase tracking-wider mb-2">
               Last Name
             </label>
             <input
@@ -135,7 +135,7 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-[#10173E] text-xs font-black uppercase tracking-wider mb-2">
+          <label htmlFor="email" className="block text-[#1A1A2E] text-xs font-black uppercase tracking-wider mb-2">
             Email
           </label>
           <input
@@ -151,7 +151,7 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
         </div>
 
         <div>
-          <label htmlFor="phone" className="block text-[#10173E] text-xs font-black uppercase tracking-wider mb-2">
+          <label htmlFor="phone" className="block text-[#1A1A2E] text-xs font-black uppercase tracking-wider mb-2">
             Phone Number
           </label>
           <input
@@ -167,7 +167,7 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
         </div>
 
         <div>
-          <label htmlFor="reason" className="block text-[#10173E] text-xs font-black uppercase tracking-wider mb-2">
+          <label htmlFor="reason" className="block text-[#1A1A2E] text-xs font-black uppercase tracking-wider mb-2">
             Reason for being here (optional)
           </label>
           <textarea
@@ -184,7 +184,7 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider border-2 border-[#5CE1E6] hover:scale-[1.02] hover:shadow-[0_8px_30px_rgba(0,74,173,0.3)] w-full transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100 shadow-[0_4px_15px_rgba(0,74,173,0.2)]"
+          className="bg-gradient-to-r from-[#FF6B6B] to-[#E84545] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider hover:scale-[1.02] hover:shadow-[0_8px_30px_rgba(255,107,107,0.3)] w-full transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100 shadow-[0_4px_15px_rgba(255,107,107,0.2)]"
         >
           {status === "submitting" ? (
             <span className="flex items-center justify-center gap-2">

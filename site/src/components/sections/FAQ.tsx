@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Phone } from "lucide-react";
 import { faqItems } from "@/data/faq";
-import { fadeInUp, staggerContainer, viewportOnce } from "@/lib/animations";
+import { fadeInUp, fadeInLeft, staggerContainer, viewportOnce } from "@/lib/animations";
+import { SITE } from "@/lib/constants";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -14,73 +15,89 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-16 md:py-20 bg-gradient-to-b from-[#EDF2F9] to-white relative overflow-hidden">
-      {/* Subtle accent */}
-      <div className="absolute -top-20 -left-20 w-[500px] h-[500px] rounded-full bg-[#5CE1E6]/[0.03] blur-[100px] pointer-events-none" />
-
-      <motion.div
-        className="relative z-10 max-w-[900px] mx-auto px-4"
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="visible"
-        viewport={viewportOnce}
-      >
-        {/* Heading */}
-        <motion.h2
-          variants={fadeInUp}
-          className="text-3xl md:text-4xl lg:text-5xl font-black text-[#10173E] leading-tight tracking-tight text-center mb-10 accent-underline-center"
+    <section className="py-20 md:py-28 bg-[#FFF8F0] relative overflow-hidden">
+      <div className="relative z-10 mx-auto max-w-6xl px-4 lg:px-20">
+        <motion.div
+          className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
         >
-          Frequently Asked Questions
-        </motion.h2>
-
-        {/* Accordion */}
-        <div className="space-y-4">
-          {faqItems.map((item, index) => (
-            <motion.div
-              key={index}
-              variants={fadeInUp}
-              className={`rounded-2xl bg-white overflow-hidden transition-all duration-300 ${
-                openIndex === index
-                  ? "shadow-[0_8px_30px_rgba(0,0,0,0.08)] ring-1 ring-[#5CE1E6]/30 border-l-4 border-[#5CE1E6]"
-                  : "shadow-[0_2px_8px_rgba(0,0,0,0.04)] border-l-4 border-transparent hover:shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:border-[#5CE1E6]/30"
-              }`}
+          {/* Left - Sticky heading */}
+          <motion.div
+            variants={fadeInLeft}
+            className="lg:col-span-4 lg:sticky lg:top-32 lg:self-start"
+          >
+            <h2 className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1A1A2E] tracking-tight leading-tight">
+              Frequently Asked Questions
+            </h2>
+            <div className="h-1 w-20 rounded-full bg-gradient-to-r from-[#FF6B6B] to-[#7C3AED] mt-4 mb-6" />
+            <p className="text-[#6B7280] text-base mb-6">
+              Have more questions? We&apos;re here to help.
+            </p>
+            <a
+              href={SITE.phoneHref}
+              className="inline-flex items-center gap-2 text-[#FF6B6B] font-bold hover:underline"
             >
-              <button
-                onClick={() => toggle(index)}
-                className="w-full flex items-center justify-between text-left px-7 py-6 gap-4"
+              <Phone className="h-4 w-4" />
+              Call us at {SITE.phone}
+            </a>
+          </motion.div>
+
+          {/* Right - Accordion */}
+          <div className="lg:col-span-8 space-y-4">
+            {faqItems.map((item, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                className={`rounded-2xl bg-white overflow-hidden transition-all duration-300 ${
+                  openIndex === index
+                    ? "shadow-[0_8px_30px_rgba(0,0,0,0.08)] border-l-4 border-[#FF6B6B]"
+                    : "shadow-[0_2px_8px_rgba(0,0,0,0.04)] border-l-4 border-transparent hover:shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:border-[#FF6B6B]/30"
+                }`}
               >
-                <span className="text-[#10173E] text-lg font-black">
-                  {item.question}
-                </span>
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
-                  openIndex === index ? "bg-[#5CE1E6] text-[#10173E]" : "bg-[#EDF2F9] text-[#004AAD]"
-                }`}>
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform duration-300 ${
-                      openIndex === index ? "rotate-180" : ""
+                <button
+                  onClick={() => toggle(index)}
+                  className="w-full flex items-center justify-between text-left px-7 py-6 gap-4"
+                >
+                  <span className="text-[#1A1A2E] text-lg font-bold">
+                    {item.question}
+                  </span>
+                  <div
+                    className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
+                      openIndex === index
+                        ? "bg-[#FF6B6B] text-white"
+                        : "bg-[#FFF0E6] text-[#FF6B6B]"
                     }`}
-                  />
-                </div>
-              </button>
-              <AnimatePresence>
-                {openIndex === index && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                    className="overflow-hidden"
                   >
-                    <p className="text-[#5A5A5A] leading-relaxed px-7 pb-6 text-base">
-                      {item.answer}
-                    </p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform duration-300 ${
+                        openIndex === index ? "rotate-180" : ""
+                      }`}
+                    />
+                  </div>
+                </button>
+                <AnimatePresence>
+                  {openIndex === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <p className="text-[#6B7280] leading-relaxed px-7 pb-6 text-base">
+                        {item.answer}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 }

@@ -4,78 +4,64 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { fadeInUp, viewportOnce } from "@/lib/animations";
 
-interface PromoCTAProps {
-  variant?: "consultation" | "core-service" | "both";
-}
-
-export default function PromoCTA({ variant = "both" }: PromoCTAProps) {
-  const consultation = (
-    <section className="relative py-16 bg-gradient-to-br from-[#0A0F2C] via-[#10173E] to-[#004AAD] overflow-hidden grain">
-      {/* Decorative orbs */}
-      <div className="absolute -right-32 -top-32 w-[600px] h-[600px] rounded-full bg-[#5CE1E6]/12 blur-[100px] pointer-events-none" />
-      <div className="absolute -left-20 -bottom-20 w-[400px] h-[400px] rounded-full bg-[#004AAD]/20 blur-[80px] pointer-events-none" />
-
-      {/* Section divider at top */}
-      <div className="absolute top-0 left-0 right-0 section-divider" />
-
-      <motion.div
-        className="relative z-10 max-w-[1140px] mx-auto px-4 text-center"
-        variants={fadeInUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={viewportOnce}
-      >
-        <p className="text-white text-xl md:text-2xl font-bold max-w-3xl mx-auto mb-10 leading-snug">
-          Not sure where to start? Book a{" "}
-          <span className="text-[#5CE1E6] font-black drop-shadow-[0_0_20px_rgba(92,225,230,0.4)]">
-            FREE 15&apos;
-          </span>{" "}
-          consult with our Wellness and Sports Medicine Expert!
-        </p>
-        <Link
-          href="/contact"
-          className="inline-block bg-[#5CE1E6] text-[#10173E] rounded-full px-10 py-5 font-black text-sm uppercase tracking-wider hover:scale-105 hover:shadow-[0_0_40px_rgba(92,225,230,0.5)] transition-all duration-300 shadow-[0_8px_30px_rgba(92,225,230,0.25)]"
-        >
-          Book My Consultation
-        </Link>
-      </motion.div>
-    </section>
-  );
-
-  const coreService = (
-    <section className="py-16 md:py-20 bg-gradient-to-br from-white to-[#EDF2F9] relative overflow-hidden">
-      {/* Subtle accent */}
-      <div className="absolute -bottom-20 -right-20 w-[400px] h-[400px] rounded-full bg-[#5CE1E6]/[0.05] blur-[80px] pointer-events-none" />
-
-      <motion.div
-        className="relative z-10 max-w-[1140px] mx-auto px-4 text-center"
-        variants={fadeInUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={viewportOnce}
-      >
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#10173E] leading-tight tracking-tight max-w-4xl mx-auto mb-8">
-          Get a core service for{" "}
-          <span className="text-gradient-cyan">FREE</span>{" "}
-          when you book an appointment with us for the first time.
-        </h2>
-        <Link
-          href="/contact"
-          className="inline-block bg-gradient-to-r from-[#004AAD] to-[#0053DA] text-white rounded-full px-10 py-5 font-black text-sm uppercase tracking-wider border-2 border-[#5CE1E6] hover:scale-105 animate-pulse-glow transition-transform duration-300 shadow-[0_8px_30px_rgba(0,74,173,0.3)]"
-        >
-          Book My Appointment
-        </Link>
-      </motion.div>
-    </section>
-  );
-
-  if (variant === "consultation") return consultation;
-  if (variant === "core-service") return coreService;
-
+export default function PromoCTA() {
   return (
-    <>
-      {consultation}
-      {coreService}
-    </>
+    <section className="relative py-16 md:py-20 overflow-hidden">
+      {/* Vibrant animated gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#FF6B6B] via-[#FF8C42] to-[#7C3AED] animate-gradient" />
+
+      {/* Subtle pattern overlay */}
+      <div className="absolute inset-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzAgMzBtLTIgMGE0IDQgMCAxIDEgNCAwIDQgNCAwIDEgMS00IDAiIGZpbGw9IiNmZmYiLz48L2c+PC9zdmc+')]" />
+
+      {/* Diagonal clips */}
+      <div className="absolute top-0 left-0 right-0 h-16 bg-white" style={{ clipPath: "polygon(0 0, 100% 0, 100% 0, 0 100%)" }} />
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-[#FFF8F0]" style={{ clipPath: "polygon(0 100%, 100% 0, 100% 100%)" }} />
+
+      <motion.div
+        className="relative z-10 max-w-6xl mx-auto px-4 lg:px-20"
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+          {/* Left offer */}
+          <div className="text-center md:text-left">
+            <h3 className="font-[var(--font-display)] text-2xl md:text-3xl lg:text-4xl font-extrabold text-white leading-tight mb-4">
+              Free 15-Min<br />Consultation
+            </h3>
+            <p className="text-white/80 text-base mb-6">
+              Not sure where to start? Talk to our Wellness and Sports Medicine Expert.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-block bg-white text-[#1A1A2E] rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider hover:scale-105 hover:shadow-[0_8px_30px_rgba(0,0,0,0.2)] transition-all duration-300"
+            >
+              Book My Consultation
+            </Link>
+          </div>
+
+          {/* Divider */}
+          <div className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-px h-32 bg-gradient-to-b from-transparent via-white/40 to-transparent" />
+          <div className="md:hidden h-px w-full bg-gradient-to-r from-transparent via-white/40 to-transparent" />
+
+          {/* Right offer */}
+          <div className="text-center md:text-left">
+            <h3 className="font-[var(--font-display)] text-2xl md:text-3xl lg:text-4xl font-extrabold text-white leading-tight mb-4">
+              Free Core Service<br />on First Visit
+            </h3>
+            <p className="text-white/80 text-base mb-6">
+              Book an appointment and get any core service on us for your first time.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-block bg-white text-[#1A1A2E] rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider hover:scale-105 hover:shadow-[0_8px_30px_rgba(0,0,0,0.2)] transition-all duration-300"
+            >
+              Book My Appointment
+            </Link>
+          </div>
+        </div>
+      </motion.div>
+    </section>
   );
 }

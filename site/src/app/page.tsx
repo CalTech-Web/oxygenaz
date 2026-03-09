@@ -1,9 +1,11 @@
 import Hero from "@/components/sections/Hero";
-import PhysicalTherapySection from "@/components/sections/PhysicalTherapySection";
+import StatsCounter from "@/components/sections/StatsCounter";
+import AllServices from "@/components/sections/AllServices";
 import PromoCTA from "@/components/sections/PromoCTA";
-import CoreServices from "@/components/sections/CoreServices";
-import AdditionalServices from "@/components/sections/AdditionalServices";
+import PhysicalTherapySection from "@/components/sections/PhysicalTherapySection";
+import HowItWorks from "@/components/sections/HowItWorks";
 import Memberships from "@/components/sections/Memberships";
+import TestimonialsPlaceholder from "@/components/sections/TestimonialsPlaceholder";
 import AboutSection from "@/components/sections/AboutSection";
 import AppDownload from "@/components/sections/AppDownload";
 import FAQ from "@/components/sections/FAQ";
@@ -12,12 +14,13 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <StatsCounter />
+      <AllServices />
+      <PromoCTA />
       <PhysicalTherapySection />
-      <PromoCTA variant="consultation" />
-      <CoreServices />
-      <PromoCTA variant="core-service" />
-      <AdditionalServices />
+      <HowItWorks />
       <Memberships />
+      <TestimonialsPlaceholder />
       <AboutSection />
       <AppDownload />
       <FAQ />

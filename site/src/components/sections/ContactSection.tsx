@@ -4,7 +4,7 @@ export default function ContactSection() {
   return (
     <section className="py-16 bg-white">
       <div className="max-w-[1140px] mx-auto px-4">
-        <h2 className="text-[40px] font-extrabold text-[#10173E] leading-[48px] tracking-[0.4px] text-center mb-12">
+        <h2 className="text-[40px] font-extrabold font-[var(--font-display)] text-[#1A1A2E] leading-[48px] tracking-[0.4px] text-center mb-12">
           Visit Us
         </h2>
 
@@ -13,14 +13,14 @@ export default function ContactSection() {
           <div className="space-y-6">
             {/* Address */}
             <div>
-              <h3 className="text-[#10173E] text-lg font-bold mb-1">
+              <h3 className="text-[#1A1A2E] text-lg font-bold mb-1">
                 Address
               </h3>
               <a
                 href={SITE.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#7A7A7A] hover:text-[#004AAD] transition-colors"
+                className="text-[#6B7280] hover:text-[#FF6B6B] transition-colors"
               >
                 {SITE.fullAddress}
               </a>
@@ -28,10 +28,10 @@ export default function ContactSection() {
 
             {/* Phone */}
             <div>
-              <h3 className="text-[#10173E] text-lg font-bold mb-1">Phone</h3>
+              <h3 className="text-[#1A1A2E] text-lg font-bold mb-1">Phone</h3>
               <a
                 href={SITE.phoneHref}
-                className="text-[#7A7A7A] hover:text-[#004AAD] transition-colors"
+                className="text-[#6B7280] hover:text-[#FF6B6B] transition-colors"
               >
                 {SITE.phone}
               </a>
@@ -39,10 +39,10 @@ export default function ContactSection() {
 
             {/* Email */}
             <div>
-              <h3 className="text-[#10173E] text-lg font-bold mb-1">Email</h3>
+              <h3 className="text-[#1A1A2E] text-lg font-bold mb-1">Email</h3>
               <a
                 href={`mailto:${SITE.email}`}
-                className="text-[#7A7A7A] hover:text-[#004AAD] transition-colors"
+                className="text-[#6B7280] hover:text-[#FF6B6B] transition-colors"
               >
                 {SITE.email}
               </a>
@@ -50,12 +50,12 @@ export default function ContactSection() {
 
             {/* Hours */}
             <div>
-              <h3 className="text-[#10173E] text-lg font-bold mb-1">Hours</h3>
-              <p className="text-[#7A7A7A]">
+              <h3 className="text-[#1A1A2E] text-lg font-bold mb-1">Hours</h3>
+              <p className="text-[#6B7280]">
                 {SITE.hours.weekday.label}: {SITE.hours.weekday.open} -{" "}
                 {SITE.hours.weekday.close}
               </p>
-              <p className="text-[#7A7A7A]">
+              <p className="text-[#6B7280]">
                 {SITE.hours.weekend.label}: {SITE.hours.weekend.open} -{" "}
                 {SITE.hours.weekend.close}
               </p>
