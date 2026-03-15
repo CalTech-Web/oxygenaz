@@ -26,7 +26,7 @@ const placeholderReviews = [
 export default function TestimonialsPlaceholder() {
   return (
     <section className="relative py-20 md:py-28 bg-[#F5F7FA] overflow-hidden">
-      <div className="mx-auto max-w-6xl px-4 lg:px-20">
+      <div className="mx-auto max-w-7xl px-4 lg:px-20">
         {/* Heading */}
         <div className="text-center mb-14">
           <h2 className="font-[var(--font-display)] text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0B2447] tracking-tight">

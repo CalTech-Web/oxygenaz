@@ -31,7 +31,7 @@ export default function WeightLossPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#00B4D8]/12 to-transparent" />
         </div>
         <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-[#00B4D8]/8 blur-[100px] pointer-events-none" />
-        <div className="relative z-10 max-w-[1140px] mx-auto px-4 text-center py-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center py-20">
           <h1
             className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-[var(--font-display)] tracking-tight text-white mb-6 leading-tight"
             style={{ textShadow: "4px 4px 0px rgba(0,0,0,0.25)" }}
@@ -49,7 +49,7 @@ export default function WeightLossPage() {
 
       {/* What is it */}
       <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-[1140px] mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-[var(--font-display)] tracking-tight accent-underline text-[#0B2447] mb-6">
             What is the {service.name}?
           </h2>
@@ -61,7 +61,7 @@ export default function WeightLossPage() {
 
       {/* Benefits */}
       <section className="py-16 md:py-20 bg-[#F5F7FA]">
-        <div className="max-w-[1140px] mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-[var(--font-display)] tracking-tight accent-underline-center text-[#0B2447] mb-8 text-center">
             Benefits
           </h2>
@@ -83,7 +83,7 @@ export default function WeightLossPage() {
 
       {/* What to Expect */}
       <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-[1140px] mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-[var(--font-display)] tracking-tight accent-underline text-[#0B2447] mb-6">
             What to Expect
           </h2>
@@ -95,7 +95,7 @@ export default function WeightLossPage() {
 
       {/* Appointment required */}
       <section className="py-10 bg-[#F5F7FA]">
-        <div className="max-w-[1140px] mx-auto px-4 flex flex-wrap items-center justify-center gap-4">
+        <div className="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-center gap-4">
           <span className="bg-gradient-to-r from-[#00B4D8] to-[#0096B7] text-white rounded-full px-6 py-2 text-sm font-black uppercase tracking-wider shadow-md">
             Appointment Required
           </span>
@@ -104,7 +104,7 @@ export default function WeightLossPage() {
 
       {/* Related Services */}
       <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-[1140px] mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-[var(--font-display)] tracking-tight accent-underline-center text-[#0B2447] mb-8 text-center">
             Related Services
           </h2>
@@ -133,7 +133,7 @@ export default function WeightLossPage() {
       {/* CTA */}
       <section className="grain py-16 md:py-20 relative overflow-hidden bg-gradient-to-br from-[#0B2447] to-[#00B4D8]">
         <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-[#00B4D8]/8 blur-[100px] pointer-events-none" />
-        <div className="relative z-10 max-w-[1140px] mx-auto px-4 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-[var(--font-display)] tracking-tight text-white mb-4">
             Ready to Start Your {service.name}?
           </h2>

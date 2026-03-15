@@ -49,7 +49,7 @@ export default function StatsCounter() {
       <div className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full bg-[#0B2447]/10 blur-[100px] pointer-events-none" />
 
       <motion.div
-        className="relative z-10 mx-auto max-w-6xl px-4 lg:px-20"
+        className="relative z-10 mx-auto max-w-7xl px-4 lg:px-20"
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"

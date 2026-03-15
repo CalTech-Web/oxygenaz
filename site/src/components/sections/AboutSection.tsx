@@ -13,7 +13,7 @@ export default function AboutSection() {
       <div className="absolute bottom-1/4 left-[-10%] w-[400px] h-[400px] rounded-full bg-[#0B2447]/6 blur-[100px] pointer-events-none" />
 
       <motion.div
-        className="relative z-10 mx-auto max-w-6xl px-4 lg:px-20"
+        className="relative z-10 mx-auto max-w-7xl px-4 lg:px-20"
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"

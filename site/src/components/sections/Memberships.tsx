@@ -24,7 +24,7 @@ export default function Memberships() {
         whileInView="visible"
         viewport={viewportOnce}
       >
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           {/* Heading */}
           <motion.div variants={fadeInUp} className="text-center mb-12">
             <h2 className="font-[var(--font-display)] text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4">

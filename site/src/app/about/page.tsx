@@ -28,7 +28,7 @@ export default function AboutPage() {
         <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-[#00B4D8]/8 blur-[100px] pointer-events-none" />
         <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] rounded-full bg-[#00B4D8]/15 blur-[120px] pointer-events-none" />
 
-        <div className="relative z-10 max-w-[1140px] mx-auto px-4 text-center py-16 md:py-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center py-16 md:py-20">
           <h1
             className="text-4xl md:text-6xl lg:text-[72px] font-extrabold font-[var(--font-display)] text-white leading-[1.05] tracking-tight"
             style={{ textShadow: "4px 4px 0px rgba(0,0,0,0.3)" }}
@@ -40,7 +40,7 @@ export default function AboutPage() {
 
       {/* Introduction */}
       <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-[1140px] mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-[#6B7B8D] text-lg md:text-xl mb-4 leading-relaxed font-light">
               Oxygen Wellness & Physical Therapy is a one-of-a-kind destination for expert Physical Therapy and advanced regenerative treatments in Glendale, AZ. From Cryotherapy and Red Light Therapy to Hyperbaric Oxygen Therapy (HBOT), spinal adjustments, dry needling, therapeutic massage, and sports injury management, we bring together the most effective modalities under one roof.
@@ -54,7 +54,7 @@ export default function AboutPage() {
 
       {/* Founder Section */}
       <section className="py-16 md:py-20 bg-gradient-to-br from-[#F5F7FA] to-white">
-        <div className="max-w-[1140px] mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <Image
@@ -105,7 +105,7 @@ export default function AboutPage() {
         {/* Decorative orb */}
         <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-[#00B4D8]/10 blur-[100px] pointer-events-none" />
 
-        <div className="relative z-10 text-center max-w-[1140px] mx-auto px-4 py-16 md:py-20">
+        <div className="relative z-10 text-center max-w-7xl mx-auto px-4 py-16 md:py-20">
           <h2
             className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-[var(--font-display)] text-white leading-tight tracking-tight mb-6"
             style={{ textShadow: "4px 4px 0px rgba(0,0,0,0.25)" }}
@@ -129,7 +129,7 @@ export default function AboutPage() {
 
       {/* Blending Tradition with Innovation */}
       <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-[1140px] mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-[var(--font-display)] tracking-tight text-[#0B2447] mb-6 text-center accent-underline-center">
             Blending Tradition with Innovation
           </h2>
@@ -141,7 +141,7 @@ export default function AboutPage() {
 
       {/* Our Mission */}
       <section className="py-16 md:py-20 bg-gradient-to-br from-[#F5F7FA] to-white">
-        <div className="max-w-[1140px] mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-[var(--font-display)] tracking-tight text-[#0B2447] mb-6 text-center accent-underline-center">
             Our Mission
           </h2>
@@ -153,7 +153,7 @@ export default function AboutPage() {
 
       {/* Why Choose Us? */}
       <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-[1140px] mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-[var(--font-display)] tracking-tight text-[#0B2447] mb-6 text-center accent-underline-center">
             Why Choose Us?
           </h2>
@@ -165,7 +165,7 @@ export default function AboutPage() {
 
       {/* Our Community */}
       <section className="py-16 md:py-20 bg-gradient-to-br from-[#F5F7FA] to-white">
-        <div className="max-w-[1140px] mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-[var(--font-display)] tracking-tight text-[#0B2447] mb-6 text-center accent-underline-center">
             Our Community
           </h2>

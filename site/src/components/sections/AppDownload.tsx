@@ -18,7 +18,7 @@ export default function AppDownload() {
       </div>
 
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 lg:px-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 lg:px-20">
         <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
           {/* Left: Text + Store badges */}
           <motion.div

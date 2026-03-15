@@ -3,7 +3,7 @@ import { SITE } from "@/lib/constants";
 export default function ContactSection() {
   return (
     <section className="py-16 bg-white">
-      <div className="max-w-[1140px] mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-[40px] font-extrabold font-[var(--font-display)] text-[#0B2447] leading-[48px] tracking-[0.4px] text-center mb-12">
           Visit Us
         </h2>

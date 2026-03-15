@@ -75,7 +75,7 @@ export default function PhysicalTherapyPage() {
         </div>
         <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-[#00B4D8]/8 blur-[100px] pointer-events-none" />
         <div className="absolute -bottom-20 -left-20 w-[300px] h-[300px] rounded-full bg-[#0B2447]/15 blur-[80px] pointer-events-none" />
-        <div className="relative z-10 max-w-[1140px] mx-auto px-4 text-center py-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center py-20">
           <h1
             className="font-[var(--font-display)] text-4xl md:text-6xl lg:text-[72px] font-extrabold text-white leading-[1.05] tracking-tight mb-4"
             style={{ textShadow: "4px 4px 0px rgba(0,0,0,0.3)" }}
@@ -96,7 +96,7 @@ export default function PhysicalTherapyPage() {
 
       {/* What is Physical Therapy */}
       <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-[1140px] mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div className="relative">
               <Image
@@ -140,7 +140,7 @@ export default function PhysicalTherapyPage() {
 
       {/* What to Expect */}
       <section className="py-16 md:py-20 bg-[#F5F7FA]">
-        <div className="max-w-[1140px] mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <h2 className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0B2447] tracking-tight mb-8 text-center">
             What to Expect During a Physical Therapy Appointment
           </h2>
@@ -175,7 +175,7 @@ export default function PhysicalTherapyPage() {
 
       {/* Meet our Physical Therapist */}
       <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-[1140px] mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
               <Image
@@ -220,7 +220,7 @@ export default function PhysicalTherapyPage() {
 
       {/* Free Core Service CTA */}
       <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-[1140px] mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <div className="relative overflow-hidden bg-gradient-to-br from-[#00B4D8] to-[#0B2447] rounded-2xl p-8 text-center">
             <div className="absolute -top-10 -right-10 w-[200px] h-[200px] rounded-full bg-white/8 blur-[60px] pointer-events-none" />
             <div className="relative z-10">
@@ -243,7 +243,7 @@ export default function PhysicalTherapyPage() {
 
       {/* Contact Form Section */}
       <section className="py-16 md:py-20 bg-[#F5F7FA]">
-        <div className="max-w-[1140px] mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <ContactForm source="physical-therapy-page" />
           </div>
@@ -256,7 +256,7 @@ export default function PhysicalTherapyPage() {
 function PTFAQSection({ faqs }: { faqs: { question: string; answer: string }[] }) {
   return (
     <section className="py-16 md:py-20 bg-[#F5F7FA]">
-      <div className="max-w-[1140px] mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4">
         <h2 className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0B2447] tracking-tight accent-underline-center mb-8 text-center">
           Physical Therapy FAQs
         </h2>

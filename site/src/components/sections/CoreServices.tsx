@@ -36,7 +36,7 @@ export default function CoreServices() {
   return (
     <section className="py-16 md:py-20 bg-gradient-to-b from-white to-[#F5F7FA]/50 relative overflow-hidden">
       <motion.div
-        className="relative z-10 max-w-[1140px] mx-auto px-4"
+        className="relative z-10 max-w-7xl mx-auto px-4"
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"

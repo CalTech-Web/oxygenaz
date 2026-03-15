@@ -143,7 +143,7 @@ export default function Header() {
     <header>
       {/* ── Row 1: Top Bar (not sticky) ── */}
       <div className="hidden bg-[#0B2447] py-1.5 lg:block">
-        <div className="mx-auto max-w-6xl px-4 lg:px-20 flex items-center justify-between">
+        <div className="mx-auto max-w-7xl px-4 lg:px-20 flex items-center justify-between">
           <span className="inline-flex items-center gap-1.5 text-sm font-medium text-white">
             <MapPin className="h-3.5 w-3.5" />
             {SITE.fullAddress}
@@ -166,7 +166,7 @@ export default function Header() {
             : "bg-white/60 backdrop-blur-sm border-transparent"
         }`}
       >
-        <div className="mx-auto max-w-6xl flex items-center justify-between px-4 py-5 lg:px-20">
+        <div className="mx-auto max-w-7xl flex items-center justify-between px-4 py-5 lg:px-20">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image

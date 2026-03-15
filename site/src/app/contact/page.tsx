@@ -17,7 +17,7 @@ export default function ContactPage() {
         <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-[#00B4D8]/8 blur-[100px] pointer-events-none" />
         <div className="absolute -bottom-20 -left-20 w-[300px] h-[300px] rounded-full bg-[#00B4D8]/20 blur-[100px] pointer-events-none" />
 
-        <div className="relative max-w-[1140px] mx-auto px-4 text-center">
+        <div className="relative max-w-7xl mx-auto px-4 text-center">
           <h1
             className="text-4xl md:text-6xl lg:text-[72px] font-extrabold font-[var(--font-display)] text-white leading-[1.05] tracking-tight mb-4"
             style={{ textShadow: "4px 4px 0px rgba(0,0,0,0.3)" }}
@@ -32,7 +32,7 @@ export default function ContactPage() {
 
       {/* Contact Form + Info */}
       <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-[1140px] mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div>
@@ -142,7 +142,7 @@ export default function ContactPage() {
 
       {/* Google Maps Embed */}
       <section className="bg-[#F5F7FA] py-16 md:py-20">
-        <div className="max-w-[1140px] mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4">
           <div className="rounded-2xl overflow-hidden shadow-xl">
             <iframe
               title="Oxygen Wellness Location"

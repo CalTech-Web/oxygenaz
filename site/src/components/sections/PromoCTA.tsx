@@ -15,7 +15,7 @@ export default function PromoCTA() {
 
 
       <motion.div
-        className="relative z-10 max-w-6xl mx-auto px-4 lg:px-20"
+        className="relative z-10 max-w-7xl mx-auto px-4 lg:px-20"
         variants={fadeInUp}
         initial="hidden"
         whileInView="visible"

@@ -35,7 +35,7 @@ export default function Footer() {
       />
 
       {/* ── Main footer content ── */}
-      <div className="relative z-10 px-4 py-[75px] lg:px-20">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-[75px] lg:px-20">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5">
           {/* Column 1: About */}
           <div className="sm:col-span-2 lg:col-span-2">
@@ -201,8 +201,8 @@ export default function Footer() {
       </div>
 
       {/* ── Bottom Bar ── */}
-      <div className="h-px bg-gradient-to-r from-transparent via-[#00B4D8]/20 to-transparent mx-4 lg:mx-20" />
-      <div className="relative z-10 mx-4 lg:mx-20 pt-6 pb-6">
+      <div className="h-px bg-gradient-to-r from-transparent via-[#00B4D8]/20 to-transparent mx-auto max-w-7xl px-4 lg:px-20" />
+      <div className="relative z-10 mx-auto max-w-7xl px-4 lg:px-20 pt-6 pb-6">
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <div className="text-sm text-white/60">
             <p>

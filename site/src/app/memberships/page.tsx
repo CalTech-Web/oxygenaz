@@ -15,7 +15,7 @@ export default function MembershipsPage() {
       <section className="relative overflow-hidden bg-gradient-to-br from-[#0B2447] via-[#0B2447] to-[#00B4D8] py-20 md:py-28 grain">
         <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-[#00B4D8]/8 blur-[100px] pointer-events-none" />
         <div className="absolute -bottom-20 -left-20 w-[300px] h-[300px] rounded-full bg-[#00B4D8]/20 blur-[80px] pointer-events-none" />
-        <div className="relative z-10 max-w-[1140px] mx-auto px-4 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
           <h1
             className="text-4xl md:text-6xl lg:text-[72px] font-extrabold font-[var(--font-display)] text-white leading-[1.05] tracking-tight mb-4"
             style={{ textShadow: "4px 4px 0px rgba(0,0,0,0.3)" }}
@@ -33,7 +33,7 @@ export default function MembershipsPage() {
 
       {/* Not Sure CTA */}
       <section className="py-16 md:py-20 bg-[#F5F7FA]">
-        <div className="max-w-[1140px] mx-auto px-4 text-center">
+        <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-[var(--font-display)] text-[#0B2447] tracking-tight accent-underline-center mb-4">
             Not Sure Which Plan Is Right for You?
           </h2>

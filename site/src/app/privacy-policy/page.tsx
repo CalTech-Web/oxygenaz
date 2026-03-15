@@ -9,7 +9,7 @@ export default function PrivacyPolicyPage() {
     <>
       {/* Hero */}
       <section className="bg-[#0B2447] py-16 md:py-20">
-        <div className="max-w-[1140px] mx-auto px-4 text-center">
+        <div className="max-w-7xl mx-auto px-4 text-center">
           <h1
             className="text-[60px] font-extrabold font-[var(--font-display)] text-white leading-tight"
             style={{ textShadow: "4px 4px 0px rgba(0,0,0,0.25)" }}
