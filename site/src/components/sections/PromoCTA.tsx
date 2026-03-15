@@ -13,9 +13,6 @@ export default function PromoCTA() {
       {/* Subtle pattern overlay */}
       <div className="absolute inset-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzAgMzBtLTIgMGE0IDQgMCAxIDEgNCAwIDQgNCAwIDEgMS00IDAiIGZpbGw9IiNmZmYiLz48L2c+PC9zdmc+')]" />
 
-      {/* Diagonal clips */}
-      <div className="absolute top-0 left-0 right-0 h-16 bg-white" style={{ clipPath: "polygon(0 0, 100% 0, 100% 0, 0 100%)" }} />
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-[#F5F7FA]" style={{ clipPath: "polygon(0 100%, 100% 0, 100% 100%)" }} />
 
       <motion.div
         className="relative z-10 max-w-6xl mx-auto px-4 lg:px-20"

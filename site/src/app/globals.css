@@ -198,18 +198,6 @@ html {
   z-index: 0;
 }
 
-/* ── Diagonal clip sections ── */
-.clip-diagonal-bottom {
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-}
-
-.clip-diagonal-top {
-  clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
-}
-
-.clip-diagonal-both {
-  clip-path: polygon(0 8%, 100% 0, 100% 92%, 0 100%);
-}
 
 /* ── Card hover lift ── */
 .card-lift {

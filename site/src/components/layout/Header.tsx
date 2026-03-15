@@ -141,7 +141,7 @@ export default function Header() {
 
   return (
     <header>
-      {/* ── Row 1: Top Bar ── */}
+      {/* ── Row 1: Top Bar (not sticky) ── */}
       <div className="hidden bg-[#0B2447] py-1.5 lg:block">
         <div className="mx-auto max-w-6xl px-4 lg:px-20 flex items-center justify-between">
           <span className="inline-flex items-center gap-1.5 text-sm font-medium text-white">
@@ -158,12 +158,12 @@ export default function Header() {
         </div>
       </div>
 
-      {/* ── Row 2: Main Navigation ── */}
+      {/* ── Row 2: Main Navigation (sticky, semi-transparent) ── */}
       <div
-        className={`sticky top-0 z-50 transition-all duration-500 border-b-2 ${
+        className={`sticky top-0 z-50 transition-all duration-500 border-b ${
           scrolled
-            ? "bg-white/95 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.08)] border-[#00B4D8]/30"
-            : "bg-white shadow-[0_1px_3px_rgba(0,0,0,0.06)] border-transparent"
+            ? "bg-white/85 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.08)] border-[#00B4D8]/30"
+            : "bg-white/60 backdrop-blur-sm border-transparent"
         }`}
       >
         <div className="mx-auto max-w-6xl flex items-center justify-between px-4 py-5 lg:px-20">
