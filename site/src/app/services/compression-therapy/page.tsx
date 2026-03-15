@@ -21,7 +21,7 @@ export default function CompressionTherapyPage() {
       <section className="grain relative overflow-hidden min-h-[500px] flex items-center justify-center">
         <div className="absolute inset-0">
           <Image
-            src="/images/services/compression-therapy.jpg"
+            src="/images/services/compression-therapy.webp"
             alt={service.name}
             fill
             className="object-cover"
