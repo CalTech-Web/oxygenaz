@@ -142,8 +142,8 @@ export default function Header() {
   return (
     <header>
       {/* ── Row 1: Top Bar ── */}
-      <div className="hidden bg-[#0B2447] py-1.5 px-4 lg:flex lg:px-20">
-        <div className="flex w-full items-center justify-between">
+      <div className="hidden bg-[#0B2447] py-1.5 lg:block">
+        <div className="mx-auto max-w-6xl px-4 lg:px-20 flex items-center justify-between">
           <span className="inline-flex items-center gap-1.5 text-sm font-medium text-white">
             <MapPin className="h-3.5 w-3.5" />
             {SITE.fullAddress}
@@ -166,7 +166,7 @@ export default function Header() {
             : "bg-white shadow-[0_1px_3px_rgba(0,0,0,0.06)] border-transparent"
         }`}
       >
-        <div className="flex items-center justify-between px-4 py-5 lg:px-20">
+        <div className="mx-auto max-w-6xl flex items-center justify-between px-4 py-5 lg:px-20">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image

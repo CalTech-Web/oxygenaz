@@ -34,7 +34,7 @@ export default function Hero() {
               animate="visible"
             >
               Only the{" "}
-              <span className="text-gradient-vibrant">
+              <span className="text-gradient-shine">
                 Good
               </span>{" "}
               Stuff
@@ -78,7 +78,7 @@ export default function Hero() {
       </div>
 
       {/* Diagonal bottom clip overlay */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-[#0B2447]" style={{ clipPath: "polygon(0 100%, 100% 40%, 100% 100%)" }} />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-[#0B2447]" />
 
       {/* Scroll indicator */}
       <motion.div

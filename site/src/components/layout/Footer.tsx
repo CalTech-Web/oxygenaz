@@ -221,20 +221,18 @@ export default function Footer() {
             <p className="text-xs text-white/50">
               Designed by Elizabeth Ardelt &amp; Audrey Muller
             </p>
-            <a
-              href="https://caltechweb.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-opacity hover:opacity-80"
-            >
-              <Image
-                src="/images/badges/caltech-web.png"
-                alt="CalTech Web"
-                width={120}
-                height={30}
-                className="h-auto w-[100px]"
-              />
-            </a>
+            <p className="text-xs text-white/50">
+              Built by{" "}
+              <a
+                href="https://caltechweb.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/70 hover:text-[#00B4D8] transition-colors"
+              >
+                CalTech Web
+              </a>
+              .
+            </p>
           </div>
         </div>
       </div>
