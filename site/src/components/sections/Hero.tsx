@@ -3,8 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ArrowRight, Phone } from "lucide-react";
 import { heroText, heroSubtext, heroCTA } from "@/lib/animations";
+import { SITE } from "@/lib/constants";
 
 export default function Hero() {
   return (
@@ -24,7 +25,7 @@ export default function Hero() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 lg:px-20 py-32 md:py-0">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           {/* Left side - text */}
-          <div className="md:col-span-7">
+          <div className="md:col-span-8">
             {/* Accent bar */}
             <motion.div
               className="h-1 w-20 rounded-full bg-gradient-to-r from-[#00B4D8] to-white/40 mb-8"
@@ -35,27 +36,24 @@ export default function Hero() {
             />
 
             <motion.h1
-              className="font-[var(--font-display)] text-5xl sm:text-6xl lg:text-[84px] font-extrabold leading-[0.95] mb-8 tracking-tight text-white"
+              className="font-[var(--font-display)] text-5xl sm:text-6xl lg:text-[84px] font-extrabold leading-[0.95] mb-8 tracking-tight text-white whitespace-nowrap"
               variants={heroText}
               initial="hidden"
               animate="visible"
             >
               Only the{" "}
-              <span className="text-gradient-shine">
-                Good
-              </span>{" "}
+              <span className="text-gradient-shine">Good</span>{" "}
               Stuff
             </motion.h1>
 
             <motion.p
-              className="text-white/80 text-lg md:text-xl max-w-lg mb-10 leading-relaxed"
+              className="text-white/80 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed"
               variants={heroSubtext}
               initial="hidden"
               animate="visible"
             >
-              Whether you&apos;re seeking pain relief, improved mobility, or a
-              complete wellness plan, our team is here to guide you. Book today or
-              give us a ring.
+              Pain relief, improved mobility, and complete wellness plans
+              backed by 25+ years of expertise. Walk in or book your session today.
             </motion.p>
 
             <motion.div
@@ -66,21 +64,24 @@ export default function Hero() {
             >
               <Link
                 href="/contact"
-                className="bg-gradient-to-r from-[#00B4D8] to-[#0096B7] text-white rounded-full px-10 py-5 font-black text-sm uppercase tracking-wider hover:scale-105 hover:shadow-[0_0_30px_rgba(0,180,216,0.4)] transition-all duration-300 shadow-[0_8px_30px_rgba(0,180,216,0.25)]"
+                className="group relative bg-gradient-to-r from-[#00B4D8] to-[#0096B7] text-white rounded-full px-10 py-5 font-black text-sm uppercase tracking-wider hover:scale-105 hover:shadow-[0_0_40px_rgba(0,180,216,0.5)] transition-all duration-300 shadow-[0_8px_30px_rgba(0,180,216,0.25)] flex items-center gap-3 overflow-hidden"
               >
                 Book Today
+                <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
               </Link>
-              <Link
-                href="/services/cryotherapy"
-                className="border-2 border-white/30 text-white rounded-full px-10 py-5 font-black text-sm uppercase tracking-wider hover:border-[#00B4D8] hover:text-[#00B4D8] hover:scale-105 transition-all duration-300"
+              <a
+                href={SITE.phoneHref}
+                className="group border-2 border-white/30 text-white rounded-full px-10 py-5 font-black text-sm uppercase tracking-wider hover:border-[#00B4D8] hover:bg-[#00B4D8]/10 hover:scale-105 transition-all duration-300 flex items-center gap-3"
               >
-                View Services
-              </Link>
+                <Phone className="h-5 w-5 transition-transform duration-300 group-hover:rotate-12" />
+                Call Us
+              </a>
             </motion.div>
           </div>
 
-          {/* Right side - decorative (empty, mesh blobs handle the visual) */}
-          <div className="hidden md:block md:col-span-5" />
+          {/* Right side - decorative */}
+          <div className="hidden md:block md:col-span-4" />
         </div>
       </div>
 
