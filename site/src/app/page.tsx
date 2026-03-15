@@ -14,10 +14,10 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <PhysicalTherapySection />
       <StatsCounter />
       <AllServices />
       <PromoCTA />
-      <PhysicalTherapySection />
       <HowItWorks />
       <Memberships />
       <TestimonialsPlaceholder />

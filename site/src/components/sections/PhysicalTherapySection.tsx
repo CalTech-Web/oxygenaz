@@ -9,7 +9,7 @@ const features = [
   {
     number: "01",
     title: "Personalized treatment plans",
-    body: "Reduce pain, move freely, and feel strong again, whether it's a new injury, surgery, or a chronic condition.",
+    body: "Reduce pain, move freely, and feel strong again \u2014 whether it\u2019s a new injury, surgery, or a chronic condition.",
   },
   {
     number: "02",
@@ -36,15 +36,14 @@ export default function PhysicalTherapySection() {
         >
           {/* Left - Image */}
           <motion.div variants={fadeInLeft} className="relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.1)] -rotate-1">
+            <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.1)]">
               <Image
-                src="/images/heroes/home-hero.jpg"
+                src="/images/content/physical-therapy-hero.jpg"
                 alt="Physical Therapy at Oxygen Wellness"
                 width={600}
                 height={450}
                 className="w-full h-auto object-cover"
               />
-              {/* Coral accent border */}
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#00B4D8] to-[#0B2447]" />
             </div>
           </motion.div>
@@ -77,10 +76,22 @@ export default function PhysicalTherapySection() {
 
             <Link
               href="/physical-therapy"
-              className="inline-block bg-gradient-to-r from-[#00B4D8] to-[#0096B7] text-white rounded-full px-8 py-4 text-sm font-black uppercase tracking-wider hover:scale-105 hover:shadow-[0_0_30px_rgba(0,180,216,0.4)] transition-all duration-300 shadow-[0_8px_30px_rgba(0,180,216,0.25)]"
+              className="inline-block bg-gradient-to-r from-[#00B4D8] to-[#0096B7] text-white rounded-full px-8 py-4 text-sm font-black uppercase tracking-wider hover:scale-105 hover:shadow-[0_0_30px_rgba(0,180,216,0.4)] transition-all duration-300 shadow-[0_8px_30px_rgba(0,180,216,0.25)] mb-8"
             >
-              Learn More
+              Learn More About Physical Therapy
             </Link>
+
+            <div className="bg-white rounded-xl p-6 shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
+              <p className="text-[#0B2447] font-medium mb-4">
+                Not sure where to start? Book a <span className="font-bold">FREE 15&apos; consult</span> with our Wellness and Sports Medicine Expert!
+              </p>
+              <Link
+                href="/contact"
+                className="inline-block border-2 border-[#0B2447] text-[#0B2447] rounded-full px-8 py-3 text-sm font-black uppercase tracking-wider hover:bg-[#0B2447] hover:text-white hover:scale-105 transition-all duration-300"
+              >
+                Book My Consultation
+              </Link>
+            </div>
           </motion.div>
         </motion.div>
       </div>
