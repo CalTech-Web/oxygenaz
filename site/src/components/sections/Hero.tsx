@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
@@ -7,11 +8,17 @@ import { heroText, heroSubtext, heroCTA } from "@/lib/animations";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-white">
-      {/* Gradient mesh blobs */}
-      <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] rounded-full bg-[#00B4D8]/20 blur-[120px] pointer-events-none animate-mesh" />
-      <div className="absolute top-[20%] right-[10%] w-[400px] h-[400px] rounded-full bg-[#0B2447]/15 blur-[100px] pointer-events-none animate-mesh" style={{ animationDelay: "-3s" }} />
-      <div className="absolute bottom-[10%] right-[15%] w-[350px] h-[350px] rounded-full bg-[#00B4D8]/15 blur-[100px] pointer-events-none animate-mesh" style={{ animationDelay: "-6s" }} />
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#0B2447]">
+      {/* Background image */}
+      <Image
+        src="/images/content/home-page.jpg"
+        alt=""
+        fill
+        priority
+        className="object-cover"
+      />
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-[#0B2447]/60" />
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-7xl px-4 lg:px-20 py-32 md:py-0">
@@ -20,7 +27,7 @@ export default function Hero() {
           <div className="md:col-span-7">
             {/* Accent bar */}
             <motion.div
-              className="h-1 w-20 rounded-full bg-gradient-to-r from-[#00B4D8] to-[#0B2447] mb-8"
+              className="h-1 w-20 rounded-full bg-gradient-to-r from-[#00B4D8] to-white/40 mb-8"
               initial={{ opacity: 0, scaleX: 0 }}
               animate={{ opacity: 1, scaleX: 1 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
@@ -28,7 +35,7 @@ export default function Hero() {
             />
 
             <motion.h1
-              className="font-[var(--font-display)] text-5xl sm:text-6xl lg:text-[84px] font-extrabold leading-[0.95] mb-8 tracking-tight text-[#0B2447]"
+              className="font-[var(--font-display)] text-5xl sm:text-6xl lg:text-[84px] font-extrabold leading-[0.95] mb-8 tracking-tight text-white"
               variants={heroText}
               initial="hidden"
               animate="visible"
@@ -41,7 +48,7 @@ export default function Hero() {
             </motion.h1>
 
             <motion.p
-              className="text-[#5A6878] text-lg md:text-xl max-w-lg mb-10 leading-relaxed"
+              className="text-white/80 text-lg md:text-xl max-w-lg mb-10 leading-relaxed"
               variants={heroSubtext}
               initial="hidden"
               animate="visible"
@@ -65,7 +72,7 @@ export default function Hero() {
               </Link>
               <Link
                 href="/services/cryotherapy"
-                className="border-2 border-[#0B2447]/20 text-[#0B2447] rounded-full px-10 py-5 font-black text-sm uppercase tracking-wider hover:border-[#00B4D8] hover:text-[#00B4D8] hover:scale-105 transition-all duration-300"
+                className="border-2 border-white/30 text-white rounded-full px-10 py-5 font-black text-sm uppercase tracking-wider hover:border-[#00B4D8] hover:text-[#00B4D8] hover:scale-105 transition-all duration-300"
               >
                 View Services
               </Link>
@@ -77,8 +84,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Diagonal bottom clip overlay */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-[#0B2447]" />
+      {/* Bottom overlay */}
+      <div className="absolute bottom-0 left-0 right-0 h-[75px] bg-[#0B2447]" />
 
       {/* Scroll indicator */}
       <motion.div
@@ -86,8 +93,8 @@ export default function Hero() {
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
       >
-        <span className="text-[#0B2447]/30 text-[10px] uppercase tracking-[0.3em] font-bold">Scroll</span>
-        <ChevronDown className="w-6 h-6 text-[#00B4D8]/50" />
+        <span className="text-white/30 text-[10px] uppercase tracking-[0.3em] font-bold">Scroll</span>
+        <ChevronDown className="w-6 h-6 text-white/50" />
       </motion.div>
     </section>
   );

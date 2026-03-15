@@ -33,6 +33,10 @@ export const metadata: Metadata = {
     "red light therapy",
     "sports medicine",
   ],
+  icons: {
+    icon: "/images/oxygen-icon.png",
+    apple: "/images/oxygen-icon.png",
+  },
   openGraph: {
     title: "Oxygen Wellness & Physical Therapy",
     description:
