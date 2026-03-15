@@ -162,20 +162,27 @@ export default function Header() {
       <div
         className={`sticky top-0 z-50 transition-all duration-500 border-b ${
           scrolled
-            ? "bg-white/85 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.08)] border-[#00B4D8]/30"
-            : "bg-white/60 backdrop-blur-sm border-transparent"
+            ? "bg-white/80 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.08)] border-[#00B4D8]/20"
+            : "bg-transparent border-transparent"
         }`}
       >
         <div className="mx-auto max-w-7xl flex items-center justify-between px-4 py-5 lg:px-20">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
+          <Link href="/" className="flex-shrink-0 relative">
             <Image
               src="/images/logo.webp"
               alt={SITE.name}
               width={208}
               height={60}
               priority
-              className="h-auto w-[170px] lg:w-[208px]"
+              className={`h-auto w-[170px] lg:w-[208px] transition-opacity duration-500 ${scrolled ? "opacity-100" : "opacity-0"}`}
+            />
+            <Image
+              src="/images/logo-footer.webp"
+              alt={SITE.name}
+              width={208}
+              height={60}
+              className={`absolute top-0 left-0 h-auto w-[170px] lg:w-[208px] transition-opacity duration-500 ${scrolled ? "opacity-0" : "opacity-100"}`}
             />
           </Link>
 
@@ -191,7 +198,9 @@ export default function Header() {
                 >
                   <button
                     type="button"
-                    className="relative inline-flex items-center gap-1 text-sm font-bold uppercase tracking-wider text-[#0B2447] transition-colors hover:text-[#00B4D8] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#00B4D8] after:transition-all after:duration-300 hover:after:w-full"
+                    className={`relative inline-flex items-center gap-1 text-sm font-bold uppercase tracking-wider transition-colors hover:text-[#00B4D8] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#00B4D8] after:transition-all after:duration-300 hover:after:w-full ${
+                      scrolled ? "text-[#0B2447]" : "text-white"
+                    }`}
                     aria-expanded={openDropdown === item.label}
                     aria-haspopup="true"
                   >
@@ -212,7 +221,9 @@ export default function Header() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="relative text-sm font-bold uppercase tracking-wider text-[#0B2447] transition-colors hover:text-[#00B4D8] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#00B4D8] after:transition-all after:duration-300 hover:after:w-full"
+                  className={`relative text-sm font-bold uppercase tracking-wider transition-colors hover:text-[#00B4D8] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#00B4D8] after:transition-all after:duration-300 hover:after:w-full ${
+                    scrolled ? "text-[#0B2447]" : "text-white"
+                  }`}
                 >
                   {item.label}
                 </Link>
@@ -233,7 +244,9 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-md p-2 text-[#0B2447] transition-colors hover:text-[#00B4D8] lg:hidden"
+            className={`inline-flex items-center justify-center rounded-md p-2 transition-colors hover:text-[#00B4D8] lg:hidden ${
+              scrolled ? "text-[#0B2447]" : "text-white"
+            }`}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}

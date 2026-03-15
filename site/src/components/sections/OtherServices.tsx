@@ -9,28 +9,31 @@ import { staggerContainer, cardReveal } from "@/lib/animations";
 
 export default function OtherServices() {
   return (
-    <section className="relative py-20 md:py-28 bg-white">
+    <section className="relative py-20 md:py-28 bg-gradient-to-b from-[#F5F7FA] to-white">
       <div className="mx-auto max-w-7xl px-4 lg:px-20">
         {/* Section heading */}
         <div className="mb-12">
-          <h2 className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0B2447] tracking-tight accent-underline">
+          <h2 className="font-[var(--font-display)] text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0B2447] tracking-tight">
             Other Services
           </h2>
+          <div className="mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-[#00B4D8] to-[#0B2447]" />
         </div>
 
-        {/* Grid */}
+        {/* Bento grid */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
         >
-          {additionalServices.map((service) => (
+          {additionalServices.map((service, index) => (
             <motion.div
               key={service.id}
               variants={cardReveal}
-              className="group relative overflow-hidden rounded-2xl min-h-[300px]"
+              className={`group relative overflow-hidden rounded-2xl ${
+                index === 0 ? "sm:col-span-2 sm:row-span-2 min-h-[320px] md:min-h-[400px]" : "min-h-[220px] md:min-h-[260px]"
+              }`}
             >
               <Link href={`/services/${service.slug}`} className="block h-full">
                 <Image
@@ -48,11 +51,23 @@ export default function OtherServices() {
                   </span>
                 </div>
 
+                {service.price && (
+                  <div className="absolute top-3 left-3 z-10">
+                    <span className="inline-block rounded-full bg-white/20 backdrop-blur-sm px-3 py-1 text-xs font-bold text-white">
+                      {service.price}
+                    </span>
+                  </div>
+                )}
+
                 <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
-                  <h3 className="font-[var(--font-display)] text-lg md:text-xl font-bold text-white">
+                  <h3 className={`font-[var(--font-display)] font-bold text-white ${
+                    index === 0 ? "text-2xl md:text-3xl" : "text-lg md:text-xl"
+                  }`}>
                     {service.name}
                   </h3>
-                  <p className="mt-1 text-white/70 text-sm line-clamp-2">
+                  <p className={`mt-1 text-white/70 line-clamp-2 ${
+                    index === 0 ? "text-base" : "text-sm"
+                  }`}>
                     {service.shortDescription}
                   </p>
 

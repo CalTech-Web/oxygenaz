@@ -1,99 +1,100 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { fadeInUp, staggerContainer, viewportOnce } from "@/lib/animations";
-
-const services = [
-  {
-    title: "Cryotherapy",
-    slug: "cryotherapy",
-    image: "/images/services/cryotherapy.jpg",
-  },
-  {
-    title: "Infrared Sauna",
-    slug: "infrared-sauna",
-    image: "/images/services/infrared-sauna.jpg",
-  },
-  {
-    title: "Oxygen Therapy",
-    slug: "oxygen-therapy",
-    image: "/images/services/oxygen-therapy.jpg",
-  },
-  {
-    title: "Red Light Therapy",
-    slug: "red-light-therapy",
-    image: "/images/services/red-light-therapy.jpg",
-  },
-  {
-    title: "Compression Therapy",
-    slug: "compression-therapy",
-    image: "/images/services/compression-therapy.webp",
-  },
-];
+import { ArrowRight } from "lucide-react";
+import { coreServices } from "@/data/services";
+import { staggerContainer, cardReveal } from "@/lib/animations";
 
 export default function CoreServices() {
   return (
-    <section className="py-16 md:py-20 bg-gradient-to-b from-white to-[#F5F7FA]/50 relative overflow-hidden">
-      <motion.div
-        className="relative z-10 max-w-7xl mx-auto px-4"
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="visible"
-        viewport={viewportOnce}
-      >
-        {/* Heading row */}
-        <motion.div variants={fadeInUp} className="flex items-center justify-between mb-8">
-          <h2 className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0B2447] leading-tight tracking-tight accent-underline">
-            Core Services
-          </h2>
-          <span className="bg-gradient-to-r from-[#00B4D8] to-[#0096B7] text-white text-sm font-black rounded-full px-6 py-2.5 shadow-[0_4px_20px_rgba(0,180,216,0.35)] animate-pulse">
+    <section className="relative py-20 md:py-28 bg-gradient-to-b from-white to-[#F5F7FA]">
+      <div className="mx-auto max-w-7xl px-4 lg:px-20">
+        {/* Section heading */}
+        <div className="flex items-center justify-between mb-12">
+          <div>
+            <h2 className="font-[var(--font-display)] text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#0B2447] tracking-tight">
+              Core Services
+            </h2>
+            <div className="mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-[#00B4D8] to-[#0B2447]" />
+          </div>
+          <span className="bg-gradient-to-r from-[#00B4D8] to-[#0096B7] text-white text-sm font-black rounded-full px-6 py-2.5 shadow-[0_4px_20px_rgba(0,180,216,0.35)] animate-pulse hidden sm:inline-block">
             $20 on Fridays
           </span>
-        </motion.div>
+        </div>
 
-        {/* Horizontal scrollable row */}
+        {/* Bento grid */}
         <motion.div
-          variants={fadeInUp}
-          className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4 scrollbar-hide"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
         >
-          {services.map((service) => (
-            <Link
-              key={service.slug}
-              href={`/services/${service.slug}`}
-              className="relative min-w-[340px] flex-shrink-0 h-[500px] rounded-2xl overflow-hidden snap-start group cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.15),0_0_0_1px_rgba(0,180,216,0.15)] transition-all duration-500"
+          {coreServices.map((service, index) => (
+            <motion.div
+              key={service.id}
+              variants={cardReveal}
+              className={`group relative overflow-hidden rounded-2xl ${
+                index === 0 ? "sm:col-span-2 sm:row-span-2 min-h-[320px] md:min-h-[400px]" : "min-h-[220px] md:min-h-[260px]"
+              }`}
             >
-              {/* Background image */}
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-115"
-                style={{ backgroundImage: `url('${service.image}')` }}
-              />
+              <Link href={`/services/${service.slug}`} className="block h-full">
+                <Image
+                  src={`/images/services/${service.slug}.jpg`}
+                  alt={service.name}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
 
-              {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B2447] via-[#0B2447]/50 to-transparent group-hover:via-[#0B2447]/30 transition-all duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B2447]/90 via-[#0B2447]/40 to-transparent transition-opacity duration-300 group-hover:from-[#0B2447]/95" />
 
-              {/* Accent line at bottom on hover */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00B4D8] to-[#0B2447] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-              {/* Content at bottom */}
-              <div className="absolute bottom-0 left-0 right-0 p-7 bg-gradient-to-t from-black/30 to-transparent">
-                <h3
-                  className="text-white text-2xl font-black mb-2 tracking-tight"
-                  style={{ textShadow: "1px 2px 4px rgba(0,0,0,0.5)" }}
-                >
-                  {service.title}
-                </h3>
-                <div className="flex items-center gap-2 text-[#00B4D8] text-sm font-bold uppercase tracking-wider opacity-80 group-hover:opacity-100 transition-opacity duration-300">
-                  <span>Learn More</span>
-                  <span className="transform translate-x-0 group-hover:translate-x-2 transition-transform duration-300">
-                    &rarr;
+                <div className="absolute top-3 right-3 z-10">
+                  <span className="inline-block rounded-full bg-[#00B4D8] px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">
+                    Core
                   </span>
                 </div>
-              </div>
-            </Link>
+
+                {service.promo && (
+                  <div className="absolute top-3 left-3 z-10">
+                    <span className="inline-block rounded-full bg-[#00B4D8] px-3 py-1 text-xs font-bold text-white animate-pulse-glow">
+                      {service.promo}
+                    </span>
+                  </div>
+                )}
+
+                <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
+                  <h3 className={`font-[var(--font-display)] font-bold text-white ${
+                    index === 0 ? "text-2xl md:text-3xl" : "text-lg md:text-xl"
+                  }`}>
+                    {service.name}
+                  </h3>
+                  <p className={`mt-1 text-white/70 line-clamp-2 ${
+                    index === 0 ? "text-base" : "text-sm"
+                  }`}>
+                    {service.shortDescription}
+                  </p>
+
+                  <div className="mt-3 flex items-center gap-1.5 text-[#00B4D8] opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                    <span className="text-sm font-bold">Learn More</span>
+                    <ArrowRight className="h-4 w-4" />
+                  </div>
+
+                  <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#00B4D8] to-[#0B2447] scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" />
+                </div>
+              </Link>
+            </motion.div>
           ))}
         </motion.div>
-      </motion.div>
+
+        {/* Promo banner */}
+        <div className="mt-8 text-center">
+          <p className="text-[#6B7B8D] text-base">
+            Get a core service for <span className="font-bold text-[#00B4D8]">FREE</span> when you book an appointment for the first time.
+          </p>
+        </div>
+      </div>
     </section>
   );
 }
