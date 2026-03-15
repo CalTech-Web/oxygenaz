@@ -1,6 +1,7 @@
 import Hero from "@/components/sections/Hero";
 import StatsCounter from "@/components/sections/StatsCounter";
-import AllServices from "@/components/sections/AllServices";
+import CoreServices from "@/components/sections/CoreServices";
+import OtherServices from "@/components/sections/OtherServices";
 import PromoCTA from "@/components/sections/PromoCTA";
 import PhysicalTherapySection from "@/components/sections/PhysicalTherapySection";
 import HowItWorks from "@/components/sections/HowItWorks";
@@ -16,8 +17,9 @@ export default function Home() {
       <Hero />
       <PhysicalTherapySection />
       <StatsCounter />
-      <AllServices />
+      <CoreServices />
       <PromoCTA />
+      <OtherServices />
       <HowItWorks />
       <Memberships />
       <TestimonialsPlaceholder />
