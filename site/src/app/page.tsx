@@ -1,4 +1,5 @@
 import Hero from "@/components/sections/Hero";
+import WellnessLivingWidgets from "@/components/sections/WellnessLivingWidgets";
 import StatsCounter from "@/components/sections/StatsCounter";
 import CoreServices from "@/components/sections/CoreServices";
 import OtherServices from "@/components/sections/OtherServices";
@@ -15,6 +16,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <WellnessLivingWidgets />
       <PhysicalTherapySection />
       <StatsCounter />
       <CoreServices />
