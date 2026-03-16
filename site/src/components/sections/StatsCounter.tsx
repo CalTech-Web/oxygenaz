@@ -67,7 +67,7 @@ export default function StatsCounter() {
                   index < stats.length - 1 ? "md:border-r md:border-white/10" : ""
                 }`}
               >
-                <Icon className="w-6 h-6 text-[#0066B3] mb-3" />
+                <Icon className="w-6 h-6 text-[#0066B3] mb-3 animate-pulse" />
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                 <span className="mt-2 text-sm font-medium uppercase tracking-wider text-white/50">
                   {stat.label}
