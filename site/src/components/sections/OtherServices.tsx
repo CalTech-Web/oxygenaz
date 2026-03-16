@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
 import { additionalServices } from "@/data/services";
 import { SITE } from "@/lib/constants";
-import { staggerContainer, cardReveal, fadeInUp, viewportOnce } from "@/lib/animations";
+import { staggerContainer, cardReveal } from "@/lib/animations";
 
 export default function OtherServices() {
   return (
@@ -82,48 +82,42 @@ export default function OtherServices() {
               </Link>
             </motion.div>
           ))}
-        </motion.div>
 
-        {/* CTA with background image */}
-        <motion.div
-          className="relative mt-12 rounded-2xl overflow-hidden min-h-[280px] flex items-center"
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
-        >
-          <Image
-            src="/images/services/anti-aging-peptides.jpg"
-            alt="Oxygenaz wellness services"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-[#061527]/85" />
-          <div className="relative z-10 w-full px-6 py-12 md:px-12 text-center md:text-left md:flex md:items-center md:justify-between gap-8">
-            <div>
-              <h3 className="font-[var(--font-display)] text-2xl md:text-3xl lg:text-4xl font-extrabold text-white leading-tight mb-3">
-                Ready to Transform Your Wellness?
-              </h3>
-              <p className="text-white/70 text-base md:text-lg max-w-xl">
-                Explore our full range of advanced services and find the perfect treatment for your goals.
-              </p>
-            </div>
-            <div className="mt-6 md:mt-0 flex flex-col sm:flex-row items-center gap-4 shrink-0">
-              <Link
-                href="/contact"
-                className="inline-block bg-[#0066B3] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider hover:scale-105 hover:shadow-[0_8px_30px_rgba(0,102,179,0.4)] transition-all duration-300"
-              >
-                Book a Consultation
-              </Link>
-              <a
-                href={SITE.phoneHref}
-                className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm font-bold"
-              >
-                <Phone className="h-4 w-4" />
-                {SITE.phone}
-              </a>
-            </div>
-          </div>
+          {/* CTA card - fills empty grid slot next to Weight Loss */}
+          <motion.div
+            variants={cardReveal}
+            className="group relative overflow-hidden rounded-2xl min-h-[220px] md:min-h-[260px]"
+          >
+            <Link href="/contact" className="block h-full">
+              <Image
+                src="/images/services/anti-aging-peptides.jpg"
+                alt="Ready to transform your wellness"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-[#061527]/85" />
+              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center p-5 text-center">
+                <h3 className="font-[var(--font-display)] text-lg md:text-xl font-bold text-white mb-2">
+                  Ready to Transform Your Wellness?
+                </h3>
+                <p className="text-white/70 text-sm mb-4">
+                  Find the perfect treatment for your goals
+                </p>
+                <span className="inline-flex items-center gap-2 bg-[#0066B3] text-white rounded-full px-6 py-2.5 text-sm font-black uppercase tracking-wider hover:scale-105 hover:shadow-[0_8px_30px_rgba(0,102,179,0.4)] transition-all duration-300">
+                  Book a Consultation
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </span>
+                <a
+                  href={SITE.phoneHref}
+                  className="mt-3 inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors text-xs font-bold"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <Phone className="h-3.5 w-3.5" />
+                  {SITE.phone}
+                </a>
+              </div>
+            </Link>
+          </motion.div>
         </motion.div>
       </div>
     </section>
