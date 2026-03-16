@@ -86,11 +86,11 @@ export default function OtherServices() {
           {/* CTA card - fills empty grid slot next to Weight Loss */}
           <motion.div
             variants={cardReveal}
-            className="group relative overflow-hidden rounded-2xl min-h-[220px] md:min-h-[260px]"
+            className="group relative overflow-hidden rounded-2xl min-h-[220px] md:min-h-[260px] lg:col-span-2"
           >
             <Link href="/contact" className="block h-full">
               <Image
-                src="/images/services/anti-aging-peptides.jpg"
+                src="/images/services/cta-background.jpg"
                 alt="Ready to transform your wellness"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
