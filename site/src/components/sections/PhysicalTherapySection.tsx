@@ -88,13 +88,13 @@ export default function PhysicalTherapySection() {
             </Link>
 
             {/* Consultation CTA card */}
-            <div className="bg-[#061527] rounded-xl p-6">
-              <p className="text-white/90 font-medium mb-4">
-                Not sure where to start? Book a <span className="font-bold text-white">FREE 15&apos; consult</span> with our Wellness and Sports Medicine Expert!
+            <div className="bg-[#F0F5FA] rounded-xl p-6 border border-[#E8EFF5]">
+              <p className="text-[#4A5568] font-medium mb-4">
+                Not sure where to start? Book a <span className="font-bold text-[#0066B3]">FREE 15&apos; consult</span> with our Wellness and Sports Medicine Expert!
               </p>
               <Link
                 href="/contact"
-                className="inline-block border-2 border-white/30 text-white rounded-full px-8 py-3 text-sm font-black uppercase tracking-wider hover:bg-white hover:text-[#061527] hover:scale-105 transition-all duration-300"
+                className="inline-block border-2 border-[#0066B3] text-[#0066B3] rounded-full px-8 py-3 text-sm font-black uppercase tracking-wider hover:bg-[#0066B3] hover:text-white hover:scale-105 transition-all duration-300"
               >
                 Book My Consultation
               </Link>
