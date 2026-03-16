@@ -8,10 +8,11 @@ export default function TermsOfServicePage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#061527] py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0a2240] via-[#0d2d54] to-[#061527] py-16 md:py-20">
+        <div className="absolute w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(0,102,179,0.2) 0%, transparent 65%)", filter: "blur(80px)", top: "-20%", right: "-10%" }} />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
           <h1
-            className="text-[60px] font-extrabold font-[var(--font-display)] text-white leading-tight"
+            className="text-4xl md:text-5xl lg:text-[60px] font-extrabold font-[var(--font-display)] text-white leading-tight"
             style={{ textShadow: "4px 4px 0px rgba(0,0,0,0.25)" }}
           >
             Terms of Service
