@@ -35,7 +35,7 @@ export default function ServicePageClient({
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden min-h-[500px] flex items-center justify-center bg-[#061527]">
+      <section className="relative overflow-hidden min-h-[500px] flex items-center justify-center bg-[#061527] -mt-[80px] lg:-mt-[112px] pt-[75px]">
         <Image
           src={`/images/services/${service.slug}.jpg`}
           alt={service.name}

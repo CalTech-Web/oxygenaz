@@ -37,7 +37,7 @@ export default function AboutPageClient() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[500px] flex items-center justify-center overflow-hidden bg-[#061527]">
+      <section className="relative min-h-[500px] flex items-center justify-center overflow-hidden bg-[#061527] -mt-[80px] lg:-mt-[112px] pt-[75px]">
         <Image
           src="/images/heroes/about-hero.jpg"
           alt="About Oxygen Wellness"
