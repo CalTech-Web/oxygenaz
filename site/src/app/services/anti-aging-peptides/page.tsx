@@ -22,6 +22,7 @@ export default function AntiAgingPeptidesPage() {
       relatedServices={relatedServices}
       whatToExpect={whatToExpect}
       formSource="anti-aging-peptides-page"
+      aboutImage="/images/services/anti-aging-detail.webp"
     />
   );
 }

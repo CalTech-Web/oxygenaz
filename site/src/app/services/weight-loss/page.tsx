@@ -22,6 +22,7 @@ export default function WeightLossPage() {
       relatedServices={relatedServices}
       whatToExpect={whatToExpect}
       formSource="weight-loss-page"
+      aboutImage="/images/services/weight-loss-detail.webp"
     />
   );
 }
