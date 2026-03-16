@@ -3,9 +3,21 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, ChevronDown, Phone, MapPin } from "lucide-react";
+import { Menu, X, ChevronDown, Phone, MapPin, Snowflake, Flame, Wind, Lightbulb, Gauge, Waves, Syringe, Dna, Scale, ArrowRight } from "lucide-react";
 import { navigation } from "@/data/navigation";
 import { SITE } from "@/lib/constants";
+
+const serviceIcons: Record<string, typeof Snowflake> = {
+  Cryotherapy: Snowflake,
+  "Infrared Sauna": Flame,
+  "Oxygen Therapy": Wind,
+  "Red Light Therapy": Lightbulb,
+  "Compression Therapy": Gauge,
+  "Hyperbaric Oxygen Therapy": Waves,
+  "IV Infusions & Vitamin Shots": Syringe,
+  "Anti Aging Peptides": Dna,
+  "Weight Loss Program": Scale,
+};
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -55,51 +67,81 @@ export default function Header() {
   const renderWellnessDropdown = (children: typeof navigation[0]["children"]) => {
     if (!children) return null;
 
-    const allServicesItem = children.find((c) => c.group === "all");
     const coreItems = children.filter((c) => c.group === "Core Services");
     const otherItems = children.filter((c) => c.group === "Other Services");
 
     return (
-      <div className="absolute left-0 top-full z-50 mt-0 pt-2">
-        <div className="grid grid-cols-2 gap-6 rounded-xl bg-white p-[15px] shadow-[0_20px_60px_rgba(0,0,0,0.12)] ring-1 ring-black/5 border-t-3 border-t-transparent" style={{ borderImage: "linear-gradient(90deg, #0066B3, #061527) 1" }}>
-          {/* Column 1 */}
-          <div>
-            {allServicesItem && (
-              <Link
-                href={allServicesItem.href}
-                className="mb-2 block text-sm font-bold text-[#061527] transition-colors hover:text-[#0066B3]"
-              >
-                {allServicesItem.label}
-              </Link>
-            )}
-            <p className="mb-1 text-xs font-black uppercase tracking-wider text-[#718096]">
-              Core Services
-            </p>
-            {coreItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="block py-1.5 px-2 text-sm font-medium text-[#4A5568] rounded-md transition-all hover:text-[#0066B3] hover:bg-[#E8EFF5]/60 hover:pl-3"
-              >
-                {item.label}
-              </Link>
-            ))}
+      <div className="absolute -left-4 top-full z-50 mt-0 pt-3">
+        <div className="w-[560px] rounded-2xl bg-[#061527] p-6 shadow-[0_25px_80px_rgba(0,0,0,0.35)] ring-1 ring-white/10">
+          {/* Top gradient accent */}
+          <div className="absolute top-0 left-6 right-6 h-[2px] rounded-full bg-gradient-to-r from-[#0066B3] via-[#4A90CC] to-[#0066B3]" />
+
+          <div className="grid grid-cols-2 gap-5">
+            {/* Core Services column */}
+            <div>
+              <p className="mb-3 text-[10px] font-black uppercase tracking-[0.2em] text-[#0066B3]">
+                Core Services
+              </p>
+              <div className="space-y-0.5">
+                {coreItems.map((item) => {
+                  const Icon = serviceIcons[item.label] || Wind;
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="group/item flex items-center gap-3 rounded-lg px-3 py-2.5 transition-all duration-200 hover:bg-white/8"
+                    >
+                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#0066B3]/15 transition-colors duration-200 group-hover/item:bg-[#0066B3]/30">
+                        <Icon className="h-4 w-4 text-[#4A90CC] transition-colors group-hover/item:text-white" />
+                      </div>
+                      <span className="text-sm font-semibold text-white/70 transition-colors group-hover/item:text-white">
+                        {item.label}
+                      </span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Other Services column */}
+            <div>
+              <p className="mb-3 text-[10px] font-black uppercase tracking-[0.2em] text-[#0066B3]">
+                Other Services
+              </p>
+              <div className="space-y-0.5">
+                {otherItems.map((item) => {
+                  const Icon = serviceIcons[item.label] || Wind;
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="group/item flex items-center gap-3 rounded-lg px-3 py-2.5 transition-all duration-200 hover:bg-white/8"
+                    >
+                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#0066B3]/15 transition-colors duration-200 group-hover/item:bg-[#0066B3]/30">
+                        <Icon className="h-4 w-4 text-[#4A90CC] transition-colors group-hover/item:text-white" />
+                      </div>
+                      <span className="text-sm font-semibold text-white/70 transition-colors group-hover/item:text-white">
+                        {item.label}
+                      </span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
           </div>
 
-          {/* Column 2 */}
-          <div>
-            <p className="mb-1 text-xs font-black uppercase tracking-wider text-[#718096]">
-              Other Services
-            </p>
-            {otherItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="block py-1.5 px-2 text-sm font-medium text-[#4A5568] rounded-md transition-all hover:text-[#0066B3] hover:bg-[#E8EFF5]/60 hover:pl-3"
-              >
-                {item.label}
-              </Link>
-            ))}
+          {/* Bottom CTA strip */}
+          <div className="mt-4 pt-4 border-t border-white/10">
+            <Link
+              href="/services/cryotherapy"
+              className="group/cta flex items-center justify-between rounded-lg bg-[#0066B3]/10 px-4 py-3 transition-all duration-200 hover:bg-[#0066B3]/20"
+            >
+              <div>
+                <p className="text-sm font-bold text-white">View All Services</p>
+                <p className="text-xs text-white/40">Explore our full range of wellness treatments</p>
+              </div>
+              <ArrowRight className="h-4 w-4 text-[#0066B3] transition-transform duration-200 group-hover/cta:translate-x-1" />
+            </Link>
           </div>
         </div>
       </div>
@@ -111,8 +153,9 @@ export default function Header() {
     if (!children) return null;
 
     return (
-      <div className="absolute left-0 top-full z-50 mt-0 pt-2">
-        <div className="min-w-[180px] rounded-xl bg-white p-[15px] shadow-[0_20px_60px_rgba(0,0,0,0.12)] ring-1 ring-black/5 border-t-3 border-t-transparent" style={{ borderImage: "linear-gradient(90deg, #0066B3, #061527) 1" }}>
+      <div className="absolute left-0 top-full z-50 mt-0 pt-3">
+        <div className="min-w-[200px] rounded-2xl bg-[#061527] p-3 shadow-[0_25px_80px_rgba(0,0,0,0.35)] ring-1 ring-white/10">
+          <div className="absolute top-0 left-4 right-4 h-[2px] rounded-full bg-gradient-to-r from-[#0066B3] via-[#4A90CC] to-[#0066B3]" />
           {children.map((child) =>
             child.external ? (
               <a
@@ -120,7 +163,7 @@ export default function Header() {
                 href={child.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block py-1.5 px-2 text-sm font-medium text-[#4A5568] rounded-md transition-all hover:text-[#0066B3] hover:bg-[#E8EFF5]/60 hover:pl-3"
+                className="block py-2.5 px-3 text-sm font-semibold text-white/70 rounded-lg transition-all duration-200 hover:text-white hover:bg-white/8"
               >
                 {child.label}
               </a>
@@ -128,7 +171,7 @@ export default function Header() {
               <Link
                 key={child.href}
                 href={child.href}
-                className="block py-1.5 px-2 text-sm font-medium text-[#4A5568] rounded-md transition-all hover:text-[#0066B3] hover:bg-[#E8EFF5]/60 hover:pl-3"
+                className="block py-2.5 px-3 text-sm font-semibold text-white/70 rounded-lg transition-all duration-200 hover:text-white hover:bg-white/8"
               >
                 {child.label}
               </Link>

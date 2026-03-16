@@ -66,17 +66,28 @@ export default function Memberships() {
                 >
                   {/* Badge */}
                   {plan.badge && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                    <motion.div
+                      className="absolute -top-4 left-1/2 -translate-x-1/2"
+                      animate={{
+                        y: [0, -4, 0],
+                        scale: [1, 1.05, 1],
+                      }}
+                      transition={{
+                        duration: 2.5,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    >
                       <span
                         className={`text-xs font-black uppercase tracking-wider rounded-full px-6 py-2.5 shadow-lg ${
                           isHighlighted
-                            ? "bg-gradient-to-r from-[#0066B3] to-[#0066B3] text-white shadow-[0_0_20px_rgba(0,180,216,0.4)]"
+                            ? "bg-gradient-to-r from-[#0066B3] to-[#00518F] text-white shadow-[0_0_20px_rgba(0,180,216,0.4)] animate-pulse-glow"
                             : "bg-white text-[#061527] shadow-[0_0_15px_rgba(11,36,71,0.3)]"
                         }`}
                       >
                         {plan.badge}
                       </span>
-                    </div>
+                    </motion.div>
                   )}
 
                   {/* Plan name */}
