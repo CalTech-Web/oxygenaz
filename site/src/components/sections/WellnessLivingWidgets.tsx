@@ -48,81 +48,71 @@ export default function WellnessLivingWidgets() {
 
   return (
     <section className="relative py-20 md:py-28 bg-[#061527] overflow-hidden">
-      {/* Animated blobs */}
+      {/* Animated blobs - travel across the entire section */}
       <motion.div
-        className="absolute w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-full pointer-events-none"
+        className="absolute w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(0,102,179,0.35) 0%, rgba(0,102,179,0.08) 50%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(0,102,179,0.4) 0%, rgba(0,102,179,0.1) 45%, transparent 70%)",
           filter: "blur(60px)",
-          top: "-10%",
-          left: "-5%",
         }}
         animate={{
-          x: [0, 80, 30, 0],
-          y: [0, 50, -30, 0],
-          scale: [1, 1.15, 0.95, 1],
+          left: ["-10%", "60%", "30%", "80%", "-10%"],
+          top: ["-15%", "20%", "60%", "-5%", "-15%"],
+          scale: [1, 1.3, 0.8, 1.1, 1],
         }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute w-[350px] h-[350px] md:w-[500px] md:h-[500px] rounded-full pointer-events-none"
+        className="absolute w-[250px] h-[250px] md:w-[450px] md:h-[450px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(74,144,204,0.3) 0%, rgba(74,144,204,0.06) 50%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(74,144,204,0.35) 0%, rgba(74,144,204,0.08) 45%, transparent 70%)",
           filter: "blur(50px)",
-          bottom: "-8%",
-          right: "-3%",
         }}
         animate={{
-          x: [0, -60, -20, 0],
-          y: [0, -40, 30, 0],
-          scale: [1, 0.9, 1.1, 1],
+          right: ["-5%", "50%", "10%", "70%", "-5%"],
+          bottom: ["-10%", "50%", "10%", "60%", "-10%"],
+          scale: [1, 0.85, 1.2, 0.9, 1],
         }}
-        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute w-[250px] h-[250px] md:w-[380px] md:h-[380px] rounded-full pointer-events-none"
+        className="absolute w-[200px] h-[200px] md:w-[380px] md:h-[380px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(0,102,179,0.25) 0%, rgba(0,80,140,0.05) 55%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(0,102,179,0.3) 0%, rgba(0,80,140,0.06) 50%, transparent 70%)",
           filter: "blur(45px)",
-          top: "35%",
-          left: "45%",
         }}
         animate={{
-          x: [0, -50, 40, 0],
-          y: [0, 30, -50, 0],
-          scale: [1, 1.2, 0.85, 1],
-        }}
-        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute w-[200px] h-[200px] md:w-[300px] md:h-[300px] rounded-full pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, rgba(100,170,230,0.2) 0%, transparent 60%)",
-          filter: "blur(40px)",
-          top: "10%",
-          right: "15%",
-        }}
-        animate={{
-          x: [0, 40, -30, 0],
-          y: [0, -60, 20, 0],
-          scale: [0.9, 1.1, 1, 0.9],
+          left: ["50%", "-5%", "70%", "20%", "50%"],
+          top: ["40%", "70%", "5%", "55%", "40%"],
+          scale: [0.9, 1.25, 0.75, 1.15, 0.9],
         }}
         transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute w-[180px] h-[180px] md:w-[280px] md:h-[280px] rounded-full pointer-events-none"
+        className="absolute w-[180px] h-[180px] md:w-[320px] md:h-[320px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(0,102,179,0.2) 0%, transparent 60%)",
-          filter: "blur(35px)",
-          bottom: "20%",
-          left: "20%",
+          background: "radial-gradient(circle, rgba(100,170,230,0.25) 0%, transparent 60%)",
+          filter: "blur(40px)",
         }}
         animate={{
-          x: [0, 60, -20, 0],
-          y: [0, -30, 50, 0],
-          scale: [1, 0.85, 1.15, 1],
+          right: ["15%", "60%", "-5%", "40%", "15%"],
+          top: ["5%", "65%", "30%", "75%", "5%"],
+          scale: [1, 1.15, 0.85, 1.3, 1],
         }}
-        transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute w-[150px] h-[150px] md:w-[280px] md:h-[280px] rounded-full pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, rgba(0,102,179,0.25) 0%, transparent 60%)",
+          filter: "blur(35px)",
+        }}
+        animate={{
+          left: ["20%", "75%", "5%", "55%", "20%"],
+          bottom: ["10%", "60%", "25%", "70%", "10%"],
+          scale: [1.1, 0.8, 1.2, 0.9, 1.1],
+        }}
+        transition={{ duration: 28, repeat: Infinity, ease: "easeInOut" }}
       />
 
       <motion.div
