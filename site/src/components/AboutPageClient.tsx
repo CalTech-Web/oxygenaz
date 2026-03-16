@@ -246,22 +246,22 @@ export default function AboutPageClient() {
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    { name: "Glendale", color: "bg-sky-400/15 text-sky-300 border-sky-400/25" },
-                    { name: "Peoria", color: "bg-violet-400/15 text-violet-300 border-violet-400/25" },
-                    { name: "Phoenix", color: "bg-amber-400/15 text-amber-300 border-amber-400/25" },
-                    { name: "Scottsdale", color: "bg-emerald-400/15 text-emerald-300 border-emerald-400/25" },
-                    { name: "Surprise", color: "bg-rose-400/15 text-rose-300 border-rose-400/25" },
-                    { name: "Arrowhead", color: "bg-teal-400/15 text-teal-300 border-teal-400/25" },
-                    { name: "Sun City", color: "bg-orange-400/15 text-orange-300 border-orange-400/25" },
-                    { name: "North Valley", color: "bg-indigo-400/15 text-indigo-300 border-indigo-400/25" },
+                    { name: "Glendale", color: "bg-sky-400/15 text-sky-300 border-sky-400/25", ping: "bg-sky-300" },
+                    { name: "Peoria", color: "bg-violet-400/15 text-violet-300 border-violet-400/25", ping: "bg-violet-300" },
+                    { name: "Phoenix", color: "bg-amber-400/15 text-amber-300 border-amber-400/25", ping: "bg-amber-300" },
+                    { name: "Scottsdale", color: "bg-emerald-400/15 text-emerald-300 border-emerald-400/25", ping: "bg-emerald-300" },
+                    { name: "Surprise", color: "bg-rose-400/15 text-rose-300 border-rose-400/25", ping: "bg-rose-300" },
+                    { name: "Arrowhead", color: "bg-teal-400/15 text-teal-300 border-teal-400/25", ping: "bg-teal-300" },
+                    { name: "Sun City", color: "bg-orange-400/15 text-orange-300 border-orange-400/25", ping: "bg-orange-300" },
+                    { name: "North Valley", color: "bg-indigo-400/15 text-indigo-300 border-indigo-400/25", ping: "bg-indigo-300" },
                   ].map((area) => (
                     <span
                       key={area.name}
-                      className={`inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-xs font-bold ${area.color}`}
+                      className={`inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-xs font-bold ${area.color}`}
                     >
-                      <span className="relative flex h-2 w-2">
-                        <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${area.color.split(" ")[1].replace("text-", "bg-")}`} />
-                        <span className={`relative inline-flex rounded-full h-2 w-2 ${area.color.split(" ")[1].replace("text-", "bg-")}`} />
+                      <span className="relative flex items-center justify-center h-4 w-4">
+                        <span className={`animate-ping absolute inline-flex h-3 w-3 rounded-full opacity-50 ${area.ping}`} />
+                        <MapPin className="relative h-3.5 w-3.5 fill-current" />
                       </span>
                       {area.name}
                     </span>
