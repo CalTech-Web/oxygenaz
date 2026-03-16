@@ -48,12 +48,13 @@ export default function WellnessLivingWidgets() {
 
   return (
     <section className="relative py-20 md:py-28 bg-[#061527] overflow-hidden">
-      {/* Animated blobs - travel across the entire section */}
+      {/* Animated blobs - bright and traveling across the section */}
+      {/* Large primary blob */}
       <motion.div
-        className="absolute w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-full pointer-events-none"
+        className="absolute w-[350px] h-[350px] md:w-[550px] md:h-[550px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(0,102,179,0.4) 0%, rgba(0,102,179,0.1) 45%, transparent 70%)",
-          filter: "blur(60px)",
+          background: "radial-gradient(circle, rgba(0,102,179,0.6) 0%, rgba(0,102,179,0.2) 40%, transparent 70%)",
+          filter: "blur(50px)",
         }}
         animate={{
           left: ["-10%", "60%", "30%", "80%", "-10%"],
@@ -62,11 +63,12 @@ export default function WellnessLivingWidgets() {
         }}
         transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
       />
+      {/* Large cyan-blue blob */}
       <motion.div
-        className="absolute w-[250px] h-[250px] md:w-[450px] md:h-[450px] rounded-full pointer-events-none"
+        className="absolute w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(74,144,204,0.35) 0%, rgba(74,144,204,0.08) 45%, transparent 70%)",
-          filter: "blur(50px)",
+          background: "radial-gradient(circle, rgba(74,144,204,0.55) 0%, rgba(74,144,204,0.15) 40%, transparent 70%)",
+          filter: "blur(45px)",
         }}
         animate={{
           right: ["-5%", "50%", "10%", "70%", "-5%"],
@@ -75,11 +77,12 @@ export default function WellnessLivingWidgets() {
         }}
         transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
       />
+      {/* Mid blue blob */}
       <motion.div
-        className="absolute w-[200px] h-[200px] md:w-[380px] md:h-[380px] rounded-full pointer-events-none"
+        className="absolute w-[250px] h-[250px] md:w-[420px] md:h-[420px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(0,102,179,0.3) 0%, rgba(0,80,140,0.06) 50%, transparent 70%)",
-          filter: "blur(45px)",
+          background: "radial-gradient(circle, rgba(0,102,179,0.5) 0%, rgba(0,80,140,0.12) 45%, transparent 70%)",
+          filter: "blur(40px)",
         }}
         animate={{
           left: ["50%", "-5%", "70%", "20%", "50%"],
@@ -88,11 +91,12 @@ export default function WellnessLivingWidgets() {
         }}
         transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
       />
+      {/* Light blue blob */}
       <motion.div
-        className="absolute w-[180px] h-[180px] md:w-[320px] md:h-[320px] rounded-full pointer-events-none"
+        className="absolute w-[220px] h-[220px] md:w-[380px] md:h-[380px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(100,170,230,0.25) 0%, transparent 60%)",
-          filter: "blur(40px)",
+          background: "radial-gradient(circle, rgba(100,170,230,0.45) 0%, rgba(100,170,230,0.1) 40%, transparent 65%)",
+          filter: "blur(35px)",
         }}
         animate={{
           right: ["15%", "60%", "-5%", "40%", "15%"],
@@ -101,11 +105,12 @@ export default function WellnessLivingWidgets() {
         }}
         transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
       />
+      {/* Small accent blob */}
       <motion.div
-        className="absolute w-[150px] h-[150px] md:w-[280px] md:h-[280px] rounded-full pointer-events-none"
+        className="absolute w-[180px] h-[180px] md:w-[300px] md:h-[300px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(0,102,179,0.25) 0%, transparent 60%)",
-          filter: "blur(35px)",
+          background: "radial-gradient(circle, rgba(0,102,179,0.45) 0%, rgba(0,102,179,0.08) 45%, transparent 65%)",
+          filter: "blur(30px)",
         }}
         animate={{
           left: ["20%", "75%", "5%", "55%", "20%"],
@@ -113,6 +118,48 @@ export default function WellnessLivingWidgets() {
           scale: [1.1, 0.8, 1.2, 0.9, 1.1],
         }}
         transition={{ duration: 28, repeat: Infinity, ease: "easeInOut" }}
+      />
+      {/* Extra bright blob - top right wanderer */}
+      <motion.div
+        className="absolute w-[280px] h-[280px] md:w-[450px] md:h-[450px] rounded-full pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, rgba(30,130,220,0.5) 0%, rgba(30,130,220,0.12) 40%, transparent 70%)",
+          filter: "blur(45px)",
+        }}
+        animate={{
+          right: ["10%", "-8%", "55%", "30%", "10%"],
+          top: ["-10%", "45%", "70%", "15%", "-10%"],
+          scale: [1, 1.2, 0.9, 1.35, 1],
+        }}
+        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+      />
+      {/* Extra teal-tinted blob - bottom center wanderer */}
+      <motion.div
+        className="absolute w-[240px] h-[240px] md:w-[400px] md:h-[400px] rounded-full pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, rgba(0,140,200,0.45) 0%, rgba(0,140,200,0.1) 42%, transparent 68%)",
+          filter: "blur(40px)",
+        }}
+        animate={{
+          left: ["40%", "5%", "65%", "-5%", "40%"],
+          bottom: ["-5%", "40%", "65%", "20%", "-5%"],
+          scale: [0.95, 1.3, 0.85, 1.15, 0.95],
+        }}
+        transition={{ duration: 24, repeat: Infinity, ease: "easeInOut" }}
+      />
+      {/* Extra vivid accent blob - fast mover */}
+      <motion.div
+        className="absolute w-[200px] h-[200px] md:w-[340px] md:h-[340px] rounded-full pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, rgba(60,160,240,0.4) 0%, rgba(60,160,240,0.08) 45%, transparent 65%)",
+          filter: "blur(35px)",
+        }}
+        animate={{
+          left: ["70%", "10%", "45%", "80%", "70%"],
+          top: ["60%", "10%", "75%", "30%", "60%"],
+          scale: [1.05, 0.85, 1.25, 0.95, 1.05],
+        }}
+        transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
       />
 
       <motion.div
@@ -125,7 +172,7 @@ export default function WellnessLivingWidgets() {
         {/* Section heading */}
         <motion.div className="text-center mb-14" variants={itemVariants}>
           <div className="inline-flex items-center gap-2 rounded-full border border-[#0066B3]/30 bg-[#0066B3]/10 px-4 py-1.5 mb-5">
-            <Sparkles className="h-3.5 w-3.5 text-[#4A90CC]" />
+            <Sparkles className="h-3.5 w-3.5 text-[#4A90CC] animate-pulse" />
             <span className="text-xs font-bold uppercase tracking-wider text-[#4A90CC]">
               Instant Online Booking
             </span>
