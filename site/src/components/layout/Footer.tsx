@@ -219,9 +219,6 @@ export default function Footer() {
 
           <div className="flex flex-col items-center gap-2 sm:flex-row sm:gap-4">
             <p className="text-xs text-white/50">
-              Designed by Elizabeth Ardelt &amp; Audrey Muller
-            </p>
-            <p className="text-xs text-white/50">
               Built by{" "}
               <a
                 href="https://caltechweb.com"

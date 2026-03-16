@@ -36,7 +36,22 @@ export const navigation: NavItem[] = [
       { label: "About Us", href: "/about" },
       {
         label: "Google Reviews",
-        href: "https://www.google.com/maps/place/Oxygen+Wellness+%26+Physical+Therapy/@33.6633,-112.1862,17z/data=!4m8!3m7!1s0x872b6916e4e3e5e7:0x2a5e3c0b1e20e9c7!8m2!3d33.6633!4d-112.1862!9m1!1b1!16s%2Fg%2F11t3m1_7yp",
+        href: "https://oxygenaz.com/reviews/",
+        external: true,
+      },
+      {
+        label: "Review Us on Google",
+        href: "https://www.google.com/maps/place//data=!4m3!3m2!1s0x872b6937d5d0b721:0xb1f5387eb1052fe0!12e1?source=g.page.m._&laa=merchant-review-solicitation",
+        external: true,
+      },
+      {
+        label: "Yelp Reviews",
+        href: "https://www.yelp.com/biz/oxygen-wellness-and-physical-therapy-glendale-2",
+        external: true,
+      },
+      {
+        label: "Get Directions",
+        href: "https://www.google.com/maps/place/Oxygen+Wellness+%26+Physical+Therapy/@33.670457,-112.184858,3805m/data=!3m1!1e3!4m6!3m5!1s0x872b6937d5d0b721:0xb1f5387eb1052fe0!8m2!3d33.6704574!4d-112.1848578!16s%2Fg%2F11v0xyc7x_",
         external: true,
       },
     ],
