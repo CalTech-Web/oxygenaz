@@ -56,13 +56,13 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="relative py-20 md:py-28 bg-[#061527] overflow-hidden">
+    <section className="relative py-20 md:py-28 bg-gradient-to-b from-[#F0F5FA] to-white overflow-hidden">
       {/* Animated background blobs */}
       <motion.div
         className="absolute w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-full pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle, rgba(0,102,179,0.25) 0%, transparent 65%)",
+            "radial-gradient(circle, rgba(0,102,179,0.12) 0%, transparent 65%)",
           filter: "blur(60px)",
           top: "-10%",
           left: "-5%",
@@ -74,7 +74,7 @@ export default function HowItWorks() {
         className="absolute w-[250px] h-[250px] md:w-[400px] md:h-[400px] rounded-full pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle, rgba(74,144,204,0.2) 0%, transparent 65%)",
+            "radial-gradient(circle, rgba(74,144,204,0.1) 0%, transparent 65%)",
           filter: "blur(50px)",
           bottom: "-8%",
           right: "-3%",
@@ -93,16 +93,16 @@ export default function HowItWorks() {
           viewport={viewportOnce}
         >
           <div className="inline-flex items-center gap-2 rounded-full border border-[#0066B3]/30 bg-[#0066B3]/10 px-4 py-1.5 mb-5">
-            <Sparkles className="h-3.5 w-3.5 text-[#4A90CC] animate-pulse" />
-            <span className="text-xs font-bold uppercase tracking-wider text-[#4A90CC]">
+            <Sparkles className="h-3.5 w-3.5 text-[#0066B3] animate-pulse" />
+            <span className="text-xs font-bold uppercase tracking-wider text-[#0066B3]">
               Simple Process
             </span>
           </div>
-          <h2 className="font-[var(--font-display)] text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4">
+          <h2 className="font-[var(--font-display)] text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#061527] tracking-tight mb-4">
             How It Works
           </h2>
-          <div className="mx-auto h-1 w-20 rounded-full bg-gradient-to-r from-[#0066B3] to-white/40 mb-5" />
-          <p className="text-white/60 text-lg max-w-2xl mx-auto">
+          <div className="mx-auto h-1 w-20 rounded-full bg-gradient-to-r from-[#0066B3] to-[#061527] mb-5" />
+          <p className="text-[#718096] text-lg max-w-2xl mx-auto">
             Getting started is easy. Four simple steps to a healthier, more energized you.
           </p>
         </motion.div>
@@ -119,7 +119,7 @@ export default function HowItWorks() {
             <motion.div
               key={step.number}
               variants={cardReveal}
-              className="group relative rounded-2xl bg-white/[0.04] border border-white/[0.08] backdrop-blur-sm p-6 md:p-8 hover:bg-white/[0.07] transition-all duration-500"
+              className="group relative rounded-2xl bg-white border border-[#E2E8F0] shadow-sm p-6 md:p-8 hover:shadow-lg hover:border-[#0066B3]/20 transition-all duration-500"
             >
               {/* Step number badge */}
               <div className="flex items-start gap-5">
@@ -134,10 +134,10 @@ export default function HowItWorks() {
                       Step {step.number}
                     </span>
                   </div>
-                  <h3 className="font-[var(--font-display)] text-xl md:text-2xl font-bold text-white mb-3">
+                  <h3 className="font-[var(--font-display)] text-xl md:text-2xl font-bold text-[#061527] mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-white/55 text-sm md:text-base leading-relaxed mb-4">
+                  <p className="text-[#718096] text-sm md:text-base leading-relaxed mb-4">
                     {step.description}
                   </p>
                   {/* Highlights */}
@@ -145,7 +145,7 @@ export default function HowItWorks() {
                     {step.highlights.map((highlight) => (
                       <span
                         key={highlight}
-                        className="inline-flex items-center gap-1.5 text-xs font-medium text-[#4A90CC] bg-[#0066B3]/10 rounded-full px-3 py-1"
+                        className="inline-flex items-center gap-1.5 text-xs font-medium text-[#0066B3] bg-[#0066B3]/10 rounded-full px-3 py-1"
                       >
                         <CheckCircle2 className="w-3 h-3" />
                         {highlight}
@@ -156,7 +156,7 @@ export default function HowItWorks() {
               </div>
 
               {/* Hover glow */}
-              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none bg-gradient-to-br from-[#0066B3]/5 to-transparent" />
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none bg-gradient-to-br from-[#0066B3]/[0.03] to-transparent" />
             </motion.div>
           ))}
         </motion.div>
@@ -169,25 +169,25 @@ export default function HowItWorks() {
           whileInView="visible"
           viewport={viewportOnce}
         >
-          <div className="flex items-center gap-3 rounded-xl bg-white/[0.04] border border-white/[0.08] px-5 py-4">
+          <div className="flex items-center gap-3 rounded-xl bg-white border border-[#E2E8F0] shadow-sm px-5 py-4">
             <Clock className="w-5 h-5 text-[#0066B3] shrink-0" />
             <div>
-              <p className="text-white font-bold text-sm">Quick Sessions</p>
-              <p className="text-white/50 text-xs">Most treatments take 15-45 minutes</p>
+              <p className="text-[#061527] font-bold text-sm">Quick Sessions</p>
+              <p className="text-[#718096] text-xs">Most treatments take 15-45 minutes</p>
             </div>
           </div>
-          <div className="flex items-center gap-3 rounded-xl bg-white/[0.04] border border-white/[0.08] px-5 py-4">
+          <div className="flex items-center gap-3 rounded-xl bg-white border border-[#E2E8F0] shadow-sm px-5 py-4">
             <Users className="w-5 h-5 text-[#0066B3] shrink-0" />
             <div>
-              <p className="text-white font-bold text-sm">Expert Team</p>
-              <p className="text-white/50 text-xs">Certified wellness professionals</p>
+              <p className="text-[#061527] font-bold text-sm">Expert Team</p>
+              <p className="text-[#718096] text-xs">Certified wellness professionals</p>
             </div>
           </div>
-          <div className="flex items-center gap-3 rounded-xl bg-white/[0.04] border border-white/[0.08] px-5 py-4">
+          <div className="flex items-center gap-3 rounded-xl bg-white border border-[#E2E8F0] shadow-sm px-5 py-4">
             <ArrowRight className="w-5 h-5 text-[#0066B3] shrink-0" />
             <div>
-              <p className="text-white font-bold text-sm">No Contracts</p>
-              <p className="text-white/50 text-xs">Pay per visit or choose a membership</p>
+              <p className="text-[#061527] font-bold text-sm">No Contracts</p>
+              <p className="text-[#718096] text-xs">Pay per visit or choose a membership</p>
             </div>
           </div>
         </motion.div>
