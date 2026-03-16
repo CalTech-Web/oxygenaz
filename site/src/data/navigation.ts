@@ -13,10 +13,10 @@ export const navigation: NavItem[] = [
   { label: "Physical Therapy", href: "/physical-therapy" },
   {
     label: "Wellness Services",
-    href: "/services/cryotherapy",
+    href: "/services",
     children: [
       // Column 1 - All + Core
-      { label: "All Services", href: "/services/cryotherapy", group: "all" },
+      { label: "All Services", href: "/services", group: "all" },
       { label: "Cryotherapy", href: "/services/cryotherapy", group: "Core Services" },
       { label: "Infrared Sauna", href: "/services/infrared-sauna", group: "Core Services" },
       { label: "Oxygen Therapy", href: "/services/oxygen-therapy", group: "Core Services" },
@@ -63,7 +63,7 @@ export const navigation: NavItem[] = [
 export const footerLinks = [
   { label: "Book Appointment", href: "/contact" },
   { label: "Physical Therapy", href: "/physical-therapy" },
-  { label: "Wellness Services", href: "/services/cryotherapy" },
+  { label: "Wellness Services", href: "/services" },
   { label: "About Us", href: "/about" },
   {
     label: "Get Directions",
