@@ -42,7 +42,22 @@ export default function Hero() {
               animate="visible"
             >
               Only the{" "}
-              <span className="text-gradient-shine">Good</span>{" "}
+              <span className="text-neon-glow inline-flex">
+                {"Good".split("").map((letter, i) => (
+                  <motion.span
+                    key={i}
+                    initial={{ opacity: 0, y: 30, scale: 0.5, filter: "blur(8px)" }}
+                    animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+                    transition={{
+                      delay: 0.8 + i * 0.12,
+                      duration: 0.5,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                  >
+                    {letter}
+                  </motion.span>
+                ))}
+              </span>{" "}
               Stuff
             </motion.h1>
 
