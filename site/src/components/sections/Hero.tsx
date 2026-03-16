@@ -42,17 +42,18 @@ export default function Hero() {
               animate="visible"
             >
               Only the{" "}
-              <span className="text-neon-glow inline-flex">
+              <span className="text-neon-glow inline-flex" style={{ perspective: "600px" }}>
                 {"Good".split("").map((letter, i) => (
                   <motion.span
                     key={i}
-                    initial={{ opacity: 0, y: 30, scale: 0.5, filter: "blur(8px)" }}
-                    animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+                    initial={{ opacity: 0, rotateX: 90, y: -40 }}
+                    animate={{ opacity: 1, rotateX: 0, y: 0 }}
                     transition={{
-                      delay: 0.8 + i * 0.12,
-                      duration: 0.5,
-                      ease: [0.22, 1, 0.36, 1],
+                      delay: 0.8 + i * 0.15,
+                      duration: 0.7,
+                      ease: [0.16, 1, 0.3, 1],
                     }}
+                    style={{ display: "inline-block", transformOrigin: "bottom center" }}
                   >
                     {letter}
                   </motion.span>
