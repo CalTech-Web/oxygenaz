@@ -162,7 +162,7 @@ export default function Header() {
       <div
         className={`transition-all duration-500 border-b ${
           scrolled
-            ? "bg-white/90 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.08)] border-[#0066B3]/20"
+            ? "bg-white/20 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.08)] border-[#0066B3]/20"
             : "bg-black/20 backdrop-blur-sm border-transparent"
         }`}
       >
