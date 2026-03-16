@@ -142,7 +142,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       {/* ── Row 1: Top Bar ── */}
-      <div className={`hidden lg:block py-1.5 transition-all duration-500 ${scrolled ? "bg-[#061527]" : "bg-transparent"}`}>
+      <div className="hidden lg:block py-1.5 bg-[#061527]">
         <div className="mx-auto max-w-7xl px-4 lg:px-20 flex items-center justify-between">
           <span className="inline-flex items-center gap-1.5 text-sm font-medium text-white">
             <MapPin className="h-3.5 w-3.5" />
@@ -163,7 +163,7 @@ export default function Header() {
         className={`transition-all duration-500 border-b ${
           scrolled
             ? "bg-white/90 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.08)] border-[#0066B3]/20"
-            : "bg-transparent border-transparent"
+            : "bg-black/20 backdrop-blur-sm border-transparent"
         }`}
       >
         <div className="mx-auto max-w-7xl flex items-center justify-between px-4 py-5 lg:px-20">
