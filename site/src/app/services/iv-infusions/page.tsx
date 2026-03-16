@@ -24,6 +24,7 @@ export default function IVInfusionsPage() {
       formSource="iv-infusions-page"
       aboutImage="/images/services/iv-infusions-detail.webp"
       heroImage="/images/heroes/iv-infusions-hero.jpg"
+      expectImage="/images/services/iv-infusions-expect.webp"
     />
   );
 }

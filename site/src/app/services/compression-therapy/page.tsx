@@ -24,6 +24,7 @@ export default function CompressionTherapyPage() {
       formSource="compression-therapy-page"
       aboutImage="/images/services/compression-therapy-detail.webp"
       heroImage="/images/heroes/compression-therapy-hero.webp"
+      expectImage="/images/services/compression-therapy-expect.webp"
     />
   );
 }

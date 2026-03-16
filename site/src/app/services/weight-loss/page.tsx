@@ -24,6 +24,7 @@ export default function WeightLossPage() {
       formSource="weight-loss-page"
       aboutImage="/images/services/weight-loss-detail.webp"
       heroImage="/images/heroes/weight-loss-hero.jpg"
+      expectImage="/images/services/weight-loss-expect.jpg"
     />
   );
 }
