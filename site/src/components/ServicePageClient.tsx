@@ -28,6 +28,7 @@ interface ServicePageClientProps {
   aboutImage?: string;
   expectImage?: string;
   heroImage?: string;
+  ctaImage?: string;
 }
 
 export default function ServicePageClient({
@@ -38,6 +39,7 @@ export default function ServicePageClient({
   aboutImage,
   expectImage,
   heroImage,
+  ctaImage,
 }: ServicePageClientProps) {
   return (
     <>
@@ -369,45 +371,100 @@ export default function ServicePageClient({
       </section>
 
       {/* CTA */}
-      <section className="relative py-16 md:py-24 bg-gradient-to-br from-[#0a2240] via-[#0d2d54] to-[#061527] overflow-hidden">
+      <section className="relative py-20 md:py-32 overflow-hidden">
+        {/* Background image */}
+        <Image
+          src={ctaImage || "/images/heroes/services-hero.webp"}
+          alt={`Book ${service.name}`}
+          fill
+          className="object-cover"
+        />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-[#061527]/85" />
+
+        {/* Animated blobs */}
         <motion.div
           className="absolute w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-full pointer-events-none"
           style={{
-            background: "radial-gradient(circle, rgba(0,102,179,0.3) 0%, transparent 65%)",
+            background: "radial-gradient(circle, rgba(0,102,179,0.35) 0%, transparent 65%)",
             filter: "blur(80px)",
             top: "-20%",
             right: "-10%",
           }}
-          animate={{ x: [0, -50, 0], y: [0, 30, 0], scale: [1, 1.2, 1] }}
+          animate={{ x: [0, -60, 0], y: [0, 40, 0], scale: [1, 1.25, 1] }}
           transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-full pointer-events-none"
+          className="absolute w-[300px] h-[300px] md:w-[450px] md:h-[450px] rounded-full pointer-events-none"
           style={{
-            background: "radial-gradient(circle, rgba(74,144,204,0.2) 0%, transparent 65%)",
-            filter: "blur(60px)",
+            background: "radial-gradient(circle, rgba(74,144,204,0.25) 0%, transparent 65%)",
+            filter: "blur(70px)",
             bottom: "-15%",
-            left: "-5%",
+            left: "-8%",
           }}
-          animate={{ x: [0, 40, 0], y: [0, -25, 0], scale: [1, 0.85, 1] }}
+          animate={{ x: [0, 50, 0], y: [0, -30, 0], scale: [1, 0.85, 1] }}
           transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute w-[200px] h-[200px] md:w-[350px] md:h-[350px] rounded-full pointer-events-none"
+          style={{
+            background: "radial-gradient(circle, rgba(0,102,179,0.2) 0%, transparent 65%)",
+            filter: "blur(60px)",
+            top: "40%",
+            left: "50%",
+          }}
+          animate={{ x: [0, -30, 30, 0], y: [0, 20, -20, 0], scale: [1, 1.1, 0.95, 1] }}
+          transition={{ duration: 26, repeat: Infinity, ease: "easeInOut" }}
         />
 
         <motion.div
           className="relative z-10 max-w-7xl mx-auto px-4 text-center"
-          variants={fadeInUp}
+          variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
         >
-          <h2 className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
+          {/* Highlight pills */}
+          <motion.div
+            className="flex flex-wrap items-center justify-center gap-3 mb-8"
+            variants={fadeInUp}
+          >
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/30 bg-emerald-400/10 backdrop-blur-sm px-4 py-2 text-xs font-bold uppercase tracking-wider text-emerald-400">
+              <CheckCircle2 className="w-3.5 h-3.5" />
+              No Referral Needed
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-[#4A90CC]/30 bg-[#4A90CC]/10 backdrop-blur-sm px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#4A90CC]">
+              <CheckCircle2 className="w-3.5 h-3.5" />
+              Walk-ins Welcome
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-400/30 bg-amber-400/10 backdrop-blur-sm px-4 py-2 text-xs font-bold uppercase tracking-wider text-amber-400">
+              <CheckCircle2 className="w-3.5 h-3.5" />
+              Free Consultation
+            </span>
+          </motion.div>
+
+          <motion.h2
+            className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4"
+            variants={fadeInUp}
+          >
             Ready to Try {service.name}?
-          </h2>
-          <div className="mx-auto h-1 w-20 rounded-full bg-gradient-to-r from-[#0066B3] to-[#4A90CC] mb-5" />
-          <p className="text-white/50 text-lg mb-8 max-w-2xl mx-auto">
-            Book your session today or walk in during business hours. No referral needed.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          </motion.h2>
+          <motion.div
+            className="mx-auto h-1 w-20 rounded-full bg-gradient-to-r from-[#0066B3] to-[#4A90CC] mb-5"
+            variants={fadeInUp}
+          />
+          <motion.p
+            className="text-white/60 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed"
+            variants={fadeInUp}
+          >
+            Take the first step toward feeling your best. Book your session today
+            or walk in during business hours - no referral required.
+          </motion.p>
+
+          <motion.div
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6"
+            variants={fadeInUp}
+          >
             <Link
               href="/contact"
               className="group inline-flex items-center gap-2 bg-gradient-to-r from-[#0066B3] to-[#4A90CC] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider hover:scale-105 hover:shadow-[0_8px_30px_rgba(0,102,179,0.5)] transition-all duration-300"
@@ -417,12 +474,22 @@ export default function ServicePageClient({
             </Link>
             <a
               href={SITE.phoneHref}
-              className="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors font-bold"
+              className="group inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm px-8 py-4 text-white/80 hover:text-white hover:border-white/40 hover:bg-white/10 transition-all duration-300 font-bold text-sm uppercase tracking-wider"
             >
               <Phone className="w-4 h-4" />
               {SITE.phone}
             </a>
-          </div>
+          </motion.div>
+
+          <motion.div variants={fadeInUp}>
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-1.5 text-white/40 hover:text-white/80 transition-colors duration-300 text-sm font-semibold uppercase tracking-wider"
+            >
+              View All Services
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </motion.div>
         </motion.div>
       </section>
 

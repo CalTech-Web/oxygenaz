@@ -13,7 +13,15 @@ export default function WellnessServicesPageClient() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#0a2240] via-[#0d2d54] to-[#061527] pb-[50px] -mt-[80px] lg:-mt-[112px] pt-[155px] lg:pt-[187px]">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0a2240] via-[#0d2d54] to-[#061527] pt-[75px] pb-[50px] -mt-[80px] lg:-mt-[112px]">
+        <Image
+          src="/images/heroes/services-hero-bg.jpg"
+          alt=""
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-[#061527]/60" />
         <motion.div
           className="absolute w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-full pointer-events-none"
           style={{

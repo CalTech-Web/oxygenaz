@@ -4,7 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, CheckCircle2, ChevronDown, Sparkles, MessageCircle, Linkedin, Bone, Target, Hand, Ribbon, Slice, StretchHorizontal, Dumbbell, GraduationCap } from "lucide-react";
+import { ArrowRight, CheckCircle2, ChevronDown, Sparkles, MessageCircle, Linkedin, Bone, Target, Hand, Ribbon, Slice, StretchHorizontal, Dumbbell, GraduationCap, Phone } from "lucide-react";
+import { SITE } from "@/lib/constants";
 import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer, cardReveal, viewportOnce } from "@/lib/animations";
 import CoreServices from "@/components/sections/CoreServices";
 import OtherServices from "@/components/sections/OtherServices";
@@ -287,25 +288,7 @@ export default function PhysicalTherapyPageClient() {
             whileInView="visible"
             viewport={viewportOnce}
           >
-            <motion.div variants={fadeInLeft} className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.12)]">
-                <Image
-                  src="/images/content/dr-clint.jpg"
-                  alt="Dr. Clint Borman"
-                  width={600}
-                  height={500}
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-
-              {/* Floating badge */}
-              <div className="absolute -bottom-5 -right-3 lg:-right-6 bg-[#061527] text-white rounded-xl px-5 py-3 shadow-[0_8px_30px_rgba(0,0,0,0.25)]">
-                <p className="text-2xl font-extrabold font-[var(--font-display)]">25+</p>
-                <p className="text-xs font-bold uppercase tracking-wider text-white/70">Years Experience</p>
-              </div>
-            </motion.div>
-
-            <motion.div variants={fadeInRight}>
+            <motion.div variants={fadeInLeft}>
               <span className="inline-block text-[#0066B3] text-sm font-black uppercase tracking-widest mb-4">
                 Meet the Founder
               </span>
@@ -335,6 +318,24 @@ export default function PhysicalTherapyPageClient() {
                 <Linkedin className="h-4 w-4" />
                 See Clint&apos;s LinkedIn
               </a>
+            </motion.div>
+
+            <motion.div variants={fadeInRight} className="relative">
+              <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.12)]">
+                <Image
+                  src="/images/content/dr-clint.jpg"
+                  alt="Dr. Clint Borman"
+                  width={600}
+                  height={500}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+
+              {/* Floating badge */}
+              <div className="absolute -bottom-5 -left-3 lg:-left-6 bg-[#061527] text-white rounded-xl px-5 py-3 shadow-[0_8px_30px_rgba(0,0,0,0.25)]">
+                <p className="text-2xl font-extrabold font-[var(--font-display)]">25+</p>
+                <p className="text-xs font-bold uppercase tracking-wider text-white/70">Years Experience</p>
+              </div>
             </motion.div>
           </motion.div>
         </div>
@@ -446,40 +447,125 @@ export default function PhysicalTherapyPageClient() {
       <CoreServices />
 
       {/* Free Core Service CTA */}
-      <section className="relative py-16 md:py-20 bg-gradient-to-br from-[#0a2240] via-[#0d2d54] to-[#061527] overflow-hidden">
+      <section className="relative py-20 md:py-28 bg-[#061527] overflow-hidden">
+        {/* Background image with dark overlay */}
+        <Image
+          src="/images/content/dr-clint.jpg"
+          alt=""
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#061527]/90 via-[#0a2240]/85 to-[#061527]/92" />
+        <div className="absolute inset-0 bg-[#061527]/40" />
+
+        {/* Animated blobs */}
         <motion.div
-          className="absolute w-[400px] h-[400px] md:w-[500px] md:h-[500px] rounded-full pointer-events-none"
+          className="absolute w-[350px] h-[350px] md:w-[550px] md:h-[550px] rounded-full pointer-events-none"
           style={{
-            background: "radial-gradient(circle, rgba(0,102,179,0.25) 0%, transparent 65%)",
-            filter: "blur(80px)",
-            top: "-15%",
+            background: "radial-gradient(circle, rgba(0,102,179,0.35) 0%, rgba(0,102,179,0.08) 45%, transparent 70%)",
+            filter: "blur(70px)",
+            top: "-12%",
             right: "-8%",
           }}
-          animate={{ x: [0, -40, 0], y: [0, 25, 0] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+          animate={{ x: [0, -50, 15, 0], y: [0, 30, -15, 0], scale: [1, 1.12, 0.95, 1] }}
+          transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute w-[280px] h-[280px] md:w-[420px] md:h-[420px] rounded-full pointer-events-none"
+          style={{
+            background: "radial-gradient(circle, rgba(74,144,204,0.3) 0%, rgba(74,144,204,0.06) 45%, transparent 70%)",
+            filter: "blur(60px)",
+            bottom: "-8%",
+            left: "-5%",
+          }}
+          animate={{ x: [0, 40, -10, 0], y: [0, -25, 15, 0], scale: [1, 0.93, 1.08, 1] }}
+          transition={{ duration: 26, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute w-[200px] h-[200px] md:w-[300px] md:h-[300px] rounded-full pointer-events-none"
+          style={{
+            background: "radial-gradient(circle, rgba(0,102,179,0.2) 0%, transparent 65%)",
+            filter: "blur(50px)",
+            top: "40%",
+            left: "30%",
+          }}
+          animate={{ x: [0, 30, -20, 0], y: [0, -15, 25, 0] }}
+          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
         />
 
         <motion.div
-          className="relative z-10 max-w-7xl mx-auto px-4 text-center"
-          variants={fadeInUp}
+          className="relative z-10 max-w-4xl mx-auto px-4 text-center"
+          variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
         >
-          <h2 className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
-            Get a Core Service for FREE
-          </h2>
-          <div className="mx-auto h-1 w-20 rounded-full bg-gradient-to-r from-[#0066B3] to-[#4A90CC] mb-5" />
-          <p className="text-white/50 text-lg mb-8 max-w-2xl mx-auto">
-            Book an appointment with us for the first time and enjoy a complimentary core service of your choice.
-          </p>
-          <Link
-            href="/contact"
-            className="group inline-flex items-center gap-2 bg-gradient-to-r from-[#0066B3] to-[#4A90CC] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider hover:scale-105 hover:shadow-[0_8px_30px_rgba(0,102,179,0.5)] transition-all duration-300"
+          {/* Badge */}
+          <motion.div variants={fadeInUp}>
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#4A90CC]/30 bg-[#4A90CC]/10 backdrop-blur-sm px-5 py-2 mb-6">
+              <Sparkles className="h-4 w-4 text-[#4A90CC] animate-pulse" />
+              <span className="text-xs font-bold uppercase tracking-wider text-[#4A90CC]">
+                First Visit Bonus
+              </span>
+            </div>
+          </motion.div>
+
+          {/* Heading */}
+          <motion.h2
+            variants={fadeInUp}
+            className="font-[var(--font-display)] text-3xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-3"
           >
-            Book Appointment
-            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
+            Not Sure Where to Start?
+          </motion.h2>
+
+          <motion.div variants={fadeInUp}>
+            <div className="mx-auto h-1 w-20 rounded-full bg-gradient-to-r from-[#0066B3] to-[#4A90CC] mb-6" />
+          </motion.div>
+
+          <motion.p
+            variants={fadeInUp}
+            className="text-white/60 text-lg md:text-xl mb-5 max-w-2xl mx-auto leading-relaxed"
+          >
+            Book a physical therapy appointment with us for the first time and enjoy a
+            complimentary core service of your choice - on the house.
+          </motion.p>
+
+          {/* Highlight badges */}
+          <motion.div
+            variants={fadeInUp}
+            className="flex flex-wrap items-center justify-center gap-3 mb-10"
+          >
+            {["Cryotherapy", "Infrared Sauna", "Red Light Therapy", "Compression Therapy", "Oxygen Therapy"].map((service) => (
+              <span
+                key={service}
+                className="inline-flex items-center gap-1.5 rounded-full bg-white/[0.08] border border-white/[0.12] backdrop-blur-sm px-4 py-2 text-sm font-semibold text-white/70"
+              >
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#4A90CC]" />
+                {service}
+              </span>
+            ))}
+          </motion.div>
+
+          {/* CTA buttons */}
+          <motion.div
+            variants={fadeInUp}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
+            <Link
+              href="/contact"
+              className="group inline-flex items-center gap-2 bg-gradient-to-r from-[#0066B3] to-[#4A90CC] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider hover:scale-105 hover:shadow-[0_8px_30px_rgba(0,102,179,0.5)] transition-all duration-300"
+            >
+              Book Appointment
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
+            <a
+              href={SITE.phoneHref}
+              className="group inline-flex items-center gap-2 border-2 border-white/20 text-white rounded-full px-8 py-4 text-sm font-black uppercase tracking-wider hover:border-[#4A90CC]/50 hover:bg-white/[0.06] hover:scale-105 transition-all duration-300"
+            >
+              <Phone className="w-4 h-4 text-[#4A90CC]" />
+              {SITE.phone}
+            </a>
+          </motion.div>
         </motion.div>
       </section>
 
