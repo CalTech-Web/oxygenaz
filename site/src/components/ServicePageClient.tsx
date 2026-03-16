@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Sparkles, Phone } from "lucide-react";
 import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer, cardReveal, viewportOnce } from "@/lib/animations";
 import { SITE } from "@/lib/constants";
-import ContactForm from "@/components/ContactForm";
+import PreFooterContact from "@/components/sections/PreFooterContact";
 
 interface Service {
   id: string;
@@ -493,36 +493,8 @@ export default function ServicePageClient({
         </motion.div>
       </section>
 
-      {/* Contact Form - Dark gradient section */}
-      <section className="relative py-16 md:py-24 bg-gradient-to-b from-[#F0F5FA] to-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="relative rounded-2xl bg-gradient-to-br from-[#0a2240] via-[#0d2d54] to-[#061527] p-8 md:p-12 lg:p-16 overflow-hidden">
-            {/* Blobs inside card */}
-            <div
-              className="absolute w-[300px] h-[300px] rounded-full pointer-events-none"
-              style={{
-                background: "radial-gradient(circle, rgba(0,102,179,0.2) 0%, transparent 65%)",
-                filter: "blur(60px)",
-                top: "-15%",
-                right: "-10%",
-              }}
-            />
-            <div
-              className="absolute w-[250px] h-[250px] rounded-full pointer-events-none"
-              style={{
-                background: "radial-gradient(circle, rgba(74,144,204,0.15) 0%, transparent 65%)",
-                filter: "blur(50px)",
-                bottom: "-10%",
-                left: "-5%",
-              }}
-            />
-
-            <div className="relative z-10 max-w-2xl mx-auto">
-              <ContactForm source={formSource} variant="dark" />
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Contact Form */}
+      <PreFooterContact source={formSource} />
     </>
   );
 }

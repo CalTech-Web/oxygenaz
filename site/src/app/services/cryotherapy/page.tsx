@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 import { allServices } from "@/data/services";
-import ContactForm from "@/components/ContactForm";
 import ServicePageClient from "@/components/ServicePageClient";
 
 const service = allServices.find((s) => s.slug === "cryotherapy")!;
