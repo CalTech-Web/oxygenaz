@@ -12,7 +12,8 @@ const whatToExpect =
 
 export const metadata: Metadata = {
   title: service.name,
-  description: service.shortDescription,
+  description:
+    "Heal faster with hyperbaric oxygen therapy in Glendale, AZ. Accelerate tissue repair, reduce swelling, and boost oxygen levels at OxygenAZ.",
 };
 
 export default function HyperbaricOxygenPage() {

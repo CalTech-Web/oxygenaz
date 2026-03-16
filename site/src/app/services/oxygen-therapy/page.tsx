@@ -12,7 +12,8 @@ const whatToExpect =
 
 export const metadata: Metadata = {
   title: service.name,
-  description: service.shortDescription,
+  description:
+    "Recharge with oxygen therapy at our Glendale, AZ oxygen bar. Boost energy, mental clarity, and overall wellness with concentrated oxygen at OxygenAZ.",
 };
 
 export default function OxygenTherapyPage() {

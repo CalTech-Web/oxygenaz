@@ -12,7 +12,8 @@ const whatToExpect =
 
 export const metadata: Metadata = {
   title: service.name,
-  description: service.shortDescription,
+  description:
+    "Relax and detox with infrared sauna therapy in Glendale, AZ. Ease pain, improve circulation, and promote deep relaxation at OxygenAZ.",
 };
 
 export default function InfraredSaunaPage() {

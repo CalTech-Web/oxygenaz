@@ -12,7 +12,8 @@ const whatToExpect =
 
 export const metadata: Metadata = {
   title: service.name,
-  description: service.shortDescription,
+  description:
+    "Turn back the clock with anti-aging peptide therapy in Glendale, AZ. Personalized protocols for skin renewal, vitality, and longevity at OxygenAZ.",
 };
 
 export default function AntiAgingPeptidesPage() {

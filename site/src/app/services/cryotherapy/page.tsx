@@ -12,7 +12,8 @@ const whatToExpect =
 
 export const metadata: Metadata = {
   title: service.name,
-  description: service.shortDescription,
+  description:
+    "Experience whole-body cryotherapy in Glendale, AZ. Reduce inflammation, boost recovery, and feel energized in just 3 minutes at OxygenAZ.",
 };
 
 export default function CryotherapyPage() {

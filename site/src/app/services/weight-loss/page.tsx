@@ -12,7 +12,8 @@ const whatToExpect =
 
 export const metadata: Metadata = {
   title: service.name,
-  description: service.shortDescription,
+  description:
+    "Achieve lasting results with a personalized weight loss program in Glendale, AZ. Expert guidance, tailored plans, and ongoing support at OxygenAZ.",
 };
 
 export default function WeightLossPage() {

@@ -12,7 +12,8 @@ const whatToExpect =
 
 export const metadata: Metadata = {
   title: service.name,
-  description: service.shortDescription,
+  description:
+    "Speed up recovery with compression therapy in Glendale, AZ. Reduce muscle soreness, improve circulation, and enhance performance at OxygenAZ.",
 };
 
 export default function CompressionTherapyPage() {

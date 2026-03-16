@@ -12,7 +12,8 @@ const whatToExpect =
 
 export const metadata: Metadata = {
   title: service.name,
-  description: service.shortDescription,
+  description:
+    "Get IV infusions and vitamin shots in Glendale, AZ. Hydrate, boost immunity, and restore energy with customized IV drips at OxygenAZ.",
 };
 
 export default function IVInfusionsPage() {

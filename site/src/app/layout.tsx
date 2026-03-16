@@ -71,8 +71,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["Person", "Organization"],
-      "@id": "https://oxygenaz.com/#person",
+      "@type": "Organization",
+      "@id": "https://oxygenaz.com/#organization",
       name: "Oxygen Wellness & Physical Therapy",
       url: "https://oxygenaz.com",
       logo: {
@@ -105,13 +105,8 @@ const jsonLd = {
       "@id": "https://oxygenaz.com/#website",
       url: "https://oxygenaz.com",
       name: "Oxygen Wellness & Physical Therapy",
-      publisher: { "@id": "https://oxygenaz.com/#person" },
+      publisher: { "@id": "https://oxygenaz.com/#organization" },
       inLanguage: "en-US",
-      potentialAction: {
-        "@type": "SearchAction",
-        target: "https://oxygenaz.com/?s={search_term_string}",
-        "query-input": "required name=search_term_string",
-      },
     },
     {
       "@type": "LocalBusiness",
@@ -138,14 +133,14 @@ const jsonLd = {
         {
           "@type": "OpeningHoursSpecification",
           dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          opens: "09:00",
-          closes: "18:00",
+          opens: "08:00",
+          closes: "20:00",
         },
         {
           "@type": "OpeningHoursSpecification",
-          dayOfWeek: "Saturday",
-          opens: "09:00",
-          closes: "14:00",
+          dayOfWeek: ["Saturday", "Sunday"],
+          opens: "08:00",
+          closes: "18:00",
         },
       ],
       priceRange: "$$",

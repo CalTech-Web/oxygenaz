@@ -12,7 +12,8 @@ const whatToExpect =
 
 export const metadata: Metadata = {
   title: service.name,
-  description: service.shortDescription,
+  description:
+    "Rejuvenate your skin and reduce pain with red light therapy in Glendale, AZ. Non-invasive sessions for anti-aging and recovery at OxygenAZ.",
 };
 
 export default function RedLightTherapyPage() {
