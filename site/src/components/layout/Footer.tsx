@@ -21,9 +21,9 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-b from-[#0B2447] to-[#061527]">
+    <footer className="relative overflow-hidden bg-gradient-to-b from-[#061527] to-[#061527]">
       {/* ── Gradient line at top ── */}
-      <div className="h-[3px] bg-gradient-to-r from-transparent via-[#00B4D8]/80 to-transparent" />
+      <div className="h-[3px] bg-gradient-to-r from-transparent via-[#0066B3]/80 to-transparent" />
 
       {/* ── Background pattern ── */}
       <div
@@ -60,18 +60,18 @@ export default function Footer() {
             <div className="mt-6 space-y-3">
               <a
                 href={SITE.phoneHref}
-                className="group flex items-center gap-3 text-sm text-white/70 transition-colors hover:text-[#00B4D8]"
+                className="group flex items-center gap-3 text-sm text-white/70 transition-colors hover:text-[#0066B3]"
               >
-                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 group-hover:bg-[#00B4D8]/15 transition-colors">
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 group-hover:bg-[#0066B3]/15 transition-colors">
                   <Phone className="h-3.5 w-3.5" />
                 </span>
                 {SITE.phone}
               </a>
               <a
                 href={`mailto:${SITE.email}`}
-                className="group flex items-center gap-3 text-sm text-white/70 transition-colors hover:text-[#00B4D8]"
+                className="group flex items-center gap-3 text-sm text-white/70 transition-colors hover:text-[#0066B3]"
               >
-                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 group-hover:bg-[#00B4D8]/15 transition-colors">
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 group-hover:bg-[#0066B3]/15 transition-colors">
                   <Mail className="h-3.5 w-3.5" />
                 </span>
                 {SITE.email}
@@ -80,9 +80,9 @@ export default function Footer() {
                 href={SITE.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-3 text-sm text-white/70 transition-colors hover:text-[#00B4D8]"
+                className="group flex items-center gap-3 text-sm text-white/70 transition-colors hover:text-[#0066B3]"
               >
-                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 group-hover:bg-[#00B4D8]/15 transition-colors shrink-0">
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/5 group-hover:bg-[#0066B3]/15 transition-colors shrink-0">
                   <MapPin className="h-3.5 w-3.5" />
                 </span>
                 20265 N 59th Ave b1, Glendale, AZ 85308
@@ -92,7 +92,7 @@ export default function Footer() {
 
           {/* Column 2: Download Our App */}
           <div>
-            <h3 className="text-base font-black uppercase tracking-wider text-[#00B4D8]">
+            <h3 className="text-base font-black uppercase tracking-wider text-[#0066B3]">
               Download Our App
             </h3>
             <div className="mt-4 flex flex-col gap-3">
@@ -129,7 +129,7 @@ export default function Footer() {
 
           {/* Column 3: Useful Links */}
           <div>
-            <h3 className="text-base font-black uppercase tracking-wider text-[#00B4D8]">
+            <h3 className="text-base font-black uppercase tracking-wider text-[#0066B3]">
               Useful Links
             </h3>
             <ul className="mt-4 space-y-2.5">
@@ -140,14 +140,14 @@ export default function Footer() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-white/70 transition-all hover:text-[#00B4D8] hover:translate-x-1 inline-block"
+                      className="text-sm text-white/70 transition-all hover:text-[#0066B3] hover:translate-x-1 inline-block"
                     >
                       {item.label}
                     </a>
                   ) : (
                     <Link
                       href={item.href}
-                      className="text-sm text-white/70 transition-all hover:text-[#00B4D8] hover:translate-x-1 inline-block"
+                      className="text-sm text-white/70 transition-all hover:text-[#0066B3] hover:translate-x-1 inline-block"
                     >
                       {item.label}
                     </Link>
@@ -160,7 +160,7 @@ export default function Footer() {
           {/* Column 4 + 5: Hours & Follow Us stacked */}
           <div>
             {/* Hours */}
-            <h3 className="text-base font-black uppercase tracking-wider text-[#00B4D8]">
+            <h3 className="text-base font-black uppercase tracking-wider text-[#0066B3]">
               Hours
             </h3>
             <dl className="mt-4 space-y-0 text-sm text-white/70">
@@ -179,7 +179,7 @@ export default function Footer() {
             </dl>
 
             {/* Follow Us */}
-            <h3 className="mt-8 text-base font-black uppercase tracking-wider text-[#00B4D8]">
+            <h3 className="mt-8 text-base font-black uppercase tracking-wider text-[#0066B3]">
               Follow Us
             </h3>
             <div className="mt-4 flex gap-3">
@@ -190,7 +190,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-white/30 text-white transition-all duration-300 hover:bg-gradient-to-r hover:from-[#00B4D8] hover:to-[#00B4D8] hover:text-white hover:border-transparent hover:shadow-[0_0_20px_rgba(0,180,216,0.4)] hover:scale-110"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-white/30 text-white transition-all duration-300 hover:bg-gradient-to-r hover:from-[#0066B3] hover:to-[#0066B3] hover:text-white hover:border-transparent hover:shadow-[0_0_20px_rgba(0,180,216,0.4)] hover:scale-110"
                 >
                   <Icon className="h-5 w-5" />
                 </a>
@@ -201,7 +201,7 @@ export default function Footer() {
       </div>
 
       {/* ── Bottom Bar ── */}
-      <div className="h-px bg-gradient-to-r from-transparent via-[#00B4D8]/20 to-transparent mx-auto max-w-7xl px-4 lg:px-20" />
+      <div className="h-px bg-gradient-to-r from-transparent via-[#0066B3]/20 to-transparent mx-auto max-w-7xl px-4 lg:px-20" />
       <div className="relative z-10 mx-auto max-w-7xl px-4 lg:px-20 pt-6 pb-6">
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <div className="text-sm text-white/60">
@@ -210,7 +210,7 @@ export default function Footer() {
               <span className="hidden sm:inline">|</span>{" "}
               <Link
                 href="/privacy-policy"
-                className="transition-colors hover:text-[#00B4D8]"
+                className="transition-colors hover:text-[#0066B3]"
               >
                 Privacy Policy
               </Link>
@@ -227,7 +227,7 @@ export default function Footer() {
                 href="https://caltechweb.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/70 hover:text-[#00B4D8] transition-colors"
+                className="text-white/70 hover:text-[#0066B3] transition-colors"
               >
                 CalTech Web
               </a>

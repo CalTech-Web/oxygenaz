@@ -29,7 +29,7 @@ const services = [
 
 export default function AdditionalServices() {
   return (
-    <section className="py-16 md:py-20 bg-gradient-to-b from-[#F5F7FA]/50 to-white relative overflow-hidden">
+    <section className="py-16 md:py-20 bg-gradient-to-b from-[#F0F5FA]/50 to-white relative overflow-hidden">
       <motion.div
         className="relative z-10 max-w-7xl mx-auto px-4"
         variants={staggerContainer}
@@ -39,7 +39,7 @@ export default function AdditionalServices() {
       >
         {/* Heading */}
         <motion.div variants={fadeInUp} className="mb-8">
-          <h2 className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0B2447] leading-tight tracking-tight accent-underline">
+          <h2 className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#061527] leading-tight tracking-tight accent-underline">
             Other Services
           </h2>
         </motion.div>
@@ -62,10 +62,10 @@ export default function AdditionalServices() {
               />
 
               {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B2447] via-[#0B2447]/50 to-transparent group-hover:via-[#0B2447]/30 transition-all duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#061527] via-[#061527]/50 to-transparent group-hover:via-[#061527]/30 transition-all duration-500" />
 
               {/* Accent line at bottom on hover */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00B4D8] to-[#0B2447] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0066B3] to-[#061527] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
               {/* Content at bottom */}
               <div className="absolute bottom-0 left-0 right-0 p-7 bg-gradient-to-t from-black/30 to-transparent">
@@ -75,7 +75,7 @@ export default function AdditionalServices() {
                 >
                   {service.title}
                 </h3>
-                <div className="flex items-center gap-2 text-[#00B4D8] text-sm font-bold uppercase tracking-wider opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="flex items-center gap-2 text-[#0066B3] text-sm font-bold uppercase tracking-wider opacity-80 group-hover:opacity-100 transition-opacity duration-300">
                   <span>Learn More</span>
                   <span className="transform translate-x-0 group-hover:translate-x-2 transition-transform duration-300">
                     &rarr;

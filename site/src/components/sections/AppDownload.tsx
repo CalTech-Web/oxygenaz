@@ -9,12 +9,12 @@ export default function AppDownload() {
   return (
     <section className="relative py-16 md:py-24 overflow-hidden">
       {/* Vibrant gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#00B4D8] via-[#00B4D8] to-[#0B2447]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0066B3] via-[#0066B3] to-[#061527]" />
 
       {/* Mesh overlay */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-white/10 blur-[100px]" />
-        <div className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full bg-[#0B2447]/20 blur-[80px]" />
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full bg-[#061527]/20 blur-[80px]" />
       </div>
 
 

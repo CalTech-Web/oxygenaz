@@ -61,25 +61,25 @@ export default function Header() {
 
     return (
       <div className="absolute left-0 top-full z-50 mt-0 pt-2">
-        <div className="grid grid-cols-2 gap-6 rounded-xl bg-white p-[15px] shadow-[0_20px_60px_rgba(0,0,0,0.12)] ring-1 ring-black/5 border-t-3 border-t-transparent" style={{ borderImage: "linear-gradient(90deg, #00B4D8, #0B2447) 1" }}>
+        <div className="grid grid-cols-2 gap-6 rounded-xl bg-white p-[15px] shadow-[0_20px_60px_rgba(0,0,0,0.12)] ring-1 ring-black/5 border-t-3 border-t-transparent" style={{ borderImage: "linear-gradient(90deg, #0066B3, #061527) 1" }}>
           {/* Column 1 */}
           <div>
             {allServicesItem && (
               <Link
                 href={allServicesItem.href}
-                className="mb-2 block text-sm font-bold text-[#0B2447] transition-colors hover:text-[#00B4D8]"
+                className="mb-2 block text-sm font-bold text-[#061527] transition-colors hover:text-[#0066B3]"
               >
                 {allServicesItem.label}
               </Link>
             )}
-            <p className="mb-1 text-xs font-black uppercase tracking-wider text-[#6B7B8D]">
+            <p className="mb-1 text-xs font-black uppercase tracking-wider text-[#718096]">
               Core Services
             </p>
             {coreItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="block py-1.5 px-2 text-sm font-medium text-[#5A6878] rounded-md transition-all hover:text-[#00B4D8] hover:bg-[#EEF1F5]/60 hover:pl-3"
+                className="block py-1.5 px-2 text-sm font-medium text-[#4A5568] rounded-md transition-all hover:text-[#0066B3] hover:bg-[#E8EFF5]/60 hover:pl-3"
               >
                 {item.label}
               </Link>
@@ -88,14 +88,14 @@ export default function Header() {
 
           {/* Column 2 */}
           <div>
-            <p className="mb-1 text-xs font-black uppercase tracking-wider text-[#6B7B8D]">
+            <p className="mb-1 text-xs font-black uppercase tracking-wider text-[#718096]">
               Other Services
             </p>
             {otherItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="block py-1.5 px-2 text-sm font-medium text-[#5A6878] rounded-md transition-all hover:text-[#00B4D8] hover:bg-[#EEF1F5]/60 hover:pl-3"
+                className="block py-1.5 px-2 text-sm font-medium text-[#4A5568] rounded-md transition-all hover:text-[#0066B3] hover:bg-[#E8EFF5]/60 hover:pl-3"
               >
                 {item.label}
               </Link>
@@ -112,7 +112,7 @@ export default function Header() {
 
     return (
       <div className="absolute left-0 top-full z-50 mt-0 pt-2">
-        <div className="min-w-[180px] rounded-xl bg-white p-[15px] shadow-[0_20px_60px_rgba(0,0,0,0.12)] ring-1 ring-black/5 border-t-3 border-t-transparent" style={{ borderImage: "linear-gradient(90deg, #00B4D8, #0B2447) 1" }}>
+        <div className="min-w-[180px] rounded-xl bg-white p-[15px] shadow-[0_20px_60px_rgba(0,0,0,0.12)] ring-1 ring-black/5 border-t-3 border-t-transparent" style={{ borderImage: "linear-gradient(90deg, #0066B3, #061527) 1" }}>
           {children.map((child) =>
             child.external ? (
               <a
@@ -120,7 +120,7 @@ export default function Header() {
                 href={child.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block py-1.5 px-2 text-sm font-medium text-[#5A6878] rounded-md transition-all hover:text-[#00B4D8] hover:bg-[#EEF1F5]/60 hover:pl-3"
+                className="block py-1.5 px-2 text-sm font-medium text-[#4A5568] rounded-md transition-all hover:text-[#0066B3] hover:bg-[#E8EFF5]/60 hover:pl-3"
               >
                 {child.label}
               </a>
@@ -128,7 +128,7 @@ export default function Header() {
               <Link
                 key={child.href}
                 href={child.href}
-                className="block py-1.5 px-2 text-sm font-medium text-[#5A6878] rounded-md transition-all hover:text-[#00B4D8] hover:bg-[#EEF1F5]/60 hover:pl-3"
+                className="block py-1.5 px-2 text-sm font-medium text-[#4A5568] rounded-md transition-all hover:text-[#0066B3] hover:bg-[#E8EFF5]/60 hover:pl-3"
               >
                 {child.label}
               </Link>
@@ -142,7 +142,7 @@ export default function Header() {
   return (
     <header>
       {/* ── Row 1: Top Bar (not sticky) ── */}
-      <div className="hidden bg-[#0B2447] py-1.5 lg:block">
+      <div className="hidden bg-[#061527] py-1.5 lg:block">
         <div className="mx-auto max-w-7xl px-4 lg:px-20 flex items-center justify-between">
           <span className="inline-flex items-center gap-1.5 text-sm font-medium text-white">
             <MapPin className="h-3.5 w-3.5" />
@@ -150,7 +150,7 @@ export default function Header() {
           </span>
           <a
             href={SITE.phoneHref}
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-white transition-colors hover:text-[#00B4D8]"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-white transition-colors hover:text-[#0066B3]"
           >
             <Phone className="h-3.5 w-3.5" />
             {SITE.phone}
@@ -162,7 +162,7 @@ export default function Header() {
       <div
         className={`sticky top-0 z-50 transition-all duration-500 border-b ${
           scrolled
-            ? "bg-white/80 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.08)] border-[#00B4D8]/20"
+            ? "bg-white/80 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.08)] border-[#0066B3]/20"
             : "bg-transparent border-transparent"
         }`}
       >
@@ -198,8 +198,8 @@ export default function Header() {
                 >
                   <button
                     type="button"
-                    className={`relative inline-flex items-center gap-1 text-sm font-bold uppercase tracking-wider transition-colors hover:text-[#00B4D8] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#00B4D8] after:transition-all after:duration-300 hover:after:w-full ${
-                      scrolled ? "text-[#0B2447]" : "text-white"
+                    className={`relative inline-flex items-center gap-1 text-sm font-bold uppercase tracking-wider transition-colors hover:text-[#0066B3] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#0066B3] after:transition-all after:duration-300 hover:after:w-full ${
+                      scrolled ? "text-[#061527]" : "text-white"
                     }`}
                     aria-expanded={openDropdown === item.label}
                     aria-haspopup="true"
@@ -221,8 +221,8 @@ export default function Header() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={`relative text-sm font-bold uppercase tracking-wider transition-colors hover:text-[#00B4D8] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#00B4D8] after:transition-all after:duration-300 hover:after:w-full ${
-                    scrolled ? "text-[#0B2447]" : "text-white"
+                  className={`relative text-sm font-bold uppercase tracking-wider transition-colors hover:text-[#0066B3] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#0066B3] after:transition-all after:duration-300 hover:after:w-full ${
+                    scrolled ? "text-[#061527]" : "text-white"
                   }`}
                 >
                   {item.label}
@@ -235,7 +235,7 @@ export default function Header() {
           <div className="hidden lg:block">
             <Link
               href="/contact"
-              className="rounded-full bg-gradient-to-r from-[#00B4D8] to-[#0096B7] px-6 py-3 text-sm font-black uppercase tracking-wider text-white hover:scale-105 hover:shadow-[0_0_30px_rgba(0,180,216,0.4)] transition-all duration-300 shadow-[0_4px_15px_rgba(0,180,216,0.25)]"
+              className="rounded-full bg-gradient-to-r from-[#0066B3] to-[#00518F] px-6 py-3 text-sm font-black uppercase tracking-wider text-white hover:scale-105 hover:shadow-[0_0_30px_rgba(0,180,216,0.4)] transition-all duration-300 shadow-[0_4px_15px_rgba(0,180,216,0.25)]"
             >
               Book Now
             </Link>
@@ -244,8 +244,8 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             type="button"
-            className={`inline-flex items-center justify-center rounded-md p-2 transition-colors hover:text-[#00B4D8] lg:hidden ${
-              scrolled ? "text-[#0B2447]" : "text-white"
+            className={`inline-flex items-center justify-center rounded-md p-2 transition-colors hover:text-[#0066B3] lg:hidden ${
+              scrolled ? "text-[#061527]" : "text-white"
             }`}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -264,7 +264,7 @@ export default function Header() {
                   <div key={item.label}>
                     <button
                       type="button"
-                      className="flex w-full items-center justify-between py-2.5 text-base font-bold uppercase tracking-wider text-[#0B2447] transition-colors hover:text-[#00B4D8]"
+                      className="flex w-full items-center justify-between py-2.5 text-base font-bold uppercase tracking-wider text-[#061527] transition-colors hover:text-[#0066B3]"
                       onClick={() => toggleMobileDropdown(item.label)}
                       aria-expanded={!!mobileDropdowns[item.label]}
                     >
@@ -277,7 +277,7 @@ export default function Header() {
                     </button>
 
                     {mobileDropdowns[item.label] && (
-                      <div className="ml-4 space-y-1 border-l-2 border-[#00B4D8] pl-4 pb-2">
+                      <div className="ml-4 space-y-1 border-l-2 border-[#0066B3] pl-4 pb-2">
                         {item.children.map((child) =>
                           child.external ? (
                             <a
@@ -285,7 +285,7 @@ export default function Header() {
                               href={child.href}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="block py-1.5 text-sm font-medium text-[#5A6878] transition-colors hover:text-[#00B4D8]"
+                              className="block py-1.5 text-sm font-medium text-[#4A5568] transition-colors hover:text-[#0066B3]"
                               onClick={closeMobile}
                             >
                               {child.label}
@@ -294,7 +294,7 @@ export default function Header() {
                             <Link
                               key={child.href + child.label}
                               href={child.href}
-                              className="block py-1.5 text-sm font-medium text-[#5A6878] transition-colors hover:text-[#00B4D8]"
+                              className="block py-1.5 text-sm font-medium text-[#4A5568] transition-colors hover:text-[#0066B3]"
                               onClick={closeMobile}
                             >
                               {child.label}
@@ -308,7 +308,7 @@ export default function Header() {
                   <Link
                     key={item.label}
                     href={item.href}
-                    className="block py-2.5 text-base font-bold uppercase tracking-wider text-[#0B2447] transition-colors hover:text-[#00B4D8]"
+                    className="block py-2.5 text-base font-bold uppercase tracking-wider text-[#061527] transition-colors hover:text-[#0066B3]"
                     onClick={closeMobile}
                   >
                     {item.label}
@@ -320,14 +320,14 @@ export default function Header() {
               <div className="border-t border-gray-200 pt-4 mt-2">
                 <a
                   href={SITE.phoneHref}
-                  className="flex items-center gap-2 py-2.5 text-base font-bold text-[#00B4D8]"
+                  className="flex items-center gap-2 py-2.5 text-base font-bold text-[#0066B3]"
                 >
                   <Phone className="h-5 w-5" />
                   {SITE.phone}
                 </a>
                 <Link
                   href="/contact"
-                  className="mt-2 block rounded-full bg-gradient-to-r from-[#00B4D8] to-[#0096B7] px-5 py-3 text-center text-sm font-black uppercase tracking-wider text-white transition-all duration-300"
+                  className="mt-2 block rounded-full bg-gradient-to-r from-[#0066B3] to-[#00518F] px-5 py-3 text-center text-sm font-black uppercase tracking-wider text-white transition-all duration-300"
                   onClick={closeMobile}
                 >
                   Book Now

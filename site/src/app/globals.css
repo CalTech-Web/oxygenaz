@@ -2,13 +2,13 @@
 
 @theme inline {
   /* ── Refined Dark Blue & Pastel Palette ── */
-  --color-blue: #5BADD6;
-  --color-blue-dark: #4A9BC4;
-  --color-blue-light: #8EC8E0;
+  --color-blue: #0066B3;
+  --color-blue-dark: #00518F;
+  --color-blue-light: #4A90CC;
   --color-navy: #061527;
   --color-navy-soft: #0A1E38;
   --color-navy-deep: #030D1A;
-  --color-pastel: #DAEAF2;
+  --color-pastel: #D4E3F2;
   --color-text-body: #4A5568;
   --color-text-muted: #718096;
   --color-light-gray: #F0F5FA;
@@ -31,11 +31,11 @@ html {
 
 /* ── Glow effects ── */
 .glow-blue {
-  box-shadow: 0 0 25px rgba(91, 173, 214, 0.4), 0 0 70px rgba(91, 173, 214, 0.15);
+  box-shadow: 0 0 25px rgba(0, 102, 179, 0.4), 0 0 70px rgba(0, 102, 179, 0.15);
 }
 
 .glow-blue-strong {
-  box-shadow: 0 0 40px rgba(91, 173, 214, 0.6), 0 0 100px rgba(91, 173, 214, 0.25);
+  box-shadow: 0 0 40px rgba(0, 102, 179, 0.6), 0 0 100px rgba(0, 102, 179, 0.25);
 }
 
 /* ── Glass morphism ── */
@@ -50,26 +50,26 @@ html {
   background: rgba(6, 21, 39, 0.6);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(91, 173, 214, 0.1);
+  border: 1px solid rgba(0, 102, 179, 0.1);
 }
 
 /* ── Gradient text ── */
 .text-gradient {
-  background: linear-gradient(135deg, #ffffff 0%, #5BADD6 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #0066B3 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .text-gradient-blue {
-  background: linear-gradient(135deg, #5BADD6 0%, #4A9BC4 100%);
+  background: linear-gradient(135deg, #0066B3 0%, #00518F 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .text-gradient-vibrant {
-  background: linear-gradient(135deg, #5BADD6 0%, #4A9BC4 40%, #061527 100%);
+  background: linear-gradient(135deg, #0066B3 0%, #00518F 40%, #061527 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -78,13 +78,13 @@ html {
 .text-gradient-shine {
   background: linear-gradient(
     90deg,
-    #5BADD6 0%,
-    #4A9BC4 30%,
+    #0066B3 0%,
+    #00518F 30%,
     #061527 50%,
     #ffffff 55%,
     #061527 60%,
-    #4A9BC4 70%,
-    #5BADD6 100%
+    #00518F 70%,
+    #0066B3 100%
   );
   background-size: 300% 100%;
   -webkit-background-clip: text;
@@ -104,7 +104,7 @@ html {
   display: block;
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #5BADD6, #061527);
+  background: linear-gradient(90deg, #0066B3, #061527);
   margin-top: 14px;
   border-radius: 4px;
   transition: width 0.4s ease;
@@ -118,7 +118,7 @@ html {
   display: block;
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #5BADD6, #061527);
+  background: linear-gradient(90deg, #0066B3, #061527);
   margin: 14px auto 0;
   border-radius: 4px;
   transition: width 0.4s ease;
@@ -129,8 +129,8 @@ html {
 
 /* ── Keyframes ── */
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(91, 173, 214, 0.3); }
-  50% { box-shadow: 0 0 50px rgba(91, 173, 214, 0.7), 0 0 100px rgba(91, 173, 214, 0.25); }
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 102, 179, 0.3); }
+  50% { box-shadow: 0 0 50px rgba(0, 102, 179, 0.7), 0 0 100px rgba(0, 102, 179, 0.25); }
 }
 
 @keyframes float {
@@ -191,7 +191,7 @@ html {
   position: absolute;
   inset: -50%;
   background:
-    radial-gradient(circle at 20% 50%, rgba(91, 173, 214, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 20% 50%, rgba(0, 102, 179, 0.12) 0%, transparent 50%),
     radial-gradient(circle at 80% 20%, rgba(6, 21, 39, 0.08) 0%, transparent 50%),
     radial-gradient(circle at 60% 80%, rgba(74, 155, 196, 0.08) 0%, transparent 50%);
   animation: mesh-float 12s ease-in-out infinite;
@@ -206,13 +206,13 @@ html {
 }
 .card-lift:hover {
   transform: translateY(-8px);
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(91, 173, 214, 0.08);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 102, 179, 0.08);
 }
 
 /* ── Section divider gradient ── */
 .section-divider {
   height: 2px;
-  background: linear-gradient(90deg, transparent 5%, #5BADD6 35%, #061527 65%, transparent 95%);
+  background: linear-gradient(90deg, transparent 5%, #0066B3 35%, #061527 65%, transparent 95%);
   opacity: 0.7;
 }
 
@@ -233,8 +233,8 @@ html {
   transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 .focus-ring:focus {
-  box-shadow: 0 0 0 3px rgba(91, 173, 214, 0.25);
-  border-color: #5BADD6;
+  box-shadow: 0 0 0 3px rgba(0, 102, 179, 0.25);
+  border-color: #0066B3;
 }
 
 /* ── Bottom vignette for hero sections ── */

@@ -9,7 +9,7 @@ import { SITE } from "@/lib/constants";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#0B2447]">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#061527]">
       {/* Background image */}
       <Image
         src="/images/content/home-page.jpg"
@@ -19,7 +19,7 @@ export default function Hero() {
         className="object-cover"
       />
       {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-[#0B2447]/60" />
+      <div className="absolute inset-0 bg-[#061527]/60" />
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-7xl px-4 lg:px-20 py-32 md:py-0">
@@ -28,7 +28,7 @@ export default function Hero() {
           <div className="md:col-span-8">
             {/* Accent bar */}
             <motion.div
-              className="h-1 w-20 rounded-full bg-gradient-to-r from-[#00B4D8] to-white/40 mb-8"
+              className="h-1 w-20 rounded-full bg-gradient-to-r from-[#0066B3] to-white/40 mb-8"
               initial={{ opacity: 0, scaleX: 0 }}
               animate={{ opacity: 1, scaleX: 1 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
@@ -64,7 +64,7 @@ export default function Hero() {
             >
               <Link
                 href="/contact"
-                className="group relative bg-gradient-to-r from-[#00B4D8] to-[#0096B7] text-white rounded-full px-10 py-5 font-black text-sm uppercase tracking-wider hover:scale-105 hover:shadow-[0_0_40px_rgba(0,180,216,0.5)] transition-all duration-300 shadow-[0_8px_30px_rgba(0,180,216,0.25)] flex items-center gap-3 overflow-hidden"
+                className="group relative bg-gradient-to-r from-[#0066B3] to-[#00518F] text-white rounded-full px-10 py-5 font-black text-sm uppercase tracking-wider hover:scale-105 hover:shadow-[0_0_40px_rgba(0,180,216,0.5)] transition-all duration-300 shadow-[0_8px_30px_rgba(0,180,216,0.25)] flex items-center gap-3 overflow-hidden"
               >
                 Book Today
                 <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -72,7 +72,7 @@ export default function Hero() {
               </Link>
               <a
                 href={SITE.phoneHref}
-                className="group border-2 border-white/30 text-white rounded-full px-10 py-5 font-black text-sm uppercase tracking-wider hover:border-[#00B4D8] hover:bg-[#00B4D8]/10 hover:scale-105 transition-all duration-300 flex items-center gap-3"
+                className="group border-2 border-white/30 text-white rounded-full px-10 py-5 font-black text-sm uppercase tracking-wider hover:border-[#0066B3] hover:bg-[#0066B3]/10 hover:scale-105 transition-all duration-300 flex items-center gap-3"
               >
                 <Phone className="h-5 w-5 transition-transform duration-300 group-hover:rotate-12" />
                 Call Us
@@ -86,7 +86,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom overlay */}
-      <div className="absolute bottom-0 left-0 right-0 h-[75px] bg-[#0B2447]" />
+      <div className="absolute bottom-0 left-0 right-0 h-[75px] bg-[#061527]" />
 
       {/* Scroll indicator */}
       <motion.div

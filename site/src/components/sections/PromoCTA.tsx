@@ -8,7 +8,7 @@ export default function PromoCTA() {
   return (
     <section className="relative py-16 md:py-20 overflow-hidden">
       {/* Vibrant animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#00B4D8] via-[#00B4D8] to-[#0B2447] animate-gradient" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0066B3] via-[#0066B3] to-[#061527] animate-gradient" />
 
       {/* Subtle pattern overlay */}
       <div className="absolute inset-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzAgMzBtLTIgMGE0IDQgMCAxIDEgNCAwIDQgNCAwIDEgMS00IDAiIGZpbGw9IiNmZmYiLz48L2c+PC9zdmc+')]" />
@@ -32,7 +32,7 @@ export default function PromoCTA() {
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-white text-[#0B2447] rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider hover:scale-105 hover:shadow-[0_8px_30px_rgba(0,0,0,0.2)] transition-all duration-300"
+              className="inline-block bg-white text-[#061527] rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider hover:scale-105 hover:shadow-[0_8px_30px_rgba(0,0,0,0.2)] transition-all duration-300"
             >
               Book My Consultation
             </Link>
@@ -52,7 +52,7 @@ export default function PromoCTA() {
             </p>
             <Link
               href="/contact"
-              className="inline-block bg-white text-[#0B2447] rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider hover:scale-105 hover:shadow-[0_8px_30px_rgba(0,0,0,0.2)] transition-all duration-300"
+              className="inline-block bg-white text-[#061527] rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider hover:scale-105 hover:shadow-[0_8px_30px_rgba(0,0,0,0.2)] transition-all duration-300"
             >
               Book My Appointment
             </Link>

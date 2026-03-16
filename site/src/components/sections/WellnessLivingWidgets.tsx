@@ -35,10 +35,10 @@ export default function WellnessLivingWidgets() {
   }, []);
 
   return (
-    <section className="relative py-16 md:py-24 bg-[#0B2447] overflow-hidden">
+    <section className="relative py-16 md:py-24 bg-[#061527] overflow-hidden">
       {/* Background accents */}
-      <div className="absolute top-0 left-0 w-[400px] h-[400px] rounded-full bg-[#00B4D8]/10 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[300px] h-[300px] rounded-full bg-[#00B4D8]/8 blur-[100px] pointer-events-none" />
+      <div className="absolute top-0 left-0 w-[400px] h-[400px] rounded-full bg-[#0066B3]/10 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[300px] h-[300px] rounded-full bg-[#0066B3]/8 blur-[100px] pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 lg:px-20">
         {/* Section heading */}
@@ -46,7 +46,7 @@ export default function WellnessLivingWidgets() {
           <h2 className="font-[var(--font-display)] text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-3">
             Book Your Session
           </h2>
-          <div className="h-1 w-20 rounded-full bg-gradient-to-r from-[#00B4D8] to-white/40 mx-auto mb-4" />
+          <div className="h-1 w-20 rounded-full bg-gradient-to-r from-[#0066B3] to-white/40 mx-auto mb-4" />
           <p className="text-white/60 text-lg max-w-xl mx-auto">
             Schedule online instantly or explore our available services
           </p>
