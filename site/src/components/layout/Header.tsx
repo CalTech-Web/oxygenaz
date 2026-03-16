@@ -41,6 +41,18 @@ export default function Header() {
     };
   }, [mobileOpen]);
 
+  /* Close mobile menu and dropdowns on Escape key */
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        if (mobileOpen) setMobileOpen(false);
+        if (openDropdown) setOpenDropdown(null);
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [mobileOpen, openDropdown]);
+
   const closeMobile = () => {
     setMobileOpen(false);
     setMobileDropdowns({});
@@ -226,7 +238,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden items-center gap-6 lg:flex">
+          <nav aria-label="Main navigation" className="hidden items-center gap-6 lg:flex">
             {navigation.map((item) =>
               item.children ? (
                 <div
@@ -234,6 +246,12 @@ export default function Header() {
                   className="relative"
                   onMouseEnter={() => handleMouseEnter(item.label)}
                   onMouseLeave={() => handleMouseLeave(item.label)}
+                  onFocus={() => handleMouseEnter(item.label)}
+                  onBlur={(e) => {
+                    if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+                      handleMouseLeave(item.label);
+                    }
+                  }}
                 >
                   <button
                     type="button"
@@ -296,7 +314,7 @@ export default function Header() {
 
         {/* ── Mobile Navigation Panel ── */}
         {mobileOpen && (
-          <nav className="border-t border-gray-100 bg-white/98 backdrop-blur-sm lg:hidden">
+          <nav aria-label="Mobile navigation" className="border-t border-gray-100 bg-white/98 backdrop-blur-sm lg:hidden">
             <div className="space-y-1 px-4 pb-6 pt-4">
               {navigation.map((item) =>
                 item.children ? (

@@ -156,6 +156,7 @@ export default function Memberships() {
                     href={plan.signupUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`Sign up for ${plan.name} plan (opens in new tab)`}
                     className={`rounded-full px-6 py-4 text-sm font-black uppercase tracking-wider w-full text-center block transition-all duration-300 hover:scale-105 ${
                       isHighlighted
                         ? "bg-gradient-to-r from-[#0066B3] to-[#00518F] text-white hover:shadow-[0_0_30px_rgba(0,180,216,0.5)]"

@@ -62,6 +62,8 @@ export default function ContactForm({ source = "contact-page", variant = "light"
   if (status === "success") {
     return (
       <motion.div
+        role="status"
+        aria-live="polite"
         className={`rounded-2xl p-10 text-center ${
           isDark
             ? "bg-white/[0.06] border border-white/[0.1] backdrop-blur-md"
@@ -76,7 +78,7 @@ export default function ContactForm({ source = "contact-page", variant = "light"
             ? "bg-gradient-to-br from-[#0066B3] to-[#4A90CC] shadow-lg shadow-[#0066B3]/25"
             : "bg-gradient-to-br from-[#0066B3]/25 to-[#0066B3]/10 shadow-[0_0_0_6px_rgba(0,180,216,0.08)]"
         }`}>
-          <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg aria-hidden="true" className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
           </svg>
         </div>
@@ -142,11 +144,14 @@ export default function ContactForm({ source = "contact-page", variant = "light"
         </div>
 
         {status === "error" && (
-          <div className={`rounded-xl p-4 ${
-            isDark
-              ? "bg-red-500/10 border border-red-500/20"
-              : "bg-red-50 border border-red-200"
-          }`}>
+          <div
+            role="alert"
+            className={`rounded-xl p-4 ${
+              isDark
+                ? "bg-red-500/10 border border-red-500/20"
+                : "bg-red-50 border border-red-200"
+            }`}
+          >
             <p className={`text-sm font-medium ${isDark ? "text-red-400" : "text-red-600"}`}>
               Something went wrong. Please try again or call us directly.
             </p>
@@ -241,6 +246,7 @@ export default function ContactForm({ source = "contact-page", variant = "light"
           {status === "submitting" ? (
             <span className="flex items-center justify-center gap-2">
               <svg
+                aria-hidden="true"
                 className="animate-spin w-5 h-5"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

@@ -331,10 +331,10 @@ export default function WellnessServicesPageClient() {
                 variants={cardReveal}
                 className="group relative overflow-hidden rounded-2xl min-h-[300px] md:min-h-[360px]"
               >
-                <Link href="/contact" className="block h-full">
+                <div className="h-full">
                   <Image
                     src="/images/services/cta-background.jpg"
-                    alt="Ready to transform your wellness"
+                    alt=""
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
@@ -346,20 +346,22 @@ export default function WellnessServicesPageClient() {
                     <p className="text-white/70 text-sm mb-5">
                       Find the perfect treatment for your goals
                     </p>
-                    <span className="inline-flex items-center gap-2 bg-gradient-to-r from-[#0066B3] to-[#4A90CC] text-white rounded-full px-7 py-3 text-sm font-black uppercase tracking-wider hover:scale-105 hover:shadow-[0_8px_30px_rgba(0,102,179,0.5)] transition-all duration-300">
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center gap-2 bg-gradient-to-r from-[#0066B3] to-[#4A90CC] text-white rounded-full px-7 py-3 text-sm font-black uppercase tracking-wider hover:scale-105 hover:shadow-[0_8px_30px_rgba(0,102,179,0.5)] transition-all duration-300"
+                    >
                       Book a Consultation
-                      <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                    </span>
+                      <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </Link>
                     <a
                       href={SITE.phoneHref}
                       className="mt-4 inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors text-sm font-bold"
-                      onClick={(e) => e.stopPropagation()}
                     >
-                      <Phone className="h-4 w-4" />
+                      <Phone aria-hidden="true" className="h-4 w-4" />
                       {SITE.phone}
                     </a>
                   </div>
-                </Link>
+                </div>
               </motion.div>
             </div>
           </motion.div>

@@ -71,13 +71,14 @@ export default function TestimonialsPlaceholder() {
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2.5 rounded-full border border-[#4A90CC]/30 bg-[#4A90CC]/10 px-5 py-2 mb-6 hover:bg-[#4A90CC]/20 transition-colors duration-300"
           >
-            <div className="flex gap-0.5">
+            <div className="flex gap-0.5" aria-hidden="true">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
               ))}
             </div>
             <span className="text-xs font-bold text-white/80">5.0 on Google</span>
-            <ExternalLink className="h-3 w-3 text-white/40 group-hover:text-white/70 transition-colors" />
+            <ExternalLink aria-hidden="true" className="h-3 w-3 text-white/40 group-hover:text-white/70 transition-colors" />
+            <span className="sr-only">(opens in new tab)</span>
           </a>
 
           <h2 className="font-[var(--font-display)] text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4">
@@ -112,9 +113,9 @@ export default function TestimonialsPlaceholder() {
                   <Quote className="w-4 h-4 text-white" />
                 </div>
                 {/* Stars */}
-                <div className="flex gap-0.5">
+                <div className="flex gap-0.5" role="img" aria-label="5 out of 5 stars">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                    <Star key={i} aria-hidden="true" className="h-4 w-4 fill-amber-400 text-amber-400" />
                   ))}
                 </div>
               </div>
@@ -156,7 +157,8 @@ export default function TestimonialsPlaceholder() {
             className="group inline-flex items-center gap-2 text-white/50 hover:text-white transition-colors duration-300 text-sm font-bold"
           >
             See all reviews on Google
-            <ExternalLink className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <ExternalLink aria-hidden="true" className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <span className="sr-only">(opens in new tab)</span>
           </a>
         </motion.div>
       </div>

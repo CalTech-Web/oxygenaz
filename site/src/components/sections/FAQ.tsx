@@ -80,7 +80,7 @@ export default function FAQ() {
               Frequently Asked Questions
             </h2>
             <div className="h-1 w-20 rounded-full bg-gradient-to-r from-[#0066B3] to-[#4A90CC] mt-4 mb-6" />
-            <p className="text-white/50 text-base mb-8">
+            <p className="text-white/60 text-base mb-8">
               Have more questions? We&apos;re here to help.
             </p>
 
@@ -94,7 +94,7 @@ export default function FAQ() {
                   <Phone className="h-4 w-4 text-white" />
                 </div>
                 <div>
-                  <p className="text-xs text-white/40 font-bold uppercase tracking-wider">Call us</p>
+                  <p className="text-xs text-white/60 font-bold uppercase tracking-wider">Call us</p>
                   <p className="text-sm font-bold text-white">{SITE.phone}</p>
                 </div>
               </a>
@@ -107,7 +107,7 @@ export default function FAQ() {
                   <MessageCircle className="h-4 w-4 text-white" />
                 </div>
                 <div>
-                  <p className="text-xs text-white/40 font-bold uppercase tracking-wider">Or</p>
+                  <p className="text-xs text-white/60 font-bold uppercase tracking-wider">Or</p>
                   <p className="text-sm font-bold text-white">Send us a message</p>
                 </div>
               </Link>
@@ -127,11 +127,14 @@ export default function FAQ() {
                 }`}
               >
                 <button
+                  id={`faq-btn-${index}`}
                   onClick={() => toggle(index)}
+                  aria-expanded={openIndex === index}
+                  aria-controls={`faq-panel-${index}`}
                   className="w-full flex items-center justify-between text-left px-7 py-6 gap-4"
                 >
                   <div className="flex items-center gap-4">
-                    <span className={`text-xs font-black tracking-wider transition-colors duration-300 ${
+                    <span aria-hidden="true" className={`text-xs font-black tracking-wider transition-colors duration-300 ${
                       openIndex === index ? "text-[#4A90CC]" : "text-white/25"
                     }`}>
                       {String(index + 1).padStart(2, "0")}
@@ -143,6 +146,7 @@ export default function FAQ() {
                     </span>
                   </div>
                   <div
+                    aria-hidden="true"
                     className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
                       openIndex === index
                         ? "bg-gradient-to-br from-[#0066B3] to-[#4A90CC] text-white shadow-lg shadow-[#0066B3]/25"
@@ -159,6 +163,9 @@ export default function FAQ() {
                 <AnimatePresence>
                   {openIndex === index && (
                     <motion.div
+                      id={`faq-panel-${index}`}
+                      role="region"
+                      aria-labelledby={`faq-btn-${index}`}
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
@@ -167,7 +174,7 @@ export default function FAQ() {
                     >
                       <div className="px-7 pb-6 pl-[4.25rem]">
                         <div className="h-px bg-gradient-to-r from-[#0066B3]/30 to-transparent mb-4" />
-                        <p className="text-white/50 leading-relaxed text-base">
+                        <p className="text-white/60 leading-relaxed text-base">
                           {item.answer}
                         </p>
                       </div>
