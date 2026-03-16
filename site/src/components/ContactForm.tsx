@@ -19,6 +19,7 @@ export default function ContactForm({ source = "contact-page", variant = "light"
     reason: "",
   });
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [honeypot, setHoneypot] = useState("");
 
   const isDark = variant === "dark";
 
@@ -30,6 +31,8 @@ export default function ContactForm({ source = "contact-page", variant = "light"
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (honeypot) return;
 
     setStatus("submitting");
 
@@ -126,6 +129,18 @@ export default function ContactForm({ source = "contact-page", variant = "light"
       </p>
 
       <form onSubmit={handleSubmit} className="space-y-5">
+        {/* Honeypot - hidden from users, catches bots */}
+        <div className="absolute opacity-0 -z-10" aria-hidden="true" tabIndex={-1}>
+          <input
+            type="text"
+            name="website"
+            value={honeypot}
+            onChange={(e) => setHoneypot(e.target.value)}
+            tabIndex={-1}
+            autoComplete="off"
+          />
+        </div>
+
         {status === "error" && (
           <div className={`rounded-xl p-4 ${
             isDark

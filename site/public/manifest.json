@@ -1,0 +1,17 @@
+{
+  "name": "Oxygen Wellness & Physical Therapy",
+  "short_name": "Oxygen Wellness",
+  "description": "Evidence-based wellness and physical therapy in Glendale, AZ.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#061527",
+  "theme_color": "#0066B3",
+  "icons": [
+    {
+      "src": "/images/oxygen-icon.png",
+      "sizes": "324x324",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -12,6 +12,10 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://oxygenaz.com"),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: "Oxygen Wellness & Physical Therapy | Glendale, AZ",
     template: "%s | Oxygen Wellness & Physical Therapy",
@@ -29,9 +33,13 @@ export const metadata: Metadata = {
     "sports medicine",
   ],
   icons: {
-    icon: "/images/oxygen-icon.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/images/oxygen-icon.png", type: "image/png" },
+    ],
     apple: "/images/oxygen-icon.png",
   },
+  manifest: "/manifest.json",
   openGraph: {
     title: "Oxygen Wellness & Physical Therapy",
     description:
