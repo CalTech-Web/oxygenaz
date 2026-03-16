@@ -69,7 +69,7 @@ export default function PhysicalTherapyPageClient() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[500px] flex items-center justify-center bg-[#061527] overflow-hidden -mt-[80px] lg:-mt-[112px] pt-[75px]">
+      <section className="relative min-h-[500px] flex items-center justify-center bg-[#061527] overflow-hidden -mt-[80px] lg:-mt-[112px] pt-[155px] lg:pt-[187px]">
         <Image
           src="/images/heroes/pt-hero.jpg"
           alt="Physical Therapy"
