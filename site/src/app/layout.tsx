@@ -13,9 +13,6 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://oxygenaz.com"),
-  alternates: {
-    canonical: "/",
-  },
   title: {
     default: "Oxygen Wellness & Physical Therapy | Glendale, AZ",
     template: "%s | Oxygen Wellness & Physical Therapy",
@@ -63,6 +60,9 @@ export const metadata: Metadata = {
     description:
       "Evidence-based wellness and physical therapy in Glendale, AZ. Only the Good Stuff.",
     images: ["https://oxygenaz.com/images/og-image.jpg"],
+  },
+  other: {
+    "theme-color": "#0066B3",
   },
 };
 
@@ -113,6 +113,49 @@ const jsonLd = {
         "query-input": "required name=search_term_string",
       },
     },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://oxygenaz.com/#localbusiness",
+      name: "Oxygen Wellness & Physical Therapy",
+      image: "https://oxygenaz.com/images/og-image.jpg",
+      url: "https://oxygenaz.com",
+      telephone: "+1-602-888-7992",
+      email: "Contact@OxygenAZ.com",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "20265 N 59th Ave Suite B-1",
+        addressLocality: "Glendale",
+        addressRegion: "AZ",
+        postalCode: "85308",
+        addressCountry: "US",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 33.6609,
+        longitude: -112.1858,
+      },
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          opens: "09:00",
+          closes: "18:00",
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: "Saturday",
+          opens: "09:00",
+          closes: "14:00",
+        },
+      ],
+      priceRange: "$$",
+      sameAs: [
+        "https://www.facebook.com/oxygenwellnessaz",
+        "https://www.instagram.com/oxygenwellnessaz",
+        "https://www.youtube.com/@OxygenWellnessAZ",
+        "https://www.linkedin.com/company/oxygen-wellness-physical-therapy",
+      ],
+    },
   ],
 };
 
@@ -124,6 +167,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={outfit.variable}>
       <head>
+        {/* ── Preconnect hints ── */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="preconnect" href="https://connect.facebook.net" />
+
         {/* ── Google Tag Manager (GTM-PVNQZGLX) ── */}
         <Script id="gtm-1" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -184,6 +232,14 @@ fbq('track','PageView');`}
         />
       </head>
       <body className="antialiased overflow-x-hidden">
+        {/* Skip to main content - accessibility */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-[#0066B3] focus:px-4 focus:py-2 focus:text-white focus:font-bold focus:shadow-lg"
+        >
+          Skip to main content
+        </a>
+
         {/* GTM noscript fallbacks */}
         <noscript>
           <iframe
@@ -214,7 +270,7 @@ fbq('track','PageView');`}
         </noscript>
 
         <Header />
-        <main className="pt-[80px] lg:pt-[112px]">{children}</main>
+        <main id="main-content" className="pt-[80px] lg:pt-[112px]">{children}</main>
         <Footer />
       </body>
     </html>

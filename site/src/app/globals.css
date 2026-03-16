@@ -305,6 +305,12 @@ html {
   border-radius: calc(1.25rem - 2px);
 }
 
+/* ── Infinite ticker scroll ── */
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 /* ── Scrollbar hide ── */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
