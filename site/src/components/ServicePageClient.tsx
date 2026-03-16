@@ -27,6 +27,7 @@ interface ServicePageClientProps {
   formSource: string;
   aboutImage?: string;
   expectImage?: string;
+  heroImage?: string;
 }
 
 export default function ServicePageClient({
@@ -36,13 +37,14 @@ export default function ServicePageClient({
   formSource,
   aboutImage,
   expectImage,
+  heroImage,
 }: ServicePageClientProps) {
   return (
     <>
       {/* Hero */}
       <section className="relative overflow-hidden min-h-[500px] flex items-center justify-center bg-[#061527] -mt-[80px] lg:-mt-[112px] pt-[155px] lg:pt-[187px] pb-[50px]">
         <Image
-          src="/images/heroes/services-hero.webp"
+          src={heroImage || "/images/heroes/services-hero.webp"}
           alt={service.name}
           fill
           className="object-cover"

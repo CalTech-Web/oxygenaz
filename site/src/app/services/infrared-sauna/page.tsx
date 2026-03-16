@@ -23,6 +23,7 @@ export default function InfraredSaunaPage() {
       whatToExpect={whatToExpect}
       formSource="infrared-sauna-page"
       aboutImage="/images/services/infrared-sauna-detail.webp"
+      heroImage="/images/heroes/infrared-sauna-hero.jpg"
     />
   );
 }

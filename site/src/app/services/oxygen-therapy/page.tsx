@@ -23,6 +23,7 @@ export default function OxygenTherapyPage() {
       whatToExpect={whatToExpect}
       formSource="oxygen-therapy-page"
       expectImage="/images/services/oxygen-therapy-detail.webp"
+      heroImage="/images/heroes/oxygen-therapy-hero.jpg"
     />
   );
 }
