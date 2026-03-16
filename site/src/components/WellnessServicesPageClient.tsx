@@ -13,7 +13,7 @@ export default function WellnessServicesPageClient() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#0a2240] via-[#0d2d54] to-[#061527] pt-[75px] pb-[50px] -mt-[80px] lg:-mt-[112px]">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0a2240] via-[#0d2d54] to-[#061527] -mt-[80px] lg:-mt-[112px] pt-[calc(155px+75px)] lg:pt-[calc(187px+75px)] pb-[calc(50px+50px)]">
         <Image
           src="/images/heroes/services-hero-bg.jpg"
           alt=""
