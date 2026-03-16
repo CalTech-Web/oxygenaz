@@ -22,6 +22,7 @@ export default function IVInfusionsPage() {
       relatedServices={relatedServices}
       whatToExpect={whatToExpect}
       formSource="iv-infusions-page"
+      aboutImage="/images/services/iv-infusions-detail.webp"
     />
   );
 }
