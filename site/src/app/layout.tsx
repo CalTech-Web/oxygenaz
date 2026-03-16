@@ -40,6 +40,21 @@ export const metadata: Metadata = {
     siteName: "Oxygen Wellness & Physical Therapy",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "https://oxygenaz.com/images/og-image.jpg",
+        width: 1205,
+        height: 804,
+        alt: "Oxygen Wellness & Physical Therapy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Oxygen Wellness & Physical Therapy",
+    description:
+      "Evidence-based wellness and physical therapy in Glendale, AZ. Only the Good Stuff.",
+    images: ["https://oxygenaz.com/images/og-image.jpg"],
   },
 };
 
@@ -60,7 +75,7 @@ const jsonLd = {
         caption: "Oxygen Wellness & Physical Therapy",
       },
       image: { "@id": "https://oxygenaz.com/#logo" },
-      telephone: "+1-623-440-7777",
+      telephone: "+1-602-888-7992",
       email: "Contact@OxygenAZ.com",
       address: {
         "@type": "PostalAddress",
