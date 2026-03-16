@@ -481,101 +481,216 @@ export default function PhysicalTherapyPageClient() {
           animate={{ x: [0, 40, -10, 0], y: [0, -25, 15, 0], scale: [1, 0.93, 1.08, 1] }}
           transition={{ duration: 26, repeat: Infinity, ease: "easeInOut" }}
         />
-        <motion.div
-          className="absolute w-[200px] h-[200px] md:w-[300px] md:h-[300px] rounded-full pointer-events-none"
-          style={{
-            background: "radial-gradient(circle, rgba(0,102,179,0.2) 0%, transparent 65%)",
-            filter: "blur(50px)",
-            top: "40%",
-            left: "30%",
-          }}
-          animate={{ x: [0, 30, -20, 0], y: [0, -15, 25, 0] }}
-          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-        />
 
-        <motion.div
-          className="relative z-10 max-w-4xl mx-auto px-4 text-center"
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
-        >
-          {/* Badge */}
-          <motion.div variants={fadeInUp}>
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#4A90CC]/30 bg-[#4A90CC]/10 backdrop-blur-sm px-5 py-2 mb-6">
-              <Sparkles className="h-4 w-4 text-[#4A90CC] animate-pulse" />
-              <span className="text-xs font-bold uppercase tracking-wider text-[#4A90CC]">
-                First Visit Bonus
-              </span>
-            </div>
-          </motion.div>
-
-          {/* Heading */}
-          <motion.h2
-            variants={fadeInUp}
-            className="font-[var(--font-display)] text-3xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-3"
-          >
-            Not Sure Where to Start?
-          </motion.h2>
-
-          <motion.div variants={fadeInUp}>
-            <div className="mx-auto h-1 w-20 rounded-full bg-gradient-to-r from-[#0066B3] to-[#4A90CC] mb-6" />
-          </motion.div>
-
-          <motion.p
-            variants={fadeInUp}
-            className="text-white/60 text-lg md:text-xl mb-5 max-w-2xl mx-auto leading-relaxed"
-          >
-            Book a physical therapy appointment with us for the first time and enjoy a
-            complimentary core service of your choice - on the house.
-          </motion.p>
-
-          {/* Highlight badges */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4">
           <motion.div
-            variants={fadeInUp}
-            className="flex flex-wrap items-center justify-center gap-3 mb-10"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportOnce}
           >
-            {["Cryotherapy", "Infrared Sauna", "Red Light Therapy", "Compression Therapy", "Oxygen Therapy"].map((service) => (
-              <span
-                key={service}
-                className="inline-flex items-center gap-1.5 rounded-full bg-white/[0.08] border border-white/[0.12] backdrop-blur-sm px-4 py-2 text-sm font-semibold text-white/70"
-              >
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#4A90CC]" />
-                {service}
-              </span>
-            ))}
-          </motion.div>
+            {/* Top - Content centered */}
+            <motion.div variants={fadeInUp} className="text-center mb-12 md:mb-16">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#4A90CC]/30 bg-[#4A90CC]/10 backdrop-blur-sm px-5 py-2 mb-6">
+                <Sparkles className="h-4 w-4 text-[#4A90CC] animate-pulse" />
+                <span className="text-xs font-bold uppercase tracking-wider text-[#4A90CC]">
+                  First Visit Bonus
+                </span>
+              </div>
 
-          {/* CTA buttons */}
-          <motion.div
-            variants={fadeInUp}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <Link
-              href="/contact"
-              className="group inline-flex items-center gap-2 bg-gradient-to-r from-[#0066B3] to-[#4A90CC] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider hover:scale-105 hover:shadow-[0_8px_30px_rgba(0,102,179,0.5)] transition-all duration-300"
-            >
-              Book Appointment
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
-            <a
-              href={SITE.phoneHref}
-              className="group inline-flex items-center gap-2 border-2 border-white/20 text-white rounded-full px-8 py-4 text-sm font-black uppercase tracking-wider hover:border-[#4A90CC]/50 hover:bg-white/[0.06] hover:scale-105 transition-all duration-300"
-            >
-              <Phone className="w-4 h-4 text-[#4A90CC]" />
-              {SITE.phone}
-            </a>
+              <h2 className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-3">
+                Not Sure Where to Start?
+              </h2>
+              <div className="mx-auto h-1 w-20 rounded-full bg-gradient-to-r from-[#0066B3] to-[#4A90CC] mb-6" />
+              <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                Book a physical therapy appointment with us for the first time and enjoy a
+                complimentary core service of your choice - <span className="text-[#4A90CC] font-bold">completely free</span>.
+              </p>
+            </motion.div>
+
+            {/* Service image cards - bento grid */}
+            <motion.div variants={fadeInUp} className="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-4 mb-12 md:mb-16">
+              {[
+                { name: "Cryotherapy", slug: "cryotherapy", color: "from-sky-500/80 to-sky-600/80" },
+                { name: "Infrared Sauna", slug: "infrared-sauna", color: "from-orange-500/80 to-orange-600/80" },
+                { name: "Red Light Therapy", slug: "red-light-therapy", color: "from-rose-500/80 to-rose-600/80" },
+                { name: "Compression", slug: "compression-therapy", color: "from-violet-500/80 to-violet-600/80" },
+                { name: "Oxygen Therapy", slug: "oxygen-therapy", color: "from-emerald-500/80 to-emerald-600/80" },
+              ].map((service, i) => (
+                <motion.div
+                  key={service.slug}
+                  className={`group relative rounded-2xl overflow-hidden cursor-default ${
+                    i === 0 ? "col-span-2 md:col-span-1" : ""
+                  }`}
+                  whileHover={{ y: -6, scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
+                  <div className="relative h-[180px] md:h-[220px]">
+                    <Image
+                      src={`/images/services/${service.slug}.jpg`}
+                      alt={service.name}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${service.color} via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500`} />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#061527]/80 via-transparent to-transparent" />
+
+                    {/* FREE badge */}
+                    <div className="absolute top-3 right-3">
+                      <span className="inline-block rounded-full bg-white text-[#061527] px-3 py-1 text-[10px] font-black uppercase tracking-wider shadow-lg animate-pulse">
+                        Free
+                      </span>
+                    </div>
+
+                    {/* Service name */}
+                    <div className="absolute bottom-0 left-0 right-0 p-4">
+                      <div className="flex items-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-white shrink-0" />
+                        <p className="text-white text-sm font-bold">{service.name}</p>
+                      </div>
+                    </div>
+
+                    {/* Bottom accent */}
+                    <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#0066B3] to-[#4A90CC] scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" />
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* Bottom - CTA row */}
+            <motion.div variants={fadeInUp}>
+              <div className="rounded-2xl bg-white/[0.06] border border-white/[0.1] backdrop-blur-md p-6 md:p-8">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                  {/* Left info */}
+                  <div className="flex items-center gap-5">
+                    <div className="shrink-0 flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-[#0066B3] to-[#4A90CC] shadow-[0_8px_30px_rgba(0,102,179,0.4)]">
+                      <span className="text-2xl md:text-3xl font-extrabold text-white font-[var(--font-display)]">$0</span>
+                    </div>
+                    <div>
+                      <p className="text-white font-extrabold text-lg md:text-xl font-[var(--font-display)]">
+                        Pick Any Core Service - It&apos;s on Us
+                      </p>
+                      <p className="text-white/40 text-sm mt-1">
+                        No strings attached. Just book your first PT appointment.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Right CTA */}
+                  <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
+                    <Link
+                      href="/contact"
+                      className="group inline-flex items-center gap-2 bg-gradient-to-r from-[#0066B3] to-[#4A90CC] text-white rounded-full px-7 py-3.5 font-black text-sm uppercase tracking-wider hover:scale-105 hover:shadow-[0_8px_30px_rgba(0,102,179,0.5)] transition-all duration-300"
+                    >
+                      Book Appointment
+                      <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </Link>
+                    <a
+                      href={SITE.phoneHref}
+                      className="group inline-flex items-center gap-2 border border-white/20 text-white rounded-full px-7 py-3.5 text-sm font-black uppercase tracking-wider hover:border-[#4A90CC]/50 hover:bg-white/[0.06] transition-all duration-300"
+                    >
+                      <Phone className="w-4 h-4 text-[#4A90CC]" />
+                      {SITE.phone}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Other Services - Same layout as homepage */}
       <OtherServices />
 
       {/* Contact Form */}
-      <section className="py-16 md:py-20 bg-gradient-to-b from-[#F0F5FA] to-white">
-        <div className="max-w-2xl mx-auto px-4">
-          <ContactForm source="physical-therapy-page" />
+      <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#0a2240] via-[#0d2d54] to-[#061527] overflow-hidden">
+        {/* Animated blobs */}
+        <motion.div
+          className="absolute w-[350px] h-[350px] md:w-[500px] md:h-[500px] rounded-full pointer-events-none"
+          style={{
+            background: "radial-gradient(circle, rgba(0,102,179,0.3) 0%, transparent 65%)",
+            filter: "blur(80px)",
+            top: "-15%",
+            right: "-8%",
+          }}
+          animate={{ x: [0, -50, 0], y: [0, 30, 0], scale: [1, 1.15, 1] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute w-[250px] h-[250px] md:w-[400px] md:h-[400px] rounded-full pointer-events-none"
+          style={{
+            background: "radial-gradient(circle, rgba(74,144,204,0.2) 0%, transparent 65%)",
+            filter: "blur(60px)",
+            bottom: "-10%",
+            left: "-5%",
+          }}
+          animate={{ x: [0, 40, 0], y: [0, -25, 0], scale: [1, 0.9, 1] }}
+          transition={{ duration: 24, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4">
+          <motion.div
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportOnce}
+          >
+            {/* Left - Info */}
+            <motion.div variants={fadeInLeft}>
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#4A90CC]/30 bg-[#4A90CC]/10 px-4 py-1.5 mb-5">
+                <MessageCircle className="h-3.5 w-3.5 text-[#4A90CC] animate-pulse" />
+                <span className="text-xs font-bold uppercase tracking-wider text-[#4A90CC]">
+                  Get Started
+                </span>
+              </div>
+              <h2 className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-3">
+                Ready to Feel Better?
+              </h2>
+              <div className="h-1 w-20 rounded-full bg-gradient-to-r from-[#0066B3] to-[#4A90CC] mb-6" />
+              <p className="text-white/50 text-lg leading-relaxed mb-8">
+                Whether you are recovering from an injury, managing chronic pain, or looking to optimize your performance - we are here to help. Fill out the form and we will reach out to schedule your first visit.
+              </p>
+
+              {/* Quick benefits */}
+              <div className="space-y-4 mb-8">
+                {[
+                  "No doctor referral needed - Arizona is a direct-access state",
+                  "Free core service with your first PT appointment",
+                  "Flexible scheduling - open 7 days a week",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-3">
+                    <div className="shrink-0 flex items-center justify-center w-6 h-6 rounded-full bg-[#0066B3]/20 mt-0.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#4A90CC]" />
+                    </div>
+                    <p className="text-white/60 text-sm leading-relaxed">{item}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Phone CTA */}
+              <a
+                href={SITE.phoneHref}
+                className="group inline-flex items-center gap-3 border border-white/15 rounded-2xl px-5 py-4 hover:border-[#4A90CC]/40 hover:bg-white/[0.04] transition-all duration-300"
+              >
+                <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-[#0066B3] to-[#4A90CC] shadow-lg shadow-[#0066B3]/25">
+                  <Phone className="w-4 h-4 text-white" />
+                </div>
+                <div>
+                  <p className="text-white/40 text-xs font-bold uppercase tracking-wider">Or call us directly</p>
+                  <p className="text-white font-extrabold">{SITE.phone}</p>
+                </div>
+              </a>
+            </motion.div>
+
+            {/* Right - Form */}
+            <motion.div variants={fadeInRight}>
+              <div className="rounded-2xl bg-white/[0.06] border border-white/[0.1] backdrop-blur-md p-8 md:p-10">
+                <ContactForm source="physical-therapy-page" variant="dark" />
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
     </>
