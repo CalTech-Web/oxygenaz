@@ -86,6 +86,34 @@ export default function CoreServices() {
               </Link>
             </motion.div>
           ))}
+
+          {/* CTA card - fills empty grid slot */}
+          <motion.div
+            variants={cardReveal}
+            className="group relative overflow-hidden rounded-2xl min-h-[220px] md:min-h-[260px]"
+          >
+            <Link href="/contact" className="block h-full">
+              <Image
+                src="/images/content/weight-loss-cta.jpg"
+                alt="Book your session today"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-[#061527]/70" />
+              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center p-5 text-center">
+                <h3 className="font-[var(--font-display)] text-lg md:text-xl font-bold text-white mb-2">
+                  Ready to Start?
+                </h3>
+                <p className="text-white/70 text-sm mb-4">
+                  Book your first session today
+                </p>
+                <span className="inline-flex items-center gap-2 bg-gradient-to-r from-[#0066B3] to-[#00518F] text-white rounded-full px-6 py-2.5 text-sm font-black uppercase tracking-wider shadow-[0_4px_20px_rgba(0,180,216,0.35)] transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_0_30px_rgba(0,180,216,0.5)]">
+                  Book Now
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </span>
+              </div>
+            </Link>
+          </motion.div>
         </motion.div>
 
         {/* Promo banner */}
