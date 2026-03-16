@@ -73,9 +73,6 @@ export default function Header() {
     return (
       <div className="absolute -left-4 top-full z-50 mt-0 pt-3">
         <div className="w-[560px] rounded-2xl bg-[#061527] p-6 shadow-[0_25px_80px_rgba(0,0,0,0.35)] ring-1 ring-white/10">
-          {/* Top gradient accent */}
-          <div className="absolute top-0 left-6 right-6 h-[2px] rounded-full bg-gradient-to-r from-[#0066B3] via-[#4A90CC] to-[#0066B3]" />
-
           <div className="grid grid-cols-2 gap-5">
             {/* Core Services column */}
             <div>
@@ -133,7 +130,7 @@ export default function Header() {
           {/* Bottom CTA strip */}
           <div className="mt-4 pt-4 border-t border-white/10">
             <Link
-              href="/services/cryotherapy"
+              href="/services"
               className="group/cta flex items-center justify-between rounded-lg bg-[#0066B3]/10 px-4 py-3 transition-all duration-200 hover:bg-[#0066B3]/20"
             >
               <div>
@@ -155,7 +152,6 @@ export default function Header() {
     return (
       <div className="absolute left-0 top-full z-50 mt-0 pt-3">
         <div className="min-w-[200px] rounded-2xl bg-[#061527] p-3 shadow-[0_25px_80px_rgba(0,0,0,0.35)] ring-1 ring-white/10">
-          <div className="absolute top-0 left-4 right-4 h-[2px] rounded-full bg-gradient-to-r from-[#0066B3] via-[#4A90CC] to-[#0066B3]" />
           {children.map((child) =>
             child.external ? (
               <a
@@ -186,7 +182,7 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50">
       {/* ── Row 1: Top Bar ── */}
       <div className="hidden lg:block py-1.5 bg-[#061527]">
-        <div className="mx-auto max-w-7xl px-4 lg:px-20 flex items-center justify-between">
+        <div className="mx-auto max-w-7xl px-4 flex items-center justify-between">
           <span className="inline-flex items-center gap-1.5 text-sm font-medium text-white">
             <MapPin className="h-3.5 w-3.5" />
             {SITE.fullAddress}
@@ -209,7 +205,7 @@ export default function Header() {
             : "bg-black/20 backdrop-blur-sm border-transparent"
         }`}
       >
-        <div className="mx-auto max-w-7xl flex items-center justify-between px-4 py-5 lg:px-20">
+        <div className="mx-auto max-w-7xl flex items-center justify-between px-4 py-5">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0 relative">
             <Image
