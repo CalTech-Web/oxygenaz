@@ -5,6 +5,7 @@ export interface MembershipPlan {
   period: string;
   idealFor: string;
   features: string[];
+  signupUrl: string;
   highlighted?: boolean;
   badge?: string;
 }
@@ -23,6 +24,8 @@ export const membershipPlans: MembershipPlan[] = [
       "Membership perks & discounts on additional services",
       "Flexible scheduling - use your 5 services anytime during the month",
     ],
+    signupUrl:
+      "https://www.wellnessliving.com/rs/catalog-view.html?k_business=605727&id_sale=2&k_id=3217796",
   },
   {
     id: "gold",
@@ -39,6 +42,8 @@ export const membershipPlans: MembershipPlan[] = [
       "BOGO 1/2 price",
       "Trade in 10 credits for a $99 service - limited to 2 a month",
     ],
+    signupUrl:
+      "https://www.wellnessliving.com/rs/catalog-view.html?k_business=605727&id_sale=2&k_id=3217779",
     highlighted: true,
     badge: "Most Popular",
   },
@@ -58,6 +63,8 @@ export const membershipPlans: MembershipPlan[] = [
       "FREE Oxygen Bar ($35 Value)",
       "Trade in 10 credits for a $99 service - limited to 4 a month",
     ],
+    signupUrl:
+      "https://www.wellnessliving.com/rs/catalog-view.html?k_business=605727&id_sale=2&k_id=3217780",
     badge: "Best Value",
   },
 ];

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
+import { Check, ArrowRight, Gift } from "lucide-react";
 import { membershipPlans } from "@/data/memberships";
 import { fadeInUp, staggerContainer, viewportOnce } from "@/lib/animations";
 
@@ -28,12 +28,12 @@ export default function Memberships() {
           {/* Heading */}
           <motion.div variants={fadeInUp} className="text-center mb-12">
             <h2 className="font-[var(--font-display)] text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4">
-              Choose Your Plan
+              Our Membership Plans
             </h2>
             <div className="mx-auto h-1 w-20 rounded-full bg-gradient-to-r from-[#0066B3] to-[#061527]" />
             <p className="text-white/50 text-lg md:text-xl max-w-2xl mx-auto mt-6">
               Want better deals? These are our most popular plans, but call
-              or take a tour and experience our full menu.
+              or take a tour and experience our full menu of plans.
             </p>
           </motion.div>
 
@@ -140,23 +140,51 @@ export default function Memberships() {
                     ))}
                   </ul>
 
-                  {/* Signup button */}
-                  <Link
-                    href="/contact"
+                  {/* Signup button - links to WellnessLiving */}
+                  <a
+                    href={plan.signupUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`rounded-full px-6 py-4 text-sm font-black uppercase tracking-wider w-full text-center block transition-all duration-300 hover:scale-105 ${
                       isHighlighted
-                        ? "bg-gradient-to-r from-[#0066B3] to-[#00518F] text-white hover:shadow-[0_0_30px_rgba(0,180,216,0.5)] animate-pulse-glow"
+                        ? "bg-gradient-to-r from-[#0066B3] to-[#00518F] text-white hover:shadow-[0_0_30px_rgba(0,180,216,0.5)]"
                         : isPlatinum
                         ? "bg-white text-[#061527] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]"
                         : "border-2 border-[#0066B3] text-[#0066B3] hover:bg-[#0066B3] hover:text-white"
                     }`}
                   >
                     Sign Up
-                  </Link>
+                  </a>
                 </motion.div>
               );
             })}
           </div>
+
+          {/* Promotional banner */}
+          <motion.div
+            variants={fadeInUp}
+            className="mt-12 rounded-2xl bg-gradient-to-r from-[#0066B3]/20 to-[#0066B3]/5 border border-[#0066B3]/20 p-8 md:p-10 text-center"
+          >
+            <div className="flex items-center justify-center gap-3 mb-3">
+              <Gift className="h-6 w-6 text-[#0066B3]" />
+              <span className="text-xs font-black uppercase tracking-wider text-[#0066B3]">
+                First-Time Offer
+              </span>
+            </div>
+            <h3 className="font-[var(--font-display)] text-2xl md:text-3xl font-extrabold text-white mb-3">
+              Get a Core Service for FREE
+            </h3>
+            <p className="text-white/50 text-base md:text-lg max-w-xl mx-auto mb-6">
+              Book an appointment with us for the first time and receive a complimentary core service.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-[#0066B3] text-white rounded-full px-8 py-3.5 text-sm font-black uppercase tracking-wider hover:scale-105 hover:shadow-[0_8px_30px_rgba(0,102,179,0.4)] transition-all duration-300"
+            >
+              Book My Appointment
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </motion.div>
         </div>
       </motion.div>
     </section>
