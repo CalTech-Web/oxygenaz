@@ -14,7 +14,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const dropdownTimers = useRef<Record<string, ReturnType<typeof setTimeout>>>({});
 
-  /* Scroll listener for sticky header effect */
+  /* Scroll listener for header effect */
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -140,9 +140,9 @@ export default function Header() {
   };
 
   return (
-    <>
-      {/* ── Row 1: Top Bar (scrolls away normally) ── */}
-      <div className="hidden bg-[#061527] py-1.5 lg:block">
+    <header className="fixed top-0 left-0 right-0 z-50">
+      {/* ── Row 1: Top Bar ── */}
+      <div className={`hidden lg:block py-1.5 transition-all duration-500 ${scrolled ? "bg-[#061527]" : "bg-transparent"}`}>
         <div className="mx-auto max-w-7xl px-4 lg:px-20 flex items-center justify-between">
           <span className="inline-flex items-center gap-1.5 text-sm font-medium text-white">
             <MapPin className="h-3.5 w-3.5" />
@@ -158,12 +158,12 @@ export default function Header() {
         </div>
       </div>
 
-      {/* ── Row 2: Main Navigation (sticky) ── */}
-      <header
-        className={`sticky top-0 z-50 transition-all duration-500 border-b ${
+      {/* ── Row 2: Main Navigation ── */}
+      <div
+        className={`transition-all duration-500 border-b ${
           scrolled
             ? "bg-white/90 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.08)] border-[#0066B3]/20"
-            : "bg-[#061527]/70 backdrop-blur-sm border-transparent"
+            : "bg-transparent border-transparent"
         }`}
       >
         <div className="mx-auto max-w-7xl flex items-center justify-between px-4 py-5 lg:px-20">
@@ -336,7 +336,7 @@ export default function Header() {
             </div>
           </nav>
         )}
-      </header>
-    </>
+      </div>
+    </header>
   );
 }

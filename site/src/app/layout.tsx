@@ -51,7 +51,7 @@ export default function RootLayout({
     <html lang="en" className={outfit.variable}>
       <body className="antialiased overflow-x-hidden">
         <Header />
-        <main>{children}</main>
+        <main className="pt-[80px] lg:pt-[112px]">{children}</main>
         <Footer />
       </body>
     </html>
