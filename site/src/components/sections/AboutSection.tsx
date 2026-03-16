@@ -41,7 +41,7 @@ export default function AboutSection() {
       />
 
       <motion.div
-        className="relative z-10 mx-auto max-w-7xl px-4 lg:px-20"
+        className="relative z-10 mx-auto max-w-7xl px-4"
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"

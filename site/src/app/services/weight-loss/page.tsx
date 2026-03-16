@@ -23,6 +23,7 @@ export default function WeightLossPage() {
       whatToExpect={whatToExpect}
       formSource="weight-loss-page"
       aboutImage="/images/services/weight-loss-detail.webp"
+      heroImage="/images/heroes/weight-loss-hero.jpg"
     />
   );
 }

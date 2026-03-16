@@ -24,7 +24,7 @@ const features = [
 export default function PhysicalTherapySection() {
   return (
     <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#F0F5FA] to-white overflow-hidden">
-      <div className="relative z-10 mx-auto max-w-7xl px-4 lg:px-20">
+      <div className="relative z-10 mx-auto max-w-7xl px-4">
         <motion.div
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
           variants={staggerContainer}

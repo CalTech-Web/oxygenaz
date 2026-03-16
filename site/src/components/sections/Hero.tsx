@@ -22,7 +22,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[#061527]/60" />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-7xl px-4 lg:px-20 py-32 md:py-0">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-32 md:py-0">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           {/* Left side - text */}
           <div className="md:col-span-8">

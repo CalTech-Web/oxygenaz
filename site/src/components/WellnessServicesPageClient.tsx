@@ -13,7 +13,7 @@ export default function WellnessServicesPageClient() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#0a2240] via-[#0d2d54] to-[#061527] pb-20 md:pb-28 -mt-[80px] lg:-mt-[112px] pt-[155px] lg:pt-[187px]">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0a2240] via-[#0d2d54] to-[#061527] pb-[50px] -mt-[80px] lg:-mt-[112px] pt-[155px] lg:pt-[187px]">
         <motion.div
           className="absolute w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-full pointer-events-none"
           style={{

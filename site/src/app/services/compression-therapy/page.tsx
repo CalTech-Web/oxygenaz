@@ -23,6 +23,7 @@ export default function CompressionTherapyPage() {
       whatToExpect={whatToExpect}
       formSource="compression-therapy-page"
       aboutImage="/images/services/compression-therapy-detail.webp"
+      heroImage="/images/heroes/compression-therapy-hero.webp"
     />
   );
 }

@@ -57,7 +57,7 @@ export default function FAQ() {
         <HelpCircle className="w-48 h-48 md:w-72 md:h-72 text-white" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 lg:px-20">
+      <div className="relative z-10 mx-auto max-w-7xl px-4">
         <motion.div
           className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16"
           variants={staggerContainer}

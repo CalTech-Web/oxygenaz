@@ -63,7 +63,7 @@ export default function OtherServices() {
 
   return (
     <section className="relative py-20 md:py-28 bg-gradient-to-b from-[#F0F5FA] to-white">
-      <div className="mx-auto max-w-7xl px-4 lg:px-20">
+      <div className="mx-auto max-w-7xl px-4 ">
         {/* Section heading */}
         <div className="mb-12">
           <h2 className="font-[var(--font-display)] text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#061527] tracking-tight">

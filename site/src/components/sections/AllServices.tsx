@@ -12,7 +12,7 @@ const allServices = [...coreServices, ...additionalServices];
 export default function AllServices() {
   return (
     <section className="relative py-20 md:py-28 bg-gradient-to-b from-white to-[#F0F5FA]">
-      <div className="mx-auto max-w-7xl px-4 lg:px-20">
+      <div className="mx-auto max-w-7xl px-4 ">
         {/* Section heading */}
         <div className="mb-12">
           <h2 className="font-[var(--font-display)] text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#061527] tracking-tight">

@@ -10,7 +10,7 @@ import { staggerContainer, cardReveal } from "@/lib/animations";
 export default function CoreServices() {
   return (
     <section className="relative py-20 md:py-28 bg-gradient-to-b from-white to-[#F0F5FA]">
-      <div className="mx-auto max-w-7xl px-4 lg:px-20">
+      <div className="mx-auto max-w-7xl px-4 ">
         {/* Section heading */}
         <div className="flex items-center justify-between mb-12">
           <div>

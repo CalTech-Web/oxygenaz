@@ -23,6 +23,7 @@ export default function IVInfusionsPage() {
       whatToExpect={whatToExpect}
       formSource="iv-infusions-page"
       aboutImage="/images/services/iv-infusions-detail.webp"
+      heroImage="/images/heroes/iv-infusions-hero.jpg"
     />
   );
 }

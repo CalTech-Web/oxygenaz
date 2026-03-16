@@ -95,7 +95,7 @@ export default function HowItWorks() {
         transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 lg:px-20">
+      <div className="relative z-10 mx-auto max-w-7xl px-4">
         {/* Heading */}
         <motion.div
           className="text-center mb-16"

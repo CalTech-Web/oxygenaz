@@ -59,7 +59,7 @@ export default function AppDownload() {
       />
 
       <motion.div
-        className="relative z-10 max-w-7xl mx-auto px-4 lg:px-20"
+        className="relative z-10 max-w-7xl mx-auto px-4"
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"

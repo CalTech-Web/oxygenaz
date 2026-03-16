@@ -50,7 +50,7 @@ export default function StatsCounter() {
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0066B3]/30 to-transparent" />
 
       <motion.div
-        className="relative z-10 mx-auto max-w-7xl px-4 lg:px-20"
+        className="relative z-10 mx-auto max-w-7xl px-4"
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"

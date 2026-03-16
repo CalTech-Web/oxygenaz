@@ -23,6 +23,7 @@ export default function HyperbaricOxygenPage() {
       whatToExpect={whatToExpect}
       formSource="hyperbaric-oxygen-page"
       aboutImage="/images/services/hyperbaric-detail.webp"
+      heroImage="/images/heroes/hyperbaric-hero.webp"
     />
   );
 }

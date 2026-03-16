@@ -55,7 +55,7 @@ export default function TestimonialsPlaceholder() {
         <Quote className="w-40 h-40 md:w-64 md:h-64 text-white" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 lg:px-20">
+      <div className="relative z-10 mx-auto max-w-7xl px-4">
         {/* Heading */}
         <motion.div
           className="text-center mb-14"
