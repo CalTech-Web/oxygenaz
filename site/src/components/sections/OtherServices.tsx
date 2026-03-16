@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
 import { additionalServices } from "@/data/services";
-import { siteConfig } from "@/lib/constants";
+import { SITE } from "@/lib/constants";
 import { staggerContainer, cardReveal, fadeInUp, viewportOnce } from "@/lib/animations";
 
 export default function OtherServices() {
@@ -116,11 +116,11 @@ export default function OtherServices() {
                 Book a Consultation
               </Link>
               <a
-                href={siteConfig.phoneHref}
+                href={SITE.phoneHref}
                 className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm font-bold"
               >
                 <Phone className="h-4 w-4" />
-                {siteConfig.phone}
+                {SITE.phone}
               </a>
             </div>
           </div>
