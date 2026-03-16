@@ -9,7 +9,7 @@ import { SITE } from "@/lib/constants";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#061527]">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#061527] -mt-[84px] pt-[84px]">
       {/* Background image */}
       <Image
         src="/images/content/home-page.jpg"

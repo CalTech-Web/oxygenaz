@@ -140,8 +140,8 @@ export default function Header() {
   };
 
   return (
-    <header>
-      {/* ── Row 1: Top Bar (not sticky) ── */}
+    <>
+      {/* ── Row 1: Top Bar (scrolls away normally) ── */}
       <div className="hidden bg-[#061527] py-1.5 lg:block">
         <div className="mx-auto max-w-7xl px-4 lg:px-20 flex items-center justify-between">
           <span className="inline-flex items-center gap-1.5 text-sm font-medium text-white">
@@ -158,8 +158,8 @@ export default function Header() {
         </div>
       </div>
 
-      {/* ── Row 2: Main Navigation (sticky, semi-transparent) ── */}
-      <div
+      {/* ── Row 2: Main Navigation (sticky) ── */}
+      <header
         className={`sticky top-0 z-50 transition-all duration-500 border-b ${
           scrolled
             ? "bg-white/90 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.08)] border-[#0066B3]/20"
@@ -235,7 +235,7 @@ export default function Header() {
           <div className="hidden lg:block">
             <Link
               href="/contact"
-              className="rounded-full bg-gradient-to-r from-[#0066B3] to-[#00518F] px-6 py-3 text-sm font-black uppercase tracking-wider text-white hover:scale-105 hover:shadow-[0_0_30px_rgba(0,180,216,0.4)] transition-all duration-300 shadow-[0_4px_15px_rgba(0,180,216,0.25)]"
+              className="rounded-full bg-gradient-to-r from-[#0066B3] to-[#00518F] px-6 py-3 text-sm font-black uppercase tracking-wider text-white hover:scale-105 hover:shadow-[0_0_30px_rgba(0,102,179,0.4)] transition-all duration-300 shadow-[0_4px_15px_rgba(0,102,179,0.25)]"
             >
               Book Now
             </Link>
@@ -336,7 +336,7 @@ export default function Header() {
             </div>
           </nav>
         )}
-      </div>
-    </header>
+      </header>
+    </>
   );
 }
