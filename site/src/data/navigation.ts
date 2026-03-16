@@ -34,11 +34,7 @@ export const navigation: NavItem[] = [
     href: "/about",
     children: [
       { label: "About Us", href: "/about" },
-      {
-        label: "Google Reviews",
-        href: "https://oxygenaz.com/reviews/",
-        external: true,
-      },
+      { label: "Google Reviews", href: "/reviews" },
       {
         label: "Review Us on Google",
         href: "https://www.google.com/maps/place//data=!4m3!3m2!1s0x872b6937d5d0b721:0xb1f5387eb1052fe0!12e1?source=g.page.m._&laa=merchant-review-solicitation",
