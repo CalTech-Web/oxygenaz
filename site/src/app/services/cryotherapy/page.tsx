@@ -25,6 +25,7 @@ export default function CryotherapyPage() {
       relatedServices={relatedServices}
       whatToExpect={whatToExpect}
       formSource="cryotherapy-page"
+      expectImage="/images/content/what-to-expect.webp"
     />
   );
 }

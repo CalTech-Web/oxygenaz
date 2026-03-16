@@ -22,6 +22,7 @@ export default function InfraredSaunaPage() {
       relatedServices={relatedServices}
       whatToExpect={whatToExpect}
       formSource="infrared-sauna-page"
+      aboutImage="/images/services/infrared-sauna-detail.webp"
     />
   );
 }

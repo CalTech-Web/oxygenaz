@@ -25,6 +25,8 @@ interface ServicePageClientProps {
   relatedServices: Service[];
   whatToExpect: string;
   formSource: string;
+  aboutImage?: string;
+  expectImage?: string;
 }
 
 export default function ServicePageClient({
@@ -32,13 +34,15 @@ export default function ServicePageClient({
   relatedServices,
   whatToExpect,
   formSource,
+  aboutImage,
+  expectImage,
 }: ServicePageClientProps) {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden min-h-[500px] flex items-center justify-center bg-[#061527] -mt-[80px] lg:-mt-[112px] pt-[155px] lg:pt-[187px]">
+      <section className="relative overflow-hidden min-h-[500px] flex items-center justify-center bg-[#061527] -mt-[80px] lg:-mt-[112px] pt-[155px] lg:pt-[187px] pb-[50px]">
         <Image
-          src={`/images/services/${service.slug}.jpg`}
+          src="/images/heroes/services-hero.webp"
           alt={service.name}
           fill
           className="object-cover"
@@ -134,7 +138,7 @@ export default function ServicePageClient({
             <motion.div className="relative" variants={fadeInLeft}>
               <div className="relative rounded-2xl overflow-hidden min-h-[300px] md:min-h-[400px]">
                 <Image
-                  src={`/images/services/${service.slug}.jpg`}
+                  src={aboutImage || `/images/services/${service.slug}.jpg`}
                   alt={service.name}
                   fill
                   className="object-cover"
@@ -275,7 +279,7 @@ export default function ServicePageClient({
             <motion.div className="relative" variants={fadeInRight}>
               <div className="relative rounded-2xl overflow-hidden min-h-[300px] md:min-h-[400px]">
                 <Image
-                  src={`/images/services/${service.slug}.jpg`}
+                  src={expectImage || "/images/content/what-to-expect.webp"}
                   alt={`What to expect during ${service.name}`}
                   fill
                   className="object-cover"

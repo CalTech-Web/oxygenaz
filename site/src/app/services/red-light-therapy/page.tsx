@@ -22,6 +22,7 @@ export default function RedLightTherapyPage() {
       relatedServices={relatedServices}
       whatToExpect={whatToExpect}
       formSource="red-light-therapy-page"
+      expectImage="/images/services/red-light-detail.webp"
     />
   );
 }

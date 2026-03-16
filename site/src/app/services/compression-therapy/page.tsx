@@ -22,6 +22,7 @@ export default function CompressionTherapyPage() {
       relatedServices={relatedServices}
       whatToExpect={whatToExpect}
       formSource="compression-therapy-page"
+      aboutImage="/images/services/compression-therapy-detail.webp"
     />
   );
 }
