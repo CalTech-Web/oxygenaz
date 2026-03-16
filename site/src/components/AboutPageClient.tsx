@@ -3,33 +3,45 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Heart, Sparkles, Users, Award, Target, MapPin } from "lucide-react";
+import { ArrowRight, Heart, Sparkles, Users, Award, Target, MapPin, FlaskConical, ShieldCheck, Clock, HandHeart, Linkedin } from "lucide-react";
 import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer, cardReveal, viewportOnce } from "@/lib/animations";
 
 const values = [
   {
-    icon: Target,
+    icon: FlaskConical,
     title: "Evidence-Based",
     description: "Treatments rooted in science, experience, and innovation.",
-    accent: "from-[#0066B3] to-[#4A90CC]",
+    bg: "bg-[#E8F4FD]",
+    iconBg: "bg-[#0066B3]",
+    border: "border-[#B8DDFB]",
+    hoverBorder: "hover:border-[#0066B3]/50",
   },
   {
-    icon: Heart,
+    icon: HandHeart,
     title: "Patient-Centered",
     description: "Personalized care that prioritizes results over routine.",
-    accent: "from-[#4A90CC] to-[#0066B3]",
+    bg: "bg-[#EDE8FD]",
+    iconBg: "bg-[#5B4AC0]",
+    border: "border-[#D4CCF9]",
+    hoverBorder: "hover:border-[#5B4AC0]/50",
   },
   {
-    icon: Award,
+    icon: Clock,
     title: "25+ Years Expertise",
     description: "Decades of outpatient sports medicine experience.",
-    accent: "from-[#0066B3] to-[#061527]",
+    bg: "bg-[#E6F7F0]",
+    iconBg: "bg-[#0E8A5E]",
+    border: "border-[#B5E8D5]",
+    hoverBorder: "hover:border-[#0E8A5E]/50",
   },
   {
     icon: MapPin,
     title: "Community-Driven",
     description: "Proudly serving Glendale, AZ athletes, professionals, and families.",
-    accent: "from-[#061527] to-[#0066B3]",
+    bg: "bg-[#FFF3E6]",
+    iconBg: "bg-[#D97706]",
+    border: "border-[#FDE0B4]",
+    hoverBorder: "hover:border-[#D97706]/50",
   },
 ];
 
@@ -37,7 +49,7 @@ export default function AboutPageClient() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[500px] flex items-center justify-center overflow-hidden bg-[#061527] -mt-[80px] lg:-mt-[112px] pt-[155px] lg:pt-[187px]">
+      <section className="relative min-h-[500px] flex items-center justify-center overflow-hidden bg-[#061527] -mt-[80px] lg:-mt-[112px] pt-[155px] lg:pt-[187px] pb-[50px]">
         <Image
           src="/images/heroes/about-hero.jpg"
           alt="About Oxygen Wellness"
@@ -78,32 +90,93 @@ export default function AboutPageClient() {
         </motion.div>
       </section>
 
-      {/* Introduction */}
-      <section className="py-16 md:py-20 bg-white">
+      {/* Introduction - Only the Good Stuff */}
+      <section className="relative py-20 md:py-28 bg-gradient-to-b from-white to-[#F0F5FA] overflow-hidden">
+        {/* Decorative blob */}
         <motion.div
-          className="max-w-7xl mx-auto px-4"
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
-        >
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#061527] tracking-tight mb-2">
-              Only the Good Stuff
-            </h2>
-            <div className="mx-auto h-1 w-20 rounded-full bg-gradient-to-r from-[#0066B3] to-[#061527] mb-6" />
-            <p className="text-[#718096] text-lg md:text-xl mb-4 leading-relaxed font-light">
-              Oxygen Wellness & Physical Therapy is a one-of-a-kind destination for expert Physical Therapy and advanced regenerative treatments in Glendale, AZ. From Cryotherapy and Red Light Therapy to Hyperbaric Oxygen Therapy (HBOT), spinal adjustments, dry needling, therapeutic massage, and sports injury management, we bring together the most effective modalities under one roof.
-            </p>
-            <p className="text-[#718096] text-lg md:text-xl leading-relaxed font-light">
-              At the core of everything we do is our commitment to &quot;ONLY THE GOOD STUFF,&quot; meaning evidence-based, results-driven treatments delivered by experienced professionals who genuinely care about your well-being.
-            </p>
-          </div>
-        </motion.div>
+          className="absolute w-[400px] h-[400px] rounded-full pointer-events-none"
+          style={{
+            background: "radial-gradient(circle, rgba(0,102,179,0.08) 0%, transparent 65%)",
+            filter: "blur(60px)",
+            top: "-10%",
+            right: "-5%",
+          }}
+          animate={{ x: [0, -30, 0], y: [0, 20, 0], scale: [1, 1.1, 1] }}
+          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4">
+          <motion.div
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportOnce}
+          >
+            {/* Left - Image with floating accent */}
+            <motion.div className="relative" variants={fadeInLeft}>
+              <div className="relative rounded-2xl overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.12)]">
+                <Image
+                  src="/images/content/home-page.jpg"
+                  alt="Oxygen Wellness facility"
+                  width={640}
+                  height={480}
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#061527]/30 to-transparent" />
+              </div>
+              {/* Floating badge */}
+              <motion.div
+                className="absolute -bottom-5 -right-3 md:-right-5 bg-white rounded-2xl px-5 py-4 shadow-[0_8px_30px_rgba(0,0,0,0.12)] border border-[#E2E8F0]"
+                animate={{ y: [0, -6, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-center w-11 h-11 rounded-xl bg-gradient-to-br from-[#0066B3] to-[#4A90CC]">
+                    <ShieldCheck className="w-5 h-5 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-extrabold text-[#061527]">Evidence-Based</p>
+                    <p className="text-xs text-[#718096]">Results-driven care</p>
+                  </div>
+                </div>
+              </motion.div>
+              {/* Decorative ring */}
+              <div className="absolute -top-4 -left-4 w-24 h-24 rounded-full border-2 border-[#0066B3]/10 pointer-events-none" />
+            </motion.div>
+
+            {/* Right - Content */}
+            <motion.div variants={fadeInRight}>
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#0066B3]/20 bg-[#0066B3]/5 px-4 py-1.5 mb-5">
+                <Sparkles className="h-3.5 w-3.5 text-[#0066B3] animate-pulse" />
+                <span className="text-xs font-bold uppercase tracking-wider text-[#0066B3]">
+                  Our Philosophy
+                </span>
+              </div>
+              <h2 className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#061527] tracking-tight mb-2">
+                Only the Good Stuff
+              </h2>
+              <div className="h-1 w-20 rounded-full bg-gradient-to-r from-[#0066B3] to-[#061527] mb-6" />
+              <p className="text-[#718096] text-base md:text-lg mb-5 leading-relaxed">
+                Oxygen Wellness & Physical Therapy is a one-of-a-kind destination for expert Physical Therapy and advanced regenerative treatments in Glendale, AZ. From <span className="font-semibold text-[#061527]">Cryotherapy</span> and <span className="font-semibold text-[#061527]">Red Light Therapy</span> to <span className="font-semibold text-[#061527]">Hyperbaric Oxygen Therapy (HBOT)</span>, spinal adjustments, dry needling, therapeutic massage, and sports injury management, we bring together the most effective modalities under one roof.
+              </p>
+              <p className="text-[#718096] text-base md:text-lg leading-relaxed mb-8">
+                At the core of everything we do is our commitment to <span className="font-extrabold text-[#0066B3]">&quot;ONLY THE GOOD STUFF&quot;</span> - meaning evidence-based, results-driven treatments delivered by experienced professionals who genuinely care about your well-being.
+              </p>
+              <Link
+                href="/services"
+                className="group inline-flex items-center gap-2 bg-gradient-to-r from-[#0066B3] to-[#4A90CC] text-white rounded-full px-7 py-3.5 font-black text-sm uppercase tracking-wider hover:scale-105 hover:shadow-[0_8px_30px_rgba(0,102,179,0.4)] transition-all duration-300"
+              >
+                Explore Our Services
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
       </section>
 
       {/* Founder Section */}
-      <section className="relative py-16 md:py-20 bg-gradient-to-br from-[#0a2240] via-[#0d2d54] to-[#061527] overflow-hidden">
+      <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#0a2240] via-[#0d2d54] to-[#061527] overflow-hidden">
         <motion.div
           className="absolute w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-full pointer-events-none"
           style={{
@@ -129,26 +202,14 @@ export default function AboutPageClient() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <motion.div
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={viewportOnce}
           >
-            <motion.div className="relative" variants={fadeInLeft}>
-              <Image
-                src="/images/content/dr-clint.jpg"
-                alt="Dr. Clint Borman - Founder"
-                width={540}
-                height={500}
-                className="rounded-2xl w-full h-auto object-cover shadow-[0_8px_40px_rgba(0,0,0,0.3)]"
-              />
-              <div className="absolute -bottom-4 -right-4 bg-gradient-to-br from-[#0066B3] to-[#4A90CC] rounded-xl px-5 py-3 shadow-lg">
-                <p className="text-2xl font-extrabold font-[var(--font-display)] text-white">25+</p>
-                <p className="text-xs font-bold uppercase tracking-wider text-white/70">Years Experience</p>
-              </div>
-            </motion.div>
-            <motion.div variants={fadeInRight}>
+            {/* Left - Text */}
+            <motion.div variants={fadeInLeft}>
               <div className="inline-flex items-center gap-2 rounded-full border border-[#4A90CC]/30 bg-[#4A90CC]/10 px-4 py-1.5 mb-5">
                 <Sparkles className="h-3.5 w-3.5 text-[#4A90CC] animate-pulse" />
                 <span className="text-xs font-bold uppercase tracking-wider text-[#4A90CC]">
@@ -166,17 +227,64 @@ export default function AboutPageClient() {
                 Over 25 years in outpatient sports medicine, he&apos;s led residency programs, trained staff, overseen mergers and acquisitions, and built a reputation for empowering patients through education at every session.
               </p>
               <p className="text-white/50 text-lg mb-8 leading-relaxed">
-                Today, Clint blends experience, education, and innovation with traditional rehabilitation and regenerative care, free from insurance constraints and focused on only the good stuff.
+                Today, Clint blends experience, education, and innovation with traditional rehabilitation and regenerative care - free from insurance constraints and focused on only the good stuff.
               </p>
               <a
                 href="https://linkedin.com/in/clintborman"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 bg-gradient-to-r from-[#0066B3] to-[#4A90CC] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider hover:scale-105 hover:shadow-[0_8px_30px_rgba(0,102,179,0.5)] transition-all duration-300"
+                className="group inline-flex items-center gap-2 border-2 border-[#4A90CC] text-[#4A90CC] rounded-full px-8 py-3.5 font-black text-sm uppercase tracking-wider hover:bg-[#4A90CC] hover:text-white hover:scale-105 transition-all duration-300 mb-8"
               >
+                <Linkedin className="h-4 w-4" />
                 See Clint&apos;s LinkedIn
-                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </a>
+
+              {/* Areas We Serve */}
+              <div>
+                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#0066B3] mb-3">
+                  Areas We Serve
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    { name: "Glendale", color: "bg-sky-400/15 text-sky-300 border-sky-400/25" },
+                    { name: "Peoria", color: "bg-violet-400/15 text-violet-300 border-violet-400/25" },
+                    { name: "Phoenix", color: "bg-amber-400/15 text-amber-300 border-amber-400/25" },
+                    { name: "Scottsdale", color: "bg-emerald-400/15 text-emerald-300 border-emerald-400/25" },
+                    { name: "Surprise", color: "bg-rose-400/15 text-rose-300 border-rose-400/25" },
+                    { name: "Arrowhead", color: "bg-teal-400/15 text-teal-300 border-teal-400/25" },
+                    { name: "Sun City", color: "bg-orange-400/15 text-orange-300 border-orange-400/25" },
+                    { name: "North Valley", color: "bg-indigo-400/15 text-indigo-300 border-indigo-400/25" },
+                  ].map((area) => (
+                    <span
+                      key={area.name}
+                      className={`inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-xs font-bold ${area.color}`}
+                    >
+                      <span className="relative flex h-2 w-2">
+                        <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${area.color.split(" ")[1].replace("text-", "bg-")}`} />
+                        <span className={`relative inline-flex rounded-full h-2 w-2 ${area.color.split(" ")[1].replace("text-", "bg-")}`} />
+                      </span>
+                      {area.name}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Right - Image */}
+            <motion.div className="relative order-first lg:order-last" variants={fadeInRight}>
+              <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.3)]">
+                <Image
+                  src="/images/content/dr-clint.jpg"
+                  alt="Dr. Clint Borman - Founder"
+                  width={600}
+                  height={700}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-5 -left-3 lg:-left-6 bg-[#061527] text-white rounded-xl px-5 py-3 shadow-[0_8px_30px_rgba(0,0,0,0.25)]">
+                <p className="text-2xl font-extrabold font-[var(--font-display)]">25+</p>
+                <p className="text-xs font-bold uppercase tracking-wider text-white/70">Years Experience</p>
+              </div>
             </motion.div>
           </motion.div>
         </div>
@@ -232,15 +340,21 @@ export default function AboutPageClient() {
       </section>
 
       {/* Why Choose Us - Values Grid */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-20 md:py-28 bg-gradient-to-b from-[#F0F5FA] to-white">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
-            className="text-center mb-12"
+            className="text-center mb-14"
             variants={fadeInUp}
             initial="hidden"
             whileInView="visible"
             viewport={viewportOnce}
           >
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#0066B3]/20 bg-[#0066B3]/5 px-4 py-1.5 mb-5">
+              <Award className="h-3.5 w-3.5 text-[#0066B3] animate-pulse" />
+              <span className="text-xs font-bold uppercase tracking-wider text-[#0066B3]">
+                Our Difference
+              </span>
+            </div>
             <h2 className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#061527] tracking-tight mb-2">
               Why Choose Us?
             </h2>
@@ -251,7 +365,7 @@ export default function AboutPageClient() {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -261,15 +375,15 @@ export default function AboutPageClient() {
               <motion.div
                 key={value.title}
                 variants={cardReveal}
-                className="group relative rounded-2xl bg-[#F0F5FA] border border-[#E2E8F0] p-6 hover:shadow-lg hover:border-[#0066B3]/20 transition-all duration-500 text-center"
+                className={`group relative rounded-2xl ${value.bg} border ${value.border} ${value.hoverBorder} p-7 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-500 text-center`}
               >
-                <div className={`mx-auto flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br ${value.accent} shadow-lg shadow-[#0066B3]/20 mb-4 group-hover:scale-110 transition-transform duration-500`}>
-                  <value.icon className="w-6 h-6 text-white" />
+                <div className={`mx-auto flex items-center justify-center w-14 h-14 rounded-2xl ${value.iconBg} shadow-lg mb-5 group-hover:scale-110 transition-transform duration-500`}>
+                  <value.icon className="w-6 h-6 text-white animate-pulse" />
                 </div>
-                <h3 className="font-[var(--font-display)] text-lg font-bold text-[#061527] mb-2">
+                <h3 className="font-[var(--font-display)] text-lg font-extrabold text-[#061527] mb-2">
                   {value.title}
                 </h3>
-                <p className="text-[#718096] text-sm">{value.description}</p>
+                <p className="text-[#718096] text-sm leading-relaxed">{value.description}</p>
               </motion.div>
             ))}
           </motion.div>
