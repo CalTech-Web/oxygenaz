@@ -1,26 +1,9 @@
 "use client";
 
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { scaleIn } from "@/lib/animations";
-
-const RECAPTCHA_SITE_KEY = "6Leu6u0pAAAAAMMsysKjs7OFb-TYDyaJhyEOADrU";
-
-/* Extend window for reCAPTCHA */
-declare global {
-  interface Window {
-    grecaptcha: {
-      render: (
-        container: HTMLElement,
-        params: { sitekey: string; theme?: string; callback?: (token: string) => void; "expired-callback"?: () => void }
-      ) => number;
-      reset: (widgetId: number) => void;
-      getResponse: (widgetId: number) => string;
-    };
-    onRecaptchaLoad: () => void;
-  }
-}
 
 interface ContactFormProps {
   source?: string;
@@ -36,49 +19,8 @@ export default function ContactForm({ source = "contact-page", variant = "light"
     reason: "",
   });
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
-  const [recaptchaToken, setRecaptchaToken] = useState<string>("");
-  const [recaptchaReady, setRecaptchaReady] = useState(false);
-  const recaptchaRef = useRef<HTMLDivElement>(null);
-  const widgetIdRef = useRef<number | null>(null);
 
   const isDark = variant === "dark";
-
-  const renderRecaptcha = useCallback(() => {
-    if (
-      recaptchaRef.current &&
-      window.grecaptcha &&
-      widgetIdRef.current === null
-    ) {
-      widgetIdRef.current = window.grecaptcha.render(recaptchaRef.current, {
-        sitekey: RECAPTCHA_SITE_KEY,
-        theme: isDark ? "dark" : "light",
-        callback: (token: string) => setRecaptchaToken(token),
-        "expired-callback": () => setRecaptchaToken(""),
-      });
-      setRecaptchaReady(true);
-    }
-  }, [isDark]);
-
-  useEffect(() => {
-    /* Load reCAPTCHA script if not already loaded */
-    if (document.getElementById("recaptcha-script")) {
-      if (window.grecaptcha) {
-        renderRecaptcha();
-      }
-      return;
-    }
-
-    window.onRecaptchaLoad = () => {
-      renderRecaptcha();
-    };
-
-    const script = document.createElement("script");
-    script.id = "recaptcha-script";
-    script.src = "https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit";
-    script.async = true;
-    script.defer = true;
-    document.head.appendChild(script);
-  }, [renderRecaptcha]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -88,11 +30,6 @@ export default function ContactForm({ source = "contact-page", variant = "light"
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    if (!recaptchaToken) {
-      alert("Please complete the reCAPTCHA verification.");
-      return;
-    }
 
     setStatus("submitting");
 
@@ -107,7 +44,6 @@ export default function ContactForm({ source = "contact-page", variant = "light"
           phone: formData.phone,
           message: formData.reason,
           source,
-          recaptchaToken,
         }),
       });
 
@@ -115,14 +51,8 @@ export default function ContactForm({ source = "contact-page", variant = "light"
 
       setStatus("success");
       setFormData({ firstName: "", lastName: "", email: "", phone: "", reason: "" });
-      setRecaptchaToken("");
     } catch {
       setStatus("error");
-      /* Reset reCAPTCHA on error */
-      if (widgetIdRef.current !== null && window.grecaptcha) {
-        window.grecaptcha.reset(widgetIdRef.current);
-        setRecaptchaToken("");
-      }
     }
   };
 
@@ -154,11 +84,7 @@ export default function ContactForm({ source = "contact-page", variant = "light"
           Thank you for reaching out. We will get back to you as soon as possible.
         </p>
         <button
-          onClick={() => {
-            setStatus("idle");
-            widgetIdRef.current = null;
-            setTimeout(() => renderRecaptcha(), 100);
-          }}
+          onClick={() => setStatus("idle")}
           className="mt-6 text-[#4A90CC] font-bold hover:text-[#0066B3] transition-colors"
         >
           Send Another Message
@@ -292,14 +218,9 @@ export default function ContactForm({ source = "contact-page", variant = "light"
           />
         </div>
 
-        {/* Google reCAPTCHA v2 - inline */}
-        <div className="flex justify-center">
-          <div ref={recaptchaRef} />
-        </div>
-
         <button
           type="submit"
-          disabled={status === "submitting" || !recaptchaToken}
+          disabled={status === "submitting"}
           className="bg-gradient-to-r from-[#0066B3] to-[#4A90CC] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider hover:scale-[1.02] hover:shadow-[0_8px_30px_rgba(0,102,179,0.5)] w-full transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100 shadow-[0_4px_15px_rgba(0,180,216,0.2)]"
         >
           {status === "submitting" ? (
