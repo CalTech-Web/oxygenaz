@@ -59,7 +59,7 @@ export default function ContactPageClient() {
   return (
     <>
       {/* Hero with background image */}
-      <section className="relative min-h-[500px] flex items-center justify-center overflow-hidden bg-[#061527] -mt-[80px] lg:-mt-[112px] pt-[155px] lg:pt-[187px] pb-[50px]">
+      <section className="relative min-h-[500px] flex items-center justify-center overflow-hidden bg-[#061527] -mt-[80px] lg:-mt-[112px] pt-[calc(155px+75px)] lg:pt-[calc(187px+75px)] pb-[calc(50px+50px)]">
         <Image
           src="/images/heroes/services-hero.webp"
           alt="Contact Oxygen Wellness"
