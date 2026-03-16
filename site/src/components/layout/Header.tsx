@@ -162,8 +162,8 @@ export default function Header() {
       <div
         className={`sticky top-0 z-50 transition-all duration-500 border-b ${
           scrolled
-            ? "bg-white/80 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.08)] border-[#0066B3]/20"
-            : "bg-transparent border-transparent"
+            ? "bg-white/90 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.08)] border-[#0066B3]/20"
+            : "bg-[#061527]/70 backdrop-blur-sm border-transparent"
         }`}
       >
         <div className="mx-auto max-w-7xl flex items-center justify-between px-4 py-5 lg:px-20">
