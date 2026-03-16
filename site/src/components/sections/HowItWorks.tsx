@@ -149,6 +149,8 @@ export default function HowItWorks() {
                   </div>
                   <span className="absolute -top-2 -right-2 flex items-center justify-center w-6 h-6 rounded-full bg-[#0a2240] border border-[#4A90CC]/40 text-[10px] font-black text-[#4A90CC]">
                     {step.number}
+                    <span className="absolute inset-0 rounded-full border-2 border-[#4A90CC] animate-ping opacity-40" />
+                    <span className="absolute -inset-1 rounded-full border border-[#4A90CC]/30 animate-pulse" />
                   </span>
                 </div>
 
