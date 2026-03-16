@@ -2,13 +2,15 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Sparkles } from "lucide-react";
 import { scaleIn } from "@/lib/animations";
 
 interface ContactFormProps {
   source?: string;
+  variant?: "light" | "dark";
 }
 
-export default function ContactForm({ source = "contact-page" }: ContactFormProps) {
+export default function ContactForm({ source = "contact-page", variant = "light" }: ContactFormProps) {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -17,6 +19,8 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
     reason: "",
   });
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+
+  const isDark = variant === "dark";
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -54,25 +58,33 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
   if (status === "success") {
     return (
       <motion.div
-        className="bg-white rounded-2xl p-10 text-center shadow-[0_8px_30px_rgba(0,0,0,0.06)]"
+        className={`rounded-2xl p-10 text-center ${
+          isDark
+            ? "bg-white/[0.06] border border-white/[0.1] backdrop-blur-md"
+            : "bg-white shadow-[0_8px_30px_rgba(0,0,0,0.06)]"
+        }`}
         variants={scaleIn}
         initial="hidden"
         animate="visible"
       >
-        <div className="w-16 h-16 bg-gradient-to-br from-[#0066B3]/25 to-[#0066B3]/10 rounded-full flex items-center justify-center mx-auto mb-5 shadow-[0_0_0_6px_rgba(0,180,216,0.08)]">
-          <svg className="w-8 h-8 text-[#0066B3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5 ${
+          isDark
+            ? "bg-gradient-to-br from-[#0066B3] to-[#4A90CC] shadow-lg shadow-[#0066B3]/25"
+            : "bg-gradient-to-br from-[#0066B3]/25 to-[#0066B3]/10 shadow-[0_0_0_6px_rgba(0,180,216,0.08)]"
+        }`}>
+          <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-xl font-black text-[#061527] mb-2">
+        <h3 className={`text-xl font-black mb-2 ${isDark ? "text-white" : "text-[#061527]"}`}>
           Message Sent Successfully
         </h3>
-        <p className="text-[#718096]">
+        <p className={isDark ? "text-white/50" : "text-[#718096]"}>
           Thank you for reaching out. We will get back to you as soon as possible.
         </p>
         <button
           onClick={() => setStatus("idle")}
-          className="mt-6 text-[#0066B3] font-bold hover:text-[#00518F] transition-colors"
+          className="mt-6 text-[#4A90CC] font-bold hover:text-[#0066B3] transition-colors"
         >
           Send Another Message
         </button>
@@ -80,22 +92,46 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
     );
   }
 
-  const inputClasses =
-    "border border-gray-200 rounded-xl px-5 py-4 text-[#061527] font-medium w-full focus:border-[#0066B3] focus:ring-2 focus:ring-[#0066B3]/20 focus:shadow-[0_0_0_4px_rgba(0,180,216,0.08)] outline-none transition-all duration-200 bg-gray-50/30 hover:border-gray-300 hover:bg-white placeholder:text-gray-400";
+  const inputClasses = isDark
+    ? "rounded-xl px-5 py-4 font-medium w-full outline-none transition-all duration-300 bg-white/[0.06] border border-white/[0.1] text-white placeholder:text-white/30 focus:border-[#4A90CC]/50 focus:bg-white/[0.1] focus:ring-2 focus:ring-[#4A90CC]/20 hover:border-white/[0.2] hover:bg-white/[0.08] backdrop-blur-sm"
+    : "border border-gray-200 rounded-xl px-5 py-4 text-[#061527] font-medium w-full focus:border-[#0066B3] focus:ring-2 focus:ring-[#0066B3]/20 focus:shadow-[0_0_0_4px_rgba(0,180,216,0.08)] outline-none transition-all duration-200 bg-gray-50/30 hover:border-gray-300 hover:bg-white placeholder:text-gray-400";
+
+  const labelClasses = isDark
+    ? "block text-white/60 text-xs font-black uppercase tracking-wider mb-2"
+    : "block text-[#061527] text-xs font-black uppercase tracking-wider mb-2";
 
   return (
     <div>
-      <h2 className="text-3xl md:text-4xl font-extrabold font-[var(--font-display)] text-[#061527] mb-2 tracking-tight">
+      {isDark && (
+        <div className="inline-flex items-center gap-2 rounded-full border border-[#4A90CC]/30 bg-[#4A90CC]/10 px-4 py-1.5 mb-5">
+          <Sparkles className="h-3.5 w-3.5 text-[#4A90CC] animate-pulse" />
+          <span className="text-xs font-bold uppercase tracking-wider text-[#4A90CC]">
+            Get in Touch
+          </span>
+        </div>
+      )}
+      <h2 className={`text-3xl md:text-4xl font-extrabold font-[var(--font-display)] mb-2 tracking-tight ${
+        isDark ? "text-white" : "text-[#061527]"
+      }`}>
         Not Sure Where to Start?
       </h2>
-      <p className="text-[#718096] mb-8">
+      <div className={`h-1 w-20 rounded-full mb-4 ${
+        isDark
+          ? "bg-gradient-to-r from-[#0066B3] to-[#4A90CC]"
+          : "bg-gradient-to-r from-[#0066B3] to-[#061527]"
+      }`} />
+      <p className={`mb-8 ${isDark ? "text-white/50" : "text-[#718096]"}`}>
         Fill out your information and we&apos;ll give you a call.
       </p>
 
       <form onSubmit={handleSubmit} className="space-y-5">
         {status === "error" && (
-          <div className="bg-red-50 border border-red-200 rounded-xl p-4">
-            <p className="text-red-600 text-sm font-medium">
+          <div className={`rounded-xl p-4 ${
+            isDark
+              ? "bg-red-500/10 border border-red-500/20"
+              : "bg-red-50 border border-red-200"
+          }`}>
+            <p className={`text-sm font-medium ${isDark ? "text-red-400" : "text-red-600"}`}>
               Something went wrong. Please try again or call us directly.
             </p>
           </div>
@@ -103,7 +139,7 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label htmlFor="firstName" className="block text-[#061527] text-xs font-black uppercase tracking-wider mb-2">
+            <label htmlFor="firstName" className={labelClasses}>
               First Name
             </label>
             <input
@@ -118,7 +154,7 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
             />
           </div>
           <div>
-            <label htmlFor="lastName" className="block text-[#061527] text-xs font-black uppercase tracking-wider mb-2">
+            <label htmlFor="lastName" className={labelClasses}>
               Last Name
             </label>
             <input
@@ -135,7 +171,7 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-[#061527] text-xs font-black uppercase tracking-wider mb-2">
+          <label htmlFor="email" className={labelClasses}>
             Email
           </label>
           <input
@@ -151,7 +187,7 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
         </div>
 
         <div>
-          <label htmlFor="phone" className="block text-[#061527] text-xs font-black uppercase tracking-wider mb-2">
+          <label htmlFor="phone" className={labelClasses}>
             Phone Number
           </label>
           <input
@@ -167,7 +203,7 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
         </div>
 
         <div>
-          <label htmlFor="reason" className="block text-[#061527] text-xs font-black uppercase tracking-wider mb-2">
+          <label htmlFor="reason" className={labelClasses}>
             Reason for being here (optional)
           </label>
           <textarea
@@ -184,7 +220,7 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="bg-gradient-to-r from-[#0066B3] to-[#00518F] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider hover:scale-[1.02] hover:shadow-[0_8px_30px_rgba(0,180,216,0.3)] w-full transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100 shadow-[0_4px_15px_rgba(0,180,216,0.2)]"
+          className="bg-gradient-to-r from-[#0066B3] to-[#4A90CC] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider hover:scale-[1.02] hover:shadow-[0_8px_30px_rgba(0,102,179,0.5)] w-full transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100 shadow-[0_4px_15px_rgba(0,180,216,0.2)]"
         >
           {status === "submitting" ? (
             <span className="flex items-center justify-center gap-2">
