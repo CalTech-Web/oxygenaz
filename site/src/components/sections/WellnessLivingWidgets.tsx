@@ -1,25 +1,33 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { CalendarCheck, Sparkles } from "lucide-react";
 
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.15 } },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const } },
-};
-
 export default function WellnessLivingWidgets() {
+  const sectionRef = useRef<HTMLElement>(null);
   const widget1Ref = useRef<HTMLDivElement>(null);
   const widget2Ref = useRef<HTMLDivElement>(null);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    if (!widget1Ref.current || !widget2Ref.current) return;
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !loaded) {
+          setLoaded(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, [loaded]);
+
+  useEffect(() => {
+    if (!loaded || !widget1Ref.current || !widget2Ref.current) return;
 
     // Create widget 1
     const w1 = document.createElement("div");
@@ -44,86 +52,35 @@ export default function WellnessLivingWidgets() {
       if (widget2Ref.current) widget2Ref.current.innerHTML = "";
       script.remove();
     };
-  }, []);
+  }, [loaded]);
 
   return (
-    <section className="relative py-20 md:py-28 bg-[#061527] overflow-hidden">
-      {/* Top-left blob */}
-      <motion.div
+    <section ref={sectionRef} className="relative py-20 md:py-28 bg-[#061527] overflow-hidden">
+      {/* Static background accents */}
+      <div
         className="absolute w-[300px] h-[300px] md:w-[450px] md:h-[450px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(0,102,179,0.4) 0%, rgba(0,102,179,0.1) 45%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(0,102,179,0.25) 0%, rgba(0,102,179,0.06) 45%, transparent 70%)",
           filter: "blur(60px)",
           top: "-10%",
           left: "-5%",
         }}
-        animate={{
-          x: [0, 60, 20, 0],
-          y: [0, 40, -20, 0],
-          scale: [1, 1.1, 0.95, 1],
-        }}
-        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
       />
-      {/* Top-right blob */}
-      <motion.div
+      <div
         className="absolute w-[250px] h-[250px] md:w-[400px] md:h-[400px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(74,144,204,0.35) 0%, rgba(74,144,204,0.08) 45%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(74,144,204,0.2) 0%, rgba(74,144,204,0.05) 45%, transparent 70%)",
           filter: "blur(55px)",
-          top: "-5%",
+          bottom: "-5%",
           right: "-3%",
         }}
-        animate={{
-          x: [0, -50, -15, 0],
-          y: [0, 30, -10, 0],
-          scale: [1, 0.9, 1.08, 1],
-        }}
-        transition={{ duration: 24, repeat: Infinity, ease: "easeInOut" }}
-      />
-      {/* Bottom-left blob */}
-      <motion.div
-        className="absolute w-[280px] h-[280px] md:w-[420px] md:h-[420px] rounded-full pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, rgba(0,102,179,0.35) 0%, rgba(0,80,140,0.08) 45%, transparent 70%)",
-          filter: "blur(55px)",
-          bottom: "-8%",
-          left: "10%",
-        }}
-        animate={{
-          x: [0, 40, -20, 0],
-          y: [0, -35, 15, 0],
-          scale: [0.95, 1.1, 1, 0.95],
-        }}
-        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
-      />
-      {/* Bottom-right blob */}
-      <motion.div
-        className="absolute w-[260px] h-[260px] md:w-[380px] md:h-[380px] rounded-full pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, rgba(30,130,220,0.3) 0%, rgba(30,130,220,0.06) 45%, transparent 70%)",
-          filter: "blur(50px)",
-          bottom: "-5%",
-          right: "8%",
-        }}
-        animate={{
-          x: [0, -45, 10, 0],
-          y: [0, -25, 20, 0],
-          scale: [1, 1.05, 0.92, 1],
-        }}
-        transition={{ duration: 26, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <motion.div
-        className="relative z-10 mx-auto max-w-7xl px-4"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-80px" }}
-      >
+      <div className="relative z-10 mx-auto max-w-7xl px-4">
         {/* Section heading */}
-        <motion.div className="text-center mb-14" variants={itemVariants}>
+        <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#0066B3]/30 bg-[#0066B3]/10 px-4 py-1.5 mb-5">
-            <Sparkles className="h-3.5 w-3.5 text-[#4A90CC] animate-pulse" />
+            <Sparkles className="h-3.5 w-3.5 text-[#4A90CC]" />
             <span className="text-xs font-bold uppercase tracking-wider text-[#4A90CC]">
               Instant Online Booking
             </span>
@@ -136,11 +93,11 @@ export default function WellnessLivingWidgets() {
           <p className="text-white/60 text-lg max-w-xl mx-auto">
             Schedule online instantly or explore our available services
           </p>
-        </motion.div>
+        </div>
 
-        {/* Side by side widgets with animated gradient borders */}
+        {/* Side by side widgets with gradient borders */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <motion.div variants={itemVariants}>
+          <div>
             <h3 className="text-white text-2xl md:text-3xl font-bold text-center mb-4">Wellness Services</h3>
             <div className="gradient-border-wrap shadow-[0_8px_40px_rgba(0,102,179,0.2)]">
               <div
@@ -148,8 +105,8 @@ export default function WellnessLivingWidgets() {
                 className="bg-white p-5 min-h-[200px]"
               />
             </div>
-          </motion.div>
-          <motion.div variants={itemVariants}>
+          </div>
+          <div>
             <h3 className="text-white text-2xl md:text-3xl font-bold text-center mb-4">Sports Medicine / Physical Therapy</h3>
             <div className="gradient-border-wrap shadow-[0_8px_40px_rgba(0,102,179,0.2)]">
               <div
@@ -157,9 +114,9 @@ export default function WellnessLivingWidgets() {
                 className="bg-white p-5 min-h-[200px]"
               />
             </div>
-          </motion.div>
+          </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

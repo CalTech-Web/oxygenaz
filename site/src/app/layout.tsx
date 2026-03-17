@@ -162,13 +162,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={outfit.variable}>
       <head>
-        {/* ── Preconnect hints ── */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://www.google-analytics.com" />
-        <link rel="preconnect" href="https://connect.facebook.net" />
-
         {/* ── Google Tag Manager (GTM-PVNQZGLX) ── */}
-        <Script id="gtm-1" strategy="afterInteractive">
+        <Script id="gtm-1" strategy="lazyOnload">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -177,7 +172,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </Script>
 
         {/* ── Google Tag Manager (GTM-5NZT7JM8 - Site Kit) ── */}
-        <Script id="gtm-2" strategy="afterInteractive">
+        <Script id="gtm-2" strategy="lazyOnload">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -188,9 +183,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {/* ── Google Analytics (GT-K4VM5GSZ - Site Kit) ── */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=GT-K4VM5GSZ"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="ga-sitekit" strategy="afterInteractive">
+        <Script id="ga-sitekit" strategy="lazyOnload">
           {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag("set","linker",{"domains":["oxygenaz.com"]});
 gtag("js",new Date());
@@ -201,16 +196,16 @@ gtag("config","GT-K4VM5GSZ");`}
         {/* ── Google Analytics (G-G47Y2YJHED) ── */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-G47Y2YJHED"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="ga-secondary" strategy="afterInteractive">
+        <Script id="ga-secondary" strategy="lazyOnload">
           {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag("js",new Date());
 gtag("config","G-G47Y2YJHED");`}
         </Script>
 
         {/* ── Meta (Facebook) Pixel (1422766152817543) ── */}
-        <Script id="fb-pixel" strategy="afterInteractive">
+        <Script id="fb-pixel" strategy="lazyOnload">
           {`!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;

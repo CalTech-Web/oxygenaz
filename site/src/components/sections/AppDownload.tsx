@@ -1,10 +1,7 @@
-"use client";
-
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { SITE } from "@/lib/constants";
-import { staggerContainer, viewportOnce } from "@/lib/animations";
 import { Smartphone, Star, Bell, CalendarCheck } from "lucide-react";
+import FadeIn from "@/components/ui/FadeIn";
 
 const features = [
   { icon: CalendarCheck, text: "Book sessions instantly" },
@@ -12,62 +9,33 @@ const features = [
   { icon: Star, text: "Track your wellness journey" },
 ];
 
-const containerChild = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
-  },
-};
-
 export default function AppDownload() {
   return (
     <section className="relative py-20 md:py-28 overflow-hidden bg-[#061527]">
-      {/* Animated gradient blobs */}
-      <motion.div
+      {/* Static gradient accents */}
+      <div
         className="absolute w-[350px] h-[350px] md:w-[500px] md:h-[500px] rounded-full pointer-events-none"
         style={{
-          background:
-            "radial-gradient(circle, rgba(0,102,179,0.4) 0%, rgba(0,102,179,0.08) 50%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(0,102,179,0.25) 0%, rgba(0,102,179,0.05) 50%, transparent 70%)",
           filter: "blur(60px)",
           top: "-10%",
           left: "-5%",
         }}
-        animate={{
-          x: [0, 50, 20, 0],
-          y: [0, 30, -15, 0],
-          scale: [1, 1.1, 0.95, 1],
-        }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
       />
-      <motion.div
+      <div
         className="absolute w-[300px] h-[300px] md:w-[450px] md:h-[450px] rounded-full pointer-events-none"
         style={{
-          background:
-            "radial-gradient(circle, rgba(74,144,204,0.3) 0%, rgba(74,144,204,0.06) 50%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(74,144,204,0.2) 0%, rgba(74,144,204,0.04) 50%, transparent 70%)",
           filter: "blur(55px)",
           bottom: "-8%",
           right: "-3%",
         }}
-        animate={{
-          x: [0, -40, 10, 0],
-          y: [0, -25, 15, 0],
-          scale: [1, 0.92, 1.08, 1],
-        }}
-        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <motion.div
-        className="relative z-10 max-w-7xl mx-auto px-4"
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="visible"
-        viewport={viewportOnce}
-      >
+      <div className="relative z-10 max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left: Content */}
-          <motion.div variants={containerChild}>
+          <FadeIn>
             {/* Badge */}
             <div className="inline-flex items-center gap-2 rounded-full border border-[#0066B3]/30 bg-[#0066B3]/10 px-4 py-1.5 mb-6">
               <Smartphone className="h-3.5 w-3.5 text-[#4A90CC]" />
@@ -139,27 +107,16 @@ export default function AppDownload() {
                 </div>
               </a>
             </div>
-          </motion.div>
+          </FadeIn>
 
           {/* Right: Phone mockup with glow */}
-          <motion.div
-            className="relative flex justify-center"
-            variants={containerChild}
-          >
+          <FadeIn delay={0.15} className="relative flex justify-center">
             {/* Glow ring behind phone */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] md:w-[360px] md:h-[360px] rounded-full bg-[#0066B3]/20 blur-[80px] pointer-events-none" />
 
-            {/* Phone with float + tilt */}
-            <motion.div
-              className="relative"
-              animate={{
-                y: [0, -12, 0],
-                rotateY: [-6, -6, -6],
-                rotateX: [3, 3, 3],
-              }}
-              transition={{
-                y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-              }}
+            {/* Phone with CSS float animation */}
+            <div
+              className="relative animate-float"
               style={{ perspective: "800px" }}
             >
               <Image
@@ -173,20 +130,8 @@ export default function AppDownload() {
                 }}
               />
 
-              {/* Floating notification cards */}
-              <motion.div
-                className="absolute -left-8 md:-left-16 top-1/4 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-3 shadow-lg"
-                animate={{
-                  y: [0, -8, 0],
-                  x: [0, 4, 0],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.5,
-                }}
-              >
+              {/* Static floating notification cards */}
+              <div className="absolute -left-8 md:-left-16 top-1/4 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-3 shadow-lg">
                 <div className="flex items-center gap-2">
                   <div className="w-8 h-8 rounded-full bg-[#0066B3] flex items-center justify-center">
                     <CalendarCheck className="h-4 w-4 text-white" />
@@ -196,21 +141,9 @@ export default function AppDownload() {
                     <p className="text-white/50 text-[10px]">Cryotherapy - 2pm</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
 
-              <motion.div
-                className="absolute -right-6 md:-right-14 bottom-1/3 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-3 shadow-lg"
-                animate={{
-                  y: [0, 6, 0],
-                  x: [0, -4, 0],
-                }}
-                transition={{
-                  duration: 3.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1,
-                }}
-              >
+              <div className="absolute -right-6 md:-right-14 bottom-1/3 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-3 shadow-lg">
                 <div className="flex items-center gap-2">
                   <div className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center">
                     <Star className="h-4 w-4 text-white" />
@@ -220,11 +153,11 @@ export default function AppDownload() {
                     <p className="text-white/50 text-[10px]">Keep it up!</p>
                   </div>
                 </div>
-              </motion.div>
-            </motion.div>
-          </motion.div>
+              </div>
+            </div>
+          </FadeIn>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

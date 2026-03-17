@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
-import { staggerContainer, popIn } from "@/lib/animations";
+import { useInView } from "framer-motion";
 import { Clock, Star, Stethoscope, Timer } from "lucide-react";
+import FadeIn from "@/components/ui/FadeIn";
 
 const stats = [
   { value: 25, suffix: "+", label: "Years of Experience", icon: Timer },
@@ -49,34 +49,28 @@ export default function StatsCounter() {
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0066B3]/30 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#0066B3]/30 to-transparent" />
 
-      <motion.div
-        className="relative z-10 mx-auto max-w-7xl px-4"
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-60px" }}
-      >
+      <div className="relative z-10 mx-auto max-w-7xl px-4">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-0">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (
-              <motion.div
+              <FadeIn
                 key={stat.label}
-                variants={popIn}
+                delay={index * 0.1}
                 className={`flex flex-col items-center text-center px-4 py-4 ${
                   index < stats.length - 1 ? "md:border-r md:border-white/10" : ""
                 }`}
               >
-                <Icon className="w-6 h-6 text-[#0066B3] mb-3 animate-pulse" />
+                <Icon className="w-6 h-6 text-[#0066B3] mb-3" />
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                 <span className="mt-2 text-sm font-medium uppercase tracking-wider text-white/50">
                   {stat.label}
                 </span>
-              </motion.div>
+              </FadeIn>
             );
           })}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

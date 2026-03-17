@@ -1,7 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
 import {
   CalendarCheck,
   MessageCircle,
@@ -13,7 +10,7 @@ import {
   Sparkles,
   CheckCircle2,
 } from "lucide-react";
-import { staggerContainer, cardReveal, fadeInUp, viewportOnce } from "@/lib/animations";
+import FadeIn from "@/components/ui/FadeIn";
 
 const steps = [
   {
@@ -57,55 +54,31 @@ const steps = [
 export default function HowItWorks() {
   return (
     <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#0a2240] via-[#0d2d54] to-[#061527] overflow-hidden">
-      {/* Animated background blobs */}
-      <motion.div
+      {/* Static background accents */}
+      <div
         className="absolute w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-full pointer-events-none"
         style={{
-          background:
-            "radial-gradient(circle, rgba(0,102,179,0.3) 0%, transparent 65%)",
+          background: "radial-gradient(circle, rgba(0,102,179,0.2) 0%, transparent 65%)",
           filter: "blur(80px)",
           top: "-15%",
           left: "-10%",
         }}
-        animate={{ x: [0, 80, 0], y: [0, 50, 0], scale: [1, 1.2, 1] }}
-        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
       />
-      <motion.div
+      <div
         className="absolute w-[350px] h-[350px] md:w-[500px] md:h-[500px] rounded-full pointer-events-none"
         style={{
-          background:
-            "radial-gradient(circle, rgba(74,144,204,0.25) 0%, transparent 65%)",
+          background: "radial-gradient(circle, rgba(74,144,204,0.15) 0%, transparent 65%)",
           filter: "blur(70px)",
           bottom: "-10%",
           right: "-5%",
         }}
-        animate={{ x: [0, -60, 0], y: [0, -40, 0], scale: [1, 0.85, 1] }}
-        transition={{ duration: 24, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute w-[250px] h-[250px] md:w-[400px] md:h-[400px] rounded-full pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(0,140,200,0.2) 0%, transparent 60%)",
-          filter: "blur(60px)",
-          top: "40%",
-          right: "20%",
-        }}
-        animate={{ x: [0, -40, 30, 0], y: [0, 30, -20, 0], scale: [1, 1.1, 0.9, 1] }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
       />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4">
         {/* Heading */}
-        <motion.div
-          className="text-center mb-16"
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
-        >
+        <FadeIn className="text-center mb-16">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#4A90CC]/30 bg-[#4A90CC]/10 px-4 py-1.5 mb-5">
-            <Sparkles className="h-3.5 w-3.5 text-[#4A90CC] animate-pulse" />
+            <Sparkles className="h-3.5 w-3.5 text-[#4A90CC]" />
             <span className="text-xs font-bold uppercase tracking-wider text-[#4A90CC]">
               Simple Process
             </span>
@@ -117,23 +90,17 @@ export default function HowItWorks() {
           <p className="text-white/50 text-lg max-w-2xl mx-auto">
             Getting started is easy. Four simple steps to a healthier, more energized you.
           </p>
-        </motion.div>
+        </FadeIn>
 
         {/* Steps - vertical timeline on mobile, 2-col grid on desktop */}
-        <motion.div
-          className="relative grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8"
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
-        >
+        <div className="relative grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {/* Connecting line - visible on md+ */}
           <div className="hidden md:block absolute left-1/2 top-8 bottom-8 w-px bg-gradient-to-b from-[#0066B3]/40 via-[#4A90CC]/20 to-[#0066B3]/40" />
 
-          {steps.map((step) => (
-            <motion.div
+          {steps.map((step, index) => (
+            <FadeIn
               key={step.number}
-              variants={cardReveal}
+              delay={index * 0.1}
               className="group relative rounded-2xl bg-white/[0.06] border border-white/[0.1] backdrop-blur-md p-6 md:p-8 hover:bg-white/[0.1] hover:border-[#4A90CC]/30 hover:shadow-[0_8px_40px_rgba(0,102,179,0.15)] transition-all duration-500"
             >
               {/* Top gradient line */}
@@ -149,8 +116,6 @@ export default function HowItWorks() {
                   </div>
                   <span className="absolute -top-2 -right-2 flex items-center justify-center w-6 h-6 rounded-full bg-[#0a2240] border border-[#4A90CC]/40 text-[10px] font-black text-[#4A90CC]">
                     {step.number}
-                    <span className="absolute inset-0 rounded-full border-2 border-[#4A90CC] animate-ping opacity-40" />
-                    <span className="absolute -inset-1 rounded-full border border-[#4A90CC]/30 animate-pulse" />
                   </span>
                 </div>
 
@@ -175,49 +140,37 @@ export default function HowItWorks() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </FadeIn>
           ))}
-        </motion.div>
+        </div>
 
         {/* Bottom stats bar */}
-        <motion.div
-          className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4"
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
-        >
-          <div className="flex items-center gap-3 rounded-xl bg-white/[0.06] border border-white/[0.1] backdrop-blur-sm px-5 py-4">
+        <FadeIn className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="flex items-center gap-3 rounded-xl bg-white/[0.06] border border-white/[0.1] px-5 py-4">
             <Clock className="w-5 h-5 text-[#4A90CC] shrink-0" />
             <div>
               <p className="text-white font-bold text-sm">Quick Sessions</p>
               <p className="text-white/40 text-xs">Most treatments take 15-45 minutes</p>
             </div>
           </div>
-          <div className="flex items-center gap-3 rounded-xl bg-white/[0.06] border border-white/[0.1] backdrop-blur-sm px-5 py-4">
+          <div className="flex items-center gap-3 rounded-xl bg-white/[0.06] border border-white/[0.1] px-5 py-4">
             <Users className="w-5 h-5 text-[#4A90CC] shrink-0" />
             <div>
               <p className="text-white font-bold text-sm">Expert Team</p>
               <p className="text-white/40 text-xs">Certified wellness professionals</p>
             </div>
           </div>
-          <div className="flex items-center gap-3 rounded-xl bg-white/[0.06] border border-white/[0.1] backdrop-blur-sm px-5 py-4">
+          <div className="flex items-center gap-3 rounded-xl bg-white/[0.06] border border-white/[0.1] px-5 py-4">
             <ArrowRight className="w-5 h-5 text-[#4A90CC] shrink-0" />
             <div>
               <p className="text-white font-bold text-sm">No Contracts</p>
               <p className="text-white/40 text-xs">Pay per visit or choose a membership</p>
             </div>
           </div>
-        </motion.div>
+        </FadeIn>
 
         {/* CTA */}
-        <motion.div
-          className="mt-10 text-center"
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
-        >
+        <FadeIn className="mt-10 text-center">
           <Link
             href="/contact"
             className="group inline-flex items-center gap-2 bg-gradient-to-r from-[#0066B3] to-[#4A90CC] text-white rounded-full px-8 py-4 font-black text-sm uppercase tracking-wider hover:scale-105 hover:shadow-[0_8px_30px_rgba(0,102,179,0.5)] transition-all duration-300"
@@ -225,7 +178,7 @@ export default function HowItWorks() {
             Get Started Today
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
-        </motion.div>
+        </FadeIn>
       </div>
     </section>
   );

@@ -1,9 +1,6 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Star, Quote, ExternalLink } from "lucide-react";
-import { staggerContainer, cardReveal, fadeInUp, viewportOnce } from "@/lib/animations";
 import { SITE } from "@/lib/constants";
+import FadeIn from "@/components/ui/FadeIn";
 
 const placeholderReviews = [
   {
@@ -26,28 +23,24 @@ const placeholderReviews = [
 export default function TestimonialsPlaceholder() {
   return (
     <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#0a2240] via-[#0d2d54] to-[#061527] overflow-hidden">
-      {/* Background blobs */}
-      <motion.div
+      {/* Static background accents */}
+      <div
         className="absolute w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(0,102,179,0.25) 0%, transparent 65%)",
+          background: "radial-gradient(circle, rgba(0,102,179,0.15) 0%, transparent 65%)",
           filter: "blur(80px)",
           top: "-15%",
           right: "-10%",
         }}
-        animate={{ x: [0, -60, 0], y: [0, 40, 0], scale: [1, 1.15, 1] }}
-        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
       />
-      <motion.div
+      <div
         className="absolute w-[300px] h-[300px] md:w-[450px] md:h-[450px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(74,144,204,0.2) 0%, transparent 65%)",
+          background: "radial-gradient(circle, rgba(74,144,204,0.12) 0%, transparent 65%)",
           filter: "blur(70px)",
           bottom: "-10%",
           left: "-5%",
         }}
-        animate={{ x: [0, 50, 0], y: [0, -30, 0], scale: [1, 0.9, 1] }}
-        transition={{ duration: 26, repeat: Infinity, ease: "easeInOut" }}
       />
 
       {/* Large quote watermark */}
@@ -57,13 +50,7 @@ export default function TestimonialsPlaceholder() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-4">
         {/* Heading */}
-        <motion.div
-          className="text-center mb-14"
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
-        >
+        <FadeIn className="text-center mb-14">
           {/* Google rating pill */}
           <a
             href={SITE.mapsUrl}
@@ -88,20 +75,14 @@ export default function TestimonialsPlaceholder() {
           <p className="text-white/50 text-lg max-w-xl mx-auto">
             Real experiences from real people who trust us with their wellness journey.
           </p>
-        </motion.div>
+        </FadeIn>
 
         {/* Testimonial cards */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {placeholderReviews.map((review, index) => (
-            <motion.div
+            <FadeIn
               key={review.name}
-              variants={cardReveal}
+              delay={index * 0.1}
               className="group relative rounded-2xl bg-white/[0.06] border border-white/[0.1] backdrop-blur-md p-7 hover:bg-white/[0.1] hover:border-[#4A90CC]/30 hover:shadow-[0_8px_40px_rgba(0,102,179,0.15)] transition-all duration-500"
             >
               {/* Top gradient accent */}
@@ -138,18 +119,12 @@ export default function TestimonialsPlaceholder() {
                   Verified
                 </span>
               </div>
-            </motion.div>
+            </FadeIn>
           ))}
-        </motion.div>
+        </div>
 
         {/* CTA */}
-        <motion.div
-          className="mt-12 text-center"
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
-        >
+        <FadeIn className="mt-12 text-center">
           <a
             href={SITE.mapsUrl}
             target="_blank"
@@ -160,7 +135,7 @@ export default function TestimonialsPlaceholder() {
             <ExternalLink aria-hidden="true" className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             <span className="sr-only">(opens in new tab)</span>
           </a>
-        </motion.div>
+        </FadeIn>
       </div>
     </section>
   );

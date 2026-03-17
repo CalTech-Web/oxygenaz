@@ -30,6 +30,7 @@ export default function Hero() {
         alt=""
         fill
         priority
+        sizes="100vw"
         className="object-cover"
       />
       {/* Dark overlay for text readability */}

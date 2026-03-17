@@ -1,26 +1,16 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { fadeInUp, viewportOnce } from "@/lib/animations";
+import FadeIn from "@/components/ui/FadeIn";
 
 export default function PromoCTA() {
   return (
     <section className="relative py-16 md:py-20 overflow-hidden">
-      {/* Vibrant animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0066B3] via-[#0066B3] to-[#061527] animate-gradient" />
+      {/* Vibrant gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0066B3] via-[#0066B3] to-[#061527]" />
 
       {/* Subtle pattern overlay */}
       <div className="absolute inset-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzAgMzBtLTIgMGE0IDQgMCAxIDEgNCAwIDQgNCAwIDEgMS00IDAiIGZpbGw9IiNmZmYiLz48L2c+PC9zdmc+')]" />
 
-
-      <motion.div
-        className="relative z-10 max-w-7xl mx-auto px-4"
-        variants={fadeInUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={viewportOnce}
-      >
+      <FadeIn className="relative z-10 max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left offer */}
           <div className="text-center md:text-left">
@@ -58,7 +48,7 @@ export default function PromoCTA() {
             </Link>
           </div>
         </div>
-      </motion.div>
+      </FadeIn>
     </section>
   );
 }

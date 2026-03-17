@@ -1,10 +1,7 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { Check, ArrowRight, Gift } from "lucide-react";
 import { membershipPlans } from "@/data/memberships";
-import { fadeInUp, staggerContainer, viewportOnce } from "@/lib/animations";
+import FadeIn from "@/components/ui/FadeIn";
 
 export default function Memberships() {
   return (
@@ -12,21 +9,15 @@ export default function Memberships() {
       {/* Dark background */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#061527] to-[#061527]" />
 
-      {/* Gradient mesh accents */}
+      {/* Static gradient mesh accents */}
       <div className="absolute -top-40 -right-40 w-[700px] h-[700px] rounded-full bg-[#0066B3]/8 blur-[120px] pointer-events-none" />
       <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-[#061527]/10 blur-[100px] pointer-events-none" />
 
       {/* Content */}
-      <motion.div
-        className="relative z-10 py-20 md:py-28 px-4"
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="visible"
-        viewport={viewportOnce}
-      >
+      <div className="relative z-10 py-20 md:py-28 px-4">
         <div className="max-w-7xl mx-auto">
           {/* Heading */}
-          <motion.div variants={fadeInUp} className="text-center mb-12">
+          <FadeIn className="text-center mb-12">
             <h2 className="font-[var(--font-display)] text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4">
               Our Membership Plans
             </h2>
@@ -35,18 +26,18 @@ export default function Memberships() {
               Want better deals? These are our most popular plans, but call
               or take a tour and experience our full menu of plans.
             </p>
-          </motion.div>
+          </FadeIn>
 
           {/* Pricing cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-            {membershipPlans.map((plan) => {
+            {membershipPlans.map((plan, index) => {
               const isHighlighted = plan.highlighted;
               const isPlatinum = plan.id === "platinum";
 
               return (
-                <motion.div
+                <FadeIn
                   key={plan.id}
-                  variants={fadeInUp}
+                  delay={index * 0.1}
                   className={`relative rounded-3xl p-8 flex flex-col min-h-[560px] transition-all duration-400 ${
                     isHighlighted
                       ? "bg-white md:scale-[1.06] hover:-translate-y-3 shadow-[0_25px_60px_rgba(0,0,0,0.12)]"
@@ -66,28 +57,17 @@ export default function Memberships() {
                 >
                   {/* Badge */}
                   {plan.badge && (
-                    <motion.div
-                      className="absolute -top-4 left-1/2 -translate-x-1/2"
-                      animate={{
-                        y: [0, -4, 0],
-                        scale: [1, 1.05, 1],
-                      }}
-                      transition={{
-                        duration: 2.5,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                      }}
-                    >
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                       <span
                         className={`text-xs font-black uppercase tracking-wider rounded-full px-6 py-2.5 shadow-lg ${
                           isHighlighted
-                            ? "bg-gradient-to-r from-[#0066B3] to-[#00518F] text-white shadow-[0_0_20px_rgba(0,180,216,0.4)] animate-pulse-glow"
+                            ? "bg-gradient-to-r from-[#0066B3] to-[#00518F] text-white shadow-[0_0_20px_rgba(0,180,216,0.4)]"
                             : "bg-white text-[#061527] shadow-[0_0_15px_rgba(11,36,71,0.3)]"
                         }`}
                       >
                         {plan.badge}
                       </span>
-                    </motion.div>
+                    </div>
                   )}
 
                   {/* Plan name */}
@@ -167,16 +147,13 @@ export default function Memberships() {
                   >
                     Sign Up
                   </a>
-                </motion.div>
+                </FadeIn>
               );
             })}
           </div>
 
           {/* Promotional banner */}
-          <motion.div
-            variants={fadeInUp}
-            className="mt-12 rounded-2xl bg-gradient-to-r from-[#0066B3]/20 to-[#0066B3]/5 border border-[#0066B3]/20 p-8 md:p-10 text-center"
-          >
+          <FadeIn className="mt-12 rounded-2xl bg-gradient-to-r from-[#0066B3]/20 to-[#0066B3]/5 border border-[#0066B3]/20 p-8 md:p-10 text-center">
             <div className="flex items-center justify-center gap-3 mb-3">
               <Gift className="h-6 w-6 text-[#0066B3]" />
               <span className="text-xs font-black uppercase tracking-wider text-[#0066B3]">
@@ -196,9 +173,9 @@ export default function Memberships() {
               Book My Appointment
               <ArrowRight className="h-4 w-4" />
             </Link>
-          </motion.div>
+          </FadeIn>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

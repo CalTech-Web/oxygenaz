@@ -1,10 +1,7 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { fadeInLeft, fadeInRight, staggerContainer, viewportOnce } from "@/lib/animations";
 import { CheckCircle } from "lucide-react";
+import FadeIn from "@/components/ui/FadeIn";
 
 const features = [
   {
@@ -25,15 +22,9 @@ export default function PhysicalTherapySection() {
   return (
     <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#F0F5FA] to-white overflow-hidden">
       <div className="relative z-10 mx-auto max-w-7xl px-4">
-        <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
-        >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left - Image */}
-          <motion.div variants={fadeInLeft} className="relative">
+          <FadeIn className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.12)]">
               <Image
                 src="/images/content/physical-therapy-hero.jpg"
@@ -49,10 +40,10 @@ export default function PhysicalTherapySection() {
               <p className="text-2xl font-extrabold font-[var(--font-display)]">25+</p>
               <p className="text-xs font-bold uppercase tracking-wider text-white/70">Years Experience</p>
             </div>
-          </motion.div>
+          </FadeIn>
 
           {/* Right - Content */}
-          <motion.div variants={fadeInRight}>
+          <FadeIn delay={0.15}>
             <span className="inline-block text-[#0066B3] text-sm font-black uppercase tracking-widest mb-4">
               Physical Therapy
             </span>
@@ -99,8 +90,8 @@ export default function PhysicalTherapySection() {
                 Book My Consultation
               </Link>
             </div>
-          </motion.div>
-        </motion.div>
+          </FadeIn>
+        </div>
       </div>
     </section>
   );

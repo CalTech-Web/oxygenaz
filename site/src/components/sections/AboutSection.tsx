@@ -1,10 +1,7 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { fadeInLeft, fadeInRight, staggerContainer, fadeInUp, viewportOnce } from "@/lib/animations";
 import { Award, ShieldCheck, Clock, Heart } from "lucide-react";
+import FadeIn from "@/components/ui/FadeIn";
 
 const highlights = [
   { icon: Award, label: "25+ Years Experience" },
@@ -16,40 +13,30 @@ const highlights = [
 export default function AboutSection() {
   return (
     <section className="relative py-20 md:py-28 bg-gradient-to-b from-white via-[#F0F5FA] to-white overflow-hidden">
-      {/* Animated background blobs */}
-      <motion.div
+      {/* Static background accents (replaces animated blobs) */}
+      <div
         className="absolute w-[400px] h-[400px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(0,102,179,0.1) 0%, transparent 65%)",
+          background: "radial-gradient(circle, rgba(0,102,179,0.08) 0%, transparent 65%)",
           filter: "blur(60px)",
           top: "10%",
           right: "-5%",
         }}
-        animate={{ x: [0, -40, 0], y: [0, 30, 0], scale: [1, 1.1, 1] }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
       />
-      <motion.div
+      <div
         className="absolute w-[350px] h-[350px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(74,144,204,0.08) 0%, transparent 65%)",
+          background: "radial-gradient(circle, rgba(74,144,204,0.06) 0%, transparent 65%)",
           filter: "blur(50px)",
           bottom: "5%",
           left: "-5%",
         }}
-        animate={{ x: [0, 50, 0], y: [0, -30, 0], scale: [1, 0.9, 1] }}
-        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <motion.div
-        className="relative z-10 mx-auto max-w-7xl px-4"
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="visible"
-        viewport={viewportOnce}
-      >
+      <div className="relative z-10 mx-auto max-w-7xl px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left - Image with overlapping card */}
-          <motion.div variants={fadeInLeft} className="relative">
+          <FadeIn className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,102,179,0.15)]">
               <Image
                 src="/images/content/dr-clint.jpg"
@@ -79,10 +66,10 @@ export default function AboutSection() {
               <p className="font-[var(--font-display)] text-2xl font-extrabold text-[#0066B3] leading-none">25+</p>
               <p className="text-[10px] font-bold uppercase tracking-wider text-[#718096] mt-0.5">Years</p>
             </div>
-          </motion.div>
+          </FadeIn>
 
           {/* Right - Content */}
-          <motion.div variants={fadeInRight}>
+          <FadeIn delay={0.15}>
             <div className="inline-flex items-center gap-2 rounded-full border border-[#0066B3]/20 bg-[#0066B3]/5 px-4 py-1.5 mb-5">
               <Heart className="h-3.5 w-3.5 text-[#0066B3]" />
               <span className="text-xs font-bold uppercase tracking-wider text-[#0066B3]">
@@ -125,9 +112,9 @@ export default function AboutSection() {
             >
               Learn More About Us
             </Link>
-          </motion.div>
+          </FadeIn>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

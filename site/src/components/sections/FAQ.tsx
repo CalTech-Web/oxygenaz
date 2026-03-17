@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Phone, HelpCircle, MessageCircle } from "lucide-react";
 import Link from "next/link";
 import { faqItems } from "@/data/faq";
-import { fadeInUp, fadeInLeft, staggerContainer, viewportOnce } from "@/lib/animations";
 import { SITE } from "@/lib/constants";
 
 export default function FAQ() {
@@ -17,39 +16,24 @@ export default function FAQ() {
 
   return (
     <section className="relative py-20 md:py-28 bg-gradient-to-br from-[#0a2240] via-[#0d2d54] to-[#061527] overflow-hidden">
-      {/* Background blobs */}
-      <motion.div
+      {/* Static background accents */}
+      <div
         className="absolute w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(0,102,179,0.25) 0%, transparent 65%)",
+          background: "radial-gradient(circle, rgba(0,102,179,0.15) 0%, transparent 65%)",
           filter: "blur(80px)",
           top: "-10%",
           left: "-8%",
         }}
-        animate={{ x: [0, 70, 0], y: [0, 40, 0], scale: [1, 1.15, 1] }}
-        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
       />
-      <motion.div
+      <div
         className="absolute w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(74,144,204,0.2) 0%, transparent 65%)",
+          background: "radial-gradient(circle, rgba(74,144,204,0.12) 0%, transparent 65%)",
           filter: "blur(70px)",
           bottom: "-12%",
           right: "-5%",
         }}
-        animate={{ x: [0, -50, 0], y: [0, -35, 0], scale: [1, 0.9, 1] }}
-        transition={{ duration: 26, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute w-[250px] h-[250px] md:w-[350px] md:h-[350px] rounded-full pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, rgba(0,140,200,0.15) 0%, transparent 60%)",
-          filter: "blur(60px)",
-          top: "50%",
-          left: "50%",
-        }}
-        animate={{ x: [0, -40, 30, 0], y: [0, 30, -20, 0] }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
       />
 
       {/* Large ? watermark */}
@@ -58,18 +42,9 @@ export default function FAQ() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4">
-        <motion.div
-          className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16"
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
-        >
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           {/* Left - Sticky heading */}
-          <motion.div
-            variants={fadeInLeft}
-            className="lg:col-span-4 lg:sticky lg:top-32 lg:self-start"
-          >
+          <div className="lg:col-span-4 lg:sticky lg:top-32 lg:self-start">
             <div className="inline-flex items-center gap-2 rounded-full border border-[#4A90CC]/30 bg-[#4A90CC]/10 px-4 py-1.5 mb-5">
               <MessageCircle className="h-3.5 w-3.5 text-[#4A90CC]" />
               <span className="text-xs font-bold uppercase tracking-wider text-[#4A90CC]">
@@ -112,14 +87,13 @@ export default function FAQ() {
                 </div>
               </Link>
             </div>
-          </motion.div>
+          </div>
 
           {/* Right - Accordion */}
           <div className="lg:col-span-8 space-y-4">
             {faqItems.map((item, index) => (
-              <motion.div
+              <div
                 key={index}
-                variants={fadeInUp}
                 className={`group rounded-2xl overflow-hidden transition-all duration-500 ${
                   openIndex === index
                     ? "bg-white/[0.1] border border-[#4A90CC]/30 shadow-[0_8px_40px_rgba(0,102,179,0.15)]"
@@ -181,10 +155,10 @@ export default function FAQ() {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

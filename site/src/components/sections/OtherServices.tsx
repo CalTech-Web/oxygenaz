@@ -1,17 +1,14 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
 import { additionalServices } from "@/data/services";
 import { SITE } from "@/lib/constants";
-import { staggerContainer, cardReveal, fadeInUp, viewportOnce } from "@/lib/animations";
+import FadeIn from "@/components/ui/FadeIn";
 
-function ServiceCard({ service, className }: { service: (typeof additionalServices)[number]; className?: string }) {
+function ServiceCard({ service, className, delay = 0 }: { service: (typeof additionalServices)[number]; className?: string; delay?: number }) {
   return (
-    <motion.div
-      variants={cardReveal}
+    <FadeIn
+      delay={delay}
       className={`group relative overflow-hidden rounded-2xl ${className ?? ""}`}
     >
       <Link href={`/services/${service.slug}`} className="block h-full">
@@ -19,6 +16,7 @@ function ServiceCard({ service, className }: { service: (typeof additionalServic
           src={`/images/services/${service.slug}.jpg`}
           alt={service.name}
           fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover transition-transform duration-500 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#061527]/90 via-[#061527]/40 to-transparent transition-opacity duration-300 group-hover:from-[#061527]/95" />
@@ -51,7 +49,7 @@ function ServiceCard({ service, className }: { service: (typeof additionalServic
           <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#0066B3] to-[#061527] scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" />
         </div>
       </Link>
-    </motion.div>
+    </FadeIn>
   );
 }
 
@@ -72,65 +70,60 @@ export default function OtherServices() {
           <div className="mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-[#0066B3] to-[#061527]" />
         </div>
 
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
-        >
-          {/* Top row: 3 equal cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-            <ServiceCard service={ivInfusions} className="min-h-[220px] md:min-h-[260px]" />
-            <ServiceCard service={antiAging} className="min-h-[220px] md:min-h-[260px]" />
-            <ServiceCard service={weightLoss} className="min-h-[220px] md:min-h-[260px] sm:col-span-2 lg:col-span-1" />
-          </div>
+        {/* Top row: 3 equal cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+          <ServiceCard service={ivInfusions} className="min-h-[220px] md:min-h-[260px]" delay={0} />
+          <ServiceCard service={antiAging} className="min-h-[220px] md:min-h-[260px]" delay={0.08} />
+          <ServiceCard service={weightLoss} className="min-h-[220px] md:min-h-[260px] sm:col-span-2 lg:col-span-1" delay={0.16} />
+        </div>
 
-          {/* Bottom row: Hyperbaric (2 cols) + CTA (1 col) */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-5 mt-4 md:mt-5">
-            <ServiceCard
-              service={hyperbaric}
-              className="min-h-[300px] md:min-h-[360px] lg:col-span-2"
-            />
+        {/* Bottom row: Hyperbaric (2 cols) + CTA (1 col) */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-5 mt-4 md:mt-5">
+          <ServiceCard
+            service={hyperbaric}
+            className="min-h-[300px] md:min-h-[360px] lg:col-span-2"
+            delay={0}
+          />
 
-            {/* CTA card */}
-            <motion.div
-              variants={cardReveal}
-              className="group relative overflow-hidden rounded-2xl min-h-[300px] md:min-h-[360px]"
-            >
-              <div className="h-full">
-                <Image
-                  src="/images/services/cta-background.jpg"
-                  alt=""
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-[#061527]/85" />
-                <div className="absolute inset-0 z-10 flex flex-col items-center justify-center p-6 text-center">
-                  <h3 className="font-[var(--font-display)] text-xl md:text-2xl font-bold text-white mb-3">
-                    Ready to Transform Your Wellness?
-                  </h3>
-                  <p className="text-white/70 text-sm mb-5">
-                    Find the perfect treatment for your goals
-                  </p>
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center gap-2 bg-[#0066B3] text-white rounded-full px-7 py-3 text-sm font-black uppercase tracking-wider hover:scale-105 hover:shadow-[0_8px_30px_rgba(0,102,179,0.4)] transition-all duration-300"
-                  >
-                    Book a Consultation
-                    <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </Link>
-                  <a
-                    href={SITE.phoneHref}
-                    className="mt-4 inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors text-sm font-bold"
-                  >
-                    <Phone aria-hidden="true" className="h-4 w-4" />
-                    {SITE.phone}
-                  </a>
-                </div>
+          {/* CTA card */}
+          <FadeIn
+            delay={0.08}
+            className="group relative overflow-hidden rounded-2xl min-h-[300px] md:min-h-[360px]"
+          >
+            <div className="h-full">
+              <Image
+                src="/images/services/cta-background.jpg"
+                alt=""
+                fill
+                sizes="(max-width: 1024px) 100vw, 33vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-[#061527]/85" />
+              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center p-6 text-center">
+                <h3 className="font-[var(--font-display)] text-xl md:text-2xl font-bold text-white mb-3">
+                  Ready to Transform Your Wellness?
+                </h3>
+                <p className="text-white/70 text-sm mb-5">
+                  Find the perfect treatment for your goals
+                </p>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 bg-[#0066B3] text-white rounded-full px-7 py-3 text-sm font-black uppercase tracking-wider hover:scale-105 hover:shadow-[0_8px_30px_rgba(0,102,179,0.4)] transition-all duration-300"
+                >
+                  Book a Consultation
+                  <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+                <a
+                  href={SITE.phoneHref}
+                  className="mt-4 inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors text-sm font-bold"
+                >
+                  <Phone aria-hidden="true" className="h-4 w-4" />
+                  {SITE.phone}
+                </a>
               </div>
-            </motion.div>
-          </div>
-        </motion.div>
+            </div>
+          </FadeIn>
+        </div>
       </div>
     </section>
   );

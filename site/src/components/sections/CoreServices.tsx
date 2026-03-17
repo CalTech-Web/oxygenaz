@@ -1,11 +1,8 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { coreServices } from "@/data/services";
-import { staggerContainer, cardReveal } from "@/lib/animations";
+import FadeIn from "@/components/ui/FadeIn";
 
 export default function CoreServices() {
   return (
@@ -19,23 +16,17 @@ export default function CoreServices() {
             </h2>
             <div className="mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-[#0066B3] to-[#061527]" />
           </div>
-          <span className="bg-gradient-to-r from-[#0066B3] to-[#00518F] text-white text-sm font-black rounded-full px-6 py-2.5 shadow-[0_4px_20px_rgba(0,180,216,0.35)] animate-pulse hidden sm:inline-block">
+          <span className="bg-gradient-to-r from-[#0066B3] to-[#00518F] text-white text-sm font-black rounded-full px-6 py-2.5 shadow-[0_4px_20px_rgba(0,180,216,0.35)] hidden sm:inline-block">
             $20 on Fridays
           </span>
         </div>
 
         {/* Bento grid */}
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5"
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           {coreServices.map((service, index) => (
-            <motion.div
+            <FadeIn
               key={service.id}
-              variants={cardReveal}
+              delay={index * 0.08}
               className={`group relative overflow-hidden rounded-2xl ${
                 index === 0 ? "sm:col-span-2 sm:row-span-2 min-h-[320px] md:min-h-[400px]" : "min-h-[220px] md:min-h-[260px]"
               }`}
@@ -45,6 +36,7 @@ export default function CoreServices() {
                   src={`/images/services/${service.slug}.jpg`}
                   alt={service.name}
                   fill
+                  sizes={index === 0 ? "(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 66vw" : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"}
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
 
@@ -58,7 +50,7 @@ export default function CoreServices() {
 
                 {service.promo && (
                   <div className="absolute top-3 left-3 z-10">
-                    <span className="inline-block rounded-full bg-[#0066B3] px-3 py-1 text-xs font-bold text-white animate-pulse-glow">
+                    <span className="inline-block rounded-full bg-[#0066B3] px-3 py-1 text-xs font-bold text-white">
                       {service.promo}
                     </span>
                   </div>
@@ -84,12 +76,12 @@ export default function CoreServices() {
                   <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#0066B3] to-[#061527] scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" />
                 </div>
               </Link>
-            </motion.div>
+            </FadeIn>
           ))}
 
           {/* CTA card - fills empty grid slot */}
-          <motion.div
-            variants={cardReveal}
+          <FadeIn
+            delay={coreServices.length * 0.08}
             className="group relative overflow-hidden rounded-2xl min-h-[220px] md:min-h-[260px]"
           >
             <Link href="/contact" className="block h-full">
@@ -97,6 +89,7 @@ export default function CoreServices() {
                 src="/images/content/weight-loss-cta.jpg"
                 alt="Book your session today"
                 fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-[#061527]/70" />
@@ -113,8 +106,8 @@ export default function CoreServices() {
                 </span>
               </div>
             </Link>
-          </motion.div>
-        </motion.div>
+          </FadeIn>
+        </div>
 
         {/* Promo banner */}
         <div className="mt-8 text-center">

@@ -1,8 +1,5 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { fadeInUp, staggerContainer, viewportOnce } from "@/lib/animations";
+import FadeIn from "@/components/ui/FadeIn";
 
 const services = [
   {
@@ -30,23 +27,16 @@ const services = [
 export default function AdditionalServices() {
   return (
     <section className="py-16 md:py-20 bg-gradient-to-b from-[#F0F5FA]/50 to-white relative overflow-hidden">
-      <motion.div
-        className="relative z-10 max-w-7xl mx-auto px-4"
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="visible"
-        viewport={viewportOnce}
-      >
+      <div className="relative z-10 max-w-7xl mx-auto px-4">
         {/* Heading */}
-        <motion.div variants={fadeInUp} className="mb-8">
+        <FadeIn className="mb-8">
           <h2 className="font-[var(--font-display)] text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#061527] leading-tight tracking-tight accent-underline">
             Other Services
           </h2>
-        </motion.div>
+        </FadeIn>
 
         {/* Horizontal scrollable row */}
-        <motion.div
-          variants={fadeInUp}
+        <FadeIn
           className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4 scrollbar-hide"
         >
           {services.map((service) => (
@@ -84,8 +74,8 @@ export default function AdditionalServices() {
               </div>
             </Link>
           ))}
-        </motion.div>
-      </motion.div>
+        </FadeIn>
+      </div>
     </section>
   );
 }

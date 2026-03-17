@@ -26,9 +26,18 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const dropdownTimers = useRef<Record<string, ReturnType<typeof setTimeout>>>({});
 
-  /* Scroll listener for header effect */
+  /* Scroll listener for header effect (throttled with rAF) */
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 50);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
