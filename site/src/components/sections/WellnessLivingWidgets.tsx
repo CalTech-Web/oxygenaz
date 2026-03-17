@@ -141,7 +141,7 @@ export default function WellnessLivingWidgets() {
         {/* Side by side widgets with animated gradient borders */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <motion.div variants={itemVariants}>
-            <h3 className="text-white text-xl font-bold text-center mb-4">Wellness Services</h3>
+            <h3 className="text-white text-2xl md:text-3xl font-bold text-center mb-4">Wellness Services</h3>
             <div className="gradient-border-wrap shadow-[0_8px_40px_rgba(0,102,179,0.2)]">
               <div
                 ref={widget1Ref}
@@ -150,7 +150,7 @@ export default function WellnessLivingWidgets() {
             </div>
           </motion.div>
           <motion.div variants={itemVariants}>
-            <h3 className="text-white text-xl font-bold text-center mb-4">Sports Medicine / Physical Therapy</h3>
+            <h3 className="text-white text-2xl md:text-3xl font-bold text-center mb-4">Sports Medicine / Physical Therapy</h3>
             <div className="gradient-border-wrap shadow-[0_8px_40px_rgba(0,102,179,0.2)]">
               <div
                 ref={widget2Ref}
