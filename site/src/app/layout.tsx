@@ -13,6 +13,7 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://oxygenaz.com"),
+  verification: { google: "pqPLpLn5abUV9zOlqjfO4RKNseHym9MPBGeR0uinZsc" },
   title: {
     default: "Oxygen Wellness & Physical Therapy | Glendale, AZ",
     template: "%s | Oxygen Wellness & Physical Therapy",
